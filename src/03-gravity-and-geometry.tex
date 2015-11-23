@@ -1,0 +1,114 @@
+\chapter{Gravity and Geometry}
+The observable universe is stable. There are two obvious configurations in which this is possible:
+\begin{enumerate}
+    \item Static universe, masses are arranged in a grid, all nett forces cancel. However small fluctuations cause the system to collapse.
+    $\implies$ no possible description for the universe. (PICTURE)
+    \item Expanding universe, all masses move away from each other, overcoming the gravitational attraction. Theoretically such a system can be described by using Newtonian Physics introducing additional energy contributions. This turns out to be inconsistent.
+\end{enumerate}
+Since in the second description all particles are accelerated relative to each other, so there are no inertial systems. A theory in which all observers are equal must therefore be local and thus be described by means of differential geometry.
+Claim: The laws of physics are the same in every system.
+If we assume that the Maxwell equations are right the Newtonian theory of gravity must be wrong.
+Implications:
+All free falling systems are equivalent (i.e. indistinguishable by the observer). Light must bend, otherwise a beam could be used to deduce whether your system is inertial.
+The following example illustrates that Euclidean geometry is no adequate description of space-time.
+\paragraph{example: rotating sphere}
+Rotating sphere (see Introduction to tensor calculus)
+\par
+We will start by studding coordinate systems in flat space, which should be familiar.
+\paragraph{Cartesian coordinates}
+(PICTURE)
+\begin{equation*}
+s^2=(x_1-x_2)^2+(y_1-y_2)^2\\
+\end{equation*}
+Infinitesimal line element
+\begin{equation}
+    \dif s^2=\dif x^2+\dif y^2  \label{eq:cartline}
+\end{equation}
+\paragraph{Polar coordinates}
+(PICTURE)
+\begin{align*}
+x= r\cos\varphi\quad y= r\sin\varphi
+\end{align*}
+\begin{align*}
+\dif x&= \pd{x}{r}\dif r+\pd{x}{\varphi}\dif \varphi = \cos\varphi\dif r-r\sin\varphi\dif \varphi\\
+\dif y&= \pd{x}{r}\dif r+\pd{y}{\varphi}\dif \varphi = \sin\varphi\dif r+r\cos\varphi\dif \varphi
+\end{align*}
+Plugging this into \eqref{eq:cartline} gives the line element in polar coordinates
+\begin{equation}
+    \dif s^2=\dif r^2+r^2\dif \varphi^2
+\end{equation}
+In matrix form
+\begin{equation}
+    \dif s^2=\begin{pmatrix}
+\dif r& \dif \varphi
+\end{pmatrix}
+\begin{pmatrix}
+1& 0\\
+0& r^2\\
+\end{pmatrix}
+\begin{pmatrix}
+\dif r\\ \dif \varphi
+\end{pmatrix}
+\end{equation}
+The matrix
+\begin{equation}
+    g(\vec{r})= \begin{pmatrix}
+1& 0\\
+0& r^2\\
+\end{pmatrix}
+\end{equation}
+is called the \emph{metric}.
+In general we have
+\begin{equation}
+    \dif s^2 = g_{ij}\dif x^i\dif x^j
+\end{equation}
+We need to generalize the concept of a 'straight' line to curved space. Straight lines are curves minimizing the distance between two points, we therefore introduce a
+\paragraph{Variation principle}
+Again we take a look at flat space, but with curved coordinates. The length of a curve $\gamma$ with $\gamma^i(\lambda) = x^i(\lambda)$ is given by the integral
+\begin{equation}
+    L=\int_{\gamma}\sqrt{\dif s^2} =\int_{\gamma}\sqrt{g_{ij}\dif x^i\dif x^j}=\int_{a}^{b}\sqrt{g_{ij}\od{x^i}{\lambda} \od{x^j}{\lambda}}\dif \lambda\, .
+\end{equation}
+As stated above straight lines satisfy $\delta L = 0$. If we define $\mathcal{L}:=\sqrt{g_{ij}\od{x^i}{\lambda} \od{x^j}{\lambda}}$, $L$ takes a form familiar from classical mechanics:
+\begin{equation}
+    L=\int_a^b \mathcal{L}\dif \lambda\, .
+\end{equation}
+The extremal condition implies the Euler Lagrange equations
+\begin{equation}
+    \pd{}{\lambda}\pd{\mathcal{L}}{\dot{q}_i}-\pd{\mathcal{L}}{\dot{q}_i}
+=0\, .		\end{equation}
+In the case at hand the equations are
+\begin{equation}
+    0=\tensor{g}{_i_l}\tensor{\ddot{x}}{^j}+\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\dot{x}^j\dot{x}^l \label{eq:PreGeo}
+\end{equation}
+The term invoking derivatives of the metric defines the \emph{Christoffel symbols} of the first kind
+\begin{equation}
+    \Gamma_{ijl}:=\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
+\end{equation}
+It is convenient to multiply \eqref{eq:PreGeo} by the inverse metric $g^{ki}$ so that we obtain the \emph{geodesic equation}
+\begin{equation}
+    0 = \od[2]{x^i}{s}+\Gamma^i_{jk}\od{x^j}{s}\od{x^k}{s}\, .
+\end{equation}
+Where $\Gamma^i_{jk}$ are the \emph{Christoffel symbols} of the second kind
+\begin{equation}
+    \Gamma^k_{jl}:=g^{km}\Gamma_{mjl}=\frac{1}{2}g^{il}\left(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
+\end{equation}
+%\begin{bemerkung}
+Bemerkung \\
+Although the notation looks as the Christoffel symbols form a tensor, however they do not. In flat space we have $g_{ij}=\eta_{ij}$ and can easily check that all Christoffel symbols vanish. We therefore recover the ordinary equation of motion for a free particle
+\begin{equation}
+    0 = \od[2]{x^i}{s}
+\end{equation}
+\paragraph{example: free fall}
+Suppose a observer follows a free falling body in a homogeneous field. Therefore a transformation between the system of the earth and the one of the body are given by (for simplicity we only consider the coordinate along it is falling)
+\begin{equation}
+    (t,x)\to\left(t,x-\frac{1}{2}gt^2\right)
+\end{equation}
+Analogous to the Riemannian case discussed before, the line element takes the form
+\begin{align*}
+\dif s^2&=-\dif t^2 +\dif x^2\\
+&=-\dif t'^2+(\dif x'- gt\dif t')(\dif x'- gt\dif t')\\
+&=(g^2t'^2-1)\dif t'^2-2gt\dif x'\dif t'+\dif x'^2\\
+\end{align*}
+%\end{bemerkung}
+(exkurs newtonian limnit)
+(Schwarzschild solution)

@@ -1,0 +1,65 @@
+\chapter{Newtonian Gravity}
+In Newtonian physics we assume that we have absolute space and time that can be described by the a set of numbers $x^1,x^2,x^3,t$. We express the coordinates as functions of time
+\section{Forces}
+The force $\vec{F}_{AB}$, a massive body $A$ with mass $m_A$ exerts on another massive body $B$ with mass $m_B$ is given by
+\begin{equation}
+    \vec{F}_{AB}=-m_B\frac{G\textsubscript{N}m_A}{r^2}\begin{bemerkung}\vec{e}_r\, .
+\end{equation}
+Where $G\textsubscript{N}$ denotes \emph{Newton's constant}, numerically equal
+to $G\textsubscript{N}\approx \unitfrac[6.673\cdot 10^{-11}]{m^3}{kgs}$. Although there is no need for $G\textsubscript{N}$ to be constant over time, there is evidence that the relative variation is less than $10^{-12}$ per year. The force can be expressed in terms of \emph{gravitational potential} $\Phi$
+\begin{equation}
+    \vec{F}_{AB}=-m_B\nabla\left(-\frac{G\textsubscript{N}m_A}{r}\right)\equiv -m_B\nabla\Phi(\vec{x}_B)\, .
+\end{equation}
+Given $N$ particles labelled by $n$, the total force $B$ experiences is
+\begin{equation}
+    \vec{F}_{B}=-\sum_n \vec{F}_{nB}\, .
+\end{equation}
+The potential at $\vec{x}_B$ is given by
+\begin{equation}
+    \Phi(\vec{x}_B)=-G\textsubscript{N}\sum_n\frac{m_n}{|\vec{x}_B-\vec{x}_n|}\, .
+\end{equation}
+In general, we assume a mass distribution $\rho(\vec{x})$ and the sum is replaced by an integral
+\begin{equation}
+    \Phi(\vec{x})=-\int\dif{\vec{x}^{\prime}}\frac{\rho(\vec{x}^{\prime})}{|\vec{x}-\vec{x}^{\prime}|}
+\end{equation}
+\section{Comparison with Electrostatics}
+The classical theory of gravity bears a striking similarity to electrostatics. To make this clearer, we introduce the gravitational field $\vec{g}(\vec{x})\equiv -\nabla\Phi(\vec{x})$.
+\begin{table}
+\centering
+\begin{tabular}{cc}
+\toprule
+Gravity&Electrostatics\\
+\midrule
+$\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
+$\Phi(r)=\frac{kQ}{r}$&\\
+\bottomrule
+\end{tabular}
+\end{table}
+\paragraph{Example: spherical mass distribution}
+\begin{equation}
+    \int_V\dif{\vec{x}}\, \nabla\vec{g}=-\int_V\dif{\vec{x}}\, \Delta\Phi = -4\pi G\textsubscript{N}\int_V\dif{\vec{x}}\,\rho(r)= -4\pi G\textsubscript{N} M\, ,
+\end{equation}
+where $M$ is the mass enclosed in the volume $V$. On the other hand we can use Gauss law to deduce
+\begin{equation}
+    \int_V\dif{\vec{x}}\, \nabla\vec{g}=\oint_{\partial V}\dif{\vec{A}}\, \vec{g} =\int_{0}^{2\pi}\int_{-1}^{1} g(r)r^2\dif{\cos\vartheta}\dif{\varphi}=4\pi r^2g(r)
+\end{equation}
+Together the gravitational force is given by
+\begin{equation}
+    g(r)=-\frac{G\textsubscript{N}M}{r^2}
+\end{equation}
+\paragraph{Inertial systems}
+A inertial system is a system in which force-free particles move with constant uniform velocity on straight lines.
+\paragraph{Weak Equivalence Systems}
+Newtons first law reads
+\begin{equation}
+    \vec{F}=m\textsubscript{I}\ddot{\vec{x}}
+\end{equation}
+where $m\textsubscript{I}$ is the inertial mass that works against the acceleration of the body.
+The force a body with 'active' mass $m\textsubscript{g,act.}$ exerts on another body with mass $\textsubscript{g,pass.}$
+\begin{equation}
+    \vec{F}=m\textsubscript{g,pass.}\frac{G\textsubscript{N}m\textsubscript{g,act.}}{r^2}\vec{e}_r
+\end{equation}
+A priori there is no reason to assume any relation between this masses. The first question one might ask is whether the active and the passive mass are equal. Suppose we have two masses $A$ and $B$. Using Newtons first law, we can explicitly write
+\begin{equation}
+    m^{B}_{\text{i}}\ddot{\vec{x}}=\vec{F}_{AB}=-	m^{B}_{\text{p}}\frac{G\textsubscript{N}m^{A}_{\text{a}}}{r^2}\vec{e}_r
+\end{equation}
