@@ -1,82 +1,92 @@
-\documentclass[
-a4paper,                                               % Papierformat
-oneside,                                               % Einseitig
-%twoside,                                              % Zweiseitig
-12pt,                                                  % Schriftgröße
-headsepline,                                           % Linie unter der Kopfzeile
-%draft=true                                            % Markiert zu lange und zu kurze Zeilen
-xcolor=dvipsnames
-]{scrreprt}
-% \usepackage{geometry}
-\usepackage{tabularx}
-\usepackage{tikz}
-\usepackage{listings}
-\usepackage{tensor}
-\usetikzlibrary{trees}
-\usetikzlibrary{decorations.pathmorphing}
-\usetikzlibrary{positioning,arrows,snakes}
-\usetikzlibrary{decorations.markings}
+\documentclass[a4paper,oneside,12pt]{scrreprt}
+
+%%% PACKAGES + MODIFICATIONS%%%
+
+%language and encoding
 \usepackage[utf8]{inputenc}
-\usepackage[OT1]{fontenc}                                                     	% Verwendung der Zeichentabelle T1, für deutschsprachige Dokumente sinnvoll                                                          % LaTeX Default-Font für geglättete Schrift
-\usepackage[english,ngerman]{babel}                                           	% Silbentrennung nach neuer deutscher und englischer Rechtschreibung
+\usepackage[T1]{fontenc}
+\usepackage[english,ngerman]{babel}
+
+%math
 \usepackage{amsmath}
 \usepackage{amsthm}
-%\usepackage{libertine}  	%
-%\usepackage{cmbright}
-%\usepackage{mathdesign}
-\usepackage{pdfpages}
-\usepackage{xifthen}                                                          	% Wird benötigt um \ifthenelse zu benutzen
-% Zum flexiblen Einbinden von Grafiken, pdftex ist optional
-\usepackage{units}                                                            	% Ermöglicht die Nutzung von \unit[Zahl]{Einheit}
-\usepackage{setspace}                                                         	% Einfaches wechseln zwischen unterschiedlichen Zeilenabständen
-\usepackage{bpchem}
-\usepackage{xcolor}
-
-\definecolor{darkblue}{RGB}{26,52,132}
-\definecolor{darkblue2}{rgb}{0.0, 0.0, 0.4}
-
-\usepackage[font=small,labelfont=bf,labelsep=endash,format=plain]{caption}    	% Darstellung für Caption s.u.
-\usepackage{subfig}                                                           	% Bilder nebeneinander
-\usepackage{wrapfig}                                                          	% Fließtext um Figure-Umgebung
-\usepackage{cite}                                                             	% Zusatzfunktionen zum zitieren
-\usepackage{scrpage2}                                                         	% Wird für Kopf- und Fußzeile benötigt
-\usepackage{array,dcolumn}                                                    	% Beide Pakete werden für die Ausrichtung der Tabellenspalten benötigt
-\usepackage{braket}
-%\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
-\usepackage{mathtools}
-\usepackage{amsfonts}
-\usepackage{tabularx}
 \usepackage{amssymb}
-\usepackage{multirow}
-\usepackage{booktabs,tabularx}
-\usepackage[section]{placeins}
-%\usepackage{morefloats}
-\usepackage{tikz}
-\usepackage{nameref}
-\usepackage{dsfont}
-\usepackage{commath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
 \usepackage{tensor}
-\usetikzlibrary{shapes,arrows}
-\usetikzlibrary{positioning}
-\usepackage[
-colorlinks=true,
-urlcolor=blue,
-linkcolor=black,
-citecolor=black
-]{hyperref}
-\usepackage{glossaries}
-\usepackage[a4paper,pdftex]{geometry}										% A4paper margins
-\setlength{\oddsidemargin}{5mm}												% Remove 'twosided' indentation
-\setlength{\evensidemargin}{5mm}
+\usepackage{commath}
+\usepackage{dsfont}		% double stroke characters
+\usepackage{braket}
+\newtagform{brackets}{[}{]}
+\usetagform{brackets}
 
-\usepackage[protrusion=true,expansion=true]{microtype}
+%science
+\usepackage{units}
+\usepackage{bpchem}	% type­set chem­i­cal names, for­mu­lae, etc
+
+%layout + style
+\usepackage[automark,headsepline]{scrlayer-scrpage} 						% headings
+\renewcommand*{\headfont}{\normalfont}										% nicht kursive Kopfzeile
+\usepackage{setspace}														% set space be­tween lines
+\usepackage[font=small,labelfont=bf,labelsep=endash,format=plain]{caption}	% change style of captions
+\usepackage[section]{placeins}												% de­fines a \FloatBar­rier com­mand, be­yond which floats may not pass.
+\usepackage[protrusion=true,expansion=true]{microtype}						% sublim­i­nal re­fine­ments to­wards ty­po­graph­i­cal per­fec­tion
+\addtokomafont{caption}{\small\linespread{1}\selectfont}					% Ändert Schriftgröße und Zeilenabstand bei captions
+
+%graphics
 \usepackage{graphicx}
-%Diese Befehle sortieren die Einträge in den
-%einzelnen Listen:
-%makeindex -s datei.ist -t datei.alg -o datei.acr datei.acn
-%makeindex -s datei.ist -t datei.glg -o datei.gls datei.glo
-%makeindex -s datei.ist -t datei.slg -o datei.syi datei.syg
+\usepackage{xcolor}
+\usepackage{subfig}		% subfigures
+\usepackage{wrapfig}	% pro­duces fig­ures which text can flow around
 
+%tikz
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning,arrows,shapes}
+
+%tables
+\usepackage{tabularx}	% tab­u­lars with ad­justable-width columns
+\usepackage{multirow}	% create tab­u­lar cells span­ning mul­ti­ple rows
+\usepackage{booktabs}	% publi­ca­tion qual­ity ta­bles in LaTeX
+\usepackage{array}
+\usepackage{dcolumn}	% align on the dec­i­mal point of num­bers in tab­u­lar columns
+
+%hyperref
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+	pdftitle={General Relativity},
+	pdfsubject={General Relativity},
+	pdfkeywords={general,relativity,space,time,minkowksi},
+	pdfauthor={Michael Ruf and Benjamin Rottler},
+	pdfcreator={Michael Ruf and Benjamin Rottler},
+	pdfproducer={Michael Ruf and Benjamin Rottler},
+	bookmarksnumbered=true, % bookmarks are numbered
+	bookmarksopen=true,     % show bookmarks at start of pdf viewer
+	bookmarksopenlevel=2,   % level to which the bookmarks are opened
+	bookmarksdepth=3,       % depth of bookmarks 
+    unicode=true,           % non-Latin characters in pdf viewer's bookmarks
+    pdftoolbar=false,       % show pdf viewer's toolbar?
+    pdfmenubar=true,        % show pdf viewer's menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new window
+    pdfborder={0 0 1},		% no border for links
+    colorlinks=true,		% false: black links; true: colored links
+    linkcolor=blue,         % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue			% color of external links
+}
+\usepackage{nameref}
+
+%general stuff
+\usepackage{cite}
+\usepackage{glossaries}	% create glos­saries and lists of acronyms
+
+
+%%% NEW COMMANDS %%%
 
 \newcommand\grad{\ensuremath{^\circ}}
 \newcommand{\imI}{\ensuremath{\mathrm{i}}}
@@ -93,92 +103,42 @@ citecolor=black
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 \renewcommand{\vec}{\mathbf}
 
-\newtagform{brackets}{[}{]}
-\usetagform{brackets}
 
-\tikzstyle{block} = [draw, fill=blue!20, rectangle,
-minimum height=3em, minimum width=6em]
-
-
-% The block diagram code is probably more verbose than necessary
-\tikzstyle{line} = [draw, -latex']
-
-
-% #1 ist dabei ein Parameter, den man \cImage übergeben muss. In 10_Titelseite.tex wird dieser Befehl verwendet. Der Parameter ist dort Bilder/titelseite.jpg.
-% Benötigt man keine Parameter, dann lässt man [1] weg. Werden zusätzliche Parameter benötigt, dann kann man die Zahl auf maximal 9 erhöhen.
-
-
-% #########################
-% # Beginn des Dokumentes #
-% #########################
-
-
-
-
-\automark[section]{chapter} % ???
-
+%%% DOCUMENT %%%
 
 \begin{document}
 \selectlanguage{english}
-\numberwithin{equation}{section}                           % Nummerierung der Formeln entsprechend der Section (z.B. 1.1)
-\addtokomafont{caption}{\small\linespread{1}\selectfont}   % Ändert Schriftgröße und Zeilenabstand bei captions
-\renewcommand*{\headfont}{\normalfont}					   % nicht kursive Kopfzeile
-
-% Römische Ziffern als Seitenzahlen für Titelseite bis einschließlich dem Inhaltsverzeichnis
-\setcounter{page}{1}
-\pagenumbering{roman}
-
-% #######################################
-% # Kopf- und Fußzeile konfigurieren    #
-% #######################################
-
-%\ihead{Loschmidt echo and non-Markovian dynamics in the quantum Ising model }                      % Innenseite der Kopfzeile
-%	\chead{}                                                   % Mitte der Kopfzeile
-%\ohead{Michael Ruf}                                 % Außenseite der Kopfzeile
-%	\ifoot{}                                                   % Innnenseite der Fußzeile
-\cfoot{- \textit{\pagemark} -}                             % Mitte der Fußzeile
-%	\ofoot{}
-%    	\lhead{\leftmark}                                               % Aussenseite der Fußzeile
-
-% ###################################
-% # Ausrichtung der Tabellenspalten #
-% ###################################
-
-\newcolumntype{,}[1]{D{,}{,}{#1}}                          % , in Tabellen untereinander stellen
-\newcolumntype{p}{D{p}{\pm}{-1}}                           % +- in Tabellen untereinander stellen
-
-% ########################
-% # Titelseite einbinden #
-% ########################
-\numberwithin{equation}{chapter}
-\thispagestyle{empty}
-\vfill
-\restoregeometry
 \onehalfspacing
 
-% ################################
-% # Inhaltsverzeichnis einbinden #
-% ################################
+\hypersetup{pageanchor=false} %stop page numbering (hyperref) to prevent for double page numers
+
+\input{titlepage}
+\thispagestyle{empty}
+\newpage
+
+\pagenumbering{roman}
 \setcounter{page}{1}
+\cfoot[- \textit{\pagemark} -]{- \textit{\pagemark} -}
+
 \tableofcontents
 \newpage
 
-% Zurücksetzen der Seitenzahlen auf arabische Ziffern
+\pagenumbering{arabic} 
+\hypersetup{pageanchor=true} %start page numbering again
 \setcounter{page}{1}
-\pagenumbering{arabic}
-\pagestyle{scrheadings}
+\cfoot[\pagemark]{\pagemark}
 
 \input{01-newtonian-gravity}
 \input{02-special-relativity}
 \input{03-gravity-and-geometry}
 \input{04-differential-geometry}
 \input{05-einsteins-field-equations}
+\input{06-energy-momentum-tensor}
+\input{07-linearised-theory-and-newtonian-limit}
+\input{08-gravitational-waves}
+\input{09-schwarzschild-solution}
+\input{10-experimental-tests}
+\input{11-black-holes}
+\input{12-cosmology}
 
-\chapter{The Energy Momentum Tensor}
-\chapter{Linearised Theory and Newtonian Limit}
-\chapter{Gravitational Waves}
-\chapter{The Schwarzschild Solution}
-\chapter{Experimental Tests in the Solar System}
-\chapter{Black Holes}
-\chapter{Cosmology}
 \end{document}

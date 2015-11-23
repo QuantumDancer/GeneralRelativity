@@ -1,16 +1,42 @@
 \chapter{Differential Geometry}
 As we have noted before general relativity is a inherent local theory. It is convenient to formulate it in terms of differential geometry.
-A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis that is locally homeomorphic to $\mathbb{R}^n$. The requirements Hausdorff and countable basis are of a more technical nature and are satisfied for most of the objects one can imagine except some pathological examples (we won't go into the details on this).
-Locally homeomorphic to $\mathbb{R}^n$ means there exists a set of \emph{charts} $(\varphi,U^\varphi)$ called an \emph{atlas} $\mathcal{A}$ with $\cup_{\varphi\in\mathcal{A}} U^\varphi =M$, i.e. the charts cover the whole manifold. The maps $\varphi:U^\varphi\to \varphi(U^\varphi)\subset\mathbb{R}^n $ are homoemorphisms, meaning that $U^\varphi$ is open, $\varphi$ is bijective and both $\varphi$ and $\varphi^{-1}$ are continuous.
-Further for any two $\varphi,\psi\in \mathcal{A}$, the coordinate changes $\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$ be infinitely often differentiable.
-(BIlder)\par
-We can now reduce differentiation on the manifold to the ordinary differentiation in $\mathbb{R}^n$. Since physical laws are described in terms of differential equations, we can formulate them on $M$. The fact that the coordinate changes are $C^\infty$ ensures that differentiability is well defined (and thus the physical laws are).\par
-VdB side note: There can be different \emph{differential structures} on a manifold, which means there are multiple differentiable structures (maximal alases) which could not be merged because the coordinate changes would not be $C^\infty$. Those differentiable structures therefore imply different notions of differentiability. Remarkably this may even play a role in some physical theories. As an example an 11d-supergravity can be described as a product $\mathbb{R}^{3+1}\times S^7$. Where $S^7$ is the 7-sphere and $\mathbb{R}^{3+1}$ Mikovski space.
-This means on every point in the $\mathbb{R}^{3+1}$ there is a (small) $S^7$  located that contains additional spatial dimensions. Since the $S^7$ has 28 different differential structures, the choice of such a structure affects the theory for the above reasons.\par
-All simple examples we come of can be embedded in a higher space. For example a 2-sphere can be interpreted as submanifold of the $\mathbb{R}^3$. However manifolds are objects that exists independent of such embeddings. For example a torus can be thought of as a square with the opposite sides identified (leaving to the left results in re-entering in the left).
-VdB side note: The topological structure of the universe is a interesting question.  On may for example imagine that we live on the surface of a 3-sphere (finite but boundless universe). However this might be observable in crosscorelation in the cosmic microwave background from photons reaching us from different directions but coming from the same event. There is no evidence of such phenomena so far. Most models can be excluded to some certainty, leaving only a cylindrical universe as a possible description (finite in one, infinite in the other directions).
+A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis that is locally homeomorphic to $\mathbb{R}^n$. 
+The requirements Hausdorff and countable basis are of a more technical nature and are satisfied for most of the objects one can imagine 
+except some pathological examples (we won't go into the details on this).
+Locally homeomorphic to $\mathbb{R}^n$ means there exists a set of \emph{charts} 
+$(\varphi,U^\varphi)$ called an \emph{atlas} $\mathcal{A}$ with $\cup_{\varphi\in\mathcal{A}} U^\varphi =M$, 
+i.e. the charts cover the whole manifold. The maps $\varphi:U^\varphi\to \varphi(U^\varphi)\subset\mathbb{R}^n $ are homoemorphisms, 
+meaning that $U^\varphi$ is open, $\varphi$ is bijective and both $\varphi$ and $\varphi^{-1}$ are continuous.
+Further for any two $\varphi,\psi\in \mathcal{A}$, the coordinate changes 
+$\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$ be infinitely often differentiable.
+(BIlder)
+
+We can now reduce differentiation on the manifold to the ordinary differentiation in $\mathbb{R}^n$. 
+Since physical laws are described in terms of differential equations, we can formulate them on $M$. 
+The fact that the coordinate changes are $C^\infty$ ensures that differentiability is well defined (and thus the physical laws are).
+
+VdB side note: There can be different \emph{differential structures} on a manifold, 
+which means there are multiple differentiable structures (maximal alases) which could not be merged because the coordinate changes 
+would not be $C^\infty$. Those differentiable structures therefore imply different notions of differentiability. 
+Remarkably this may even play a role in some physical theories. 
+As an example an 11d-supergravity can be described as a product $\mathbb{R}^{3+1}\times S^7$. 
+Where $S^7$ is the 7-sphere and $\mathbb{R}^{3+1}$ Mikovski space.
+This means on every point in the $\mathbb{R}^{3+1}$ there is a (small) $S^7$  located that contains additional spatial dimensions. 
+Since the $S^7$ has 28 different differential structures, the choice of such a structure affects the theory for the above reasons.
+
+All simple examples we come of can be embedded in a higher space. 
+For example a 2-sphere can be interpreted as submanifold of the $\mathbb{R}^3$. 
+However manifolds are objects that exists independent of such embeddings. 
+For example a torus can be thought of as a square with the opposite sides identified (leaving to the left results in re-entering in the left).
+VdB side note: The topological structure of the universe is a interesting question.  
+On may for example imagine that we live on the surface of a 3-sphere (finite but boundless universe). 
+However this might be observable in crosscorelation in the cosmic microwave background from photons reaching us 
+from different directions but coming from the same event. There is no evidence of such phenomena so far. 
+Most models can be excluded to some certainty, leaving only a cylindrical universe as a possible description 
+(finite in one, infinite in the other directions).
 \section{Vectors}
-Vectors are important objects describing physics. The naive view as an "arrow pointing frow one point to another" is flawed. For example on a sphere an arrow connecting two points does not make much sense.
+Vectors are important objects describing physics. The naive view as an "arrow pointing frow one point to another" is flawed. 
+For example on a sphere an arrow connecting two points does not make much sense.
 We want to find a description of vectors as objects that are naturally related to the structure of the manifold independent of the embedding.
 There are three equivalent definitions for a vector.
 \begin{enumerate}
@@ -19,11 +45,13 @@ There are three equivalent definitions for a vector.
     \item geometrically (ugly, but plastic)
 \end{enumerate}
 \paragraph{algebraic}
-A vector is a derivation at the germ of a function at $p$ (the germ is the set of all functions that are locally equal,i.e. vectors are local objects). A derivation $D$ satisfies the following rules:
+A vector is a derivation at the germ of a function at $p$ 
+(the germ is the set of all functions that are locally equal,i.e. vectors are local objects). 
+A derivation $D$ satisfies the following rules:
 \begin{align*}
-D(f+g) &=Df+Dg\\
-D(\lambda)f&=\lambda f\\
-D(fg)&= (Df)g+f(Dg)
+    D(f+g) &=Df+Dg\\
+    D(\lambda)f&=\lambda f\\
+    D(fg)&= (Df)g+f(Dg)
 \end{align*}
 Given two vectors we can construct a new one, the \emph{Lie Braket}
 \begin{equation}
@@ -31,7 +59,7 @@ Given two vectors we can construct a new one, the \emph{Lie Braket}
 \end{equation}
 The only property that has to be checked is that it satisfies the Leibniz rule.
 \begin{equation*}
-XY(fg)=X((Yf)g+f(Yg))=(XYf)g+(Yf)(Xg)+(Yg)(Xf)+(XYg)f\\
+    XY(fg)=X((Yf)g+f(Yg))=(XYf)g+(Yf)(Xg)+(Yg)(Xf)+(XYg)f\\
 \end{equation*}
 Subtracting $YX(fg)$ proves that $[X,Y]$ is indeed a vector.
 The set of all vectors in a point $p$ is called the tangent space $T_pM$. A basis of $T_pM$ is given by $\partial_i$.
@@ -41,7 +69,8 @@ Proof sketch:
     \item Write $X=a^i\partial_i$
     \item Show $Xf=0\quad \forall f \iff X=0$
 \end{enumerate}
-Every vector $A$ can be written as $A=a^i\pd{}{{x^i}}$. We can now look how the components of the vector transform under a change of coordinates (the vector itself is invariant!). We usually denote the elements of the transformed systems with a bar.
+Every vector $A$ can be written as $A=a^i\pd{}{{x^i}}$. We can now look how the components of the vector transform 
+under a change of coordinates (the vector itself is invariant!). We usually denote the elements of the transformed systems with a bar.
 \begin{equation}
     A= a^k\pd{}{{x^k}}= a^k\pd{\overline{x}^i}{{x^k}}\pd{}{{\overline{x}^k}}
 \end{equation}
@@ -53,10 +82,13 @@ Comparing the coefficients gives the vector transformation law
 \begin{equation}
     \overline{a}^i=a^k\pd{\overline{x}^i}{{x^k}}\label{eq:coefftrafo}
 \end{equation}
-Sometimes a vector is defined as a object that transforms according to \ref{eq:coefftrafo} under a change of coordinates, this is the physical definition. It is a priori not clear that a vector also corresponds to a geometrical object. Consider a curve on $M$, i.e. a map $\gamma:\mathbb{R}\to M$
+Sometimes a vector is defined as a object that transforms according to \ref{eq:coefftrafo} under a change of coordinates, 
+this is the physical definition. It is a priori not clear that a vector also corresponds to a geometrical object. 
+Consider a curve on $M$, i.e. a map $\gamma:\mathbb{R}\to M$
 Then $D_\gamma f=\od{}{t}(f\circ\gamma)(0)$ is a derivative.
 For the special curves $\gamma_i(t)=p+te_i$
-$D_{\gamma_i} f=\partial_if$, so we can identify the derivatives with the geometrical tangent space.\par
+$D_{\gamma_i} f=\partial_if$, so we can identify the derivatives with the geometrical tangent space.
+
 Since we have a basis we can work in local coordinates, e.g. let $A=a^i\pd{}{{x^i}}$, $B=b^i\pd{}{{x^i}}$ then the lie bracket reads
 \begin{equation}
     [A,B]^j=a^i\partial_ib^j-b^i\partial_ia^i
@@ -74,14 +106,20 @@ It can easily deduced by \eqref{eq:orthdual} that the components of a dual vecto
 \begin{equation}
     \overline{a}_i=\pd{x^k}{{\overline{x}^i}}a_k\, .
 \end{equation}
-If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the component of a vector and a dual vector respectively, then the transformation can be written in matrix form
+If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the component of a vector and a dual vector respectively, 
+then the transformation can be written in matrix form
 \begin{align*}
-\vec{a}&\to V\vec{a}\\
-\vec{b}&\to\left(V^T\right)^{-1}\vec{b}
+    \vec{a}&\to V\vec{a}\\
+    \vec{b}&\to\left(V^T\right)^{-1}\vec{b}
 \end{align*}
-with $V_{ij}=\pd{\overline{x}^i}{{x^j}}$. In normal calculus we restrict ourself to orthogonal transformations (i.e. mapping orthonormal bases onto each other) for which $(O^T)^{-1}=O$. Which is the reason why we do not bother to distinguish between vectors and dual vectors because they transform identically. In special relativity we have e.g. $(\Lambda^T)^{-1}\neq\Lambda$ for a boost, the difference becomes even more important in general relativity where the relation can become arbitrarily complicated.
+with $V_{ij}=\pd{\overline{x}^i}{{x^j}}$. 
+In normal calculus we restrict ourself to orthogonal transformations (i.e. mapping orthonormal bases onto each other) for which $(O^T)^{-1}=O$. 
+Which is the reason why we do not bother to distinguish between vectors and dual vectors because they transform identically. 
+In special relativity we have e.g. $(\Lambda^T)^{-1}\neq\Lambda$ for a boost, the difference becomes even more important in general 
+relativity where the relation can become arbitrarily complicated.
 \section{Tensors}
-From vectors $A$ ,$B$ we can construct new objects with multiple indices that posses well defined transformation behaviours. For example we can define
+From vectors $A$ ,$B$ we can construct new objects with multiple indices that posses well defined transformation behaviours. 
+For example we can define
 \begin{equation}
     \overline{T}^{ij}=a^ib^j
 \end{equation}
@@ -89,7 +127,9 @@ Which transforms as
 \begin{equation}
     T^{ij}=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}a^kb^l=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}T^{kl}\label{eq:tensortrafo}
 \end{equation}
-Again it is possible to define tensors in a coordinate independent way. At this point we will make things easier and only consider the physical definition. A tensor is then a object that transforms similar to \eqref{eq:tensortrafo}.
+Again it is possible to define tensors in a coordinate independent way. 
+At this point we will make things easier and only consider the physical definition. 
+A tensor is then a object that transforms similar to \eqref{eq:tensortrafo}.
 \paragraph{Symmetries}
 A tensor is said to be symmetric in two indices if it stays invariant when exchanging those indices, e.g.
 \begin{equation}
@@ -101,16 +141,20 @@ Remark: We have not yet established a relation between upper and lower indices, 
 \end{equation}
 make no sense since they can not be true in every system.
 \section{The Metric}
-The metric $g$ is a non degenerate ($\det(g)\neq 0$), symmetric covariant two tensor. We have already seen examples of metrics for the flat space, e.g. in spherical coordinates $g$ was given as
+The metric $g$ is a non degenerate ($\det(g)\neq 0$), symmetric covariant two tensor. 
+We have already seen examples of metrics for the flat space, e.g. in spherical coordinates $g$ was given as
 \begin{equation}
-    g=\begin{pmatrix}
-1 & 0\\
-0 & r^2\\
-\end{pmatrix}
+    g=
+    \begin{pmatrix}
+        1 & 0\\
+        0 & r^2\\
+    \end{pmatrix}
 \end{equation}
 Given a metric we relate vectors and dual vectors to each other by
 \begin{equation}
     a_i=g_{ij}a^j
 \end{equation}
 \section{Parallel Transport}
-vdB side note: Example from Electrodynamics concerning the covariant derivative. The theory is invariant under transformations $\phi\to e^{\imI \alpha}\phi$, because $\phi^*\phi$ and\\ $\phi^*\nabla\phi-\phi\nabla\phi^*$do not change.
+vdB side note: Example from Electrodynamics concerning the covariant derivative. 
+The theory is invariant under transformations $\phi\to e^{\imI \alpha}\phi$, 
+because $\phi^*\phi$ and\\ $\phi^*\nabla\phi-\phi\nabla\phi^*$do not change.

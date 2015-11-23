@@ -3,7 +3,7 @@ In Newtonian physics we assume that we have absolute space and time that can be 
 \section{Forces}
 The force $\vec{F}_{AB}$, a massive body $A$ with mass $m_A$ exerts on another massive body $B$ with mass $m_B$ is given by
 \begin{equation}
-    \vec{F}_{AB}=-m_B\frac{G\textsubscript{N}m_A}{r^2}\begin{bemerkung}\vec{e}_r\, .
+    \vec{F}_{AB}=-m_B\frac{G\textsubscript{N}m_A}{r^2}\vec{e}_r\, .
 \end{equation}
 Where $G\textsubscript{N}$ denotes \emph{Newton's constant}, numerically equal
 to $G\textsubscript{N}\approx \unitfrac[6.673\cdot 10^{-11}]{m^3}{kgs}$. Although there is no need for $G\textsubscript{N}$ to be constant over time, there is evidence that the relative variation is less than $10^{-12}$ per year. The force can be expressed in terms of \emph{gravitational potential} $\Phi$
@@ -25,15 +25,15 @@ In general, we assume a mass distribution $\rho(\vec{x})$ and the sum is replace
 \section{Comparison with Electrostatics}
 The classical theory of gravity bears a striking similarity to electrostatics. To make this clearer, we introduce the gravitational field $\vec{g}(\vec{x})\equiv -\nabla\Phi(\vec{x})$.
 \begin{table}
-\centering
-\begin{tabular}{cc}
-\toprule
-Gravity&Electrostatics\\
-\midrule
-$\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
-$\Phi(r)=\frac{kQ}{r}$&\\
-\bottomrule
-\end{tabular}
+    \centering
+    \begin{tabular}{cc}
+        \toprule
+        Gravity&Electrostatics\\
+        \midrule
+        $\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
+        $\Phi(r)=\frac{kQ}{r}$&\\
+        \bottomrule
+    \end{tabular}
 \end{table}
 \paragraph{Example: spherical mass distribution}
 \begin{equation}
@@ -55,7 +55,8 @@ Newtons first law reads
     \vec{F}=m\textsubscript{I}\ddot{\vec{x}}
 \end{equation}
 where $m\textsubscript{I}$ is the inertial mass that works against the acceleration of the body.
-The force a body with 'active' mass $m\textsubscript{g,act.}$ exerts on another body with mass $\textsubscript{g,pass.}$
+The force a body with 'active' mass $m\textsubscript{g,act.}$ exerts on another
+body with mass $m\textsubscript{g,pass.}$
 \begin{equation}
     \vec{F}=m\textsubscript{g,pass.}\frac{G\textsubscript{N}m\textsubscript{g,act.}}{r^2}\vec{e}_r
 \end{equation}
