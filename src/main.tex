@@ -1,0 +1,645 @@
+        \documentclass[
+    a4paper,                                               % Papierformat
+    oneside,                                               % Einseitig
+    %twoside,                                              % Zweiseitig
+    12pt,                                                  % Schriftgröße
+    headsepline,                                           % Linie unter der Kopfzeile
+    %draft=true                                            % Markiert zu lange und zu kurze Zeilen
+    xcolor=dvipsnames
+    ]{scrreprt}
+   % \usepackage{geometry}
+    \usepackage{tabularx}
+    \usepackage{tikz}
+    \usepackage{listings}
+    \usepackage{tensor}
+    \usetikzlibrary{trees}
+    \usetikzlibrary{decorations.pathmorphing}
+    \usetikzlibrary{positioning,arrows,snakes}
+    \usetikzlibrary{decorations.markings}
+    \usepackage[utf8]{inputenc}                                                  	    \usepackage[OT1]{fontenc}                                                     	% Verwendung der Zeichentabelle T1, für deutschsprachige Dokumente sinnvoll                                                          % LaTeX Default-Font für geglättete Schrift
+    \usepackage[english,ngerman]{babel}                                           	% Silbentrennung nach neuer deutscher und englischer Rechtschreibung
+    \usepackage{amsmath}     
+    \usepackage{amsthm}                                                     
+    %\usepackage{libertine}  	%
+    %\usepackage{cmbright}
+%\usepackage{mathdesign}
+    \usepackage{pdfpages}
+    \usepackage{xifthen}                                                          	% Wird benötigt um \ifthenelse zu benutzen
+    % Zum flexiblen Einbinden von Grafiken, pdftex ist optional
+    \usepackage{units}                                                            	% Ermöglicht die Nutzung von \unit[Zahl]{Einheit}
+    \usepackage{setspace}                                                         	% Einfaches wechseln zwischen unterschiedlichen Zeilenabständen
+    \usepackage{bpchem}
+    \usepackage{xcolor}
+    
+    \definecolor{darkblue}{RGB}{26,52,132}
+    \definecolor{darkblue2}{rgb}{0.0, 0.0, 0.4}
+    
+    \usepackage[font=small,labelfont=bf,labelsep=endash,format=plain]{caption}    	% Darstellung für Caption s.u.
+    \usepackage{subfig}                                                           	% Bilder nebeneinander
+    \usepackage{wrapfig}                                                          	% Fließtext um Figure-Umgebung
+    \usepackage{cite}                                                             	% Zusatzfunktionen zum zitieren
+    \usepackage{scrpage2}                                                         	% Wird für Kopf- und Fußzeile benötigt
+    \usepackage{array,dcolumn}                                                    	% Beide Pakete werden für die Ausrichtung der Tabellenspalten benötigt
+    \usepackage{braket}
+    %\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+    \usepackage{mathtools}
+    \usepackage{amsfonts}
+    \usepackage{tabularx}
+    \usepackage{amssymb}
+    \usepackage{multirow}
+    \usepackage{booktabs,tabularx}
+    \usepackage[section]{placeins}
+    %\usepackage{morefloats}
+    \usepackage{tikz}
+    \usepackage{nameref}
+    \usepackage{dsfont}
+    \usepackage{commath}
+    \usepackage{tensor}
+    \usetikzlibrary{shapes,arrows}
+    \usetikzlibrary{positioning}
+    \usepackage[
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=black,
+    citecolor=black
+    ]{hyperref}        
+        \usepackage{glossaries}   
+        \usepackage[a4paper,pdftex]{geometry}										% A4paper margins
+        \setlength{\oddsidemargin}{5mm}												% Remove 'twosided' indentation
+       \setlength{\evensidemargin}{5mm}
+
+        \usepackage[protrusion=true,expansion=true]{microtype}	 
+           \usepackage{graphicx}
+    %Diese Befehle sortieren die Einträge in den
+    %einzelnen Listen:
+    %makeindex -s datei.ist -t datei.alg -o datei.acr datei.acn
+    %makeindex -s datei.ist -t datei.glg -o datei.gls datei.glo
+    %makeindex -s datei.ist -t datei.slg -o datei.syi datei.syg
+    
+    %Befehle für Symbole
+    
+    % ############################
+    % # Eigene Befehle einbinden #
+    % ############################
+    
+    % Eigene Befehle eignen sich gut um Abkürzungen für lange Befehle zu erstellen. Die Syntax ist folgende:
+    % \newcommand{neuer Befahl}{ein langer Befehl}
+    % Das folgende Beispiel fügt ein Bild mit bestimmten vorgegebenen Optionen ein:
+    \newcommand{\cImage}[1]{
+    	\begin{figure}[h!]
+    		\centering
+    		%\includegraphics[width=0.50\textwidth]{#1}
+    	\end{figure}
+    }
+    
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{satz}{Satz}
+    
+    \newtheorem{lemma}[theorem]{Lemma}
+    \newtheorem{korrolar}{korollar}
+    \theoremstyle{definition}
+    \newtheorem{definition}{Definition}
+    \theoremstyle{remark}
+    \newtheorem{bemerkung}{Bemerkung}
+
+   %     \newtheorem{bemerkung}{Bemerkung}
+
+    \newcommand\tabref{Tabelle~\ref}
+    \newcommand\taburef{table~\ref}
+    \newcommand\grad{\ensuremath{^\circ}}
+    \newcommand{\imI}{\ensuremath{\mathrm{i}}}
+    \newcommand{\Sn}{\ensuremath{\mathbb{S}^n}}
+    \newcommand{\Rn}{\ensuremath{\mathbb{R}^n}}
+    \DeclareMathOperator{\tr}{Tr}
+    \DeclareMathOperator{\re}{Re}
+    \DeclareMathOperator{\im}{Im}
+    \DeclareMathOperator{\id}{id}
+    \DeclareMathOperator{\res}{Res}
+    \DeclareMathOperator{\supp}{Supp}
+    \let\originalleft\left
+    \let\originalright\right
+    \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+    \renewcommand{\right}{\aftergroup\egroup\originalright}
+    \renewcommand{\vec}{\mathbf}
+
+    \newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}} % linksbündig mit Breitenangabe
+    \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}} % zentriert mit Breitenangabe
+    \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}} % rechtsbündig mit Breitenangabe
+    
+    \newtagform{brackets}{[}{]}
+    \usetagform{brackets}
+    
+    \tikzstyle{block} = [draw, fill=blue!20, rectangle, 
+    minimum height=3em, minimum width=6em]
+    
+    
+    % The block diagram code is probably more verbose than necessary
+    \tikzstyle{line} = [draw, -latex']
+    
+    
+    % #1 ist dabei ein Parameter, den man \cImage übergeben muss. In 10_Titelseite.tex wird dieser Befehl verwendet. Der Parameter ist dort Bilder/titelseite.jpg.
+    % Benötigt man keine Parameter, dann lässt man [1] weg. Werden zusätzliche Parameter benötigt, dann kann man die Zahl auf maximal 9 erhöhen.
+    
+
+    % #########################
+    % # Beginn des Dokumentes #
+    % #########################
+    
+    
+    
+    
+   \automark[section]{chapter}
+    	
+    	% ------------------------------------------------------------------------------
+    	% Definitions (do not change this)
+    	% ------------------------------------------------------------------------------
+    	\newcommand{\HRule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+    	
+    	\makeatletter							% Title
+    	\def\printtitle{%						
+    		{\centering \@title\par}}
+    	\makeatother									
+    	
+    	\makeatletter							% Author
+    	\def\printauthor{%					
+    		{\centering \large \@author}}				
+    	\makeatother							
+    	
+    	% ------------------------------------------------------------------------------
+    	% Metadata (Change this)
+    	% ------------------------------------------------------------------------------
+    	\title{	\normalsize\hfill	% Subtitle of the document
+    		\\[2.0cm]													% 2cm spacing
+    		\HRule{0.5pt} \\										% Upper rule
+    		\Huge \textbf{\textsc{Introduction to General Relativity}}	% Title
+    		\HRule{2pt} \\ [0.5cm]								% Lower rule + 0.5cm spacing
+    		\normalsize \today									% Todays date
+    	}
+    	
+    	\author{
+    		Submitted by Michael Ruf\\	
+			Supervisor: Prof. Dr. H.P. Breuer\\
+    		Albert-Ludwigs-University Freiburg\\
+    		Faculty of Mathematics and Physics\\
+    	}
+    \begin{document}
+    	\selectlanguage{english}                                   % Schreibsprache Deutsch
+                                         % 1 1/2 facher Zeilenabstand
+    	%\addtokomafont{sectioning}{\rmfamily}                      % Schriftsatz
+    	\numberwithin{equation}{section}                           % Nummerierung der Formeln entsprechend der Section (z.B. 1.1)
+    	\addtokomafont{caption}{\small\linespread{1}\selectfont}   % Ändert Schriftgröße und Zeilenabstand bei captions
+    	\renewcommand*{\headfont}{\normalfont}					   % nicht kursive Kopfzeile
+    	
+    	% Römische Ziffern als Seitenzahlen für Titelseite bis einschließlich dem Inhaltsverzeichnis
+    	\setcounter{page}{1}
+    	\pagenumbering{roman}
+    	
+    	% #######################################
+    	% # Kopf- und Fußzeile konfigurieren    #
+    	% #######################################
+    	
+    	%\ihead{Loschmidt echo and non-Markovian dynamics in the quantum Ising model }                      % Innenseite der Kopfzeile
+    %	\chead{}                                                   % Mitte der Kopfzeile
+    	%\ohead{Michael Ruf}                                 % Außenseite der Kopfzeile
+    %	\ifoot{}                                                   % Innnenseite der Fußzeile
+    	\cfoot{- \textit{\pagemark} -}                             % Mitte der Fußzeile
+    %	\ofoot{}    
+%    	\lhead{\leftmark}                                               % Aussenseite der Fußzeile
+    	
+    	% ###################################
+    	% # Ausrichtung der Tabellenspalten #
+    	% ###################################
+    	
+    	\newcolumntype{,}[1]{D{,}{,}{#1}}                          % , in Tabellen untereinander stellen
+    	\newcolumntype{p}{D{p}{\pm}{-1}}                           % +- in Tabellen untereinander stellen
+    	
+    	% ########################
+    	% # Titelseite einbinden #
+    	% ########################
+    	 \numberwithin{equation}{chapter}
+\thispagestyle{empty}	
+\printtitle									% Print the title data as defined above
+\vfill
+\restoregeometry
+ 	\onehalfspacing      
+    	    
+    	% ################################
+    	% # Inhaltsverzeichnis einbinden #
+    	% ################################
+    	\setcounter{page}{1}
+    	\tableofcontents
+    	\newpage
+    	
+    	% Zurücksetzen der Seitenzahlen auf arabische Ziffern
+    	\setcounter{page}{1}
+    	\pagenumbering{arabic}
+    	
+    	\pagestyle{scrheadings}   
+    	\chapter{Newtonian Gravity}
+    	In Newtonian physics we assume that we have absolute space and time that can be described by the a set of numbers $x^1,x^2,x^3,t$. We express the coordinates as functions of time
+    	\section{Forces}
+    	The force $\vec{F}_{AB}$, a massive body $A$ with mass $m_A$ exerts on another massive body $B$ with mass $m_B$ is given by 
+    	\begin{equation}
+    		\vec{F}_{AB}=-m_B\frac{G\textsubscript{N}m_A}{r^2}\vec{e}_r\, .
+    	\end{equation}
+    	Where $G\textsubscript{N}$ denotes \emph{Newton's constant}, numerically equal to $G\textsubscript{N}\approx \unitfrac[6,673\cdot 10^{-11}]{m^3}{kgs}$. Although there is no need for $G\textsubscript{N}$ to be constant over time, there is evidence that the relative variation is less than $10^{-12}$ per year. The force can be expressed in terms of \emph{gravitational potential} $\Phi$
+    	\begin{equation}
+    	\vec{F}_{AB}=-m_B\nabla\left(-\frac{G\textsubscript{N}m_A}{r}\right)\equiv -m_B\nabla\Phi(\vec{x}_B)\, .
+    	\end{equation}
+    	Given $N$ particles labelled by $n$, the total force $B$ experiences is 
+    	\begin{equation}
+    		\vec{F}_{B}=-\sum_n \vec{F}_{nB}\, .
+    	\end{equation} 
+    	The potential at $\vec{x}_B$ is given by 
+	 	\begin{equation}
+ 	    \Phi(\vec{x}_B)=-G\textsubscript{N}\sum_n\frac{m_n}{|\vec{x}_B-\vec{x}_n|}\, .
+ 	    \end{equation} 
+ 	    In general, we assume a mass distribution $\rho(\vec{x})$ and the sum is replaced by an integral
+ 	    \begin{equation}
+ 	    	\Phi(\vec{x})=-\int\dif{\vec{x}^{\prime}}\frac{\rho(\vec{x}^{\prime})}{|\vec{x}-\vec{x}^{\prime}|}
+ 	    \end{equation}
+ 	    \section{Comparison with Electrostatics}
+ 	    The classical theory of gravity bears a striking similarity to electrostatics. To make this clearer, we introduce the gravitational field $\vec{g}(\vec{x})\equiv -\nabla\Phi(\vec{x})$.
+ 	    \begin{table}
+ 	    	\centering
+ 	    	\begin{tabular}{cc}
+ 	    		\toprule
+ 	    		Gravity&Electrostatics\\
+ 	    		\midrule
+ 	    		$\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
+ 	    		$\Phi(r)=\frac{kQ}{r}$&\\
+ 	    		\bottomrule
+ 	    	\end{tabular}
+ 	    \end{table}
+ 	    \paragraph{Example: spherical mass distribution}
+ 	    \begin{equation}
+ 	    	\int_V\dif{\vec{x}}\, \nabla\vec{g}=-\int_V\dif{\vec{x}}\, \Delta\Phi = -4\pi G\textsubscript{N}\int_V\dif{\vec{x}}\,\rho(r)= -4\pi G\textsubscript{N} M\, ,
+ 	    \end{equation}
+ 	    where $M$ is the mass enclosed in the volume $V$. On the other hand we can use Gauss law to deduce
+   	    \begin{equation}
+   	    \int_V\dif{\vec{x}}\, \nabla\vec{g}=\oint_{\partial V}\dif{\vec{A}}\, \vec{g} =\int_{0}^{2\pi}\int_{-1}^{1} g(r)r^2\dif{\cos\vartheta}\dif{\varphi}=4\pi r^2g(r)
+   	    \end{equation}
+   	    Together the gravitational force is given by
+   	    \begin{equation}
+   	    	g(r)=-\frac{G\textsubscript{N}M}{r^2}
+   	    \end{equation}
+   	    \paragraph{Inertial systems}
+		A inertial system is a system in which force-free particles move with constant uniform velocity on straight lines. 
+		\paragraph{Weak Equivalence Systems}
+		Newtons first law reads 
+		\begin{equation}
+			\vec{F}=m\textsubscript{I}\ddot{\vec{x}}
+		\end{equation}
+		where $m\textsubscript{I}$ is the inertial mass that works against the acceleration of the body.
+		The force a body with 'active' mass $m\textsubscript{g,act.}$ exerts on another body with mass $\textsubscript{g,pass.}$
+		\begin{equation}
+		\vec{F}=m\textsubscript{g,pass.}\frac{G\textsubscript{N}m\textsubscript{g,act.}}{r^2}\vec{e}_r
+		\end{equation}
+		A priori there is no reason to assume any relation between this masses. The first question one might ask is whether the active and the passive mass are equal. Suppose we have two masses $A$ and $B$. Using Newtons first law, we can explicitly write 
+		\begin{equation}
+			m^{B}_{\text{i}}\ddot{\vec{x}}=\vec{F}_{AB}=-	m^{B}_{\text{p}}\frac{G\textsubscript{N}m^{A}_{\text{a}}}{r^2}\vec{e}_r
+		\end{equation}
+    	\chapter{Special Relativity}
+    	\chapter{Gravity and Geometry}
+    	The observable universe is stable. There are two obvious configurations in which this is possible:
+    	\begin{enumerate}
+    		\item Static universe, masses are arranged in a grid, all nett forces cancel. However small fluctuations cause the system to collapse. 
+    		$\implies$ no possible description for the universe. (PICTURE)
+    		\item Expanding universe, all masses move away from each other, overcoming the gravitational attraction. Theoretically such a system can be described by using Newtonian Physics introducing additional energy contributions. This turns out to be inconsistent.
+    	\end{enumerate}
+    	Since in the second description all particles are accelerated relative to each other, so there are no inertial systems. A theory in which all observers are equal must therefore be local and thus be described by means of differential geometry.
+    	Claim: The laws of physics are the same in every system. 
+    	If we assume that the Maxwell equations are right the Newtonian theory of gravity must be wrong.
+    	Implications:
+    	All free falling systems are equivalent (i.e. indistinguishable by the observer). Light must bend, otherwise a beam could be used to deduce whether your system is inertial.
+    	The following example illustrates that Euclidean geometry is no adequate description of space-time. 
+    	\paragraph{example: rotating sphere}
+    	Rotating sphere (see Introduction to tensor calculus)
+    	\par
+    	We will start by studding coordinate systems in flat space, which should be familiar.
+    	\paragraph{Cartesian coordinates} 
+    	(PICTURE)
+    	\begin{equation*}
+    		s^2=(x_1-x_2)^2+(y_1-y_2)^2\\
+    	\end{equation*}
+    	Infinitesimal line element 
+    	\begin{equation}
+    	\dif s^2=\dif x^2+\dif y^2  \label{eq:cartline}
+    	\end{equation}
+ 	    \paragraph{Polar coordinates} 
+ 	    (PICTURE)
+ 	    \begin{align*}
+	 	    x= r\cos\varphi\quad y= r\sin\varphi
+ 	    \end{align*}
+	    \begin{align*}
+	    \dif x&= \pd{x}{r}\dif r+\pd{x}{\varphi}\dif \varphi = \cos\varphi\dif r-r\sin\varphi\dif \varphi\\
+	    \dif y&= \pd{x}{r}\dif r+\pd{y}{\varphi}\dif \varphi = \sin\varphi\dif r+r\cos\varphi\dif \varphi
+	    \end{align*}
+	    Plugging this into \eqref{eq:cartline} gives the line element in polar coordinates
+ 	    \begin{equation}
+ 	    \dif s^2=\dif r^2+r^2\dif \varphi^2
+ 	    \end{equation}
+    	In matrix form
+    	\begin{equation}
+    		\dif s^2=\begin{pmatrix}
+    		\dif r& \dif \varphi 
+    		\end{pmatrix}
+	 		\begin{pmatrix}
+	 		1& 0\\
+	 		0& r^2\\ 
+	 		\end{pmatrix}
+	 		\begin{pmatrix}
+	 		\dif r\\ \dif \varphi 
+	 		\end{pmatrix}
+    	\end{equation}
+    	The matrix 
+    	\begin{equation}
+		   	g(\vec{r})= \begin{pmatrix}
+		   	1& 0\\
+		   	0& r^2\\ 
+		   	\end{pmatrix}
+    	\end{equation}
+    	is called the \emph{metric}.
+    	In general we have
+    	\begin{equation}
+    	\dif s^2 = g_{ij}\dif x^i\dif x^j
+    	\end{equation}
+    		We need to generalize the concept of a 'straight' line to curved space. Straight lines are curves minimizing the distance between two points, we therefore introduce a
+    	\paragraph{Variation principle}
+	     Again we take a look at flat space, but with curved coordinates. The length of a curve $\gamma$ with $\gamma^i(\lambda) = x^i(\lambda)$ is given by the integral
+    	\begin{equation}
+    	L=\int_{\gamma}\sqrt{\dif s^2} =\int_{\gamma}\sqrt{g_{ij}\dif x^i\dif x^j}=\int_{a}^{b}\sqrt{g_{ij}\od{x^i}{\lambda} \od{x^j}{\lambda}}\dif \lambda\, .
+    	\end{equation}
+		As stated above straight lines satisfy $\delta L = 0$. If we define $\mathcal{L}:=\sqrt{g_{ij}\od{x^i}{\lambda} \od{x^j}{\lambda}}$, $L$ takes a form familiar from classical mechanics:
+		\begin{equation}
+			L=\int_a^b \mathcal{L}\dif \lambda\, .
+		\end{equation}
+		The extremal condition implies the Euler Lagrange equations
+		\begin{equation}
+			\pd{}{\lambda}\pd{\mathcal{L}}{\dot{q}_i}-\pd{\mathcal{L}}{\dot{q}_i}
+=0\, .		\end{equation} 
+In the case at hand the equations are 
+\begin{equation}
+	0=\tensor{g}{_i_l}\tensor{\ddot{x}}{^j}+\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\dot{x}^j\dot{x}^l \label{eq:PreGeo}
+\end{equation}
+The term invoking derivatives of the metric defines the \emph{Christoffel symbols} of the first kind
+\begin{equation}
+	\Gamma_{ijl}:=\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
+\end{equation}
+It is convenient to multiply \eqref{eq:PreGeo} by the inverse metric $g^{ki}$ so that we obtain the \emph{geodesic equation}
+\begin{equation}
+	0 = \od[2]{x^i}{s}+\Gamma^i_{jk}\od{x^j}{s}\od{x^k}{s}\, .
+\end{equation}
+Where $\Gamma^i_{jk}$ are the \emph{Christoffel symbols} of the second kind
+\begin{equation}
+	\Gamma^k_{jl}:=g^{km}\Gamma_{mjl}=\frac{1}{2}g^{il}\left(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
+\end{equation}
+\begin{bemerkung}
+	Although the notation looks as the Christoffel symbols form a tensor, however they do not. In flat space we have $g_{ij}=\eta_{ij}$ and can easily check that all Christoffel symbols vanish. We therefore recover the ordinary equation of motion for a free particle
+	\begin{equation}
+			0 = \od[2]{x^i}{s}
+	\end{equation}
+	\paragraph{example: free fall}
+	Suppose a observer follows a free falling body in a homogeneous field. Therefore a transformation between the system of the earth and the one of the body are given by (for simplicity we only consider the coordinate along it is falling)
+	\begin{equation}
+		(t,x)\to\left(t,x-\frac{1}{2}gt^2\right)
+	\end{equation}
+	Analogous to the Riemannian case discussed before, the line element takes the form
+	\begin{align*}
+		\dif s^2&=-\dif t^2 +\dif x^2\\
+			&=-\dif t'^2+(\dif x'- gt\dif t')(\dif x'- gt\dif t')\\
+			&=(g^2t'^2-1)\dif t'^2-2gt\dif x'\dif t'+\dif x'^2\\
+	\end{align*}
+\end{bemerkung}
+	(exkurs newtonian limnit)
+	(Schwarzschild solution)
+    	\chapter{Differential Geometry}
+    	As we have noted before general relativity is a inherent local theory. It is convenient to formulate it in terms of differential geometry.
+    	A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis that is locally homeomorphic to $\mathbb{R}^n$. The requirements Hausdorff and countable basis are of a more technical nature and are satisfied for most of the objects one can imagine except some pathological examples (we won't go into the details on this). 
+    	Locally homeomorphic to $\mathbb{R}^n$ means there exists a set of \emph{charts} $(\varphi,U^\varphi)$ called an \emph{atlas} $\mathcal{A}$ with $\cup_{\varphi\in\mathcal{A}} U^\varphi =M$, i.e. the charts cover the whole manifold. The maps $\varphi:U^\varphi\to \varphi(U^\varphi)\subset\mathbb{R}^n $ are homoemorphisms, meaning that $U^\varphi$ is open, $\varphi$ is bijective and both $\varphi$ and $\varphi^{-1}$ are continuous.
+    	Further for any two $\varphi,\psi\in \mathcal{A}$, the coordinate changes $\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$ be infinitely often differentiable. 
+    	(BIlder)\par
+    	We can now reduce differentiation on the manifold to the ordinary differentiation in $\mathbb{R}^n$. Since physical laws are described in terms of differential equations, we can formulate them on $M$. The fact that the coordinate changes are $C^\infty$ ensures that differentiability is well defined (and thus the physical laws are).\par
+	    VdB side note: There can be different \emph{differential structures} on a manifold, which means there are multiple differentiable structures (maximal alases) which could not be merged because the coordinate changes would not be $C^\infty$. Those differentiable structures therefore imply different notions of differentiability. Remarkably this may even play a role in some physical theories. As an example an 11d-supergravity can be described as a product $\mathbb{R}^{3+1}\times S^7$. Where $S^7$ is the 7-sphere and $\mathbb{R}^{3+1}$ Mikovski space. 
+	    This means on every point in the $\mathbb{R}^{3+1}$ there is a (small) $S^7$  located that contains additional spatial dimensions. Since the $S^7$ has 28 different differential structures, the choice of such a structure affects the theory for the above reasons.\par
+	    All simple examples we come of can be embedded in a higher space. For example a 2-sphere can be interpreted as submanifold of the $\mathbb{R}^3$. However manifolds are objects that exists independent of such embeddings. For example a torus can be thought of as a square with the opposite sides identified (leaving to the left results in re-entering in the left).
+	    VdB side note: The topological structure of the universe is a interesting question.  On may for example imagine that we live on the surface of a 3-sphere (finite but boundless universe). However this might be observable in crosscorelation in the cosmic microwave background from photons reaching us from different directions but coming from the same event. There is no evidence of such phenomena so far. Most models can be excluded to some certainty, leaving only a cylindrical universe as a possible description (finite in one, infinite in the other directions).
+	     \section{Vectors}
+	     Vectors are important objects describing physics. The naive view as an "arrow pointing frow one point to another" is flawed. For example on a sphere an arrow connecting two points does not make much sense.
+	     We want to find a description of vectors as objects that are naturally related to the structure of the manifold independent of the embedding.
+	     There are three equivalent definitions for a vector.
+	     \begin{enumerate}
+	     	\item algebraic (mathematical, suitable for proofs)
+	     	\item physically
+	     	\item geometrically (ugly, but plastic)
+	     \end{enumerate}  
+	     \paragraph{algebraic}
+	     A vector is a derivation at the germ of a function at $p$ (the germ is the set of all functions that are locally equal,i.e. vectors are local objects). A derivation $D$ satisfies the following rules:
+	     \begin{align*}
+	     	D(f+g) &=Df+Dg\\
+	     	D(\lambda)f&=\lambda f\\
+	     	D(fg)&= (Df)g+f(Dg)
+	     \end{align*}
+	     Given two vectors we can construct a new one, the \emph{Lie Braket}
+	     \begin{equation}
+	     	[X,Y]f:=X(Yf)-Y(Xf)
+	     \end{equation}
+	     The only property that has to be checked is that it satisfies the Leibniz rule.
+	     \begin{equation*}
+	     	XY(fg)=X((Yf)g+f(Yg))=(XYf)g+(Yf)(Xg)+(Yg)(Xf)+(XYg)f\\
+	     \end{equation*}
+	     Subtracting $YX(fg)$ proves that $[X,Y]$ is indeed a vector. 
+	     The set of all vectors in a point $p$ is called the tangent space $T_pM$. A basis of $T_pM$ is given by $\partial_i$.
+	     Proof sketch:
+	     \begin{enumerate}
+	     	\item Show $f(x^i)=f(0)+x^i\tilde{f}(x^i)$
+	     	\item Write $X=a^i\partial_i$
+	     	\item Show $Xf=0\quad \forall f \iff X=0$
+	     \end{enumerate}
+	     Every vector $A$ can be written as $A=a^i\pd{}{{x^i}}$. We can now look how the components of the vector transform under a change of coordinates (the vector itself is invariant!). We usually denote the elements of the transformed systems with a bar.
+	     \begin{equation}
+	     	A= a^k\pd{}{{x^k}}= a^k\pd{\overline{x}^i}{{x^k}}\pd{}{{\overline{x}^k}}
+	     \end{equation}
+	     also we can express $A$ directly in the new basis
+	     \begin{equation}
+	     A= \overline{a}^i\pd{}{{\overline{x}^i}}
+	     \end{equation}
+	     Comparing the coefficients gives the vector transformation law
+	     \begin{equation}
+	     	\overline{a}^i=a^k\pd{\overline{x}^i}{{x^k}}\label{eq:coefftrafo}
+	     \end{equation}
+	     Sometimes a vector is defined as a object that transforms according to \ref{eq:coefftrafo} under a change of coordinates, this is the physical definition. It is a priori not clear that a vector also corresponds to a geometrical object. Consider a curve on $M$, i.e. a map $\gamma:\mathbb{R}\to M$
+	     Then $D_\gamma f=\od{}{t}(f\circ\gamma)(0)$ is a derivative.
+	     For the special curves $\gamma_i(t)=p+te_i$
+	     $D_{\gamma_i} f=\partial_if$, so we can identify the derivatives with the geometrical tangent space.\par
+	     Since we have a basis we can work in local coordinates, e.g. let $A=a^i\pd{}{{x^i}}$, $B=b^i\pd{}{{x^i}}$ then the lie bracket reads 
+	     \begin{equation}
+	     	[A,B]^j=a^i\partial_ib^j-b^i\partial_ia^i
+	     \end{equation}
+	     Since the tangent space is a vector space, we can define its dual space
+	     \begin{equation}
+			T_pM^*=\{L:T_pM\to \mathbb{R}\, |\, L \text{ linear}\}
+	     \end{equation} 
+	     which is again a vector space of the same dimension. Its elements are called dual or covariant vectors.
+	     We can define a basis on $	T_pM^*$, which we denote by $\dif x^i$ and  which acts on $T_pM$ via
+	     \begin{equation}
+	     	\dif x^i(\partial_j)=\delta^i_j\label{eq:orthdual}
+	     \end{equation}
+	     It can easily deduced by \eqref{eq:orthdual} that the components of a dual vector transform as
+	     \begin{equation}
+	     	\overline{a}_i=\pd{x^k}{{\overline{x}^i}}a_k\, .
+	     \end{equation}
+	     If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the component of a vector and a dual vector respectively, then the transformation can be written in matrix form
+	     \begin{align*}
+	     	\vec{a}&\to V\vec{a}\\
+	     	\vec{b}&\to\left(V^T\right)^{-1}\vec{b}
+	     \end{align*} 
+	     with $V_{ij}=\pd{\overline{x}^i}{{x^j}}$. In normal calculus we restrict ourself to orthogonal transformations (i.e. mapping orthonormal bases onto each other) for which $(O^T)^{-1}=O$. Which is the reason why we do not bother to distinguish between vectors and dual vectors because they transform identically. In special relativity we have e.g. $(\Lambda^T)^{-1}\neq\Lambda$ for a boost, the difference becomes even more important in general relativity where the relation can become arbitrarily complicated. 
+	     \section{Tensors}
+	     From vectors $A$ ,$B$ we can construct new objects with multiple indices that posses well defined transformation behaviours. For example we can define 
+	    \begin{equation}
+	    \overline{T}^{ij}=a^ib^j
+	    \end{equation}	   
+	     Which transforms as 
+		\begin{equation}
+		T^{ij}=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}a^kb^l=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}T^{kl}\label{eq:tensortrafo}
+		\end{equation}
+		Again it is possible to define tensors in a coordinate independent way. At this point we will make things easier and only consider the physical definition. A tensor is then a object that transforms similar to \eqref{eq:tensortrafo}. 
+		\paragraph{Symmetries}
+		A tensor is said to be symmetric in two indices if it stays invariant when exchanging those indices, e.g.
+		\begin{equation}
+			T_{ab}=T_{ba}
+		\end{equation}
+		Remark: We have not yet established a relation between upper and lower indices, i.e. we have no metric. Expressions of the form 
+		\begin{equation}
+			T_a^b=T_b^a
+		\end{equation}
+		make no sense since they can not be true in every system.
+		\section{The Metric}
+		The metric $g$ is a non degenerate ($\det(g)\neq 0$), symmetric covariant two tensor. We have already seen examples of metrics for the flat space, e.g. in spherical coordinates $g$ was given as 
+		\begin{equation}
+			g=\begin{pmatrix}
+			1 & 0\\
+			0 & r^2\\
+			\end{pmatrix}
+		\end{equation} 
+		Given a metric we relate vectors and dual vectors to each other by
+		\begin{equation}
+			a_i=g_{ij}a^j
+		\end{equation} 
+		\section{Parallel Transport}
+		vdB side note: Example from Electrodynamics concerning the covariant derivative. The theory is invariant under transformations $\phi\to e^{\imI \alpha}\phi$, because $\phi^*\phi$ and\\ $\phi^*\nabla\phi-\phi\nabla\phi^*$do not change.
+    	\chapter{Einstein's Field Equations}
+    	\chapter{The Energy Momentum Tensor}
+    	\chapter{Linearised Theory and Newtonian Limit}
+    	\chapter{Gravitational Waves}
+    	\chapter{The Schwarzschild Solution}
+    	\chapter{Experimental Tests in the Solar System}
+    	\chapter{Black Holes}
+    	\chapter{Cosmology}
+%\chapter{Introduction}
+%\section{Konventionen}
+%\subsection{Indices}
+%Wir werden häufig mit 4 
+%\subsection{Einsteinsche Summenkonvention}
+%Sei $M$ eine differenzierbare Mannigfaltigkeit. Dann bezeichnen wir mit 
+%Wir betrachten im Folgenden 4-dimensionale Pseudo-riemannsche Mannigfaltigkeit  $M$. Dies bedeutet, dass in jedem Punkt $p\in M$ eine nicht entartete Bilinearform $g$ auf dem Tangentialraum $T_pM$ definiert ist. 
+%Eine Basis des Tangentialraums ist gegeben durch die Richtungsableitungen $\partial_\mu$ sodass sich jeder (Vier-)Vektor $X\in T_pM$ in Komponenten darstellen lässt
+%\begin{equation} 
+%	X=\sum_{\mu=0}^{3}x^\mu\partial_\mu\,.
+%\end{equation}
+%Im Rahmen dieser Arbeit werden wir meist mit den Lokalen koordinaten $x^\mu$ anstatt von Vektoren des Tangentialraums arbeiten. 
+%In lokalen Koordinaten nimmt die Metrik $g$ die Form 
+%\begin{equation}
+%	g_{\mu\nu}=g(\partial_\mu,\partial_\nu)
+%\end{equation}
+%an.
+%Mit $g_{\mu\nu}$ bezeichnen wir den metrischen Tensor. Wir verwenden die Signatur $(-,+,+,+)$, damit die induzierte Metrik auf raumartigen Hyperebenen positiv definit und liefert einen sinnvollen Längenbegriff. Das Linienenelemt ist definiert als die Größe
+%\begin{equation}
+%\dif s^2= g_{\mu\nu}\dif x^\mu\dif x^\nu
+%\end{equation}
+%Bei dem Ausdruck (..) handelt es sich um einen (0,2)-Tensor. Informal wird $\dif s^2$ kann auch als Quadrat einer infinitesimalen Größe was zum Teil aber problematisch sein kann da $g_{\mu\nu}$ nicht positiv ist.
+%$g:=\det g_{\mu\nu}$. Inverse Metrik $g^{\mu\nu}$. Wir arbeiten in natürlichen Einheiten, d.h. wir messen Lägen über die Strecke die das Licht in einer Zeiteinheit zurücklegt. Insbesondere hat in diesem System die Lichtgeschwindigkeit den Zahlenwert $c=1$.
+%\section{Symmetrien}
+%Symmetrien spielen eine entscheidende Rolle bei der Behandlung von Problemen in der Physik. Sie erlauben, es die Anzahl der unabhängigen Freiheitsgrade einzuschränken und machen manche Fragestellungen erst lösbar. Ein Typisches Beispiel für eine Symmetrie ist die 2-Sphäre $\mathbb{S}^2$, welche durch eine Rotation auf sich selbst abgebildet wird. 
+%\par
+%Es liegt nahe den $\Rn$ als das maximal symmetrisches Objekt zu bezeichnen. Dieser besitzt neben $n(n-1)$ Rotations- auch $n$ Translationssymmetrien, d.h. insgesamt $n(n+1)$ unabhängige Symmetrien.
+%\begin{definition}
+%	Sei $M$ eine Mannigfaltigkeit mit $n(n+1)$ unabhängigen Killing-Vektorfeldern. Dann heißt $M$ maximal symmetrisch.
+%\end{definition}
+%\section{Robertson-Walker-Metrik}
+%\cite{carroll2004spacetime}
+%Annahme: 
+%\begin{itemize}
+%	\item Isotropie
+%	\item Homogenität
+%\end{itemize}
+%Metrik:
+%\begin{equation}
+%\dif s^2=-\dif t^2+R^2(t)\dif \sigma^2
+%\end{equation}
+%Maximal symmetrischer Raum, nicht maximal symmetrische Raumzeit
+%\begin{equation}
+%\dif \sigma^2:=\gamma_{ij}\dif u^i\dif u^j
+%\end{equation}
+%wobei maximal symmetrisch bedeutet das der Ricci Tensor proportional zur Metrik $\gamma_{ij}$ ist
+%\begin{equation}
+%R_{ij}=\kappa\gamma_{ij}
+%\end{equation}
+%\begin{equation}
+%R=R\indices{^i_i}=\kappa\gamma^{ij}\gamma_{ij}=\kappa\tr\gamma=3\kappa
+%\end{equation}
+%Radialsymmetrie impliziert das das Linienelement die Form
+%\begin{equation}
+%\dif \sigma^2=e^{2\alpha(r)}\dif r^2+e^{2\beta(r)}r^2 \dif \Omega^2
+%\end{equation}
+%besitzen muss. Variablenwechsel $\overline{r}=e^{2\beta(r)}r$ liefert
+%\begin{equation}
+%\dif \overline{r}^2 =\left(2\od{\beta}{r}+1\right)e^{2\beta(r)}\dif r
+%\end{equation}
+%Mit $e^{2\tilde{\beta}(\overline{r})}:=\left(2\od{\beta}{r}+1\right)e^{2\beta(r)}$
+%\begin{equation}
+%\dif \sigma^2=e^{2\tilde{\beta}(\overline{r})}\dif \overline{r}^2+\overline{r}^2 \dif \Omega^2
+%\end{equation}
+%Dies impliziert zusammen mit (R=gamma) die Gleichungen 
+%\begin{align}
+%\kappa e^{2\tilde{\beta}(\overline{r})}=R_{rr}&=\\
+%\kappa R_{\vartheta\vartheta}&=
+%\end{align}
+%Die entsprechende $R_{\varphi\varphi}$ Gleichung ist dann aufgrund der Form der Metrik ebenfalls erfüllt. Die Gleichungen zusammen führen auf
+%\begin{equation}
+%\beta=-\frac{1}{2}\ln\left(1-kr^2\right)
+%\end{equation}
+%implizieren. Wenn man wieder in das Linienelement einsetzt erhält man die \emph{Robertson-Walker Metrik}
+%\begin{equation}
+%\dif s^2=-\dif t^2+R^2(t)\left(\frac{\dif {\bar{r}}^2}{1-k\bar{r}^2}+\overline{r}^2\dif \Omega^2\right)
+%\end{equation}
+%\begin{lemma}
+%	Inhalt...
+%\end{lemma}
+    \newpage
+%    \listoffigures
+    \newpage
+%    \listoftables
+    \newpage
+    
+    
+    
+    % ###################################
+    % # Literaturverzeichnis mit BibTeX #
+    % ###################################
+    %\cite{ThesisAdam}
+    %\setboolean{show}{\varZeigeLiteraturverzeichnis}
+    %\ifthenelse{\boolean{show}}{
+    %\bibliographystyle{amsplain}
+	%\cite{greenwade93}
+%	\bibliographystyle{plain}
+%	\bibliographystyle{unsrtdin}
+%	\bibliography{bibfile}
+ %   \bibliographystyle{unsrtdin}
+    %\bibliographystyle{unsrtdin}
+    %}{}
+    % #######################
+    % # Ende des Dokumentes #
+    % #######################
+\end{document}
