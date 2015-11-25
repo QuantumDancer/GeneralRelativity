@@ -98,7 +98,6 @@ Consider a curve on $M$, i.e. a map $\gamma:\mathbb{R}\to M$
 Then $D_\gamma f=\od{}{t}(f\circ\gamma)(0)$ is a derivative.
 For the special curves $\gamma_i(t)=p+te_i$
 $D_{\gamma_i} f=\partial_if$, so we can identify the derivatives with the geometrical tangent space.
-
 Since we have a basis we can work in local coordinates, e.g. let $A=a^i\pd{}{{x^i}}$, $B=b^i\pd{}{{x^i}}$ then the lie bracket reads
 \begin{equation}
     [A,B]^j=a^i\partial_ib^j-b^i\partial_ia^i
@@ -110,7 +109,7 @@ Since the tangent space is a vector space, we can define its dual space
 which is again a vector space of the same dimension. Its elements are called dual or covariant vectors.
 We can define a basis on $	T_pM^*$, which we denote by $\dif x^i$ and  which acts on $T_pM$ via
 \begin{equation}
-    \dif x^i(\partial_j)=\delta^i_j\label{eq:orthdual}
+    \dif x^i(\partial_j)=\delta^i_j\, . \label{eq:orthdual}
 \end{equation}
 It can easily deduced by \eqref{eq:orthdual} that the components of a dual vector transform as
 \begin{equation}
@@ -119,8 +118,8 @@ It can easily deduced by \eqref{eq:orthdual} that the components of a dual vecto
 If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the component of a vector and a dual vector respectively, 
 then the transformation can be written in matrix form
 \begin{align*}
-    \vec{a}&\to V\vec{a}\\
-    \vec{b}&\to\left(V^T\right)^{-1}\vec{b}
+    \vec{a}&\to V\vec{a}\, ,\\
+    \vec{b}&\to\left(V^T\right)^{-1}\vec{b}\, .
 \end{align*}
 with $V_{ij}=\pd{\overline{x}^i}{{x^j}}$. 
 In normal calculus we restrict ourself to orthogonal transformations (i.e. mapping orthonormal bases onto each other) for which $(O^T)^{-1}=O$. 
@@ -131,11 +130,12 @@ relativity where the relation can become arbitrarily complicated.
 From vectors $A$ ,$B$ we can construct new objects with multiple indices that posses well defined transformation behaviour. 
 For example we can define
 \begin{equation}
-    \overline{T}^{ij}=a^ib^j
+    \overline{T}^{ij}=a^ib^j\, ,
 \end{equation}
-Which transforms as
+which transforms as
 \begin{equation}
-    T^{ij}=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}a^kb^l=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}T^{kl}\label{eq:tensortrafo}
+    T^{ij}=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}a^kb^l=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}T^{kl}\,
+   .\label{eq:tensortrafo}
 \end{equation}
 Again it is possible to define tensors in a coordinate independent way. 
 At this point we will make things easier and only consider the physical definition. 
@@ -144,13 +144,13 @@ A tensor is then per definitionem a object that transforms similar to
 \subsection{Symmetries}
 A tensor is said to be symmetric in two indices if it stays invariant when exchanging those indices, e.g.
 \begin{equation}
-    T_{ab}=T_{ba}
+    T_{ab}=T_{ba}\, .
 \end{equation}
 Remark: We have not yet established a relation between upper and lower indices, i.e. we have no metric. Expressions of the form
 \begin{equation}
     \tensor{T}{^a_b}=\tensor{T}{^b_a}
 \end{equation}
-make no sense since they can not be true in every system.
+make no sense, since they can not be true in every system.
 \section{The Metric}
 The metric $g$ is a non degenerate ($\det(g)\neq 0$), symmetric covariant two tensor. 
 We have already seen examples of metrics for the flat space, e.g. in spherical coordinates $g$ was given as
@@ -169,5 +169,36 @@ Given a metric we relate vectors and dual vectors to each other by
 \begin{remark}[The Covariant Derivative in Electrodynamics]
 Example from Electrodynamics concerning the covariant derivative. 
 The theory is invariant under transformations $\phi\to e^{\imI \alpha}\phi$, 
-because $\phi^*\phi$ and\\ $\phi^*\nabla\phi-\phi\nabla\phi^*$do not change.
+because $\phi^*\phi$ and $\phi^*\nabla\phi-\phi\nabla\phi^*$ do not change.
+Vervollständigen\ldots
 \end{remark}
+Since we have now established a relation between vectors and dual vectors, we
+can also determine the covariant derivative of a dual vector. Therefore we
+consider the scalar $A_iB^i$. Since the covariant derivative satisfies the
+Leibniz rule we get
+\begin{align}
+(A_iB^i);j = \tensor{A}{_i_;_j}\tensor{B}{^i}+\tensor{A}{_i}\tensor{B}{^i_;_j}
+\end{align}
+But for scalars the covariant derivative is identical to the normal derivative
+so that 
+\begin{align}
+(A_iB^i)_{;j} =(A_iB^i)_{,j}=
+\tensor{A}{_i_,_j}\tensor{B}{^i}+\tensor{A}{_i}\tensor{B}{^i_,_j}
+\end{align}
+If we put in the kovariant derivative of a we get 
+\begin{equation}
+\tensor{A}{_i}\tensor{B}{^i_;_j}=\tensor{A}{_i}\left(\pd{}{{x^j}}B^i+\Gamma^i_{kj}\tensor{B}{^k}\right)
+\end{equation}
+Since $A$ was arbitary, we can deduce that
+\begin{equation}
+\tensor{B}{^i_;_j}=\left(\pd{}{{x^j}}B^i+\Gamma^i_{kj}\tensor{B}{^k}\right)
+\end{equation}
+for a (1,1)-tensor we get:
+\begin{equation}
+\tensor{A}{^i_j_;_k}=\pd{}{{x^k}}\tensor{A}{^i_j}-\Gamma^a_{jk}\tensor{A}{^i_a}+\Gamma^i_{ak}\tensor{A}{^a_j}\,
+.\end{equation}
+Similar expressions hold for tensors of arbitary rank where each index gives an
+aditional term containing a contraction with the affinity $\Gamma^i_{jk}$. 
+We now want to consider curved spaces. This can not immediatly be determined by
+the metric, for example the polar coordinates do not look flat even though they
+describe the ordinary $\Reals^2$. (PICTURES)

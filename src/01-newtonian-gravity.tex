@@ -25,15 +25,24 @@ In general, we assume a mass distribution $\rho(\vec{x})$ and the sum is replace
 \section{Comparison with Electrostatics}
 The classical theory of gravity bears a striking similarity to electrostatics. To make this clearer, we introduce the gravitational field $\vec{g}(\vec{x})\equiv -\nabla\Phi(\vec{x})$.
 \begin{table}
+\def\arraystretch{2} %increase space in tables should be solvable in a more
+% elegant way\ldots
     \centering
-    \begin{tabular}{cc}
+    \begin{tabular}{lll}
         \toprule
-        Gravity&Electrostatics\\
+        &Newtonian Gravity&Electrostatics\\
         \midrule
-        $\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
-        $\Phi(r)=\frac{kQ}{r}$&\\
+        Force&$\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
+        Potential&$\Phi(\vec{r})=\frac{kQ}{r}$&$\Phi(\vec{r})=\frac{kQ}{r}$\\
+        Field&$\vec{E}(\vec{r})=-\nabla\Phi\textsubscript{el}(\vec{r})$&$\vec{E}(\vec{r})=-\nabla\Phi\textsubscript{g}(\vec{r})$\\
+        Laplace Equation
+        &$\Delta\Phi\textsubscript{el}=-\frac{1}{\varepsilon_0}\rho\textsubscript{el}(\vec{r})$&
+        $\Delta\Phi\textsubscript{el}=4\pi
+        G\textsubscript{N}\rho\textsubscript{g}(\vec{r})$
+        \\
         \bottomrule
     \end{tabular}
+    \def\arraystretch{1}
 \end{table}
 \begin{example}[Field of Spherical Mass Distribution]
 \begin{equation}
