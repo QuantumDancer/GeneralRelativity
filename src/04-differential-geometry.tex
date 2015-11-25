@@ -1,5 +1,6 @@
 \chapter{Differential Geometry}
 As we have noted before general relativity is a inherent local theory. It is convenient to formulate it in terms of differential geometry.
+We introduce the notion of a manifold.\par
 A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis that is locally homeomorphic to $\mathbb{R}^n$. 
 The requirements Hausdorff and countable basis are of a more technical nature and are satisfied for most of the objects one can imagine 
 except some pathological examples (we won't go into the details on this).
@@ -15,31 +16,39 @@ We can now reduce differentiation on the manifold to the ordinary differentiatio
 Since physical laws are described in terms of differential equations, we can formulate them on $M$. 
 The fact that the coordinate changes are $C^\infty$ ensures that differentiability is well defined (and thus the physical laws are).
 
-\begin{sidenote}
+\begin{sidenote}[Differentiability depends on the Differential Structure]
 There can be different \emph{differential structures} on a manifold, 
-which means there are multiple differentiable structures (maximal alases) which could not be merged because the coordinate changes 
-would not be $C^\infty$. Those differentiable structures therefore imply different notions of differentiability. 
+which means there are multiple (maximal)alases, which
+could not be merged because the coordinate changes would not be $C^\infty$. Those differentiable structures therefore imply different notions of differentiability. 
 Remarkably this may even play a role in some physical theories. 
-As an example an 11d-supergravity can be described as a product $\mathbb{R}^{3+1}\times S^7$. 
-Where $S^7$ is the 7-sphere and $\mathbb{R}^{3+1}$ Mikovski space.
-This means on every point in the $\mathbb{R}^{3+1}$ there is a (small) $S^7$  located that contains additional spatial dimensions. 
-Since the $S^7$ has 28 different differential structures, the choice of such a structure affects the theory for the above reasons.
+As an example an 11d-supergravity can be described as a product
+$\Reals^{3+1}\times \Sphere^7$.
+Where $\Sphere^7$ is the 7-sphere and $\Reals^{3+1}$ Mikovski space.
+This means on every point in the $\mathbb{R}^{3+1}$ there is a (small) $\Sphere^7$  located that contains additional spatial dimensions. 
+The $\Sphere^7$ has 28 different differential structures, so the choice of
+such a structure affects the theory for the above reasons.
 \end{sidenote}
-All simple examples we come of can be embedded in a higher space. 
-For example a 2-sphere can be interpreted as submanifold of the $\mathbb{R}^3$. 
+All simple examples we come of can be embedded in a higher space. It holds true
+that every real $n$-dimensional Manifold can be embedded to $\Reals^{2n}$
+(This is however not true for complex, i.e. analytic manifolds).
+For example the $\Sphere^2$ can be interpreted as submanifold of the $\Reals^3$.
 However manifolds are objects that exists independent of such embeddings. 
 For example a torus can be thought of as a square with the opposite sides identified (leaving to the left results in re-entering in the left).
-VdB side note: The topological structure of the universe is a interesting question.  
+\begin{sidenote}[Topology of the Universe]
+In addition to the local structure, we may question the global, i.e. the
+topological structure of the universe.
 On may for example imagine that we live on the surface of a 3-sphere (finite but boundless universe). 
 However this might be observable in crosscorelation in the cosmic microwave background from photons reaching us 
 from different directions but coming from the same event. There is no evidence of such phenomena so far. 
-Most models can be excluded to some certainty, leaving only a cylindrical universe as a possible description 
-(finite in one, infinite in the other directions).
+Most models can be excluded to some certainty. A cylindrical
+universe is still possible (finite in one, infinite in the
+other directions).
+\end{sidenote}
 \section{Vectors}
 Vectors are important objects describing physics. The naive view as an "arrow pointing frow one point to another" is flawed. 
 For example on a sphere an arrow connecting two points does not make much sense.
 We want to find a description of vectors as objects that are naturally related to the structure of the manifold independent of the embedding.
-There are three equivalent definitions for a vector.
+There are three equivalent definitions for a vector:
 \begin{enumerate}
     \item algebraic (mathematical, suitable for proofs)
     \item physically
@@ -119,7 +128,7 @@ Which is the reason why we do not bother to distinguish between vectors and dual
 In special relativity we have e.g. $(\Lambda^T)^{-1}\neq\Lambda$ for a boost, the difference becomes even more important in general 
 relativity where the relation can become arbitrarily complicated.
 \section{Tensors}
-From vectors $A$ ,$B$ we can construct new objects with multiple indices that posses well defined transformation behaviours. 
+From vectors $A$ ,$B$ we can construct new objects with multiple indices that posses well defined transformation behaviour. 
 For example we can define
 \begin{equation}
     \overline{T}^{ij}=a^ib^j
@@ -130,7 +139,8 @@ Which transforms as
 \end{equation}
 Again it is possible to define tensors in a coordinate independent way. 
 At this point we will make things easier and only consider the physical definition. 
-A tensor is then a object that transforms similar to \eqref{eq:tensortrafo}.
+A tensor is then per definitionem a object that transforms similar to
+\eqref{eq:tensortrafo}.
 \subsection{Symmetries}
 A tensor is said to be symmetric in two indices if it stays invariant when exchanging those indices, e.g.
 \begin{equation}
@@ -138,7 +148,7 @@ A tensor is said to be symmetric in two indices if it stays invariant when excha
 \end{equation}
 Remark: We have not yet established a relation between upper and lower indices, i.e. we have no metric. Expressions of the form
 \begin{equation}
-    T_a^b=T_b^a
+    \tensor{T}{^a_b}=\tensor{T}{^b_a}
 \end{equation}
 make no sense since they can not be true in every system.
 \section{The Metric}
@@ -156,6 +166,8 @@ Given a metric we relate vectors and dual vectors to each other by
     a_i=g_{ij}a^j
 \end{equation}
 \section{Parallel Transport}
-vdB side note: Example from Electrodynamics concerning the covariant derivative. 
+\begin{remark}[The Covariant Derivative in Electrodynamics]
+Example from Electrodynamics concerning the covariant derivative. 
 The theory is invariant under transformations $\phi\to e^{\imI \alpha}\phi$, 
 because $\phi^*\phi$ and\\ $\phi^*\nabla\phi-\phi\nabla\phi^*$do not change.
+\end{remark}
