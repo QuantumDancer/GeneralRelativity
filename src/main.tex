@@ -92,6 +92,8 @@
 \newcommand{\Cn}{\ensuremath{\mathbb{C}^n}}
 \newcommand{\Sn}{\ensuremath{\mathbb{S}^n}}
 \newcommand{\Rn}{\ensuremath{\mathbb{R}^n}}
+\newcommand{\cSym}[3]{\ensuremath{\begin{Bmatrix} #1 \\ #2 #3 \end{Bmatrix}}}
+\newcommand{\csym}[3]{\ensuremath{[#1 #2,\, #3]}}
 \DeclareMathOperator{\tr}{Tr}
 \DeclareMathOperator{\re}{Re}
 \DeclareMathOperator{\im}{Im}
@@ -101,6 +103,11 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 \renewcommand{\vec}{\mathbf}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{sidenote}{Sidenote}
+\newtheorem*{example}{Example}
 
 
 %%% DOCUMENT %%%

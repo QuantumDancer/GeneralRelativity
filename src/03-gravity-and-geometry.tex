@@ -2,8 +2,8 @@
 The observable universe is stable. There are two obvious configurations in which this is possible:
 \begin{enumerate}
     \item Static universe, masses are arranged in a grid, all nett forces cancel. 
-    	  However small fluctuations cause the system to collapse.
-    $\implies$ no possible description for the universe. (PICTURE)
+    	  However small fluctuations cause the system to collapse therefore this is
+    	  no possible description for the universe. (PICTURE)
     \item Expanding universe, all masses move away from each other, overcoming the gravitational attraction. 
     	  Theoretically such a system can be described by using Newtonian Physics introducing additional energy contributions. 
     	  This turns out to be inconsistent.
@@ -16,11 +16,12 @@ Implications:
 All free falling systems are equivalent (i.e. indistinguishable by the observer). 
 Light must bend, otherwise a beam could be used to deduce whether your system is inertial.
 The following example illustrates that Euclidean geometry is no adequate description of space-time.
-\paragraph{example: rotating sphere}
-Rotating sphere (see Introduction to tensor calculus)
-
+\begin{example}[Rotationg Sphere]
+see Introduction to tensor calculus
+\end{example}
+\section{Coordinate Systems}
 We will start by studding coordinate systems in flat space, which should be familiar.
-\paragraph{Cartesian coordinates}
+\subsection*{Cartesian Coordinates}
 (PICTURE)
 \begin{equation*}
     s^2=(x_1-x_2)^2+(y_1-y_2)^2\\
@@ -29,7 +30,7 @@ Infinitesimal line element
 \begin{equation}
     \dif s^2=\dif x^2+\dif y^2  \label{eq:cartline}
 \end{equation}
-\paragraph{Polar coordinates}
+\subsection*{Polar Coordinates}
 (PICTURE)
 \begin{align*}
     x= r\cos\varphi\quad y= r\sin\varphi
@@ -71,7 +72,7 @@ In general we have
 \end{equation}
 We need to generalize the concept of a 'straight' line to curved space. Straight lines are curves minimizing the distance between two points, 
 we therefore introduce a
-\paragraph{Variation principle}
+\section{Variation Principle}
 Again we take a look at flat space, but with curved coordinates. 
 The length of a curve $\gamma$ with $\gamma^i(\lambda) = x^i(\lambda)$ is given by the integral
 \begin{equation}
@@ -90,29 +91,35 @@ The extremal condition implies the Euler Lagrange equations
 In the case at hand the equations are
 \begin{equation}
     0=\tensor{g}{_i_l}\tensor{\ddot{x}}{^j}+\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} - 
-    \partial_l g_{ij}\right)\dot{x}^j\dot{x}^l \label{eq:PreGeo}
+    \partial_l g_{ij}\right)\dot{x}^j\dot{x}^l\, . \label{eq:PreGeo}
 \end{equation}
-The term invoking derivatives of the metric defines the \emph{Christoffel symbols} of the first kind
+The term invoking derivatives of the metric defines the \emph{Christoffel
+symbols of the first kind}
 \begin{equation}
-    \Gamma_{ijl}:=\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
+    \csym{i}{j}{l}:=\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} -
+    \partial_l g_{ij}\right)\, .
 \end{equation}
 It is convenient to multiply \eqref{eq:PreGeo} by the inverse metric $g^{ki}$ so that we obtain the \emph{geodesic equation}
 \begin{equation}
-    0 = \od[2]{x^i}{s}+\Gamma^i_{jk}\od{x^j}{s}\od{x^k}{s}\, .
+    0 =
+    \od[2]{x^i}{s}+\cSym{i}{j}{k}\od{x^j}{s}\od{x^k}{s}\, .
 \end{equation}
-Where $\Gamma^i_{jk}$ are the \emph{Christoffel symbols} of the second kind
+Where $\cSym{i}{j}{k}$ are the \emph{Christoffel symbols of the second kind}
 \begin{equation}
-    \Gamma^k_{jl}:=g^{km}\Gamma_{mjl}=\frac{1}{2}g^{il}\left(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
+   \cSym{i}{j}{k}:=g^{km}\csym{m}{j}{k}=\frac{1}{2}g^{il}\left(\partial_i
+    g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
 \end{equation}
-%\begin{bemerkung}
-Bemerkung \\
-Although the notation looks as the Christoffel symbols form a tensor, however they do not. 
-In flat space we have $g_{ij}=\eta_{ij}$ and can easily check that all Christoffel symbols vanish. 
-We therefore recover the ordinary equation of motion for a free particle
+% remark is obsolete as long as bracket notation for christoffel symbols is used
+%\begin{remark}
+%Although the notation looks as the Christoffel symbols form a tensor, however
+% they do not.
+%\end{remark}
+In flat space we have $g_{ij}=\eta_{ij}$ and can easily check that all
+Christoffel symbols vanish. We therefore recover the ordinary equation of motion for a free particle
 \begin{equation}
-    0 = \od[2]{x^i}{s}
+    0 = \od[2]{x^i}{s}\, .
 \end{equation}
-\paragraph{example: free fall}
+\begin{example}
 Suppose a observer follows a free falling body in a homogeneous field. 
 Therefore a transformation between the system of the earth and the one of the body are given by 
 (for simplicity we only consider the coordinate along it is falling)
@@ -125,6 +132,6 @@ Analogous to the Riemannian case discussed before, the line element takes the fo
     &=-\dif t'^2+(\dif x'- gt\dif t')(\dif x'- gt\dif t')\\
     &=(g^2t'^2-1)\dif t'^2-2gt\dif x'\dif t'+\dif x'^2\\
 \end{align*}
-%\end{bemerkung}
+\end{example}
 (exkurs newtonian limnit)
 (Schwarzschild solution)
