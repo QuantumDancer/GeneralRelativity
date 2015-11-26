@@ -6,7 +6,10 @@ The force $\vec{F}_{AB}$, a massive body $A$ with mass $m_A$ exerts on another m
     \vec{F}_{AB}=-m_B\frac{G\textsubscript{N}m_A}{r^2}\vec{e}_r\, .
 \end{equation}
 Where $G\textsubscript{N}$ denotes \emph{Newton's constant}, numerically equal
-to $G\textsubscript{N}\approx \unitfrac[6.673\cdot 10^{-11}]{m^3}{kgs}$. Although there is no need for $G\textsubscript{N}$ to be constant over time, there is evidence that the relative variation is less than $10^{-12}$ per year. The force can be expressed in terms of \emph{gravitational potential} $\Phi$
+to $G\textsubscript{N}\approx \unitfrac[6.673\cdot 10^{-11}]{m^3}{kgs}$. 
+Although there is no need for $G\textsubscript{N}$ to be constant over time, 
+there is evidence that the relative variation is less than $10^{-12}$ per year. 
+The force can be expressed in terms of \emph{gravitational potential} $\Phi$
 \begin{equation}
     \vec{F}_{AB}=-m_B\nabla\left(-\frac{G\textsubscript{N}m_A}{r}\right)\equiv -m_B\nabla\Phi(\vec{x}_B)\, .
 \end{equation}
@@ -23,12 +26,11 @@ In general, we assume a mass distribution $\rho(\vec{x})$ and the sum is replace
     \Phi(\vec{x})=-\int\dif{\vec{x}^{\prime}}\frac{\rho(\vec{x}^{\prime})}{|\vec{x}-\vec{x}^{\prime}|}
 \end{equation}
 \section{Comparison with Electrostatics}
-The classical theory of gravity bears a striking similarity to electrostatics. To make this clearer, we introduce the gravitational field $\vec{g}(\vec{x})\equiv -\nabla\Phi(\vec{x})$.
+The classical theory of gravity bears a striking similarity to electrostatics. 
+To make this clearer, we introduce the gravitational field $\vec{g}(\vec{x})\equiv -\nabla\Phi(\vec{x})$.
 \begin{table}
-\def\arraystretch{2} %increase space in tables should be solvable in a more
-% elegant way\ldots
     \centering
-    \begin{tabular}{lll}
+    \begin{tabulars}{lll}
         \toprule
         &Newtonian Gravity&Electrostatics\\
         \midrule
@@ -41,16 +43,17 @@ The classical theory of gravity bears a striking similarity to electrostatics. T
         G\textsubscript{N}\rho\textsubscript{g}(\vec{r})$
         \\
         \bottomrule
-    \end{tabular}
-    \def\arraystretch{1}
+    \end{tabulars}
 \end{table}
 \begin{example}[Field of Spherical Mass Distribution]
 \begin{equation}
-    \int_V\dif{\vec{x}}\, \nabla\vec{g}=-\int_V\dif{\vec{x}}\, \Delta\Phi = -4\pi G\textsubscript{N}\int_V\dif{\vec{x}}\,\rho(r)= -4\pi G\textsubscript{N} M\, ,
+    \int_V\dif{\vec{x}}\, \nabla\vec{g}=-\int_V\dif{\vec{x}}\, \Delta\Phi 
+    = -4\pi G\textsubscript{N}\int_V\dif{\vec{x}}\,\rho(r)= -4\pi G\textsubscript{N} M\, ,
 \end{equation}
 where $M$ is the mass enclosed in the volume $V$. On the other hand we can use Gauss law to deduce
 \begin{equation}
-    \int_V\dif{\vec{x}}\, \nabla\vec{g}=\oint_{\partial V}\dif{\vec{A}}\, \vec{g} =\int_{0}^{2\pi}\int_{-1}^{1} g(r)r^2\dif{\cos\vartheta}\dif{\varphi}=4\pi r^2g(r)
+    \int_V\dif{\vec{x}}\, \nabla\vec{g}=\oint_{\partial V}\dif{\vec{A}}\, \vec{g} 
+    = \int_{0}^{2\pi}\int_{-1}^{1} g(r)r^2\dif{\cos\vartheta}\dif{\varphi}=4\pi r^2g(r)
 \end{equation}
 Together the gravitational force is given by
 \begin{equation}
@@ -58,7 +61,9 @@ Together the gravitational force is given by
 \end{equation}
 \end{example}
 \subsection*{Inertial systems}
+\begin{definition}
 A inertial system is a system in which force-free particles move with constant uniform velocity on straight lines.
+\end{definition}
 \subsection*{Weak Equivalence Systems}
 Newtons first law reads
 \begin{equation}
@@ -70,7 +75,9 @@ body with mass $m\textsubscript{g,pass.}$
 \begin{equation}
     \vec{F}=m\textsubscript{g,pass.}\frac{G\textsubscript{N}m\textsubscript{g,act.}}{r^2}\vec{e}_r
 \end{equation}
-A priori there is no reason to assume any relation between this masses. The first question one might ask is whether the active and the passive mass are equal. Suppose we have two masses $A$ and $B$. Using Newtons first law, we can explicitly write
+A priori there is no reason to assume any relation between this masses. 
+The first question one might ask is whether the active and the passive mass are equal. 
+Suppose we have two masses $A$ and $B$. Using Newtons first law, we can explicitly write
 \begin{equation}
     m^{B}_{\text{i}}\ddot{\vec{x}}=\vec{F}_{AB}=-	m^{B}_{\text{p}}\frac{G\textsubscript{N}m^{A}_{\text{a}}}{r^2}\vec{e}_r
 \end{equation}

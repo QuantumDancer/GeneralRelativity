@@ -72,7 +72,7 @@
     pdfstartview={FitH},    % fits the width of the page to the window
     pdfnewwindow=true,      % links in new window
     pdfborder={0 0 1},		% no border for links
-    colorlinks=true,		% false: black links; true: colored links
+    colorlinks=false,		% false: black links; true: colored links
     linkcolor=blue,         % color of internal links (change box color with linkbordercolor)
     citecolor=green,        % color of links to bibliography
     filecolor=magenta,      % color of file links
@@ -104,11 +104,14 @@
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 \renewcommand{\vec}{\mathbf}
 
+%new environments
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{sidenote}{Sidenote}
 \newtheorem*{example}{Example}
-
+\newenvironment{tabulars}[1]{\renewcommand*{\arraystretch}{2}\tabular{#1}}{\endtabular}		% stretched table
 
 %%% DOCUMENT %%%
 

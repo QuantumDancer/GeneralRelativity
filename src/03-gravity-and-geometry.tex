@@ -23,22 +23,22 @@ see Introduction to tensor calculus
 We will start by studding coordinate systems in flat space, which should be familiar.
 \subsection*{Cartesian Coordinates}
 (PICTURE)
-\begin{equation*}
-    s^2=(x_1-x_2)^2+(y_1-y_2)^2\\
-\end{equation*}
+\begin{equation}
+    s^2=(x_1-x_2)^2+(y_1-y_2)^2
+\end{equation}
 Infinitesimal line element
 \begin{equation}
     \dif s^2=\dif x^2+\dif y^2  \label{eq:cartline}
 \end{equation}
 \subsection*{Polar Coordinates}
 (PICTURE)
-\begin{equation*}
+\begin{equation}
     x= r\cos\varphi\quad y= r\sin\varphi
-\end{equation*}
-\begin{align*}
+\end{equation}
+\begin{align}
     \dif x&= \pd{x}{r}\dif r+\pd{x}{\varphi}\dif \varphi = \cos\varphi\dif r-r\sin\varphi\dif \varphi\\
     \dif y&= \pd{x}{r}\dif r+\pd{y}{\varphi}\dif \varphi = \sin\varphi\dif r+r\cos\varphi\dif \varphi
-\end{align*}
+\end{align}
 Plugging this into \eqref{eq:cartline} gives the line element in polar coordinates
 \begin{equation}
     \dif s^2=\dif r^2+r^2\dif \varphi^2
@@ -93,22 +93,25 @@ In the case at hand the equations are
     0=\tensor{g}{_i_l}\tensor{\ddot{x}}{^j}+\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} - 
     \partial_l g_{ij}\right)\dot{x}^j\dot{x}^l\, . \label{eq:PreGeo}
 \end{equation}
-The term invoking derivatives of the metric defines the \emph{Christoffel
-symbols of the first kind}
+The term invoking derivatives of the metric defines the \emph{Christoffel symbols of the first kind}
+\begin{definition}[Christoffel symbols of the first kind]
 \begin{equation}
     \csym{i}{j}{l}:=\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} -
     \partial_l g_{ij}\right)\, .
 \end{equation}
+\end{definition}
 It is convenient to multiply \eqref{eq:PreGeo} by the inverse metric $g^{ki}$ so that we obtain the \emph{geodesic equation}
 \begin{equation}
     0 =
     \od[2]{x^i}{s}+\cSym{i}{j}{k}\od{x^j}{s}\od{x^k}{s}\, .
 \end{equation}
 Where $\cSym{i}{j}{k}$ are the \emph{Christoffel symbols of the second kind}
+\begin{definition}[Christoffel symbols of the second kind]
 \begin{equation}
    \cSym{i}{j}{k}:=g^{km}\csym{m}{j}{k}=\frac{1}{2}g^{il}\left(\partial_i
     g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
 \end{equation}
+\end{definition}
 % remark is obsolete as long as bracket notation for christoffel symbols is used
 %\begin{remark}
 %Although the notation looks as the Christoffel symbols form a tensor, however
@@ -127,11 +130,13 @@ Therefore a transformation between the system of the earth and the one of the bo
     (t,x)\to\left(t,x-\frac{1}{2}gt^2\right)
 \end{equation}
 Analogous to the Riemannian case discussed before, the line element takes the form
-\begin{align*}
-    \dif s^2&=-\dif t^2 +\dif x^2\\
-    &=-\dif t'^2+(\dif x'- gt\dif t')(\dif x'- gt\dif t')\\
-    &=(g^2t'^2-1)\dif t'^2-2gt\dif x'\dif t'+\dif x'^2\\
-\end{align*}
+\begin{equation}
+    \begin{split}
+	    \dif s^2&=-\dif t^2 +\dif x^2\\
+	    &=-\dif t'^2+(\dif x'- gt\dif t')(\dif x'- gt\dif t')\\
+	    &=(g^2t'^2-1)\dif t'^2-2gt\dif x'\dif t'+\dif x'^2
+    \end{split}
+\end{equation}
 \end{example}
 (exkurs newtonian limnit)
 (Schwarzschild solution)

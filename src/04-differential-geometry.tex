@@ -1,9 +1,14 @@
 \chapter{Differential Geometry}
 As we have noted before general relativity is a inherent local theory. It is convenient to formulate it in terms of differential geometry.
-We introduce the notion of a manifold.\par
+We introduce the notion of a manifold.
+
+\begin{definition}
 A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis that is locally homeomorphic to $\mathbb{R}^n$. 
+\end{definition}
+\begin{remark}
 The requirements Hausdorff and countable basis are of a more technical nature and are satisfied for most of the objects one can imagine 
 except some pathological examples (we won't go into the details on this).
+
 Locally homeomorphic to $\mathbb{R}^n$ means there exists a set of \emph{charts} 
 $(\varphi,U^\varphi)$ called an \emph{atlas} $\mathcal{A}$ with $\cup_{\varphi\in\mathcal{A}} U^\varphi =M$, 
 i.e. the charts cover the whole manifold. The maps $\varphi:U^\varphi\to \varphi(U^\varphi)\subset\mathbb{R}^n $ are homoemorphisms, 
@@ -11,6 +16,7 @@ meaning that $U^\varphi$ is open, $\varphi$ is bijective and both $\varphi$ and 
 Further for any two $\varphi,\psi\in \mathcal{A}$, the coordinate changes 
 $\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$ be infinitely often differentiable.
 (BIlder)
+\end{remark}
 
 We can now reduce differentiation on the manifold to the ordinary differentiation in $\mathbb{R}^n$. 
 Since physical laws are described in terms of differential equations, we can formulate them on $M$. 
@@ -54,23 +60,27 @@ There are three equivalent definitions for a vector:
     \item physically
     \item geometrically (ugly, but plastic)
 \end{enumerate}
-\subsection*{Algebraic Definition}
-A vector is a derivation at the germ of a function at $p$ 
-(the germ is the set of all functions that are locally equal,i.e. vectors are local objects). 
-A derivation $D$ satisfies the following rules:
-\begin{align*}
+\subsection*{Definitions}
+\begin{definition}[Algebraic]
+A vector is a derivation at the germ of a function at $p$.
+\end{definition}
+The germ is the set of all functions that are locally equal,i.e. vectors are local objects.
+\begin{definition}[Derivation]
+A derivation $D$ satisfies the following rules for all $f,g\in C^\infty(\Reals)$ and $\lambda \in \Reals$:
+\begin{align}
     D(f+g) &=Df+Dg\\
     D(\lambda)f&=\lambda f\\
     D(fg)&= (Df)g+f(Dg)
-\end{align*}
+\end{align}
+\end{definition}
 Given two vectors we can construct a new one, the \emph{Lie Braket}
 \begin{equation}
     [X,Y]f:=X(Yf)-Y(Xf)
 \end{equation}
 The only property that has to be checked is that it satisfies the Leibniz rule.
-\begin{equation*}
+\begin{equation}
     XY(fg)=X((Yf)g+f(Yg))=(XYf)g+(Yf)(Xg)+(Yg)(Xf)+(XYg)f\\
-\end{equation*}
+\end{equation}
 Subtracting $YX(fg)$ proves that $[X,Y]$ is indeed a vector.
 The set of all vectors in a point $p$ is called the tangent space $T_pM$. A basis of $T_pM$ is given by $\partial_i$.
 Proof sketch:
@@ -117,10 +127,10 @@ It can easily deduced by \eqref{eq:orthdual} that the components of a dual vecto
 \end{equation}
 If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the component of a vector and a dual vector respectively, 
 then the transformation can be written in matrix form
-\begin{align*}
+\begin{align}
     \vec{a}&\to V\vec{a}\, ,\\
     \vec{b}&\to\left(V^T\right)^{-1}\vec{b}\, .
-\end{align*}
+\end{align}
 with $V_{ij}=\pd{\overline{x}^i}{{x^j}}$. 
 In normal calculus we restrict ourself to orthogonal transformations (i.e. mapping orthonormal bases onto each other) for which $(O^T)^{-1}=O$. 
 Which is the reason why we do not bother to distinguish between vectors and dual vectors because they transform identically. 
@@ -146,13 +156,17 @@ A tensor is said to be symmetric in two indices if it stays invariant when excha
 \begin{equation}
     T_{ab}=T_{ba}\, .
 \end{equation}
-Remark: We have not yet established a relation between upper and lower indices, i.e. we have no metric. Expressions of the form
+\begin{remark}
+We have not yet established a relation between upper and lower indices, i.e. we have no metric. Expressions of the form
 \begin{equation}
     \tensor{T}{^a_b}=\tensor{T}{^b_a}
 \end{equation}
 make no sense, since they can not be true in every system.
+\end{remark}
 \section{The Metric}
+\begin{definition}[Metric]
 The metric $g$ is a non degenerate ($\det(g)\neq 0$), symmetric covariant two tensor. 
+\end{definition}
 We have already seen examples of metrics for the flat space, e.g. in spherical coordinates $g$ was given as
 \begin{equation}
     g=
@@ -185,7 +199,7 @@ so that
 (A_iB^i)_{;j} =(A_iB^i)_{,j}=
 \tensor{A}{_i_,_j}\tensor{B}{^i}+\tensor{A}{_i}\tensor{B}{^i_,_j}
 \end{align}
-If we put in the kovariant derivative of a we get 
+If we put in the covariant derivative of a we get 
 \begin{equation}
 \tensor{A}{_i}\tensor{B}{^i_;_j}=\tensor{A}{_i}\left(\pd{}{{x^j}}B^i+\Gamma^i_{kj}\tensor{B}{^k}\right)
 \end{equation}
