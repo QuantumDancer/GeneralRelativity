@@ -3,7 +3,8 @@ As we have noted before general relativity is a inherent local theory. It is con
 We introduce the notion of a manifold.
 
 \begin{definition}
-A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis that is locally homeomorphic to $\mathbb{R}^n$. 
+A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis, that
+is locally homeomorphic to $\mathbb{R}^n$.
 \end{definition}
 \begin{remark}
 The requirements Hausdorff and countable basis are of a more technical nature and are satisfied for most of the objects one can imagine 
@@ -75,7 +76,7 @@ A derivation $D$ satisfies the following rules for all $f,g\in C^\infty(\Reals)$
 \end{definition}
 Given two vectors we can construct a new one, the \emph{Lie Braket}
 \begin{equation}
-    [X,Y]f:=X(Yf)-Y(Xf)
+    [X,Y]f:=X(Yf)-Y(Xf)\, .
 \end{equation}
 The only property that has to be checked is that it satisfies the Leibniz rule.
 \begin{equation}
@@ -165,7 +166,8 @@ make no sense, since they can not be true in every system.
 \end{remark}
 \section{The Metric}
 \begin{definition}[Metric]
-The metric $g$ is a non degenerate ($\det(g)\neq 0$), symmetric covariant two tensor. 
+The metric $g$ is a non-degenerate ($\det(g)\neq 0$), symmetric covariant two
+tensor.
 \end{definition}
 We have already seen examples of metrics for the flat space, e.g. in spherical coordinates $g$ was given as
 \begin{equation}
@@ -180,8 +182,50 @@ Given a metric we relate vectors and dual vectors to each other by
     a_i=g_{ij}a^j
 \end{equation}
 \section{Parallel Transport}
-\begin{remark}[The Covariant Derivative in Electrodynamics]
-Example from Electrodynamics concerning the covariant derivative. 
+Idea: Generalize parralel transport from flat space.
+(PICTURES) 
+If we express a vector in non-cartesian coordinates and shift it it's
+coordinates do not change.
+We take a look on two operations:
+\begin{enumerate}
+\item the change of the vector itself
+\item the change of its coordinates
+\end{enumerate}
+Let $A_i$ be the coordinates of a vector in a system $x^i$ and $B_i$ the in a
+system associated with coordinates $y^i$ respectively.
+\begin{equation}
+A_i\pd{{y^j}}{{x^i}}B_j\, ,\quad B_i\pd{{x^j}}{{y^i}}A_j\, .
+\end{equation}
+We look at vectors whose coodinates in the system $y^i$ do not change i.e.
+$\delta B_i=0$ The variation of $A_i$ is given by
+\begin{equation}
+\delta
+A_i=\delta\left(\pd{{y^j}}{{x^i}}\right)B_j
+=\md{{y^j}}{2}{{x^i}}{}{{x^k}}{}\delta
+x^k B_j\, .
+\end{equation}
+Expressing $B_i$ in terms of $A_i$ yields
+\begin{equation}
+\delta A_i = \md{{y^j}}{2}{{x^i}}{}{{x^k}}{}\pd{{x^l}}{{y^j}}A_l\delta x^k
+=:\affin{l}{i}{k}A_l\delta x^k
+\end{equation}
+$\affin{l}{i}{k}$ is called \emph{affine connection} or short affinity.
+\begin{remark}
+We can always find a coordinate system in wich $\affin{l}{i}{k}\equiv 0$.  
+\end{remark}
+We notice that if 
+\begin{equation}
+\left(\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\right)\delta x^k = 0\, ,
+\end{equation}
+The vector $A$ does not change its cordinates. We define a \emph{covariant
+derivative} 
+\begin{equation}
+\tensor{A}{_i_;_j}:=\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\, .
+\end{equation}
+It can easyly be seen that the covariant derivative of a tensor transforms as a
+tensor. 
+\begin{remark}[The
+Covariant Derivative in Electrodynamics] Example from Electrodynamics concerning the covariant derivative. 
 The theory is invariant under transformations $\phi\to e^{\imI \alpha}\phi$, 
 because $\phi^*\phi$ and $\phi^*\nabla\phi-\phi\nabla\phi^*$ do not change.
 Vervollständigen\ldots

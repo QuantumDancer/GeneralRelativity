@@ -11,23 +11,26 @@ Although there is no need for $G\textsubscript{N}$ to be constant over time,
 there is evidence that the relative variation is less than $10^{-12}$ per year. 
 The force can be expressed in terms of \emph{gravitational potential} $\Phi$
 \begin{equation}
-    \vec{F}_{AB}=-m_B\nabla\left(-\frac{G\textsubscript{N}m_A}{r}\right)\equiv -m_B\nabla\Phi(\vec{x}_B)\, .
+    \vec{F}_{AB}=-m_B\nabla\left(-\frac{G\textsubscript{N}m_A}{r}\right)\equiv
+    -m_B\nabla\Phi(\vec{r}_B)\, .
 \end{equation}
 Given $N$ particles labelled by $n$, the total force $B$ experiences is
 \begin{equation}
     \vec{F}_{B}=-\sum_n \vec{F}_{nB}\, .
 \end{equation}
-The potential at $\vec{x}_B$ is given by
+The potential at $\vec{r}$ is then easitly found to be
 \begin{equation}
-    \Phi(\vec{x}_B)=-G\textsubscript{N}\sum_n\frac{m_n}{|\vec{x}_B-\vec{x}_n|}\, .
+    \Phi(\vec{r})=-G\textsubscript{N}\sum_n\frac{m_n}{|\vec{r}_B-\vec{r}_n|}\, .
 \end{equation}
-In general, we assume a mass distribution $\rho(\vec{x})$ and the sum is replaced by an integral
+In general, we assume a mass distribution $\rho(\vec{r})$ and the sum is
+replaced by an integral
 \begin{equation}
-    \Phi(\vec{x})=-\int\dif{\vec{x}^{\prime}}\frac{\rho(\vec{x}^{\prime})}{|\vec{x}-\vec{x}^{\prime}|}
-\end{equation}
+    \Phi(\vec{r})=-G\textsubscript{N}\int_{\Reals^3}\dif{\vec{r}^{\prime}}\frac{\rho(\vec{r}^{\prime})}{|\vec{r}-\vec{r}^{\prime}|}\,
+    .\end{equation}
 \section{Comparison with Electrostatics}
 The classical theory of gravity bears a striking similarity to electrostatics. 
-To make this clearer, we introduce the gravitational field $\vec{g}(\vec{x})\equiv -\nabla\Phi(\vec{x})$.
+To make this clearer, we introduce the gravitational field
+$\vec{g}(\vec{r})\equiv -\nabla\Phi(\vec{r})$.
 \begin{table}
     \centering
     \begin{tabulars}{lll}
@@ -35,29 +38,42 @@ To make this clearer, we introduce the gravitational field $\vec{g}(\vec{x})\equ
         &Newtonian Gravity&Electrostatics\\
         \midrule
         Force&$\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
-        Potential&$\Phi(\vec{r})=\frac{kQ}{r}$&$\Phi(\vec{r})=\frac{kQ}{r}$\\
-        Field&$\vec{E}(\vec{r})=-\nabla\Phi\textsubscript{el}(\vec{r})$&$\vec{E}(\vec{r})=-\nabla\Phi\textsubscript{g}(\vec{r})$\\
+        Potential
+        &$\Phi\textsubscript{el}(\vec{r})=q\frac{kQ}{r}$
+        &$\Phi\textsubscript{g}(\vec{r})=m\frac{G\textsubscript{N}M}{r}$\\
+        Field
+        &$\vec{E}(\vec{r})=-\nabla\Phi\textsubscript{el}(\vec{r})$
+        &$\vec{g}(\vec{r})=-\nabla\Phi\textsubscript{g}(\vec{r})$\\
         Laplace Equation
         &$\Delta\Phi\textsubscript{el}=-\frac{1}{\varepsilon_0}\rho\textsubscript{el}(\vec{r})$&
-        $\Delta\Phi\textsubscript{el}=4\pi
+        $\Delta\Phi\textsubscript{g}=4\pi
         G\textsubscript{N}\rho\textsubscript{g}(\vec{r})$
         \\
         \bottomrule
     \end{tabulars}
+    \caption{Comparison of electrostatics and Newtonian gravity}
 \end{table}
 \begin{example}[Field of Spherical Mass Distribution]
+Assume we have a spherical mass distribution i.e. $\rho(\vec{r})=\rho(r)$. By
+symmetry considerations it follows, that the gravitational field can be
+expressed by
 \begin{equation}
-    \int_V\dif{\vec{x}}\, \nabla\vec{g}=-\int_V\dif{\vec{x}}\, \Delta\Phi 
-    = -4\pi G\textsubscript{N}\int_V\dif{\vec{x}}\,\rho(r)= -4\pi G\textsubscript{N} M\, ,
+\vec{g}(\vec{r})=g(r)\vec{e}_r\, .
+\end{equation}
+We integrate the divergence of the field over a ball of radius $r$ 
+\begin{equation}
+    \int_V\dif{\vec{r}}\,\nabla\vec{g}=-\int_V\dif{\vec{r}}\, \Delta\Phi 
+    = -4\pi G\textsubscript{N}\int_V\dif{\vec{r}}\,\rho(r)= -4\pi
+    G\textsubscript{N} M\, ,
 \end{equation}
 where $M$ is the mass enclosed in the volume $V$. On the other hand we can use Gauss law to deduce
 \begin{equation}
-    \int_V\dif{\vec{x}}\, \nabla\vec{g}=\oint_{\partial V}\dif{\vec{A}}\, \vec{g} 
-    = \int_{0}^{2\pi}\int_{-1}^{1} g(r)r^2\dif{\cos\vartheta}\dif{\varphi}=4\pi r^2g(r)
+    \int_V\dif{\vec{r}}\,\nabla\vec{g}=\oint_{\partial V}\dif{\vec{A}}\cdot
+    \vec{g} = \int_{\Omega}\dif{\Omega}\, g(r)r^2=4\pi r^2g(r)\,
 \end{equation}
-Together the gravitational force is given by
+Together the gravitational field is given by
 \begin{equation}
-    g(r)=-\frac{G\textsubscript{N}M}{r^2}\, .
+    \vec{g}(r)=-\frac{G\textsubscript{N}M}{r^2}\vec{e}_{r}\, .
 \end{equation}
 \end{example}
 \subsection*{Inertial systems}
