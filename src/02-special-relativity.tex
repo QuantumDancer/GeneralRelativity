@@ -1,1 +1,87 @@
 \chapter{Special Relativity}
+\begin{table}
+    \centering
+    \begin{tabulars}{lll}
+        \toprule
+        &Newton&Einstein (SR)\\
+        \midrule
+        
+        & Law of inertia
+        & Law of inertia \\
+        Newton's Laws
+        & $\vec{F}=m\ddot{\vec{x}}=m\od{\vec{p}}{t}$
+        &$\vec{F}=m\od{\vec{p}}{\tau}$\\
+        & $\vec{F}_{12}=-\vec{F}_{21}$
+        & Momentum conservations (postulate)\\
+        Force
+        &$\vec{F}=\frac{G\textsubscript{N}m_1m_2}{r^2}$
+        &$F^\alpha= \frac{q}{m} U_\beta
+        \tensor{F}{^\alpha^\beta}$,\,  $F
+        =\gamma\left(\begin{smallmatrix}
+        \beta
+        f_0\\
+        \vec{f}
+        \end{smallmatrix}\right)$\\
+ 		&$\Delta \Phi =4\pi\rho$ &Maxwell equations
+        \\
+        \bottomrule
+    \end{tabulars}
+    \caption{Comparison of electrostatics and Newtonian gravity}
+\end{table}
+We want to introduce a Lagrangian for special relativity. We start by a
+variation principle. We consider massive particles, i.e. timelike paths. We
+postulate that the action $S$ is proportional to the spacetime distance 
+\begin{equation}
+S= \alpha \int_a^b\dif s=- \alpha \int_a^b\dif \tau = \alpha
+\int_{t_1}^{t^2}\sqrt{1-v^2}\dif t =: \int_{t_1}^{t^2}L\dif t\, .
+\end{equation}
+Where the Lagrangian $L$ is given by
+\begin{equation}
+L=-\alpha\sqrt{1-v^2}\simeq -\alpha +\alpha\frac{1}{2}v^2+\ldots\, .
+\end{equation}
+We demand that we recover the classical theory in the limit $v\to 0$. The
+dynamical term contribution, i.e. the lowest order term containing $v$ is 
+\begin{equation}
+L_0=\alpha\frac{1}{2}v^2\, .
+\end{equation}
+Since we know that $L_0=\frac{1}{2}mv^2$ we find $\alpha=m$. 
+If we restore units of $c$ for a moment we get that the constant term in $L$ is
+equal to $mc^2$. This is Einsteins famous $E=mc^2$. 
+
+If we substitute $\alpha$ we recover the Lagrangian of special relativity
+\begin{equation}
+L\textsubscript{SR}=-m\sqrt{1-v^2}\, .
+\end{equation}
+We can proceed calculate the generalisized momenta
+\begin{equation}
+p_i=\dpd{L}{v_i}=\frac{mv_i}{\sqrt{1-v^2}}=\gamma m v_i\, .
+\end{equation}
+The energy can be calculated via the Hamiltonian $H$
+\begin{equation}
+E=H=\vec{p}\cdot\vec{v}-L=\gamma m v^2 + m\gamma^{-1} =\gamma m
+\end{equation}
+Expanded in $v$ the energy reads as
+\begin{equation}
+E=m+\frac{1}{2}mv^2+\ldots\, .
+\end{equation}
+We can further relate energy and momentum to each other. Therefore consider 
+\begin{equation}
+p^2=\frac{mv^2}{1-v^2}\, .
+\end{equation}
+Solving for $v$ yields
+\begin{equation}
+v^2=\frac{p^2}{p^2+m^2}\, .
+\end{equation}
+Which we can insert in the expression for the energy
+\begin{equation}
+E^2=\frac{m^2}{1-v^2}=p^2+m^2 \label{eq:onshell}\, .
+\end{equation}
+The equation \eqref{eq:onshell} is called the \emph{on shell condition}.
+\begin{sidenote}
+There is nothing in the theory that predicst that the photon is massless. It
+could be possible that its mass is only really small and that in fact that the
+photon does not travel at the speed of light. (This would make it
+convinient to rename the constant $c$) Even though the mass should be so small
+that the de Broglie wavelength is of the order of the size of the universe,
+massive photons would have a huge impact.
+\end{sidenote}
