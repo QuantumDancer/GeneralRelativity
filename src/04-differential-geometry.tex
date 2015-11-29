@@ -62,7 +62,7 @@ There are three equivalent definitions for a vector:
     \item geometrically (ugly, but plastic)
 \end{enumerate}
 \subsection*{Definitions}
-\begin{definition}[Algebraic]
+\begin{definition}[Vector, algebraic]
 A vector is a derivation at the germ of a function at $p$.
 \end{definition}
 The germ is the set of all functions that are locally equal,i.e. vectors are local objects.
@@ -82,40 +82,52 @@ The only property that has to be checked is that it satisfies the Leibniz rule.
 \begin{equation}
     XY(fg)=X((Yf)g+f(Yg))=(XYf)g+(Yf)(Xg)+(Yg)(Xf)+(XYg)f\\
 \end{equation}
-Subtracting $YX(fg)$ proves that $[X,Y]$ is indeed a vector.
-The set of all vectors in a point $p$ is called the tangent space $T_pM$. A basis of $T_pM$ is given by $\partial_i$.
+Subtracting $YX(fg)$ proves that $[X,Y]$ is indeed a vector. The fact that we
+have a natural vectorspace structure on the set of vectors at $p$ motivates the
+following
+\begin{definition}
+The Tangentspace $T_pM$ is the space of all vectors in a point $p\in M$.
+\end{definition}
+A basis of $T_pM$ is given by the derivation along the
+coordinates $\partial_i$, therefore its dimension is equal to that of the manifold $M$.
 Proof sketch:
 \begin{enumerate}
     \item Show $f(x^i)=f(0)+x^i\tilde{f}(x^i)$
     \item Write $X=a^i\partial_i$
     \item Show $Xf=0\quad \forall f \iff X=0$
 \end{enumerate}
-Every vector $A$ can be written as $A=a^i\pd{}{{x^i}}$. We can now look how the components of the vector transform 
-under a change of coordinates (the vector itself is invariant!). We usually denote the elements of the transformed systems with a bar.
+Every vector $A$ can be written as $A=A^i\pd{}{{x^i}}$, where $A^i$ are the
+components of the vector. We can now look how the components of the vector
+transform under a change of coordinates (the vector itself is invariant!). 
+We usually denote the elements of the transformed systems with a bar.
+By the chain rule we have
 \begin{equation}
-    A= a^k\pd{}{{x^k}}= a^k\pd{\overline{x}^i}{{x^k}}\pd{}{{\overline{x}^k}}
+    A= a^k\pd{}{{x^k}}= a^k\pd{\overline{x}^i}{{x^k}}\pd{}{{\overline{x}^k}}\, .
 \end{equation}
-also we can express $A$ directly in the new basis
+We can also express $A$ directly in the new basis
 \begin{equation}
-    A= \overline{a}^i\pd{}{{\overline{x}^i}}
+    A= \overline{a}^i\pd{}{{\overline{x}^i}}\, .
 \end{equation}
 Comparing the coefficients gives the vector transformation law
 \begin{equation}
-    \overline{a}^i=a^k\pd{\overline{x}^i}{{x^k}}\label{eq:coefftrafo}
+    \overline{a}^i=a^k\pd{\overline{x}^i}{{x^k}}\label{eq:coefftrafo}\, .
 \end{equation}
 Sometimes a vector is defined as a object that transforms according to \ref{eq:coefftrafo} under a change of coordinates, 
 this is the physical definition. It is a priori not clear that a vector also corresponds to a geometrical object. 
-Consider a curve on $M$, i.e. a map $\gamma:\mathbb{R}\to M$
-Then $D_\gamma f=\od{}{t}(f\circ\gamma)(0)$ is a derivative.
+Consider a curve on $M$, i.e. a map $\gamma:\mathbb{R}\to M$, with
+$\gamma(0)=p$, $\dot{\gamma}(0)=X$. Then $D_X f=\od{}{t}(f\circ\gamma)(0)$ is
+a derivative, namely the directional derivative along $X$.
 For the special curves $\gamma_i(t)=p+te_i$
-$D_{\gamma_i} f=\partial_if$, so we can identify the derivatives with the geometrical tangent space.
-Since we have a basis we can work in local coordinates, e.g. let $A=a^i\pd{}{{x^i}}$, $B=b^i\pd{}{{x^i}}$ then the lie bracket reads
+$D_{\dot{\gamma}_i} f=\partial_if$, so we can identify the derivatives with
+the geometrical tangent space.
+Since we have a basis we can work in local coordinates, 
+e.g. let $A=A^i\pd{}{{x^i}}$, $B=B^i\pd{}{{x^i}}$, then the Lie bracket reads
 \begin{equation}
-    [A,B]^j=a^i\partial_ib^j-b^i\partial_ia^i
+    [A,B]^j=A^i\partial_iB^j-B^i\partial_iA^i\, .
 \end{equation}
 Since the tangent space is a vector space, we can define its dual space
 \begin{equation}
-    T_pM^*=\{L:T_pM\to \mathbb{R}\, |\, L \text{ linear}\}
+    T_pM^*=\{L:T_pM\to \mathbb{R}\, |\, L \text{ linear}\}\, ,
 \end{equation}
 which is again a vector space of the same dimension. Its elements are called dual or covariant vectors.
 We can define a basis on $	T_pM^*$, which we denote by $\dif x^i$ and  which acts on $T_pM$ via
@@ -126,20 +138,23 @@ It can easily deduced by \eqref{eq:orthdual} that the components of a dual vecto
 \begin{equation}
     \overline{a}_i=\pd{x^k}{{\overline{x}^i}}a_k\, .
 \end{equation}
+\begin{remark}[Dual vectors in flat space]
 If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the component of a vector and a dual vector respectively, 
 then the transformation can be written in matrix form
 \begin{align}
     \vec{a}&\to V\vec{a}\, ,\\
-    \vec{b}&\to\left(V^T\right)^{-1}\vec{b}\, .
+    \vec{b}&\to\left(V^\intercal\right)^{-1}\vec{b}\, ,
 \end{align}
 with $V_{ij}=\pd{\overline{x}^i}{{x^j}}$. 
-In normal calculus we restrict ourself to orthogonal transformations (i.e. mapping orthonormal bases onto each other) for which $(O^T)^{-1}=O$. 
+In normal calculus we restrict ourself to orthogonal transformations (i.e.
+mapping orthonormal bases onto each other) for which $(O^\intercal)^{-1}=O$.
 Which is the reason why we do not bother to distinguish between vectors and dual vectors because they transform identically. 
-In special relativity we have e.g. $(\Lambda^T)^{-1}\neq\Lambda$ for a boost, the difference becomes even more important in general 
-relativity where the relation can become arbitrarily complicated.
+In special relativity we have e.g. $(\Lambda^\intercal)^{-1}\neq\Lambda$ for a
+boost, the difference becomes even more important in general relativity where the relation can become arbitrarily complicated.
+\end{remark}
 \section{Tensors}
 From vectors $A$ ,$B$ we can construct new objects with multiple indices that posses well defined transformation behaviour. 
-For example we can define
+For example consider
 \begin{equation}
     \overline{T}^{ij}=a^ib^j\, ,
 \end{equation}
@@ -148,11 +163,12 @@ which transforms as
     T^{ij}=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}a^kb^l=\pd{\overline{x}^i}{{x^k}}\pd{\overline{x}^j}{{x^l}}T^{kl}\,
    .\label{eq:tensortrafo}
 \end{equation}
-Again it is possible to define tensors in a coordinate independent way. 
-At this point we will make things easier and only consider the physical definition. 
-A tensor is then per definitionem a object that transforms similar to
-\eqref{eq:tensortrafo}.
-\subsection{Symmetries}
+We call an object that transforms in this way a \emph{tensor}. 
+As with vectors, it is possible to define tensors in a coordinate independent
+way.
+At this point we will make things easier and only consider the physical
+definition, i.e. classify tensors by a transformation according to \eqref{eq:tensortrafo}.
+
 A tensor is said to be symmetric in two indices if it stays invariant when exchanging those indices, e.g.
 \begin{equation}
     T_{ab}=T_{ba}\, .

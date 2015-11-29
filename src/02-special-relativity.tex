@@ -1,11 +1,320 @@
 \chapter{Special Relativity}
+\section{Postulates and Definitions}
+\begin{enumerate}
+\item Principle of Relativity: 
+The laws of physics acquire the same form in all inertial systems.
+\item Constancy of the speed of light:
+The speed of light in vacuum is constant ${c\approx\unitfrac[3\cdot
+10^8]{m}{s}}$
+\end{enumerate}
+\begin{definition}[System of reference]
+A system of reference is a system of three spacial coordinates to indicate the
+position and one time coordinate to indicate the time
+\end{definition}
+\begin{definition}[Inertial system]
+An inertial system $I$ belongs to a particular subspace of reference systems in
+which a freely moving body, i.e. a body that is not subject to any external
+force, moves with constant velocity on an straight line.
+\end{definition}
+\begin{definition}[Event]
+An Event or world point, is a point in spacetime. In any system of reference it
+can be described by four coordinates 
+\begin{equation}
+x^\mu: (x^0,x^1,x^2,x^3)\, .
+\end{equation}
+For example in cartesian coordinates we have 
+\begin{equation}
+(x^0,x^1,x^2,x^3) = (ct,x,y,z)\, .
+\end{equation}
+\end{definition}
+\begin{definition}[Worldline]
+A worldline is a parametrised curve in spacetime. To each parameter, there
+corresponds an event that lies on the worldline.
+\end{definition}
+\section{Propagation of light waves and the line element}
+(Pictures)
+Inertial System $I$:
+$P:$ Event of emission $(t_1,x_1,y_1,z_1)$\\
+$Q:$ Event of absorption $(t_2,x_2,y_2,z_2)$
+The spatially distance between the events is
+\begin{equation}
+r=\left[(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2\right]^{\frac{1}{2}}\, .
+\end{equation}
+Since we are tracing a light ray and the events are absoption and emission, we
+furter have
+\begin{equation}
+r=c(t_2-t_1)\, .
+\end{equation}
+We construct the quantity
+\begin{equation}
+{\Delta s}^2=-c^2(t_2-t_1)^2+(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2\, ,
+\end{equation}
+so that ${\Delta s}^2=0$ for light.\\
+Inertial System $I'$:
+$P:$ Event of emission $(t_1^\prime,x_1^\prime,y_1^\prime,z_1^\prime)$\\
+$Q:$ Event of absorption $(t_2^\prime,x_2^\prime,y_2^\prime,z_2^\prime)$
+\begin{equation}
+{\Delta
+s^\prime}^2=-c^2\left(t^\prime_2-t^\prime_1\right)^2
++\left(x^\prime_2-x^\prime_1\right)^2
++\left(y^\prime_2-y^\prime_1\right)^2
++\left(z^\prime_2-z^\prime_1\right)^2\,.
+\end{equation}
+Again ${\Delta s^\prime}^2=0$ for light.\\
+We define an infinitisimal interval, or \emph{line element}:
+\begin{equation}
+\dif s^2=-c^2\dif t^2+\dif x^2+\dif y^2+\dif z^2\, .
+\end{equation}
+If the intervall is zero in one IS it should be zero in all IS. To relate the
+linelements of different systems to each other, we make the following thought:
+Suppose we have three interial Systems $I,I_1,I_2$.
+The Systems $I_1$ and $I_2$ move at constant velocity $\vec{v}_1$ and $\vec{v}_2$ relative to $I$. Further
+$I_2$ moves with velocity $\vec{v}_{12}$ relative to $I_1$. The demand implies
+that there exists a function $\alpha$ so that
+\begin{equation}
+\dif s'^2=\alpha(\vec{v})\dif s^2
+\end{equation}
+We have
+\begin{equation}
+\dif s^2=\alpha(\vec{v}_1)\dif s_1^2\, ,\quad\dif s^2=\alpha(\vec{v}_2)\dif
+s_2^2\, ,\quad\dif s_1^2=\alpha(\vec{v}_{12})\dif s_2^2\, .
+\end{equation}
+Together they imply
+\begin{equation}
+\alpha(\vec{v}_{12})=\frac{\alpha(\vec{v}_{2})}{\alpha(\vec{v}_{1})}\, ,
+\end{equation}
+but since the velocities where arbitary $\alpha$ has to be constant and we are
+free to chose $\alpha\equiv 1$. Therefore the lineelement has to stay invariant.
+\section{Invariant distances Metric and Signature}
+In flat space we can calculate the distance $\Delta l$ between two points
+$(x_1,y_1)$ and $(x_2,y_2)$ by the Pythagorean theorem
+\begin{equation}
+\Delta l^2=\Delta x^2+\Delta y^2\, ,
+\quad \Delta x=x_2-x_1\,,\quad \Delta
+y=y_2-y_1\, .
+\end{equation}
+For an infinitisimal distance $\dif l$ we recover
+\begin{equation}
+\dif l^2=\dif x^2+\dif y^2=\delta_{ij}\dif x^i\dif x^j\, .
+\end{equation}
+If we introduce
+\begin{equation}
+(\dif x^i)=\begin{pmatrix}
+\dif x\\
+\dif y
+\end{pmatrix}\,\quad ,(\delta_{ij})=\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix}\, .
+\end{equation}
+We can expand the formula for the infinitisimal element and obtain
+\begin{equation}
+\dif l^2=\begin{pmatrix}
+\dif x & 
+\dif y
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+\dif x\\
+\dif y
+\end{pmatrix}
+\end{equation}
+Which we do to point out the similarity to the line element $\dif s^2$
+\begin{equation}
+\dif s^2=\begin{pmatrix}
+c\dif t & 
+\dif x & 
+\dif y &
+\dif z 
+\end{pmatrix}
+\begin{pmatrix}
+-1 & 0 & 0 & 0\\
+0  & 1 & 0 & 0\\
+0  & 0 & 1 & 0\\
+0  & 0 & 0 & 1\\
+\end{pmatrix}
+\begin{pmatrix}
+c\dif t\\
+\dif x\\
+\dif y\\
+\dif z\\
+\end{pmatrix}=:\eta_{\mu\nu}\dif x^\mu\dif x^\nu\, .
+\end{equation}
+We call the matrix $\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$ the
+\emph{Mikovski-metric}. It has some obvious properties:
+\begin{itemize}
+  \item constancy: $\pd{\tensor{\eta}{_\mu_\nu}}{{x^\rho}}=0$
+  \item symmetry: $\tensor{\eta}{_\mu_\nu}=\tensor{\eta}{_\nu_\nu}$
+  \item self inverse:
+  $\tensor{\eta}{^\mu^\nu}:=\tensor{{\eta^{-1}}}{_\mu_\nu}=\tensor{\eta}{_\mu_\nu}$
+\end{itemize}
+We can use the metric to raise and lower indices:
+\begin{equation}
+x_\nu=\tensor{\eta}{_\mu_\nu}x^\mu\, ,\quad x^\mu=\tensor{\eta}{^\mu^\nu}x_\nu\,
+.
+\end{equation}
+The trace of the metric is given by
+\begin{equation}
+\tensor{\eta}{^\mu_\mu}=\tensor{\eta}{^\mu^\nu}\tensor{\eta}{_\nu_\mu}
+=\tensor{\delta}{^\mu_\mu}=4\, .
+\end{equation}
+We say $\tensor{\eta}{_\mu_\nu}$ has signature $(-,+,+,+)$
+\subsection{Einstein summation convention}
+Wir brauchen ein evtl. kapitel mit Notationen 
+We write short $x^ix_i$ for $\sum_i x^ix_i$..
+\subsection{Poincaré-transformation}
+\begin{equation}
+\dif {s^\prime}^2 = \eta_{\mu\nu}\dif {x^\prime}^\mu\dif
+{x^\prime}^\nu=\eta_{\mu\nu}\dif x^\mu\dif
+x^\nu = \dif s^2
+\end{equation}
+We consider afine coordinate transformations 
+\begin{equation}
+{x^\prime}^\mu= f^\mu(x^\nu)=\tensor{L}{^\mu_\nu}x^\nu+a^\mu\, .
+\end{equation}
+Where $\tensor{L}{^\mu_\nu}$ is a a lorentz transformation and $a^\mu$ is a
+constant shift.\\
+We can now inspect the transformation properties of an allowed transformation.
+The invariance of the line element implies
+\begin{equation}
+\dif {s^\prime}^2 = \eta_{\mu\nu}\dif {x^\prime}^\mu\dif
+{x^\prime}^\nu=\eta_{\rho\sigma}\tensor{L}{^\rho_\nu}\dif
+x^\mu\tensor{L}{^\sigma_\nu}\dif x^\nu = \dif s^2
+\end{equation}
+This implies that
+\begin{equation}
+\eta_{\mu\nu}=\tensor{L}{^\rho_\nu}\eta_{\rho\sigma}\tensor{L}{^\sigma_\nu}\label{eq:invariance}
+\end{equation}
+We can take a look at infinitimal transformations i.e.
+\begin{equation}
+\tensor{L}{^\mu_\nu}=\tensor{\delta}{^\mu_\nu}
++\varepsilon\tensor{\omega}{^\mu_\nu}+\mathcal{O}\left(\varepsilon^2\right)\, .
+\end{equation}
+Plugging into \eqref{eq:invariance} results in
+\begin{equation}
+\begin{split}
+\eta_{\mu\nu}&=\eta_{\rho\sigma}(\tensor{\delta}{^\rho_\mu}
++\varepsilon\tensor{\omega}{^\rho_\mu})(\tensor{\delta}{^\sigma_\nu}
++\varepsilon\tensor{\omega}{^\sigma_\nu})\\
+&=
+\eta_{\mu\nu}+\varepsilon(\tensor{\omega}{_\mu_\nu}+\tensor{\omega}{_\nu_\mu})
+\end{split}
+\end{equation}
+Since this must hold true for arbitary $\varepsilon$ the generators
+$\tensor{\omega}{_\nu_\mu}$ must satisfie
+$\tensor{\omega}{_\nu_\mu}=-\tensor{\omega}{_\mu_\nu}$, i.e. be antisymmetric.
+In general we have $\frac{n(n-1)}{2}$ antisymetric linear maps. Since we are
+considering 4d spacetime, there are $6$ possible maps. We can classify the maps
+in two groups
+\begin{enumerate}
+  \item Rotations. E.g. Rotation around $z$-Axis:
+  \begin{align*}
+  \tensor{\omega}{^\mu_\nu}
+  =\begin{pmatrix}
+  0&0 & 0&0\\
+  0&0 &1&0\\
+  0&-1&0 &0\\
+  0&0 &0 &0
+  \end{pmatrix}\implies
+  \begin{pmatrix}
+  ct\\
+  x\\
+  y\\
+  z\\
+  \end{pmatrix}=
+  \begin{pmatrix}
+  1&0 & 0&0\\
+  0&\cos\alpha &\sin\alpha&0\\
+  0&-\sin\alpha&\cos\alpha &0\\
+  0&0 &0 &1
+  \end{pmatrix}
+  \begin{pmatrix}
+  ct^\prime\\
+  x^\prime\\
+  y^\prime\\
+  z^\prime
+  \end{pmatrix}
+  \end{align*}
+  \item Boosts, i.e. maps mixing time and spacial coordinates. Boost in $x$
+  direction:
+  \begin{equation}
+  -(ct)^2+x^2=(ct^\prime)^2+(x^\prime)^2
+  \end{equation}
+  This hyperbolic equation can be parametrised as
+  \begin{equation}
+  ct = ct^\prime\cosh\psi+x^\prime\sinh\psi\,, \quad x =
+  ct^\prime\sinh\psi+x^\prime\cosh\psi\, .
+  \end{equation}
+  Where $\psi$ is called the \emph{rapidity}. In matrix form the transformation
+  reads
+  \begin{align*}
+  \tensor{\omega}{^\mu_\nu}
+  =\begin{pmatrix}
+  0&1 & 0&0\\
+  1&0 &0&0\\
+  0&0&0 &0\\
+  0&0 &0 &0
+  \end{pmatrix}\implies
+  \begin{pmatrix}
+  ct\\
+  x\\
+  y\\
+  z\\
+  \end{pmatrix}=
+  \begin{pmatrix}
+  \cosh\psi&\sinh\psi & 0&0\\
+  \sinh\psi&\cosh\psi &0&0\\
+  0&0&1 &0\\
+  0&0 &0 &1
+  \end{pmatrix}
+  \begin{pmatrix}
+  ct^\prime\\
+  x^\prime\\
+  y^\prime\\
+  z^\prime
+  \end{pmatrix}\, .
+  \end{align*}
+  To which velocity $v$ does this boost corespond? Set $x^\prime= 0$. Then 
+  \begin{equation}
+  ct=ct^\prime\cosh\psi\, ,\quad
+  x=x^\prime\sinh\psi\, .
+  \end{equation}
+  Then we have 
+  \begin{equation}
+  v=\frac{x}{t}=\tanh\psi
+  \end{equation}
+  It is convinient to introduce the parameters $\beta$ and $\gamma$ defined as
+  follows
+  \begin{equation}
+  \beta:=\frac{v}{c}\, ,\quad\gamma:=\frac{1}{\sqrt{1-\beta}}\, .
+  \end{equation}
+  In terms of these we find
+  \begin{equation}
+  \sinh\psi = \beta\gamma\, , \quad \cosh\psi=\gamma
+  \end{equation}
+  Which gives 
+  \begin{align}
+  t&=\gamma\left(t^\prime+\frac{v}{c^2}x^\prime\right)\, ,\\
+  x&=\gamma\left(x^\prime+vt^\prime\right)\, .
+  \end{align}
+\end{enumerate}
+All together we have 10 independent (affine) transformations that leave the line
+element invariant. Namely:
+\begin{itemize}
+  \item 4 shifts by $a^\mu$
+  \item 3 rotations in space
+  \item 3 boosts with constant velocity $\vec{v}$
+\end{itemize}
+The poincare transformations form a 10 parameter group.
 \begin{table}
     \centering
     \begin{tabulars}{lll}
         \toprule
         &Newton&Einstein (SR)\\
         \midrule
-        
         & Law of inertia
         & Law of inertia \\
         Newton's Laws
@@ -13,6 +322,15 @@
         &$\vec{F}=m\od{\vec{p}}{\tau}$\\
         & $\vec{F}_{12}=-\vec{F}_{21}$
         & Momentum conservations (postulate)\\
+        Transformations
+        & boosts
+        & Galilei Transformation\\
+        
+        & absolute structure
+        & absolute time\\
+                
+        & $c=\mathrm{const.}$
+        & $t^\prime=t$\\
         Force
         &$\vec{F}=\frac{G\textsubscript{N}m_1m_2}{r^2}$
         &$F^\alpha= \frac{q}{m} U_\beta
@@ -26,55 +344,59 @@
         \\
         \bottomrule
     \end{tabulars}
-    \caption{Comparison of electrostatics and Newtonian gravity}
+    \caption{Comparison of Newtonian theory and special relativity}
 \end{table}
+
+\section{Lagrangian Principle}
 We want to introduce a Lagrangian for special relativity. We start by a
 variation principle. We consider massive particles, i.e. timelike paths. We
 postulate that the action $S$ is proportional to the spacetime distance 
 \begin{equation}
 S= \alpha \int_a^b\dif s=- \alpha \int_a^b\dif \tau = \alpha
-\int_{t_1}^{t^2}\sqrt{1-v^2}\dif t =: \int_{t_1}^{t^2}L\dif t\, .
+\int_{t_1}^{t^2}\sqrt{1-v^2}\dif t =: \int_{t_1}^{t^2}L\dif t\, ,
 \end{equation}
-Where the Lagrangian $L$ is given by
+whith $\alpha$ a constant that has to be determined. The Lagrangian $L$ is
+given by
 \begin{equation}
 L=-\alpha\sqrt{1-v^2}\simeq -\alpha +\alpha\frac{1}{2}v^2+\ldots\, .
 \end{equation}
 We demand that we recover the classical theory in the limit $v\to 0$. The
-dynamical term contribution, i.e. the lowest order term containing $v$ is 
+the lowest order kinetic term is 
 \begin{equation}
 L_0=\alpha\frac{1}{2}v^2\, .
 \end{equation}
-Since we know that $L_0=\frac{1}{2}mv^2$ we find $\alpha=m$. 
-If we restore units of $c$ for a moment we get that the constant term in $L$ is
-equal to $mc^2$. This is Einsteins famous $E=mc^2$. 
-
-If we substitute $\alpha$ we recover the Lagrangian of special relativity
+Comparing with the classical kinetic energy $L_0=\frac{1}{2}mv^2$ yields
+$\alpha=m$. If we substitute $\alpha$ we recover the Lagrangian of special
+relativity
 \begin{equation}
 L\textsubscript{SR}=-m\sqrt{1-v^2}\, .
 \end{equation}
-We can proceed calculate the generalisized momenta
+We can proceed calculate the generalized momenta
 \begin{equation}
 p_i=\dpd{L}{v_i}=\frac{mv_i}{\sqrt{1-v^2}}=\gamma m v_i\, .
 \end{equation}
 The energy can be calculated via the Hamiltonian $H$
 \begin{equation}
-E=H=\vec{p}\cdot\vec{v}-L=\gamma m v^2 + m\gamma^{-1} =\gamma m
+E=H=\vec{p}\cdot\vec{v}-L=\gamma m \vec{v}^2 + m\gamma^{-1} =\gamma m
 \end{equation}
-Expanded in $v$ the energy reads as
+Expanded in $\vec{v}^2$ the energy reads as
 \begin{equation}
-E=m+\frac{1}{2}mv^2+\ldots\, .
+E=m+\frac{1}{2}m\vec{v}^2+\ldots\, .
 \end{equation}
-We can further relate energy and momentum to each other. Therefore consider 
+If we restore units of $c$ for a moment we get that the constant term is
+equal to $mc^2$. This is Einsteins famous $E=mc^2$. 
+We can further relate energy and momentum to each other. Therefore consider the
+square of the momentum $\vec{p}$
 \begin{equation}
-p^2=\frac{mv^2}{1-v^2}\, .
+\vec{p}^2=\frac{m\vec{v}^2}{1-\vec{v}^2}\, .
 \end{equation}
-Solving for $v$ yields
+Solving for $\vec{v}^2$ yields
 \begin{equation}
-v^2=\frac{p^2}{p^2+m^2}\, .
+\vec{v}^2=\frac{\vec{p}^2}{\vec{p}^2+m^2}\, .
 \end{equation}
 Which we can insert in the expression for the energy
 \begin{equation}
-E^2=\frac{m^2}{1-v^2}=p^2+m^2 \label{eq:onshell}\, .
+E^2=\frac{m^2}{1-\vec{v}^2}=\vec{p}^2+m^2 \label{eq:onshell}\, .
 \end{equation}
 The equation \eqref{eq:onshell} is called the \emph{on shell condition}.
 \begin{sidenote}
