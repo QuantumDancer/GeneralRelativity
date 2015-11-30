@@ -181,9 +181,11 @@ We have not yet established a relation between upper and lower indices, i.e. we 
 make no sense, since they can not be true in every system.
 \end{remark}
 \section{The Metric}
+So far we have not defined a length scale on manifolds yet. We will do so now by
+introducing a \emph{metric} 
 \begin{definition}[Metric]
-The metric $g$ is a non-degenerate ($\det(g)\neq 0$), symmetric covariant two
-tensor.
+A metric $g$ on a manifold $M$, is a non-degenerate ($\det(g)\neq 0$), symmetric
+covariant two tensor.
 \end{definition}
 We have already seen examples of metrics for the flat space, e.g. in spherical coordinates $g$ was given as
 \begin{equation}
@@ -191,12 +193,29 @@ We have already seen examples of metrics for the flat space, e.g. in spherical c
     \begin{pmatrix}
         1 & 0\\
         0 & r^2\\
-    \end{pmatrix}
+    \end{pmatrix}\,.
 \end{equation}
-Given a metric we relate vectors and dual vectors to each other by
+A metric that is positive definite is called \emph{Riemanian metric}. In
+relativity we deal with \emph{Lorentzian metrics}, for which there are vectors
+beside the zero vector which have zero 'length'. In flat space we have
+$\tensor{g}{_i_j}=\tensor{\eta}{_i_j}$ \begin{remark}[About
+raising and lowering indices] Supose we have given a vector $A=A^i\partial_i$
+with coodinates $A^i$, then we can relate it 
+in a natural way to a linear form $g(A,\cdot)$,
 \begin{equation}
-    a_i=g_{ij}a^j
+\begin{split}
+ g(A,\cdot)\,\colon T_pM &\to \Reals\\
+ X &\mapsto g(A,X)
+\end{split}\, ,
 \end{equation}
+i.e. a dual vector. The components of this dual vector are given by its action
+on the Basis elemts of the tangentspace
+\begin{equation}
+A_i=g(A,\partial_i)=A^jg(\partial_j,\partial_i)=g_{ji}A^j\,,
+\end{equation}
+which is exactly the law for lowering indices. Given the inverse metric we can
+multiply this equation by it to obtain $A^i$ in terms of $A_i$.
+\end{remark}
 \section{Parallel Transport}
 Idea: Generalize parralel transport from flat space.
 (PICTURES) 
