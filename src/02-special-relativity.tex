@@ -536,5 +536,54 @@ Its trace is given by
 It is traceless for photons. If an external field is present the divergence is
 given by
 \begin{equation}
-\tensor{T}{_\mu_\nu_,_\nu}=\tensor{D}{_\mu}\,  .
+\tensor{T}{^\mu^\nu_,_\nu}=\tensor{D}{^\mu}\,  .
 \end{equation}
+Where the external momentum is itselve given as the divergence 
+\begin{equation}
+\tensor{D}{^\mu} =-\tensor{S}{^\mu^\nu_,_\nu}\, . 
+\end{equation}
+Putting both terms together gives
+\begin{equation}
+\partial_\mu(\tensor{T}{^\mu^\nu}+\tensor{S}{^\mu^\nu})=0\,,
+\end{equation}
+Which can be interpretet as the total energy conservation
+\subsection{Noether's Theorem}
+We introduce a tensorial generalisation of the angular momentum (density???)
+\begin{equation}
+\tensor{T}{^\lambda^\mu^\nu}:=
+\tensor{x}{^\lambda}\tensor{T}{^\mu^\nu}-\tensor{x}{^\mu}\tensor{T}{^\lambda^\nu}\,
+.
+\end{equation}
+The angular momentum is given by (etwas viele Komponenten?)
+\begin{equation}
+\tensor{L}{^i^j} = \int\dif{}^3 x \tensor{M}{^i^j^0}\, .
+\end{equation}
+It can be shown that it is a conserved quantity
+\begin{equation}
+\tensor{\partial}{_\nu}\left(\tensor{x}{^\lambda}\tensor{T}{^\mu^\nu}-\tensor{x}{^\nu}\tensor{T}{^\lambda^\nu}\right)
+=\tensor{T}{^\mu^\lambda}-\tensor{T}{^\lambda^\mu}+\tensor{x}{^\lambda}
+\tensor{T}{^\mu^\nu_,_\nu}-\tensor{x}{^\nu}\tensor{T}{^\lambda^\nu_,_\nu}=0\, .
+\end{equation}
+The ecistence of a conserved symmetric tensor $\tensor{T}{^\mu^\nu}$ is
+nessecary in order to build a relativistic theory
+\begin{example}[Electrodynamics]
+We start by inspecting the Lorentz Force $\tensor{F}{^\mu}$ which is given by
+\begin{equation}
+\tensor{F}{^\mu}=e\tensor{F}{^\mu^\nu}\tensor{u}{_\nu}=\tensor{F}{^\mu^\nu}\tensor{J}{_\nu}=\tensor{D}{^\mu}\,
+.
+\end{equation}
+We now ask whether ther is a potential $\tensor{S}{^\mu^\nu}$ so that
+$\tensor{D}{^\mu}=-\tensor{S}{^\mu^\nu_{,\nu}}$. Indeed a potential is given by 
+\begin{equation}
+\tensor{S}{^\mu^\nu}=\tensor{F}{^\mu_\alpha}\tensor{F}{^\mu^\alpha}-\frac{1}{4}\tensor{\eta}{^\mu^\nu}\tensor{F}{_\alpha_\beta}\tensor{F}{^\alpha^\beta}\,
+.
+\end{equation}
+We can check 
+(Rechnungen\ldots.)
+
+The Lagrangian of electrodynamics is given by
+\begin{equation}
+\mathcal{L}=-\frac{1}{2}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}+\tensor{J}{_\mu}\tensor{A}{^\mu}-\frac{1}{2}m^2\tensor{A}{_\mu}\tensor{A}{^\mu}\,
+.
+\end{equation}
+\end{example}
