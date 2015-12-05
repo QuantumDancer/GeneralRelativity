@@ -1,46 +1,55 @@
 \chapter{Special Relativity}
 \section{Postulates and Definitions}
+Special relativity is based on two main postulates, namely
 \begin{enumerate}
-\item Principle of relativity: 
+\item Principle of relativity: \\
 The laws of physics acquire the same form in all inertial systems.
-\item Constancy of the speed of light:
+\item Constancy of the speed of light:\\
 The speed of light in vacuum is constant ${c\approx\unitfrac[3\cdot
-10^8]{m}{s}}$
+10^8]{m}{s}}$.
 \end{enumerate}
+We further define a series of objects that will come handy when describing
+relativity:
 \begin{definition}[System of reference]
-A system of reference is a system of three spacial coordinates to indicate the
-position and one time coordinate to indicate the time
+A system of reference $K$ is a system of three spacial coordinates to indicate
+the position and one time coordinate to indicate the time.
 \end{definition}
 \begin{definition}[Inertial system]
 An inertial system $I$ belongs to a particular subspace of reference systems in
-which a freely moving body, i.e. a body that is not subject to any external
-force, moves with constant velocity on an straight line.
+which a freely moving bodies, i.e. that are not subject to any external
+force, move with constant velocity on an straight lines.
 \end{definition}
 \begin{definition}[Event]
-An event or world point, is a point in spacetime. In any system of reference it
-can be described by four coordinates 
+An event or world point $x$ is a point in spacetime. In any system of reference
+it can be described by four coordinates 
 \begin{equation}
 x^\mu: (x^0,x^1,x^2,x^3)\, .
 \end{equation}
-For example in cartesian coordinates we have 
+For example in cartesian coordinates, we have 
 \begin{equation}
 (x^0,x^1,x^2,x^3) = (ct,x,y,z)\, .
 \end{equation}
 \end{definition}
 \begin{definition}[Worldline]
-A worldline is a parametrised curve in spacetime. To each parameter, there
-corresponds an event that lies on the worldline.
+A worldline $\gamma$ is a parametrised curve in spacetime. To each parameter,
+there corresponds an event that lies on the worldline
+\begin{equation}
+\tensor{\gamma}{^\mu}(\lambda)=\tensor{x}{^\mu}(\lambda)\, .
+\end{equation}
 \end{definition}
 \subsection{Einstein Summation Convention}
-Since we will have to deal mit many indices, we will find a way to keep notation
-as compact as possible. We agree that whenever we have a summation over an
-upper and a lower index like $\sum_i x^ix_i$, we drop the sumation and assume
-that terms of type $x^ix_i$ are always summed over.
+Since we will have to deal which many indices, we will find a way to keep
+notation as compact as possible. We agree that whenever we have a summation over an
+upper and a lower index like $\sum_\mu \tensor{x}{_\mu}\tensor{x}{^\mu}$, we
+drop the sumation and assume that terms of type
+$\tensor{x}{_\mu}\tensor{x}{^\mu}$ are always summed over.
 \section{Propagation of Light Waves and the Line Element}
-(Pictures)
-Inertial System $I$:
-$P:$ Event of emission $(t_1,x_1,y_1,z_1)$\\
-$Q:$ Event of absorption $(t_2,x_2,y_2,z_2)$
+(Pictures)\\
+Inertial System $I$: 
+\begin{itemize}
+  \item $P:$ Event of emission of the ray $(ct_1,x_1,y_1,z_1)$
+  \item $Q:$ Event of absorption of the ray $(ct_2,x_2,y_2,z_2)$
+\end{itemize}
 The spatially distance between the events is
 \begin{equation}
 r=\left[(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2\right]^{\frac{1}{2}}\, .
@@ -54,25 +63,23 @@ We construct the quantity
 \begin{equation}
 {\Delta s}^2=-c^2(t_2-t_1)^2+(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2\, ,
 \end{equation}
-so that ${\Delta s}^2=0$ for light.\\
-Inertial System $I'$:
-$P:$ Event of emission $(t_1^\prime,x_1^\prime,y_1^\prime,z_1^\prime)$\\
-$Q:$ Event of absorption $(t_2^\prime,x_2^\prime,y_2^\prime,z_2^\prime)$
-\begin{equation}
-{\Delta
-s^\prime}^2=-c^2\left(t^\prime_2-t^\prime_1\right)^2
-+\left(x^\prime_2-x^\prime_1\right)^2
-+\left(y^\prime_2-y^\prime_1\right)^2
-+\left(z^\prime_2-z^\prime_1\right)^2\,.
-\end{equation}
-Again ${\Delta s^\prime}^2=0$ for light.\\
+so that ${\Delta s}^2=0$ for light.
+
+We consider another Inertial System $I'$, in which we the events are given by
+\begin{itemize}
+  \item $P:$ Event of emission $(ct_1^\prime,x_1^\prime,y_1^\prime,z_1^\prime)$
+  \item $Q:$ Event of absorption
+  $(ct_2^\prime,x_2^\prime,y_2^\prime,z_2^\prime)$
+\end{itemize}
+By the same reasoning we have ${\Delta s^\prime}^2=0$ for light.
 We define an infinitisimal interval, or \emph{line element}:
 \begin{equation}
 \dif s^2=-c^2\dif t^2+\dif x^2+\dif y^2+\dif z^2\, .
 \end{equation}
 (PICTURE)
-If the intervall is zero in one IS it should be zero in all IS. To relate the
-linelements of different systems to each other, we make the following thought:
+Our preliminary considerations lead to the following statement: if the intervall
+is zero in one inertial system, it should be zero in all. 
+To relate the linelements of different systems to each other, we make the following thought:
 Suppose we have three interial Systems $I,I_1,I_2$.
 The Systems $I_1$ and $I_2$ move at constant velocity $\vec{v}_1$ and $\vec{v}_2$ relative to $I$. Further
 $I_2$ moves with velocity $\vec{v}_{12}$ relative to $I_1$. The demand implies
@@ -110,7 +117,8 @@ If we introduce
 (\dif x^i)=\begin{pmatrix}
 \dif x\\
 \dif y
-\end{pmatrix}\,\quad ,(\delta_{ij})=\begin{pmatrix}
+\end{pmatrix}\,,\quad (\delta_{ij})
+=\begin{pmatrix}
 1 & 0\\
 0 & 1
 \end{pmatrix}\, .
@@ -164,7 +172,7 @@ We can use the metric to raise and lower indices:
 x_\nu=\tensor{\eta}{_\mu_\nu}x^\mu\, ,\quad x^\mu=\tensor{\eta}{^\mu^\nu}x_\nu\,
 .
 \end{equation}
-The trace of the metric is given by
+For example, the \emph{trace} of the metric is given by
 \begin{equation}
 \tensor{\eta}{^\mu_\mu}=\tensor{\eta}{^\mu^\nu}\tensor{\eta}{_\nu_\mu}
 =\tensor{\delta}{^\mu_\mu}=4\, .
@@ -177,7 +185,7 @@ coordinate systems must leave the line element invariant, i.e.
 \begin{equation}
 \dif {s^\prime}^2 = \eta_{\mu\nu}\dif {x^\prime}^\mu\dif
 {x^\prime}^\nu=\eta_{\mu\nu}\dif x^\mu\dif
-x^\nu = \dif s^2
+x^\nu = \dif s^2 \label{eq:invarline}
 \end{equation}
 We consider afine coordinate transformations 
 \begin{equation}
@@ -193,12 +201,12 @@ The invariance of the line element implies
 x^\mu\dif x^\nu \stackrel{!}{=} \dif s^2
 \end{equation}
 Independent of the shift $a^\mu$. We will therefore focus our attention towards
-the linerar transformation $\tensor{L}{^\mu_\nu}$. Equation (\ldots) implies
-that
+the linerar transformation $\tensor{L}{^\mu_\nu}$. Equation 
+\eqref{eq:invarline} implies that
 \begin{equation}
 \eta_{\mu\nu}=\tensor{L}{^\rho_\nu}\eta_{\rho\sigma}\tensor{L}{^\sigma_\nu}\label{eq:invariance}
 \end{equation}
-We can take a look at an infinitimal transformation that is, up to an order of
+We can take a look at an infinitimal transformation, that is up to an order of
 $\varepsilon^2$
 \begin{equation}
 \tensor{L}{^\mu_\nu}=\tensor{\delta}{^\mu_\nu}
@@ -231,7 +239,7 @@ We can
 classify the resulting transformations into two groups
 \subsubsection{Rotations}
 Rotations mix the spatial coordinates, but leave the time fixed. Consider for
-example an Rotation around $z$-Axis. Then we have
+example an rotation around $z$-axis. Then we have
 \begin{equation}
 x^\prime=x\cos\alpha+y\sin\alpha \, ,\quad y^\prime=-x\sin\alpha+y\cos\alpha \,
 .
@@ -349,10 +357,10 @@ a linear transformation keeps the origin fixed we have
 All together we have 10 independent (affine) transformations that leave the line
 element invariant. Namely:
 \begin{itemize}
-  \item 4 shifts by $a^\mu=(a^0,a^1,a^2,a^3)^\intercal$
+  \item 4 shifts by $a^\mu=(a^0,a^1,a^2,a^3)^{\transpose}$
   \item 3 rotations in space corresponding to three real angles
-  $\boldsymbol{\theta}=(\theta_1,\theta_2,\theta_3)^\intercal$ (Euler angles)
-  \item 3 boosts with constant velocity $\vec{v}=(v_1,v_2,v_3)^\intercal$
+  $\boldsymbol{\theta}=(\theta_1,\theta_2,\theta_3)^{\transpose}$ (Euler angles)
+  \item 3 boosts with constant velocity $\vec{v}=(v_1,v_2,v_3)^{\transpose}$
 \end{itemize}
 The Poincaré transformations form a 10 parameter group.
 \begin{table}
@@ -392,7 +400,32 @@ The Poincaré transformations form a 10 parameter group.
     \end{tabulars}
     \caption{Comparison of Newtonian theory and special relativity}
 \end{table}
-
+\subsection{fourvectors}
+There are 3 types of vectors:
+\begin{enumerate}
+\item \emph{Spacaelike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}>0$
+\item \emph{Lightlike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}=0$
+\item \emph{Timelike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}<0$
+\end{enumerate}
+All classes are transfomed ito themself by Lorentz transformation. There is a
+set of transformations that is forbidden by physical considerations: namely the
+Parity change $\vec{x}\to -\vec{x}$ and time reversal $t\to -t$ because this are
+no real symmetries of nature.
+We will mainly deal with timelike and lightlike vectors for which the time order
+does not change. For spacelike intervals the order can change. To remain causal
+all particles have to move at velocity $v\leq c$. This is in contrast to
+Newtonian theory where everything can affect everything, because the velocities
+are unbounded. A direct consequence of this is for example that even the two
+body problem has no exakt solution in special relativity.
+Four vectors
+\begin{align}
+\tensor{u}{^\mu}&:=\od{\tensor{x}{^\mu}}{\tau}=\gamma(\vec{v},c)^{\transpose}\quad
+\tensor{u}{_\mu}\tensor{u}{^\mu}=-1\\
+\tensor{p}{^\mu}&:=m\tensor{u}{^\mu}\quad
+\tensor{u}{_\mu}\tensor{u}{^\mu}=-m^2\\
+\tensor{a}{^\mu}&:=\od{\tensor{u}{^\mu}}{\tau}\quad
+\tensor{a}{_\mu}\tensor{a}{^\mu}=0 \text{ has no importance in SR}
+\end{align}
 \section{Lagrangian Formalism}
 We want to formulate special relativity in terms of a variation principle. 
 Therefore we consider massive particles, i.e. timelike paths. As a postulate we
@@ -486,6 +519,16 @@ vector potential $\tensor{A}{_\mu}$:
 \begin{equation}
 \tensor{F}{_\mu_\nu}=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,
 .
+\end{equation}
+The matrix form is 
+\begin{equation}
+\tensor{F}{^\mu^\nu}=
+\begin{pmatrix}
+                  0  &   -E_x/c &  -E_y/c &  -E_z/c \\
+                 E_x/c &   0  &  -B_z & B_y \\
+                 E_y/c & B_z &   0  &  -B_x \\
+                 E_z/c &  -B_y & B_x &   0  \\
+\end{pmatrix}\, .
 \end{equation}
 In tensor form the maxwell equations take a particular simple form
 \begin{equation}

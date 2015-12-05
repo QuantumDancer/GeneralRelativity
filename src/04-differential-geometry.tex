@@ -35,9 +35,9 @@ This means on every point in the $\mathbb{R}^{3+1}$ there is a (small) $\Sphere^
 The $\Sphere^7$ has 28 different differential structures, so the choice of
 such a structure affects the theory for the above reasons.
 \end{sidenote}
-All simple examples we come of can be embedded in a higher space. It holds true
-that every real $n$-dimensional Manifold can be embedded to $\Reals^{2n}$
-(This is however not true for complex, i.e. analytic manifolds).
+All simple examples we come of can be embedded in a higher space. The Whitney
+embedding theorem states that every real $n$-dimensional Manifold
+can be embedded to $\Reals^{2n}$ (This is however not true for complex, i.e. analytic manifolds).
 For example the $\Sphere^2$ can be interpreted as submanifold of the $\Reals^3$.
 However manifolds are objects that exists independent of such embeddings. 
 For example a torus can be thought of as a square with the opposite sides identified (leaving to the left results in re-entering in the left).
@@ -57,23 +57,30 @@ For example on a sphere an arrow connecting two points does not make much sense.
 We want to find a description of vectors as objects that are naturally related to the structure of the manifold independent of the embedding.
 There are three equivalent definitions for a vector:
 \begin{enumerate}
-    \item algebraic (mathematical, suitable for proofs)
-    \item physically
-    \item geometrically (ugly, but plastic)
+    \item Algebraic 
+    \item Physical
+    \item Geometrical 
 \end{enumerate}
 \subsection*{Definitions}
-\begin{definition}[Vector, algebraic]
-A vector is a derivation at the germ of a function at $p$.
-\end{definition}
-The germ is the set of all functions that are locally equal,i.e. vectors are local objects.
+We start by giving the algebraic definition which is the most
+abstract and prefered by mathematicans, because it is suitable for proofs.
+Vectors are identified with derivatices, which are formally defined by
 \begin{definition}[Derivation]
-A derivation $D$ satisfies the following rules for all $f,g\in C^\infty(\Reals)$ and $\lambda \in \Reals$:
+A derivation $D$ satisfies the following rules for all $f,g\in
+C^\infty(M,\Reals)$ and $\lambda \in \Reals$:
 \begin{align}
     D(af+bg) &=Df+Dg\\
     D(\lambda f)&=\lambda f\\
     D(fg)&= (Df)g+f(Dg)
 \end{align}
 \end{definition}
+We then define a vector by 
+\begin{definition}[Vector,
+algebraic] A vector is a derivation at the germ at $p$.
+\end{definition}
+The germ is the set of all functions $f\in C^\infty(M,\Reals)$, that are defined
+in $p$ where we identify all functions that are equal in some neighbourhood
+of $p$, i.e. vectors are local objects.
 Given two vectors we can construct a new one, the \emph{Lie Braket}
 \begin{equation}
     [X,Y]f:=X(Yf)-Y(Xf)\, .
@@ -86,7 +93,7 @@ Subtracting $YX(fg)$ proves that $[X,Y]$ is indeed a vector. The fact that we
 have a natural vectorspace structure on the set of vectors at $p$ motivates the
 following
 \begin{definition}
-The Tangentspace $T_pM$ is the space of all vectors in a point $p\in M$.
+The Tangentspace $T_pM$ is the space of all vectors in $p\in M$.
 \end{definition}
 A basis of $T_pM$ is given by the derivation along the
 coordinates $\partial_i$, therefore its dimension is equal to that of the manifold $M$.
@@ -112,24 +119,34 @@ Comparing the coefficients gives the vector transformation law
 \begin{equation}
     \overline{a}^i=a^k\pd{\overline{x}^i}{{x^k}}\label{eq:coefftrafo}\, .
 \end{equation}
-Sometimes a vector is defined as a object that transforms according to \ref{eq:coefftrafo} under a change of coordinates, 
-this is the physical definition. It is a priori not clear that a vector also corresponds to a geometrical object. 
+\begin{definition}[Vector,
+physical] A vector with components $A^i$ is a object that transforms according
+to \ref{eq:coefftrafo} under a change of coordinates.
+\end{definition}
 Consider a curve on $M$, i.e. a map $\gamma:\mathbb{R}\to M$, with
 $\gamma(0)=p$, $\dot{\gamma}(0)=X$. Then $D_X f=\od{}{t}(f\circ\gamma)(0)$ is
 a derivative, namely the directional derivative along $X$.
-For the special curves $\gamma_i(t)=p+te_i$
+For the special curves $\gamma_i(t)=p+te_i$, 
 $D_{\dot{\gamma}_i} f=\partial_if$, so we can identify the derivatives with
 the geometrical tangent space.
-Since we have a basis we can work in local coordinates, 
-e.g. let $A=A^i\pd{}{{x^i}}$, $B=B^i\pd{}{{x^i}}$, then the Lie bracket reads
+
+Since we have a basis, we can work in local coordinates.
+\begin{example}[Lie brackets in local coordinates]
+Let $A=A^i\pd{}{{x^i}}$, $B=B^i\pd{}{{x^i}}$ be vectors, then the Lie bracket
+reads
 \begin{equation}
     [A,B]^j=A^i\partial_iB^j-B^i\partial_iA^i\, .
 \end{equation}
+\end{example}
 Since the tangent space is a vector space, we can define its dual space
+\begin{definition}[Cotangentspace] The Cotangentspace is defined as the set of
+linear maps from $T_pM$ to $\mathbb{R}$
 \begin{equation}
-    T_pM^*=\{L:T_pM\to \mathbb{R}\, |\, L \text{ linear}\}\, ,
+    T_pM^*=\{L:T_pM\to \mathbb{R}\, |\, L \text{ linear}\}\, .
 \end{equation}
-which is again a vector space of the same dimension. Its elements are called dual or covariant vectors.
+\end{definition}
+The Cotangentspace is again a vector space of the same dimension. Its elements
+are called dual or covariant vectors.
 We can define a basis on $	T_pM^*$, which we denote by $\dif x^i$ and  which acts on $T_pM$ via
 \begin{equation}
     \dif x^i(\partial_j)=\delta^i_j\, . \label{eq:orthdual}
@@ -139,8 +156,8 @@ It can easily deduced by \eqref{eq:orthdual} that the components of a dual vecto
     \overline{a}_i=\pd{x^k}{{\overline{x}^i}}a_k\, .
 \end{equation}
 \begin{remark}[Dual vectors in flat space]
-If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the component of a vector and a dual vector respectively, 
-then the transformation can be written in matrix form
+If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the components of a vector and a
+dual vector respectively, then the transformation can be written in matrix form
 \begin{align}
     \vec{a}&\to V\vec{a}\, ,\\
     \vec{b}&\to\left(V^\intercal\right)^{-1}\vec{b}\, ,
@@ -270,7 +287,8 @@ can also determine the covariant derivative of a dual vector. Therefore we
 consider the scalar $A_iB^i$. Since the covariant derivative satisfies the
 Leibniz rule we get
 \begin{align}
-(A_iB^i);j = \tensor{A}{_i_;_j}\tensor{B}{^i}+\tensor{A}{_i}\tensor{B}{^i_;_j}
+\tensor{(A_iB^i)}{_{;j}} =
+\tensor{A}{_i_;_j}\tensor{B}{^i}+\tensor{A}{_i}\tensor{B}{^i_;_j}
 \end{align}
 But for scalars the covariant derivative is identical to the normal derivative
 so that 
@@ -295,3 +313,47 @@ aditional term containing a contraction with the affinity $\Gamma^i_{jk}$.
 We now want to consider curved spaces. This can not immediatly be determined by
 the metric, for example the polar coordinates do not look flat even though they
 describe the ordinary $\Reals^2$. (PICTURES)
+\subsection{Riemanian Curvature Tensor}
+\ldots
+We can contract indices on the Rieman Tensor
+\begin{equation}
+\tensor{R}{^i_i_k_l}=\pd{{\Gamma^i_{il}}}{{x^k}}-\pd{{\Gamma^i_{ik}}}{{x^l}}
+\end{equation}
+which is zero for a metric affinity. The Ricci tensor is given by
+\begin{equation}
+\tensor{R}{_j_k}=\tensor{R}{^i_j_k_i}\, .
+\end{equation}
+Because of the symmetrie this are all independent contractions. Notice that at
+this point we cannot raise or lower indices to contract different indices.
+Since we can express the Rieman tensor in terms of commutators ther is a also a
+symmetry that can be derived from the Jacobi identity:
+Physics can be described in terms of differential equations. We for example
+would like to have a object similiar to the laplacian in curved coordinates.
+However $\partial_i\partial_i$ is not coordinate invariant. We therefore
+introduce a metric. The equivalence principle implies that space is locally
+Minkovski.
+\begin{sidenote}
+There are several theories that do not need a metric. For example 3d gravity.
+\end{sidenote}
+Inner product 
+\begin{equation}
+\langle A,B\rangle=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{B}{^j}
+\end{equation}
+Norm
+\begin{equation}
+\|A\|^2=\langle A,A\rangle=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{A}{^j}
+\end{equation}
+Since the connection and the metric are not related, we stil don't have a lenght
+scale on the manifold
+\begin{equation}
+\tensor{R}{_i_j_k_l}:=\tensor{g}{_i_a}\tensor{R}{^a_j_k_l}
+\end{equation}
+Only useful if $R$ and $g$ are related i.e. metric connection.
+(Bilder)
+A curve is a map $\gamma:\Reals\to M$. The parametrisation is arbitary e.g.
+\begin{equation}
+\begin{split}
+\gamma:\, &\Reals\to \Reals^2\\
+& t\mapsto \left(\frac{1}{2}t^2,\frac{1}{2}t^2\right)^{\transpose}
+\end{split}
+\end{equation} 
