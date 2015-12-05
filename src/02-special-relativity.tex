@@ -169,7 +169,8 @@ The trace of the metric is given by
 \tensor{\eta}{^\mu_\mu}=\tensor{\eta}{^\mu^\nu}\tensor{\eta}{_\nu_\mu}
 =\tensor{\delta}{^\mu_\mu}=4\, .
 \end{equation}
-We say $\tensor{\eta}{_\mu_\nu}$ has signature $(-,+,+,+)$
+We say $\tensor{\eta}{_\mu_\nu}$ has signature $(-,+,+,+)$ or $(1,3)$, because
+it has 1 negative and three positive eigenvalues.
 \subsection{Poincaré-transformation}
 To be consistent with a constant speed of light a transformation between two
 coordinate systems must leave the line element invariant, i.e.
@@ -228,7 +229,7 @@ The transformations can be created from the generators
 \end{equation}
 We can
 classify the resulting transformations into two groups
-\subsubsection*{Rotations}
+\subsubsection{Rotations}
 Rotations mix the spatial coordinates, but leave the time fixed. Consider for
 example an Rotation around $z$-Axis. Then we have
 \begin{equation}
@@ -453,9 +454,9 @@ convinient to rename the constant $c$) Even though the mass should be so small
 that the de Broglie wavelength is of the order of the size of the universe,
 massive photons would have a huge impact.
 \end{sidenote}
-\begin{sidenote}[Complex notation]
+\begin{sidenote}[Complex Time]
 We could in principle make a substitution $t\to \imI t$. Which would free us
-from the need to distingish between co and contravariant vectors, because the
+from the need to distingish between co- and contravariant vectors, because the
 inner product would be given as
 \begin{equation}
 g(x,y)=\left(\imI x^0\right)\left(\imI
@@ -483,7 +484,7 @@ and similar for an arbitary number of indices. A typical example is the field
 strength tensor $\tensor{F}{^\mu^\nu}$ of electrodynamics given in terms of the
 vector potential $\tensor{A}{_\mu}$:
 \begin{equation}
-\tensor{F}{^\mu^\nu}=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,
+\tensor{F}{_\mu_\nu}=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,
 .
 \end{equation}
 In tensor form the maxwell equations take a particular simple form
@@ -579,11 +580,39 @@ $\tensor{D}{^\mu}=-\tensor{S}{^\mu^\nu_{,\nu}}$. Indeed a potential is given by
 .
 \end{equation}
 We can check 
-(Rechnungen\ldots.)
-
+\begin{equation}
+\tensor{S}{^\mu^\nu_{,\nu}}=\tensor{F}{^\mu_\alpha_{,\nu}}\tensor{F}{^\nu^\alpha}+
+\tensor{F}{^\mu_\alpha}\tensor{F}{^\nu^\alpha_{,\nu}}
+-\frac{1}{2}\tensor{\eta}{^\mu^\nu}\tensor{F}{_\alpha_\beta_{,\nu}}\tensor{F}{^\alpha^\beta}\,
+.
+\end{equation}
+\begin{align}
+\tensor{F}{^\mu_\alpha_{,\nu}}\tensor{F}{^\nu^\alpha}
+&=\tensor{F}{^\mu_\nu_{,\alpha}}\tensor{F}{^\alpha^\nu}
+=\tensor{F}{^\nu_\mu_{,\alpha}}\tensor{F}{^\nu^\alpha}
+\\
+\tensor{F}{^\mu_\alpha}\tensor{F}{^\nu^\alpha_{,\nu}}&=\\
+\tensor{\eta}{^\mu^\nu}\tensor{F}{_\alpha_\beta_{,\nu}}\tensor{F}{^\alpha^\beta}
+&=\tensor{F}{_\alpha_\nu^{,\mu}}\tensor{F}{^\alpha^\nu}
+= -\tensor{F}{_\alpha_\nu^{,\mu}}\tensor{F}{^\nu^\alpha}
+\,
+.
+\end{align}
 The Lagrangian of electrodynamics is given by
 \begin{equation}
 \mathcal{L}=-\frac{1}{2}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}+\tensor{J}{_\mu}\tensor{A}{^\mu}-\frac{1}{2}m^2\tensor{A}{_\mu}\tensor{A}{^\mu}\,
 .
 \end{equation}
+Was ist s haben wir ko oder kontravariante form ist die matrix so richtig?
+%\begin{equation}
+%\tensor{S}{_\mu_\nu}=
+%\begin{pmatrix}
+%u&\vec{S}^\transpose\\
+%\vec{S}& \tensor{t}{_i_j}
+%\end{pmatrix}
+%\end{equation}
+Where
+$\tensor{t}{_i_j}=\tensor{E}{_i}\tensor{E}{_j}+\tensor{E}{_i}\tensor{E}{_j}-\frac{1}{2}\tensor{\delta}{_i_j}\left(\vec{E}^2+\vec{B}^2\right)$
+Poynting vector $\vec{S}=\vec{E}\times\vec{B}$ and energy density $u
+=\frac{1}{2}\left(\vec{E}^2+\vec{B}^2\right)$
 \end{example}

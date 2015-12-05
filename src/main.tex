@@ -18,12 +18,30 @@
 \usepackage{commath}
 \usepackage{dsfont}		% double stroke characters
 \usepackage{braket}
+\usepackage{babel}
+\usepackage{xcolor}
+\usepackage{amsthm,thmtools}
+\usepackage{mdframed}
+\usepackage{sectsty}
+
+% Defining theorem environment.
+
+\makeatletter
+
+\newenvironment{thm}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  %\setlength{\shadeboxrule}{1.5pt}%
+  \begin{thms}[#1]\hspace*{1mm}%
+}{\end{thms}}
 
 %science
 \usepackage{units}
 \usepackage{bpchem}	% type­set chem­i­cal names, for­mu­lae, etc
 
 %layout + style
+\definecolor{section_color}{rgb}{0.35,0.0,0}								% colors
+\definecolor{MyGray}{rgb}{0.96,0.97,0.98}
 \usepackage[automark,headsepline]{scrlayer-scrpage} 						% headings
 \renewcommand*{\headfont}{\normalfont}										% nicht kursive Kopfzeile
 \usepackage{setspace}														% set space be­tween lines
@@ -31,6 +49,34 @@
 \usepackage[section]{placeins}												% de­fines a \FloatBar­rier com­mand, be­yond which floats may not pass.
 \usepackage[protrusion=true,expansion=true]{microtype}						% sublim­i­nal re­fine­ments to­wards ty­po­graph­i­cal per­fec­tion
 \addtokomafont{caption}{\small\linespread{1}\selectfont}					% Ändert Schriftgröße und Zeilenabstand bei captions
+\declaretheoremstyle[														
+  spaceabove = 6pt,
+  spacebelow = 6pt,
+  headfont = \color{section_color}\sffamily\bfseries,
+  notefont = \mdseries,
+  notebraces = {(}{)},
+  bodyfont = \normalfont,
+  postheadspace = 1em,
+  qed = ,
+]{mythmstyle}
+\declaretheoremstyle[														
+  spaceabove = 6pt,
+  spacebelow = 6pt,
+  headfont = \color{section_color}\sffamily\bfseries,
+  notefont = \mdseries,
+  notebraces = {(}{)},
+  bodyfont = \normalfont,
+  postheadspace = 1em,
+  qed = ,
+]{myrmstyle}
+\chapterfont{\color{section_color}}
+\sectionfont{\color{section_color}}
+\subsectionfont{\color{section_color}}
+\subsubsectionfont{\color{section_color}}
+\paragraphfont{\color{section_color}}
+\renewcommand{\labelitemi}{\color{section_color}\scriptsize$\blacksquare$} 
+\renewcommand{\labelenumi}{\color{section_color}\textsf{\textbf{\arabic{enumi}}}.}
+%\def\labelitemi{\sqbullet}
 
 %graphics
 \usepackage{graphicx}
@@ -109,9 +155,26 @@
 
 %new environments
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
+\declaretheorem[
+  style = mythmstyle,
+  name = Definition,
+  shaded = {
+    bgcolor = MyGray,
+    padding = 2mm,
+    textwidth = 0.98\textwidth
+}
+]{definition}
 \theoremstyle{remark}
-\newtheorem*{remark}{Remark}
+%\newtheorem*{remark}{Remark}
+\declaretheorem[
+  style = myrmstyle,
+  name = Remark,
+  shaded = {
+    bgcolor = white,
+    padding = 2mm,
+    textwidth = 0.98\textwidth
+}
+]{remark}
 \newtheorem*{sidenote}{Sidenote}
 \newtheorem*{example}{Example}
 \newenvironment{tabulars}[1]{\renewcommand*{\arraystretch}{2}\tabular{#1}}{\endtabular}		% stretched table
