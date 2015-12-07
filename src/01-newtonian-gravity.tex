@@ -1,75 +1,78 @@
 \chapter{Newtonian Gravity}
-In Newtonian physics we assume that we have absolute space and time that can be described by the a set of numbers $x^1,x^2,x^3,t$. We express the coordinates as functions of time
+In Newtonian physics we assume that we have absolute space and time that can be described by the a set of numbers $x^1,x^2,x^3,t$.
+We express the coordinates as functions of time.
 \section{Forces}
-The force $\vec{F}_{AB}$, a massive body $A$ with mass $m_A$ exerts on another massive body $B$ with mass $m_B$ is given by
+The force $\vec{F}_{AB}$, which a massive body $A$ with mass $m_A$ exerts on another massive body $B$ with mass $m_B$, is given by
 \begin{equation}
-    \vec{F}_{AB}=-m_B\frac{G\textsubscript{N}m_A}{r^2}\vec{e}_r\, .
+    \vec{F}_{AB}=-m_B\frac{G\textsubscript{N}m_A}{r^2}\vec{e}_r\, ,
 \end{equation}
-Where $G\textsubscript{N}$ denotes \emph{Newton's constant}, numerically equal
-to $G\textsubscript{N}\approx \unitfrac[6.673\cdot 10^{-11}]{m^3}{kgs}$. 
-Although there is no need for $G\textsubscript{N}$ to be constant over time, 
-there is evidence that the relative variation is less than $10^{-12}$ per year. 
-The force can be expressed in terms of \emph{gravitational potential} $\Phi$
+where $G\textsubscript{N}$ denotes \emph{Newton's constant}, numerically equal
+to $G\textsubscript{N}\approx \unitfrac[6.673\cdot 10^{-11}]{m^3}{kg\,s}$.
+Although there is no need for $G\textsubscript{N}$ to be constant over time,
+there is evidence that the relative variation is less than $10^{-12}$ per year.
+The force can be expressed in terms of \emph{gravitational potential} $\Phi$:
 \begin{equation}
     \vec{F}_{AB}=-m_B\nabla\left(-\frac{G\textsubscript{N}m_A}{r}\right)=:
     -m_B\nabla\Phi(\vec{r}_B)\, .
 \end{equation}
-Given $N$ particles labelled by $n$, the total force $B$ experiences is
+Given $N$ particles labeled by $n$, the total force $B$ experiences is
 \begin{equation}
     \vec{F}_{B}=-\sum_n \vec{F}_{nB}\, .
 \end{equation}
-The potential at $\vec{r}$ is then easitly found to be
+The potential at $\vec{r}$ is then easily found to be
 \begin{equation}
     \Phi(\vec{r})=-G\textsubscript{N}\sum_n\frac{m_n}{|\vec{r}-\vec{r}_n|}\, .
 \end{equation}
 In general, we assume a mass distribution $\rho(\vec{r})$ and the sum is
-replaced by an integral
+replaced by an integral:
 \begin{equation}
-    \Phi(\vec{r})=-G\textsubscript{N}\int_{\Reals^3}\dif{\vec{r}^{\prime}}\frac{\rho(\vec{r}^{\prime})}{|\vec{r}-\vec{r}^{\prime}|}\,
-    .\end{equation}
-\section{Comparison with Electrostatics}
-The classical theory of gravity bears a striking similarity to electrostatics. 
+    \Phi(\vec{r}) = -G\textsubscript{N}\int_{\Reals^3}\dif{\vec{r}^{\prime}}
+    \frac{\rho(\vec{r}^{\prime})}{|\vec{r}-\vec{r}^{\prime}|}\,.
+\end{equation}
+\section{Comparison with electrostatics}
+The classical theory of gravity bears a striking similarity to electrostatics.
 To make this clearer, we introduce the gravitational field
 $\vec{g}(\vec{r}):= -\nabla\Phi(\vec{r})$.
-\begin{table}
-    \centering
-    \begin{tabulars}{lll}
-        \toprule
-        &Newtonian Gravity&Electrostatics\\
-        \midrule
-        Force&$\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
-        Potential
-        &$\Phi\textsubscript{el}(\vec{r})=q\frac{kQ}{r}$
-        &$\Phi\textsubscript{g}(\vec{r})=m\frac{G\textsubscript{N}M}{r}$\\
-        Field
-        &$\vec{E}(\vec{r})=-\nabla\Phi\textsubscript{el}(\vec{r})$
-        &$\vec{g}(\vec{r})=-\nabla\Phi\textsubscript{g}(\vec{r})$\\
-        Laplace Equation
-        &$\Delta\Phi\textsubscript{el}=-4\pi k\rho\textsubscript{el}(\vec{r})$&
-        $\Delta\Phi\textsubscript{g}=4\pi
-        G\textsubscript{N}\rho\textsubscript{g}(\vec{r})$
-        \\
-        \bottomrule
-    \end{tabulars}
-    \caption{Comparison of electrostatics and Newtonian gravity}
+\begin{table}[htb]
+    \caption{Comparison of electrostatics and Newtonian gravity.}
+    \begin{center}
+        \begin{tabulars}{lll}
+            \toprule
+            &Newtonian Gravity&Electrostatics\\
+            \midrule
+            Force&$\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
+            Potential
+            &$\Phi\textsubscript{el}(\vec{r})=q\frac{kQ}{r}$
+            &$\Phi\textsubscript{g}(\vec{r})=m\frac{G\textsubscript{N}M}{r}$\\
+            Field
+            &$\vec{E}(\vec{r})=-\nabla\Phi\textsubscript{el}(\vec{r})$
+            &$\vec{g}(\vec{r})=-\nabla\Phi\textsubscript{g}(\vec{r})$\\
+            Laplace Equation
+            &$\Delta\Phi\textsubscript{el}=-4\pi k\rho\textsubscript{el}(\vec{r})$&
+            $\Delta\Phi\textsubscript{g}=4\pi
+            G\textsubscript{N}\rho\textsubscript{g}(\vec{r})$
+            \\
+            \bottomrule
+        \end{tabulars}
+    \end{center}
 \end{table}
-\begin{example}[Field of Spherical Mass Distribution]
-Assume we have a spherical mass distribution i.e. $\rho(\vec{r})=\rho(r)$. By
-symmetry considerations it follows, that the gravitational field can be
+\begin{example}[Field of a spherical mass distribution]
+Assume we have a spherical mass distribution, i.e.\ $\rho(\vec{r})=\rho(r)$.
+By symmetry considerations it follows, that the gravitational field can be
 expressed by
 \begin{equation}
-\vec{g}(\vec{r})=g(r)\vec{e}_r\, .
+    \vec{g}(\vec{r})=g(r)\vec{e}_r\, .
 \end{equation}
-We integrate the divergence of the field over a ball $B$ of radius $r$ 
+We integrate the divergence of the field over a ball $B$ of radius $r$
 \begin{equation}
-    \int_B\dif{\vec{r}}\,\nabla\vec{g}=-\int_B\dif{\vec{r}}\, \Delta\Phi 
+    \int_B\dif{\vec{r}}\,\nabla\vec{g}=-\int_B\dif{\vec{r}}\, \Delta\Phi
     = -4\pi G\textsubscript{N}\int_B\dif{\vec{r}}\,\rho(r)= -4\pi
     G\textsubscript{N} M\, ,
 \end{equation}
-where $M$ is the mass enclosed in $B$. On the other hand we can use Gauss law to deduce
+where $M$ is the mass enclosed in $B$. On the other hand we can use Gauss's theorem to deduce
 \begin{equation}
     \int_B\dif{\vec{r}}\,\nabla\vec{g}=\oint_{\partial B}\dif{\vec{A}}\cdot
-    \vec{g} = \oint_{\Omega}\dif{\Omega}\, g(r)r^2=4\pi r^2g(r)\,
+    \vec{g} = \oint_{\Omega}\dif{\Omega}\, g(r)r^2=4\pi r^2g(r)\, .
 \end{equation}
 Together the gravitational field is given by
 \begin{equation}
@@ -78,22 +81,23 @@ Together the gravitational field is given by
 \end{example}
 \subsection{Inertial systems}
 \begin{definition}
-A inertial system is a system in which force-free particles move with constant uniform velocity on straight lines.
+An inertial system is a system in which force-free particles move with constant uniform velocity on straight lines.
 \end{definition}
-\subsection*{Weak Equivalence Systems}
+\subsection*{Weak equivalence systems}
 Newtons first law reads
 \begin{equation}
-    \vec{F}=m\textsubscript{I}\ddot{\vec{x}}
+    \vec{F}=m\textsubscript{I} \ddot{\vec{x}} \, ,
 \end{equation}
 where $m\textsubscript{I}$ is the inertial mass that works against the acceleration of the body.
-The force a body with 'active' mass $m\textsubscript{g,act.}$ exerts on another
-body with mass $m\textsubscript{g,pass.}$
+The force which a body with ``active'' mass $m\textsubscript{g,act.}$ exerts on another
+body with mass $m\textsubscript{g,pass.}$ is given by 
 \begin{equation}
-    \vec{F}=m\textsubscript{g,pass.}\frac{G\textsubscript{N}m\textsubscript{g,act.}}{r^2}\vec{e}_r
+    \vec{F}=m\textsubscript{g,pass.}\frac{G\textsubscript{N}m\textsubscript{g,act.}}{r^2}\vec{e}_r \, .
 \end{equation}
-A priori there is no reason to assume any relation between this masses. 
-The first question one might ask is whether the active and the passive mass are equal. 
+A priori, there is no reason to assume any relation between this masses.
+The first question one might ask is whether the active and the passive mass are equal.
 Suppose we have two masses $A$ and $B$. Using Newtons first law, we can explicitly write
 \begin{equation}
-    m^{B}_{\text{i}}\ddot{\vec{x}}=\vec{F}_{AB}=-	m^{B}_{\text{p}}\frac{G\textsubscript{N}m^{A}_{\text{a}}}{r^2}\vec{e}_r
+    m^{B}_{\text{i}}\ddot{\vec{x}}=\vec{F}_{AB}=-	m^{B}_{\text{p}}\frac{G\textsubscript{N}m^{A}_{\text{a}}}{r^2}\vec{e}_r \, .
 \end{equation}
+%TODO finish chapter 1
