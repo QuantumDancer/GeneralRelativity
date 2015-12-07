@@ -119,7 +119,8 @@
     pdfnewwindow=true,      % links in new window
     pdfborder={0 0 1},		% no border for links
     colorlinks=false,		% false: black links; true: colored links
-    linkcolor=blue,         % color of internal links (change box color with linkbordercolor)
+    linkcolor=section_color,         % color of internal links (change box color with
+    % linkbordercolor)
     citecolor=green,        % color of links to bibliography
     filecolor=magenta,      % color of file links
     urlcolor=blue			% color of external links
@@ -138,7 +139,7 @@
 \newcommand{\Reals}{\ensuremath{\mathbb{R}}}
 \newcommand{\Complex}{\ensuremath{\mathbb{C}}}
 \newcommand{\Sphere}{\ensuremath{\mathbb{S}}}
-\newcommand{\transpose}{^\intercal}
+\newcommand{\transpose}{^{^\intercal}}
 \newcommand{\cSym}[3]{\ensuremath{\begin{Bmatrix} #1 \\ #2 #3 \end{Bmatrix}}}
 \newcommand{\csym}[3]{\ensuremath{[#1 #2,\, #3]}}
 \newcommand{\affin}[3]{\ensuremath{\Gamma^{#1}_{#2 #3}}}
@@ -175,8 +176,26 @@
     textwidth = 0.98\textwidth
 }
 ]{remark}
-\newtheorem*{sidenote}{Sidenote}
-\newtheorem*{example}{Example}
+\declaretheorem[
+  style = myrmstyle,
+  name = Sidenote,
+  shaded = {
+    bgcolor = white,
+    padding = 2mm,
+    textwidth = 0.98\textwidth
+}
+]{sidenote}
+\declaretheorem[
+  style = myrmstyle,
+  name = Example,
+  shaded = {
+    bgcolor = white,
+    padding = 2mm,
+    textwidth = 0.98\textwidth
+}
+]{example}
+%\newtheorem*{sidenote}{Sidenote}
+%\newtheorem*{example}{Example}
 \newenvironment{tabulars}[1]{\renewcommand*{\arraystretch}{2}\tabular{#1}}{\endtabular}		% stretched table
 
 %%% DOCUMENT %%%

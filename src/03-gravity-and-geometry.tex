@@ -48,29 +48,29 @@ Plugging this into \eqref{eq:cartline} gives the line element in polar coordinat
 In matrix form
 \begin{equation}
     \dif s^2=
-    \begin{pmatrix}
+    \begin{bmatrix}
         \dif r& \dif \varphi
-    \end{pmatrix}
-    \begin{pmatrix}
+    \end{bmatrix}
+    \begin{bmatrix}
         1& 0\\
         0& r^2\\
-    \end{pmatrix}
-    \begin{pmatrix}
+    \end{bmatrix}
+    \begin{bmatrix}
         \dif r\\ \dif \varphi
-    \end{pmatrix}\, .
+    \end{bmatrix}\, .
 \end{equation}
 The matrix
 \begin{equation}
     g(\vec{r})=
-    \begin{pmatrix}
+    \begin{bmatrix}
         1& 0\\
         0& r^2\\
-    \end{pmatrix}\, ,
+    \end{bmatrix}\, ,
 \end{equation}
 is called the \emph{metric}.
 In general we have
 \begin{equation}
-    \dif s^2 = g_{ij}\dif x^i\dif x^j
+    \dif s^2 = g_{ij}\dif x^i\dif x^j\, .
 \end{equation}
 The idea is to keep the law of inertia, i.e. particles still move on straight
 line. However, we need to generalize the concept of a 'straight' line, in a
@@ -100,25 +100,21 @@ In the case at hand the equations are
     0=\tensor{g}{_i_l}\tensor{\ddot{x}}{^j}+\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} - 
     \partial_l g_{ij}\right)\dot{x}^j\dot{x}^l\, . \label{eq:PreGeo}
 \end{equation}
-\begin{definition}[Christoffel symbols of the first kind]
 The term invoking derivatives of the metric defines the \emph{Christoffel
 symbols of the first kind}
 \begin{equation}
     \csym{i}{j}{l}:=\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} -
     \partial_l g_{ij}\right)\, .
 \end{equation}
-\end{definition}
 It is convenient to multiply \eqref{eq:PreGeo} by the inverse metric $g^{ki}$ so that we obtain the \emph{geodesic equation}
 \begin{equation}
     0 = \od[2]{x^i}{s}+\cSym{i}{j}{k}\od{x^j}{s}\od{x^k}{s}\, .
 \end{equation}
 Where $\cSym{i}{j}{k}$ are the \emph{Christoffel symbols of the second kind}
-\begin{definition}[Christoffel symbols of the second kind]
 \begin{equation}
    \cSym{i}{j}{k}:=g^{km}\csym{m}{j}{k}=\frac{1}{2}g^{il}\left(\partial_i
     g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
 \end{equation}
-\end{definition}
 % remark is obsolete as long as bracket notation for christoffel symbols is used
 %\begin{remark}
 %Although the notation looks as the Christoffel symbols form a tensor, however

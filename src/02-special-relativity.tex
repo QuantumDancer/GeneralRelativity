@@ -114,50 +114,50 @@ For an infinitisimal distance $\dif l$ we recover
 \end{equation}
 If we introduce
 \begin{equation}
-(\dif x^i)=\begin{pmatrix}
+(\dif x^i)=\begin{bmatrix}
 \dif x\\
 \dif y
-\end{pmatrix}\,,\quad (\delta_{ij})
-=\begin{pmatrix}
+\end{bmatrix}\,,\quad (\delta_{ij})
+=\begin{bmatrix}
 1 & 0\\
 0 & 1
-\end{pmatrix}\, .
+\end{bmatrix}\, .
 \end{equation}
 We can expand the formula for the infinitisimal element and obtain
 \begin{equation}
-\dif l^2=\begin{pmatrix}
+\dif l^2=\begin{bmatrix}
 \dif x & 
 \dif y
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 1 & 0\\
 0 & 1
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 \dif x\\
 \dif y
-\end{pmatrix}\, .
+\end{bmatrix}\, .
 \end{equation}
 Which we do to point out the similarity to the line element $\dif s^2$
 \begin{equation}
-\dif s^2=\begin{pmatrix}
+\dif s^2=\begin{bmatrix}
 c\dif t & 
 \dif x & 
 \dif y &
 \dif z 
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 -1 & 0 & 0 & 0\\
 0  & 1 & 0 & 0\\
 0  & 0 & 1 & 0\\
 0  & 0 & 0 & 1\\
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 c\dif t\\
 \dif x\\
 \dif y\\
 \dif z\\
-\end{pmatrix}=:\eta_{\mu\nu}\dif x^\mu\dif x^\nu\, .
+\end{bmatrix}=:\eta_{\mu\nu}\dif x^\mu\dif x^\nu\, .
 \end{equation}
 We call the matrix $\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$ the
 \emph{Mikovski-metric}. It has some obvious properties:
@@ -247,33 +247,33 @@ x^\prime=x\cos\alpha+y\sin\alpha \, ,\quad y^\prime=-x\sin\alpha+y\cos\alpha \,
 The infinitisimal generator is 
 \begin{equation}
  \tensor{\omega}{^\mu_\nu}
-  =\begin{pmatrix}
+  =\begin{bmatrix}
   0&0 & 0&0\\
   0&0 &1&0\\
   0&-1&0 &0\\
   0&0 &0 &0
-  \end{pmatrix}\, 
+  \end{bmatrix}\, 
 \end{equation}
 and the transformation can be expressed in matrix form
 \begin{equation}
-  \begin{pmatrix}
+  \begin{bmatrix}
   ct\\
   x\\
   y\\
   z\\
-  \end{pmatrix}=
-  \begin{pmatrix}
+  \end{bmatrix}=
+  \begin{bmatrix}
   1&0 & 0&0\\
   0&\cos\alpha &\sin\alpha&0\\
   0&-\sin\alpha&\cos\alpha &0\\
   0&0 &0 &1
-  \end{pmatrix}
-  \begin{pmatrix}
+  \end{bmatrix}
+  \begin{bmatrix}
   ct^\prime\\
   x^\prime\\
   y^\prime\\
   z^\prime
-  \end{pmatrix}
+  \end{bmatrix}
 \end{equation}
 \subsubsection*{Boosts}
 Boosts can be thought of as rotations between time and spacial coordinates. We
@@ -291,33 +291,33 @@ a linear transformation keeps the origin fixed we have
   The generator is 
   \begin{equation}
   \tensor{\omega}{^\mu_\nu}
-  =\begin{pmatrix}
+  =\begin{bmatrix}
   0&1 & 0&0\\
   1&0 &0&0\\
   0&0&0 &0\\
   0&0 &0 &0
-  \end{pmatrix}\,.
+  \end{bmatrix}\,.
   \end{equation}
   The matrixform of the transformation is
   \begin{equation}
-  \begin{pmatrix}
+  \begin{bmatrix}
   ct\\
   x\\
   y\\
   z\\
-  \end{pmatrix}=
-  \begin{pmatrix}
+  \end{bmatrix}=
+  \begin{bmatrix}
   \cosh\psi&\sinh\psi & 0&0\\
   \sinh\psi&\cosh\psi &0&0\\
   0&0&1 &0\\
   0&0 &0 &1
-  \end{pmatrix}
-  \begin{pmatrix}
+  \end{bmatrix}
+  \begin{bmatrix}
   ct^\prime\\
   x^\prime\\
   y^\prime\\
   z^\prime
-  \end{pmatrix}\, .
+  \end{bmatrix}\, .
   \end{equation}
   The parameter $\psi$ is not related to a phisical quantity yet. We may ask to which 
   velocity $v$ does this boost corespond? 
@@ -342,12 +342,12 @@ a linear transformation keeps the origin fixed we have
   \end{equation}
   Therefore an alternative form is given by
   \begin{equation}
-  \tensor{L}{^\mu_\nu}=\begin{pmatrix}
+  \tensor{L}{^\mu_\nu}=\begin{bmatrix}
   \gamma&\beta\gamma & 0&0\\
   \beta\gamma&\gamma &0&0\\
   0&0&1 &0\\
   0&0 &0 &1
-  \end{pmatrix}
+  \end{bmatrix}
   \end{equation}
   Which gives 
   \begin{align}
@@ -357,10 +357,10 @@ a linear transformation keeps the origin fixed we have
 All together we have 10 independent (affine) transformations that leave the line
 element invariant. Namely:
 \begin{itemize}
-  \item 4 shifts by $a^\mu=(a^0,a^1,a^2,a^3)^{\transpose}$
+  \item 4 shifts by $a^\mu=(a^0,a^1,a^2,a^3)\transpose$
   \item 3 rotations in space corresponding to three real angles
-  $\boldsymbol{\theta}=(\theta_1,\theta_2,\theta_3)^{\transpose}$ (Euler angles)
-  \item 3 boosts with constant velocity $\vec{v}=(v_1,v_2,v_3)^{\transpose}$
+  $\boldsymbol{\theta}=(\theta_1,\theta_2,\theta_3)\transpose$ (Euler angles)
+  \item 3 boosts with constant velocity $\vec{v}=(v_1,v_2,v_3)\transpose$
 \end{itemize}
 The Poincaré transformations form a 10 parameter group.
 \begin{table}
@@ -504,7 +504,7 @@ At this point we will just list some objects that we call vectors and tensors
 and delay the definition of those to a later chapter.
 An example of a vector is the four current $J^\mu$:
 \begin{equation}
-J^\mu=\gamma(c\rho,\vec{j})\, ,
+J^\mu=\gamma(\rho,\vec{j})\, ,
 \end{equation}
 with $\rho$ the charge density and $\vec{j}$ the 3-current density. A bit sloppy
 we refer to a tensor as a 'vector with more indices' that transforms
@@ -523,28 +523,30 @@ vector potential $\tensor{A}{_\mu}$:
 The matrix form is 
 \begin{equation}
 \tensor{F}{^\mu^\nu}=
-\begin{pmatrix}
-                  0  &   -E_x/c &  -E_y/c &  -E_z/c \\
-                 E_x/c &   0  &  -B_z & B_y \\
-                 E_y/c & B_z &   0  &  -B_x \\
-                 E_z/c &  -B_y & B_x &   0  \\
-\end{pmatrix}\, .
+\begin{bmatrix}
+                  0  &   -E_1 &  -E_2 &  -E_3 \\
+                 E_1 &   0  &  -B_3 & B_2 \\
+                 E_2 & B_3 &   0  &  -B_1 \\
+                 E_3 &  -B_2 & B_1 &   0  \\
+\end{bmatrix}\, .
 \end{equation}
-In tensor form the maxwell equations take a particular simple form
+In tensorial form maxwell's equations take a particular simple form. The
+inhongenous terms are colected in 
 \begin{equation}
-\partial_\nu\tensor{F}{^\mu^\nu}=\frac{4\pi}{c}\tensor{J}{^\mu}
+\partial_\nu\tensor{F}{^\mu^\nu}=4\pi\tensor{J}{^\mu}
 \end{equation}
+The homogenous ones $(\nabla B=0\, ,\nabla\times E=-\partial_t
+B)$ are condensed in a Bianchi identity
 \begin{equation}
-\partial_\alpha\tensor{F}{^\mu^\nu}
-+\partial_\nu\tensor{F}{^\alpha^\mu}
-+\partial_\mu\tensor{F}{^\nu^\alpha}=0
-\iff \nabla B=0\, , \quad \nabla\times E=-\frac{1}{c}\partial_t B
+\partial_\alpha\tensor{F}{_\mu_\nu}
++\partial_\nu\tensor{F}{_\alpha_\mu}
++\partial_\mu\tensor{F}{_\nu_\alpha}=0
 \end{equation}
 The Lorentz force is given by
 \begin{equation}
-\tensor{F}{^\mu}=\frac{q}{c}\tensor{F}{^\mu^\nu}\tensor{U}{_\nu}
+\tensor{F}{^\mu}=q\tensor{F}{^\mu^\nu}\tensor{U}{_\nu}
 \end{equation} 
-Where $\tensor{U}{^\mu}=(c,\vec{v})$ is the four velocity. As annother example
+Where $\tensor{U}{^\mu}=(1,\vec{v})$ is the four velocity. As annother example
 we can take a look at plane waves. The vector potential of a plane wave is
 \begin{equation}
 \tensor{A}{^\mu}=\tensor{\hat{A}}{^\mu}
@@ -557,10 +559,10 @@ Where $\tensor{K}{^\mu}=\left(\frac{\omega}{c},\vec{k}\right)$ must be a four
 vector, because otherwise we could use plane waves to distinguish between
 inertial systems. The dispersion relation reads as
 \begin{equation}
-\tensor{K}{^\mu}\tensor{K}{_\mu}=-\frac{\omega^2}{c^2}+\vec{k}^2=0\, .
+\tensor{K}{^\mu}\tensor{K}{_\mu}=-\omega^2+\vec{k}^2=0\, .
 \end{equation}
-It is equivalent to the on shell condition \eqref{eq:onshell}, when we identify
-the photons energy $E=\hbar\omega$ and momentum $\vec{p}=\hbar\vec{k}$ and set
+It is equivalent to the on shell condition \eqref{eq:onshell}, if we identify
+the photons energy $E=\omega$ and momentum $\vec{p}=\vec{k}$ and set
 $m=0$.
 \subsection{The Energy Momentum Tensor}
 Evtl. aus anderer Quelle, arges Durcheinander mit komplexer Notation\ldots
@@ -647,13 +649,13 @@ The Lagrangian of electrodynamics is given by
 .
 \end{equation}
 Was ist s haben wir ko oder kontravariante form ist die matrix so richtig?
-%\begin{equation}
-%\tensor{S}{_\mu_\nu}=
-%\begin{pmatrix}
-%u&\vec{S}^\transpose\\
-%\vec{S}& \tensor{t}{_i_j}
-%\end{pmatrix}
-%\end{equation}
+\begin{equation}
+\tensor{S}{_\mu_\nu}=
+\begin{bmatrix}
+u&\vec{S}^{\transpose}\\
+\vec{S}& \tensor{t}{_i_j}
+\end{bmatrix}
+\end{equation}
 Where
 $\tensor{t}{_i_j}=\tensor{E}{_i}\tensor{E}{_j}+\tensor{E}{_i}\tensor{E}{_j}-\frac{1}{2}\tensor{\delta}{_i_j}\left(\vec{E}^2+\vec{B}^2\right)$
 Poynting vector $\vec{S}=\vec{E}\times\vec{B}$ and energy density $u

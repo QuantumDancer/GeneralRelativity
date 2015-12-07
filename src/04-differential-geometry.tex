@@ -1,10 +1,10 @@
 \chapter{Differential Geometry}
 As we have noted before general relativity is a inherent local theory. It is convenient to formulate it in terms of differential geometry.
-We introduce the notion of a manifold.
-
+\section{Manifolds}
 \begin{definition}
 A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis, that
-is locally homeomorphic to $\mathbb{R}^n$.
+is locally homeomorphic to $\mathbb{R}^n$. We will give a short introduction to
+the most important terms.
 \end{definition}
 \begin{remark}
 The requirements Hausdorff and countable basis are of a more technical nature and are satisfied for most of the objects one can imagine 
@@ -55,13 +55,14 @@ other directions).
 Vectors are important objects describing physics. The naive view as an "arrow pointing frow one point to another" is flawed. 
 For example on a sphere an arrow connecting two points does not make much sense.
 We want to find a description of vectors as objects that are naturally related to the structure of the manifold independent of the embedding.
-There are three equivalent definitions for a vector:
+\subsection{Definitions}
+There are three equivalent definitions for a
+vector:
 \begin{enumerate}
     \item Algebraic 
     \item Physical
     \item Geometrical 
 \end{enumerate}
-\subsection*{Definitions}
 We start by giving the algebraic definition which is the most
 abstract and prefered by mathematicans, because it is suitable for proofs.
 Vectors are identified with derivatices, which are formally defined by
@@ -76,18 +77,17 @@ C^\infty(M,\Reals)$ and $\lambda \in \Reals$:
 \end{definition}
 We then define a vector by 
 \begin{definition}[Vector,
-algebraic] A vector is a derivation at the germ at $p$.
+algebraic] A vector in $p$ is a derivation on the germ at $p$.
 \end{definition}
-The germ is the set of all functions $f\in C^\infty(M,\Reals)$, that are defined
-in $p$ where we identify all functions that are equal in some neighbourhood
-of $p$, i.e. vectors are local objects.
-Given two vectors we can construct a new one, the \emph{Lie Braket}
+The germ is the set of all functions $f\in C^\infty(M,\Reals)$, where we
+identify all functions that are equal in some neighbourhood of $p$, i.e. vectors are local objects.
+Given two vectors we can construct a new one, the \emph{Lie bracket}
 \begin{equation}
     [X,Y]f:=X(Yf)-Y(Xf)\, .
 \end{equation}
 The only property that has to be checked is that it satisfies the Leibniz rule.
 \begin{equation}
-    XY(fg)=X((Yf)g+f(Yg))=(XYf)g+(Yf)(Xg)+(Yg)(Xf)+(XYg)f\\
+    XY(fg)=X[(Yf)g+f(Yg)]=(XYf)g+(Yf)(Xg)+(Yg)(Xf)+(XYg)f\\
 \end{equation}
 Subtracting $YX(fg)$ proves that $[X,Y]$ is indeed a vector. The fact that we
 have a natural vectorspace structure on the set of vectors at $p$ motivates the
@@ -160,14 +160,17 @@ If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the components of a vector and a
 dual vector respectively, then the transformation can be written in matrix form
 \begin{align}
     \vec{a}&\to V\vec{a}\, ,\\
-    \vec{b}&\to\left(V^\intercal\right)^{-1}\vec{b}\, ,
+    \vec{b}&\to\left(V\transpose\right)^{-1}\vec{b}\, ,
 \end{align}
-with $V_{ij}=\pd{\overline{x}^i}{{x^j}}$. 
+with $V=\left(\pd{\overline{x}^i}{{x^j}}\right)_{ij}$ the
+Jacobian of the transformation.
 In normal calculus we restrict ourself to orthogonal transformations (i.e.
-mapping orthonormal bases onto each other) for which $(O^\intercal)^{-1}=O$.
+mapping orthonormal bases onto each other) for which
+$\left(O\transpose\right)^{-1}=O$.
 Which is the reason why we do not bother to distinguish between vectors and dual vectors because they transform identically. 
-In special relativity we have e.g. $(\Lambda^\intercal)^{-1}\neq\Lambda$ for a
-boost, the difference becomes even more important in general relativity where the relation can become arbitrarily complicated.
+In special relativity we have e.g.
+$\left(\Lambda\transpose\right)^{-1}\neq\Lambda$ for a boost and the difference
+becomes even more important in general relativity where the relation can become arbitrarily complicated.
 \end{remark}
 \section{Tensors}
 From vectors $A$ ,$B$ we can construct new objects with multiple indices that posses well defined transformation behaviour. 
@@ -207,15 +210,16 @@ covariant two tensor.
 We have already seen examples of metrics for the flat space, e.g. in spherical coordinates $g$ was given as
 \begin{equation}
     g=
-    \begin{pmatrix}
+    \begin{bmatrix}
         1 & 0\\
         0 & r^2\\
-    \end{pmatrix}\,.
+    \end{bmatrix}\,.
 \end{equation}
 A metric that is positive definite is called \emph{Riemanian metric}. In
 relativity we deal with \emph{Lorentzian metrics}, for which there are vectors
 beside the zero vector which have zero 'length'. In flat space we have
-$\tensor{g}{_i_j}=\tensor{\eta}{_i_j}$ \begin{remark}[About
+$\tensor{g}{_i_j}=\tensor{\eta}{_i_j}$.
+\begin{remark}[About
 raising and lowering indices] Supose we have given a vector $A=A^i\partial_i$
 with coodinates $A^i$, then we can relate it 
 in a natural way to a linear form $g(A,\cdot)$,
@@ -263,19 +267,22 @@ Expressing $B_i$ in terms of $A_i$ yields
 \end{equation}
 $\affin{l}{i}{k}$ is called \emph{affine connection} or short affinity.
 \begin{remark}
-We can always find a coordinate system in wich $\affin{l}{i}{k}\equiv 0$.  
+We can always find a coordinate system in wich $\affin{l}{i}{k}\equiv 0$, this
+system is called \emph{Riemanian normal coordinate system} (RNCS).
 \end{remark}
 We notice that if 
 \begin{equation}
-\left(\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\right)\delta x^k = 0\, ,
+\left(\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\right)\delta x^k = 0\,
+,\label{eq:covdev}
 \end{equation}
 The vector $A$ does not change its cordinates. We define a \emph{covariant
 derivative} 
 \begin{equation}
-\tensor{A}{_i_;_j}:=\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\, .
+\tensor{A}{_i_;_j}:=\tensor{\nabla}{_j}\tensor{A}{_i}:=\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\,
+.
 \end{equation}
 It can easyly be seen that the covariant derivative of a tensor transforms as a
-tensor. 
+tensor, by inspecting \eqref{eq:covdev} and applying the quotient theorem.
 \begin{remark}[The
 Covariant Derivative in Electrodynamics] Example from Electrodynamics concerning the covariant derivative. 
 The theory is invariant under transformations $\phi\to e^{\imI \alpha}\phi$, 
@@ -339,7 +346,7 @@ Inner product
 \begin{equation}
 \langle A,B\rangle=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{B}{^j}
 \end{equation}
-Norm
+Pseudo norm
 \begin{equation}
 \|A\|^2=\langle A,A\rangle=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{A}{^j}
 \end{equation}
@@ -354,6 +361,12 @@ A curve is a map $\gamma:\Reals\to M$. The parametrisation is arbitary e.g.
 \begin{equation}
 \begin{split}
 \gamma:\, &\Reals\to \Reals^2\\
-& t\mapsto \left(\frac{1}{2}t^2,\frac{1}{2}t^2\right)^{\transpose}
-\end{split}
-\end{equation} 
+& t\mapsto
+\frac{1}{2} t^2
+\begin{bmatrix}
+1 \\
+1
+\end{bmatrix}
+\end{split}\, ,
+\end{equation}
+clearly describes a straight line with $y=x$ 
