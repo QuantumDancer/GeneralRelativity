@@ -1,3 +1,6 @@
+% !TEX program = pdflatex
+% !TEX encoding = UTF-8
+
 \documentclass[a4paper,oneside,12pt]{scrreprt}
 
 %%% PACKAGES + MODIFICATIONS%%%
@@ -8,32 +11,22 @@
 \usepackage{lmodern}
 \usepackage[english,ngerman]{babel}
 
+%graphics
+\usepackage{graphicx}
+\usepackage{xcolor}
+
 %math
 \usepackage{amsmath}
-\usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{thmtools}
 \usepackage{mathtools}
 \usepackage{tensor}
 \usepackage{commath}
 \usepackage{dsfont}		% double stroke characters
 \usepackage{braket}
-\usepackage{babel}
-\usepackage{xcolor}
-\usepackage{amsthm,thmtools}
-\usepackage{mdframed}
-\usepackage{sectsty}
-
-% Defining theorem environment.
-
-\makeatletter
-
-\newenvironment{thm}[1][]{%
-  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
-  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
-  %\setlength{\shadeboxrule}{1.5pt}%
-  \begin{thms}[#1]\hspace*{1mm}%
-}{\end{thms}}
+\usepackage{mdframed}	% framed environments that can split at page bound­aries
 
 %science
 \usepackage{units}
@@ -42,6 +35,7 @@
 %layout + style
 \definecolor{section_color}{rgb}{0.35,0.0,0}								% colors
 \definecolor{MyGray}{rgb}{0.96,0.97,0.98}
+
 \usepackage[automark,headsepline]{scrlayer-scrpage} 						% headings
 \renewcommand*{\headfont}{\normalfont}										% nicht kursive Kopfzeile
 \usepackage{setspace}														% set space be­tween lines
@@ -49,6 +43,7 @@
 \usepackage[section]{placeins}												% de­fines a \FloatBar­rier com­mand, be­yond which floats may not pass.
 \usepackage[protrusion=true,expansion=true]{microtype}						% sublim­i­nal re­fine­ments to­wards ty­po­graph­i­cal per­fec­tion
 \addtokomafont{caption}{\small\linespread{1}\selectfont}					% Ändert Schriftgröße und Zeilenabstand bei captions
+% styles for math environments
 \declaretheoremstyle[														
   spaceabove = 6pt,
   spacebelow = 6pt,
@@ -58,7 +53,7 @@
   bodyfont = \normalfont,
   postheadspace = 1em,
   qed = ,
-]{mythmstyle}
+]{mythmstyle} %theorems
 \declaretheoremstyle[														
   spaceabove = 6pt,
   spacebelow = 6pt,
@@ -68,28 +63,23 @@
   bodyfont = \normalfont,
   postheadspace = 1em,
   qed = ,
-]{myrmstyle}
-\chapterfont{\color{section_color}}
-\sectionfont{\color{section_color}}
-\subsectionfont{\color{section_color}}
-\subsubsectionfont{\color{section_color}}
-\paragraphfont{\color{section_color}}
+]{myrmstyle} %remarks
+
+%TODO outdated package, produces warnings, use package 'titlesec' to control sectioning format -- Ben 7.12
+
+% TODO I disabled the sectsty package for the moment, this fixes the messed up spacing between chapter number and description -- Ben 7.12
+% \usepackage{sectsty}	 % con­trol sec­tional head­ers
+% \chapterfont{\color{section_color}}
+% \sectionfont{\color{section_color}}
+% \subsectionfont{\color{section_color}}
+% \subsubsectionfont{\color{section_color}}
+% \paragraphfont{\color{section_color}}
+
 \renewcommand{\labelitemi}{\color{section_color}\scriptsize$\blacksquare$} 
 \renewcommand{\labelenumi}{\color{section_color}\textsf{\textbf{\arabic{enumi}}}.}
-%\def\labelitemi{\sqbullet}
-
-%graphics
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{subfig}		% subfigures
-\usepackage{wrapfig}	% pro­duces fig­ures which text can flow around
 
 %tikz
 \usepackage{tikz}
-\usetikzlibrary{trees}
-\usetikzlibrary{decorations.pathmorphing}
-\usetikzlibrary{decorations.markings}
-\usetikzlibrary{positioning,arrows,shapes}
 
 %tables
 \usepackage{tabularx}	% tab­u­lars with ad­justable-width columns
@@ -155,6 +145,12 @@
 \renewcommand{\vec}{\mathbf}
 
 %new environments
+\newenvironment{thm}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  %\setlength{\shadeboxrule}{1.5pt}%
+  \begin{thms}[#1]\hspace*{1mm}%
+}{\end{thms}}
 \theoremstyle{definition}
 \declaretheorem[
   style = mythmstyle,

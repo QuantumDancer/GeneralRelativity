@@ -16,8 +16,23 @@ i.e. the charts cover the whole manifold. The maps $\varphi:U^\varphi\to \varphi
 meaning that $U^\varphi$ is open, $\varphi$ is bijective and both $\varphi$ and $\varphi^{-1}$ are continuous.
 Further for any two $\varphi,\psi\in \mathcal{A}$, the coordinate changes 
 $\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$ be infinitely often differentiable.
-(BIlder)
 \end{remark}
+\begin{figure}[htb]
+    \begin{center}
+        \begin{tikzpicture}
+            \draw [->] (1,1.5) -- (0,0);
+            \draw [->] (2,1.5) -- (3,0);
+            \draw [->] (0.25,-0.35) -- (2.75,-0.35);
+            \node [below] at (-1,0) {$\Reals^n \supseteq h_\alpha(U_{\alpha\beta}) $};
+            \node [above] at (1,1.5) {$U_{\alpha\beta} = U_\alpha \cap U_\beta$};
+            \node [below] at (4,0) {$h_\beta(U_{\alpha\beta}) \subseteq \Reals^n$};
+            \node [left] at (0.45,0.9) {$h_\alpha$};
+            \node [right] at (2.5,0.9) {$h_\beta$};
+            \node [below] at (1.5,-0.35) {$h_{\alpha\beta}= h_\beta \circ h_\alpha^{-1}$};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Coordinate change.} %TODO better caption.
+\end{figure}
 
 We can now reduce differentiation on the manifold to the ordinary differentiation in $\mathbb{R}^n$. 
 Since physical laws are described in terms of differential equations, we can formulate them on $M$. 
