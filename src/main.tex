@@ -133,6 +133,7 @@
 \newcommand{\cSym}[3]{\ensuremath{\begin{Bmatrix} #1 \\ #2 #3 \end{Bmatrix}}}
 \newcommand{\csym}[3]{\ensuremath{[#1 #2,\, #3]}}
 \newcommand{\affin}[3]{\ensuremath{\Gamma^{#1}_{#2 #3}}}
+\newcommand{\landauO}{\mathcal{O}}
 \DeclareMathOperator{\tr}{Tr}
 \DeclareMathOperator{\re}{Re}
 \DeclareMathOperator{\im}{Im}
@@ -143,6 +144,7 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 \renewcommand{\vec}{\mathbf}
+\def\mathunderline#1#2{\color{#1}\underline{{\color{black}#2}}\color{black}}
 
 %new environments
 \newenvironment{thm}[1][]{%
