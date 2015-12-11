@@ -1,1 +1,100 @@
-\chapter{Linearised Theory and Newtonian Limit}
+\chapter{Linearized theory and Newtonian limit}
+\section{Linearized theory}
+Consider a weak gravitational field. Then we can split the full spacetime metric $g_{\mu\nu}(x)$ into two parts.
+\begin{definition}{Linearization of the metric field.}
+\begin{equation}
+    g_{\mu\nu}(x) = \eta_{\mu\nu} + h_{\mu\nu}(x) + \landauO(h^2) \, .
+\end{equation}
+\end{definition}
+$\eta_{\mu\nu}$ is the flat, constant ``background'' metric of Minkowski space, i.e.\ there is no gravitational field present.
+The field $h_{\mu\nu}(x)$ can be interpreted as a perturbation on the fixed background $\eta_{\mu\nu}$.
+One can identify a spin-2 particle, the so-called \emph{graviton}, with the excitations (quantized fluctuations) of this field.
+Because only the linear order of $h$ is considered, the nonlinearity of Einstein's equations is lost.
+We can raise and lower indices with $\eta_{\mu\nu}$ and $\eta^{\mu\nu}$.
+
+\begin{remark}
+This works only for a weak gravitational field, since a strong gravitational field produces a strong back reaction of ``matter''
+on the geometry, which follows from the nonlinearity of Einstein's equations.
+Exactly this back reaction is neglected in the linearized theory.
+\end{remark}
+
+\subsection{Derivation of the linearized Einstein's equations}
+In the following we neglect all terms with $\landauO(h^2)$.
+Our goal is to express Einstein's field equations in the linearized approximation.
+For this we need to calculate the Christoffel symbols, the Riemann tensor, the Ricci tensor and the Ricci scalar.
+
+Christoffel symbols of the first kind:
+\begin{equation}
+    \csym{\mu}{\nu}{\rho} = \frac{1}{2} \left( \tensor{h}{_\mu_\rho_,_\nu} + \tensor{h}{_\nu_\rho_,_\mu}
+    - \tensor{h}{_\mu_\nu_,_\rho} \right) + \landauO(h^2) \, .
+\end{equation}
+Christoffel symbols of the second kind:
+\begin{equation}
+    \cSym{\rho}{\mu}{\nu} = g^{\rho\sigma} \csym{\mu}{\nu}{\sigma} = \eta^{\rho\sigma} \csym{\mu}{\nu}{\sigma} + \landauO(h^2)
+    = \frac{1}{2} \left( \tensor{h}{_\mu^\rho_,_\nu} + \tensor{h}{_\nu^\rho_,_\mu} - \tensor{h}{_\mu_\nu^,^\rho} \right) + \landauO(h^2) \, .
+\end{equation}
+Riemann tensor:
+\begin{equation}
+    \begin{split}
+        \tensor{R}{^\rho_\sigma_\mu_\nu}
+        &= \partial_\mu \cSym{\rho}{\nu}{\sigma} - \partial_\nu \cSym{\rho}{\mu}{\sigma}
+        + \underbrace{\cSym{\rho}{\mu}{\lambda} \cSym{\lambda}{\nu}{\sigma} - \cSym{\rho}{\nu}{\lambda} \cSym{\lambda}{\mu}{\sigma}}_{\landauO(h^2)} \\
+        &= \frac{1}{2} \left( \tensor{h}{_\nu^\rho_,_\sigma_\mu} + \mathunderline{blue}{\tensor{h}{^\rho_\sigma_,_\nu_\mu}} - \tensor{h}{_\nu_\sigma^,^\rho_\mu}
+        - \mathunderline{blue}{\tensor{h}{^\rho_\mu_,_\sigma_\nu}} + \tensor{h}{^\rho_\sigma_,_\mu_\nu} + \tensor{h}{_\mu_\sigma^,^\rho_\nu} \right) + \landauO(h^2) \\
+        &= \frac{1}{2} \left( \tensor{h}{_\nu^\rho_,_\sigma_\mu} - \tensor{h}{_\nu_\sigma^,^\rho_\mu}
+        - \tensor{h}{^\rho_\sigma_,_\mu_\nu} + \tensor{h}{_\mu_\sigma^,^\rho_\nu} \right) + \landauO(h^2) \, .
+    \end{split}
+\end{equation}
+Ricci tensor
+\begin{equation}
+    \tensor{R}{_\sigma_\nu} = \tensor{R}{^\rho_\sigma_\rho_\nu} 
+    = \frac{1}{2} \left( \tensor{h}{_\nu^\rho_,_\sigma_\rho} - \tensor{h}{_\nu_\sigma^,^\rho_\rho} 
+    - \tensor{h}{_,_\sigma_\nu} + \tensor{h}{_\rho_\sigma^,^\rho_\nu} \right) + \landauO(h^2)\, ,
+\end{equation}
+with $h\coloneqq h_{\mu\nu}\eta^{\mu\nu}$
+
+Ricci scalar
+\begin{equation}
+    R = g^{\sigma\nu}R_{\sigma\nu} = \eta^{\sigma\nu}R_{\sigma\nu} + \landauO(h^2) 
+    = \tensor{h}{^\sigma^\nu_,_\sigma_\nu} - \tensor{h}{_,_\sigma^\sigma} + \landauO(h^2) 
+\end{equation}
+We define 
+\begin{equation}
+    \overline{h}_{\mu\nu} \coloneqq h_{\mu\nu} - \frac{1}{2} \eta_{\mu_\nu}h\,.
+\end{equation}
+With the following two lines we can show that $\overline{\overline{h}} = h$:
+\begin{align}
+    \overline{h} \coloneqq &\ \overline{h}_{\mu\nu}\eta^{\mu\nu} = h - 2h = -h \\
+    h_{\mu_\nu} =&\ \overline{h}_{\mu\nu} + \frac{1}{2} \eta_{\mu\nu}h = \overline{h}_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu}\overline{h}
+\end{align}
+
+\subsubsection{Linearized Einstein tensor \texorpdfstring{$G_{\mu\nu}$}{Gmunu} in terms of \texorpdfstring{$\overline{h}_{\mu\nu}$}{hbarmunu}}
+
+\begin{equation}
+    \begin{split}
+        G_{\mu\nu}^{\text{(L)}} =\ & R_{\mu\nu}^{\text{(L)}} - \frac{1}{2} \eta_{\mu\nu} R^{\text{(L)}} \\
+        =\ & \frac{1}{2} \partial_\mu \partial_\rho \tensor{h}{_\nu^\rho} + \frac{1}{2} \partial_\nu \partial_\rho \tensor{h}{_\mu^\rho}
+        - \frac{1}{2} \Box h_{\mu\nu} - \frac{1}{2} \partial_{\mu\nu}h-\frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma h^{\rho\sigma}
+        + \frac{1}{2} \eta_{\mu_\nu}\Box h \\
+        =\ & \frac{1}{2} \partial_\mu\partial_\rho \tensor{\overline{h}}{_\nu^\rho} 
+        - \mathunderline{blue}{\frac{1}{4}\partial_\mu\partial_\nu\overline{h}} 
+        + \frac{1}{2} \partial_\nu\partial_\rho\tensor{\overline{h}}{_\mu^\rho} 
+        - \mathunderline{blue}{\frac{1}{4}\partial_\nu\partial_\mu\overline{h}} - \frac{1}{2}\Box\overline{h}_{\mu\nu} \\
+        & + \mathunderline{green}{\frac{1}{2}\eta_{\mu\nu}\Box\overline{h}} + \mathunderline{blue}{\frac{1}{2}\partial_\mu\partial_\nu\overline{h}}
+        - \frac{1}{2}\eta_{\mu\nu}\partial_\rho\partial_\sigma\overline{h}^{\rho\sigma}
+        + \mathunderline{green}{\frac{1}{4}\eta_{\mu\nu}\Box\overline{h}} - \mathunderline{green}{\frac{1}{2}\eta_{\mu\nu}\Box\overline{h}} \\
+        =\ & -\frac{1}{2} \Box \overline{h}_{\mu\nu} + \partial_\rho \tensor{\partial}{_(_\mu}\tensor{\overline{h}}{_\nu_)^\rho} 
+        - \frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma \overline{h}^{\rho\sigma} \\
+        \overset{!}{=}\ & \kappa T_{\mu\nu}
+    \end{split}
+\end{equation}
+with the (linearized )d'Alembert operator 
+\begin{equation}
+    \Box^{\text{(L)}} = \Box = \partial_\mu\partial_\nu \eta^{\mu\nu}=\partial_\mu\partial^\mu
+\end{equation}
+
+\subsubsection{Gauge transformations}
+Usually field equations are in the form of
+\begin{equation}
+    \Box \text{``field''} = \text{``source''}
+\end{equation}
