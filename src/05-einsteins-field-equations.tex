@@ -1,1 +1,82 @@
 \chapter{Einstein's Field Equations}
+We will derive Einsteins Equations by physical considerations. The poisson
+equation reads as:
+\begin{equation}
+\Delta\Phi=4\pi\rho
+\end{equation}
+\begin{equation}
+S\textsubscript{EH}=\int\dif x^4 \sqrt{-g}(R-2\Lambda)
+\end{equation}
+In SR, the energy impuls tensor $\tensor{T}{_\mu_\nu}$ is conserved i.e.
+$\tensor{T}{_\mu_\nu^{,\nu}}=0$.As a natural extension we demand that the energy
+impuls tensor of general relativity is \emph{covariantly} conserved 
+\begin{equation}
+\tensor{\nabla}{^\nu}\tensor{T}{_\mu_\nu}=\tensor{T}{_\mu_\nu^{;\nu}}=0
+\end{equation}
+We now ask for the most general tensor satisfying this equation. 
+\begin{theorem}[Lovelock]
+For a fourdimensional space the most general divergence free tensor
+$\tensor{A}{_\mu_\nu}$ is given by
+\begin{equation}
+\tensor{A}{_\mu_\nu}= c_1\tensor{G}{_\mu_\nu}+c_2\tensor{g}{_\mu_\nu}\, .
+\end{equation}
+Where $\tensor{G}{_\mu_\nu}$ is the \emph{Einstein tensor}
+$\tensor{G}{_\mu_\nu}:=\tensor{R}{_\mu_\nu}-\frac{1}{2}\tensor{g}{_\mu_\nu}R$.
+\end{theorem}
+The Theorem imediatly implies that 
+\begin{equation}
+\tensor{R}{_\mu_\nu}-\frac{1}{2}R\tensor{g}{_\mu_\nu}-\Lambda\tensor{g}{_\mu_\nu}=\kappa\tensor{T}{_\mu_\nu}
+\end{equation}
+for some constants $\kappa$, $\Lambda$.
+Of course we identify $\kappa=\frac{8\pi}{c^2}$ and $\Lambda$ is the
+cosmological constant. We can rewrite equation (??) as
+\begin{equation}
+\tensor{R}{_\mu_\nu}-\frac{1}{2}R\tensor{g}{_\mu_\nu}
+=\kappa\left(\tensor{T}{_\mu_\nu}-\frac{\Lambda}{\kappa}\tensor{g}{_\mu_\nu}\right)
+\end{equation}
+so that the left hand side represents the geometrical part and the right hand
+side the matter content. 
+Wheeler: ``Geometry tells matter how to move, matter tells geometry how to
+curve.''
+\begin{sidenote}
+In the time of the inflation the cosmological constant must have been large.
+Since it is small today it has do decay with time
+\end{sidenote}
+We can identfy $\Lambda$ with an vacuum energy so that. Can we get the Einstein
+equations from a variation principle?
+\begin{equation}
+S\textsubscript{g}=\int\dif x^4 \sqrt{-g}\tilde{\mathcal{L}}
+\end{equation}
+$\tilde{\mathcal{L}}$ must transform a (scalar) density, therefore we define a
+scalar $\sqrt{-g}\mathcal{L}=\mathcal{L}$
+\begin{equation}
+S\textsubscript{g}=\int\dif x^4 \sqrt{-g}\mathcal{L}
+\end{equation}
+One can think of various contributions to $\mathcal{L}$
+\begin{equation*}
+R,\, \square
+R,\,\tensor{\nabla}{^\mu}\tensor{\nabla}{^\mu}\tensor{R}{_\mu_\nu},\,
+\tensor{R}{_\mu_\nu}\tensor{R}{^\mu^\nu}
+,\,\tensor{R}{_\mu_\nu_\sigma_\rho}\tensor{R}{^\mu^\nu^\sigma^\rho}\dots
+\end{equation*}
+Which have to be contracted so that the resulting quantity becomes a scalar.
+We have no contributions of the metric because
+$\tensor{g}{_\mu_\nu_{;\sigma}}=0$. From Yang-Mills theory one would expect a
+structure 
+\begin{equation}
+\mathcal{L}\sim\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
+\end{equation}
+but $\Gamma$ is not the fundamental field but $g$ is. If we demand that we only
+have up to second derivatives of $g$ the only allowed term in the Lagrangian is
+$R$.
+This constraint leads to the \emph{Einstein-Hilbert-action}
+\begin{equation}
+S\textsubscript{EH}=\frac{1}{2\kappa}\int\dif x^4 \sqrt{-g}(R-2\Lambda)
+\end{equation}
+\begin{sidenote}[On higher derivatives]
+If we include higher order derivatives of $g$ in the right way we can make the
+resulting theory renormalisable. However we violate unitarity and introduce so
+called ghost fields which are associated with the additional degrees of freedom
+we get.
+\end{sidenote}
+ 
