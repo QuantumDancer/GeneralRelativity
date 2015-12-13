@@ -156,16 +156,6 @@
 \theoremstyle{definition}
 \declaretheorem[
   style = mythmstyle,
-  name = Definition,
-  shaded = {
-    bgcolor = MyGray,
-    padding = 2mm,
-    textwidth = 0.98\textwidth
-}
-]{definition}
-\theoremstyle{remark}
-\declaretheorem[
-  style = mythmstyle,
   name = Theorem,
   shaded = {
     bgcolor = MyGray,
@@ -173,11 +163,20 @@
     textwidth = 0.98\textwidth
 }
 ]{theorem}
-\theoremstyle{remark}
-%\newtheorem*{remark}{Remark}
+\declaretheorem[
+  style = mythmstyle,
+  name = Definition,
+  numberlike=theorem,
+  shaded = {
+    bgcolor = MyGray,
+    padding = 2mm,
+    textwidth = 0.98\textwidth
+}
+]{definition}
 \declaretheorem[
   style = myrmstyle,
   name = Remark,
+  numberlike=theorem,
   shaded = {
     bgcolor = white,
     padding = 2mm,
@@ -187,6 +186,7 @@
 \declaretheorem[
   style = myrmstyle,
   name = Sidenote,
+  numberlike=theorem,
   shaded = {
     bgcolor = white,
     padding = 2mm,
@@ -196,6 +196,7 @@
 \declaretheorem[
   style = myrmstyle,
   name = Example,
+  numberlike=theorem,
   shaded = {
     bgcolor = white,
     padding = 2mm,

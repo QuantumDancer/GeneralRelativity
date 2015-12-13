@@ -118,10 +118,10 @@ If we introduce
 \dif x\\
 \dif y
 \end{bmatrix}\,,\quad (\delta_{ij})
-=\begin{pmatrix}
+=\begin{bmatrix}
 1 & 0\\
 0 & 1
-\end{pmatrix}\, .
+\end{bmatrix}\, .
 \end{equation}
 We can expand the formula for the infinitesimal element and obtain
 \begin{equation}
@@ -130,14 +130,14 @@ We can expand the formula for the infinitesimal element and obtain
         \dif x &
         \dif y
     \end{bmatrix}
-    \begin{pmatrix}
+    \begin{bmatrix}
         1 & 0\\
         0 & 1
-    \end{pmatrix}
-    \begin{pmatrix}
+    \end{bmatrix}
+    \begin{bmatrix}
         \dif x\\
         \dif y
-    \end{pmatrix}\, .
+    \end{bmatrix}\, .
 \end{equation}
 Which we do to point out the similarity to the line element $\dif s^2$
 \begin{equation}
@@ -148,18 +148,18 @@ Which we do to point out the similarity to the line element $\dif s^2$
         \dif y &
         \dif z
     \end{bmatrix}
-    \begin{pmatrix}
+    \begin{bmatrix}
         -1 & 0 & 0 & 0\\
         0  & 1 & 0 & 0\\
         0  & 0 & 1 & 0\\
         0  & 0 & 0 & 1\\
-    \end{pmatrix}
-    \begin{pmatrix}
+    \end{bmatrix}
+    \begin{bmatrix}
         c\dif t\\
         \dif x\\
         \dif y\\
         \dif z\\
-    \end{pmatrix}=:\eta_{\mu\nu}\dif x^\mu\dif x^\nu\, .
+    \end{bmatrix}=:\eta_{\mu\nu}\dif x^\mu\dif x^\nu\, .
 \end{equation}
 We call the matrix $\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$ the
 \emph{Minkowski-metric}. It has some obvious properties:
@@ -545,8 +545,8 @@ The Lorentz force is given by
 \begin{equation}
     \tensor{F}{^\mu}=q\tensor{F}{^\mu^\nu}\tensor{U}{_\nu}
 \end{equation}
-Where $\tensor{U}{^\mu}=(c,\vec{v})$ is the four velocity. As annother example
-we can take a look at plane waves. The vector potential of a plane wave is
+Where $\tensor{U}{^\mu}=(1,\vec{v})\transpose$ is the four velocity. As annother
+example we can take a look at plane waves. The vector potential of a plane wave is
 \begin{equation}
     \tensor{A}{^\mu}=\tensor{\hat{A}}{^\mu}
     \exp\left[\imI(\vec{k}\cdot\vec{r}-\omega
@@ -554,7 +554,7 @@ we can take a look at plane waves. The vector potential of a plane wave is
     =\tensor{\hat{A}}{^\mu}\exp\left(\imI\tensor{K}{^\mu} \tensor{X}{_\mu}\right)\,
     .
 \end{equation}
-Where $\tensor{K}{^\mu}=\left(\frac{\omega}{c},\vec{k}\right)$ must be a four
+Where $\tensor{K}{^\mu}=\left(\omega,\vec{k}\right)\transpose$ must be a four
 vector, because otherwise we could use plane waves to distinguish between
 inertial systems. The dispersion relation reads as
 \begin{equation}

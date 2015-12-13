@@ -69,14 +69,158 @@ structure
 but $\Gamma$ is not the fundamental field but $g$ is. If we demand that we only
 have up to second derivatives of $g$ the only allowed term in the Lagrangian is
 $R$.
-This constraint leads to the \emph{Einstein-Hilbert-action}
-\begin{equation}
-S\textsubscript{EH}=\frac{1}{2\kappa}\int\dif x^4 \sqrt{-g}(R-2\Lambda)
-\end{equation}
 \begin{sidenote}[On higher derivatives]
 If we include higher order derivatives of $g$ in the right way we can make the
 resulting theory renormalisable. However we violate unitarity and introduce so
 called ghost fields which are associated with the additional degrees of freedom
 we get.
 \end{sidenote}
- 
+\begin{remark}[Dimensions]
+In natural units the line element $\dif s^2$ has dimension ${[\dif
+s^2]=\textrm{M}^{-2}}$, Since further
+${\left[\tensor{x}{^\mu}\right]=\textrm{M}^{-1}}$ the Lagrange density must have Dimension ${\left[\tilde{\mathcal{L}}\right]=\textrm{M}^{4}}$
+\end{remark} 
+This constraint leads to the \emph{Einstein-Hilbert-action}
+\begin{equation}
+S\textsubscript{EH}=\frac{1}{2\kappa}\int\dif x^4 \sqrt{-g}(R-2\Lambda)
+\end{equation}
+We now check that its variation indeed reproduces Einsteins equations. To do
+so we introduce the formalism of \emph{functional derivative}. Let therefore
+$\Phi=\{\}$ be a collection of fields. $F[\Phi]$ a functional. We define the
+variation of $F$ as
+\begin{equation}
+\delta F:=\int \dif x \frac{\delta F}{\delta\Phi^i}\delta\Phi^i\,.
+\end{equation} 
+Typically the functionals are givenn in the form 
+\begin{equation}
+S[\Phi]=\int \dif x L(x,\Phi)\, ,
+\end{equation}
+where $L$ is some local function.
+\begin{equation}
+\frac{\delta\tensor{g}{_\rho_\sigma}(x)}{\delta\delta\tensor{g}{_\mu_\nu}(x')}=\tensor*{\delta}{*^\mu*^\nu*_\rho*_\sigma}\delta(x,x')\
+\end{equation}
+Where
+$\tensor*{\delta}{*^\mu*^\nu*_\rho*_\sigma}=\frac{1}{2}\left(\tensor*{\delta}{^\nu_\rho}\tensor*{\delta}{^\mu_\sigma}+\tensor*{\delta}{^\mu_\rho}\tensor*{\delta}{^\nu_\sigma}\right)$
+is the unity of the space of symmetric rank two tensors
+\begin{remark}
+In general $\delta(x,x')\neq \delta(x-x')$
+\end{remark}
+\section{Introduction of Matter}
+In the gravitational kontext we mean be \emph{matter} any non gravitational
+fields this include scalar fields $\varphi$, spinor fields $\Psi$, gauge fields
+$\tensor{A}{^\mu}$,\dots. We collect all of them in a multivariable $\Phi$
+A local action can be written as 
+\begin{equation}
+S\textsubscript{m}[\Phi,g]=\int \dif x^4\sqrt{-g}
+L\textsubscript{m}\left(\Phi,\tensor{\nabla}{_\mu}\Phi,g\right)
+\end{equation}
+$\tensor{g}{^\mu^\nu}$ appears in $L\textsubscript{m}$ because the derivatives
+$\tensor{\nabla}{_\mu}, \tensor{\partial}{_\mu}$ must be contracted.
+Additionally it enters via $\sqrt{-g}$
+\begin{example}[free scalar field in Minkowski space]
+\begin{equation}
+S\textsubscript{m}=\int \dif x^4 \left(-\frac{1}{2}\tensor{\eta}{^\mu^\nu}
+\tensor{\partial}{_\mu}\varphi\tensor{\partial}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)
+\end{equation}
+The minus sign in front of the partial derivative should come as no surprise
+since we have $\tensor{\eta}{^0^0}=-1\, \dot{\varphi}^2>0$. In a non inertial
+frame we have to make the usual replacements 
+\begin{equation}
+\tensor{\eta}{_\mu_\nu}\to \tensor{g}{_\mu_\nu}\, , \quad
+\tensor{\partial}{_\mu}\to
+\tensor{\nabla}{_\mu}\, \quad \dif x^4\to \dif x^4\sqrt{-g}\, .
+\end{equation}
+\end{example}
+\emph{minimal cuppling description} (Kontext???) The action reads as 
+\begin{equation}
+S\textsubscript{m}=\int \dif x^4 \sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}
+\tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)
+\end{equation}
+which is the action for a scalar $\varphi$ in the presence of gravity, i.e. a
+dynamical $\tensor{g}{_\mu_\nu}(x)$. The combined action of scalar field and
+gravity is given as 
+\begin{equation}
+S[g,\varphi]=S\textsubscript{g}[g]+S\textsubscript{m}[g,\varphi]
+\end{equation}
+The Euler Lagange Equations in terms of the scalar field read as 
+\begin{equation}
+\frac{\delta S[g,\varphi]}{\delta
+\varphi\left(x'\right)}=\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta \varphi\left(x'\right)}
+\end{equation}
+
+\begin{equation}
+\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta \varphi\left(x'\right)}=\int
+\dif x^4\sqrt{-g}\left[-\tensor{g}{^\mu^\nu}
+\tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\left(\frac{\delta
+\varphi(x)}{\delta \varphi\left(x'\right)}\right)-m^2\varphi\frac{\delta
+\varphi(x)}{\delta \varphi\left(x'\right)}\right]
+\end{equation}
+where we used that the $\delta$ and $\tensor{\nabla}{_\mu}$ commute. Partial
+integration yields 
+\begin{equation}
+\begin{split}
+\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta \varphi\left(x'\right)}&=\int
+\dif
+x^4\sqrt{-g}\left[\square_{g}-m^2\right]\varphi\delta(x,x')\\
+&=\sqrt{-g}\left[\square_{g}-m^2\right]\varphi
+\end{split}
+\end{equation}
+where $\square_{g}:=\tensor{g}{^\mu^\nu}
+\tensor{\nabla}{_\mu}\tensor{\nabla}{_\nu} $ is the
+\emph{Laplace–Beltrami operator}, a generalisation of the ordinary laplacian to
+curved space.
+Demanding that the variation with respect to $\varphi$ vanishes implies the
+\emph{Klein-Gordon equation}
+\begin{equation}
+\left(\square_g-m^2\right)\varphi=0
+\end{equation}
+Variing with respect to the metric $\tensor{g}{_\mu_\nu}$
+\begin{equation}
+\frac{\delta S[g,\varphi]}{\delta
+\tensor{g}{_\mu_\nu}\left(x'\right)}=
+\frac{\delta S\textsubscript{g}[g]}{\delta
+\tensor{g}{_\mu_\nu}\left(x'\right)}
++\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta
+\tensor{g}{_\mu_\nu}\left(x'\right)}
+=\frac{\sqrt{-g}}{2\kappa}\left(\tensor{G}{^\mu^\nu}+\Lambda\tensor{g}{^\mu^\nu}
+\right)+\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta
+\tensor{g}{_\mu_\nu}\left(x'\right)}
+\end{equation}
+This makes it convenient to define the energy-momentum tensor (Vorzeichen????)
+\begin{equation}
+\tensor{T}{^\mu^\nu}:=\frac{2}{\sqrt{-g}}\frac{\delta
+S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}\,.
+\end{equation}
+\begin{remark}
+Attention $\delta_g
+\tensor{g}{^\mu^\nu}=-\tensor{g}{^\rho^{(\mu}}\tensor{g}{^{\nu)}^\sigma}\delta_g
+\tensor{g}{_\mu_\nu}$
+\end{remark}
+We can now proceed in calculating the quantity we have ust introduced for a
+scalar field
+\begin{equation}
+\begin{split}
+\frac{\delta
+S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}\\
+&=\int \dif x^4 \frac{\delta\sqrt{-g}}{\delta
+\tensor{g}{_\mu_\nu}}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}
+\tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)
++ \sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\alpha^\rho}\tensor{g}{^\beta^\sigma}
+\tensor{\nabla}{_\alpha}\varphi\tensor{\nabla}{_\beta}\varphi\frac{\delta
+\tensor{g}{_\rho_\sigma}}{\delta \tensor{g}{_\mu_\nu}}\right)\\
+&=\frac{1}{2}\int \dif x^4
+\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
++\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{^\nu}\varphi\right)\delta(x,x')\\
+&=\frac{1}{2}\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
++\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{^\nu}\varphi\right)
+\end{split}
+\end{equation}
+So that 
+\begin{equation}
+\tensor{T}{^\mu^\nu}(\varphi)=
+\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
++\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{^\nu}\varphi\right)
+\end{equation}
+As we have noticed, the Einstein Tensor is covariantly conserved (contracted
+Bianci identities). The Einstein equation then implies that also
+$\tensor{T}{_\mu_\nu^{;\nu}}=0$
