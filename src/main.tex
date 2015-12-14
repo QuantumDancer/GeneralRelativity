@@ -43,6 +43,7 @@
 \usepackage[section]{placeins}												% de­fines a \FloatBar­rier com­mand, be­yond which floats may not pass.
 \usepackage[protrusion=true,expansion=true]{microtype}						% sublim­i­nal re­fine­ments to­wards ty­po­graph­i­cal per­fec­tion
 \addtokomafont{caption}{\small\linespread{1}\selectfont}					% Ändert Schriftgröße und Zeilenabstand bei captions
+\usepackage{enumerate} % better way to config enumerates
 % styles for math environments
 \declaretheoremstyle[														
   spaceabove = 6pt,
@@ -145,6 +146,7 @@
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 \renewcommand{\vec}{\mathbf}
 \def\mathunderline#1#2{\color{#1}\underline{{\color{black}#2}}\color{black}}
+\newcommand{\liedif}[2]{\ensuremath{\mathcal{L}_{#1}#2}}
 
 %new environments
 \newenvironment{thm}[1][]{%
