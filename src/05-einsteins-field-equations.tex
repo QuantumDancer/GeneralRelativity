@@ -86,8 +86,9 @@ S\textsubscript{EH}=\frac{1}{2\kappa}\int\dif x^4 \sqrt{-g}(R-2\Lambda)
 \end{equation}
 We now check that its variation indeed reproduces Einsteins equations. To do
 so we introduce the formalism of \emph{functional derivative}. Let therefore
-$\Phi=\{\}$ be a collection of fields. $F[\Phi]$ a functional. We define the
-variation of $F$ as
+$\Phi=\{\varphi,\tensor{A}{^\mu},\Psi,\dots\}$ be a collection of fields.
+$F[\Phi]$ a functional.
+We define the variation of $F$ as
 \begin{equation}
 \delta F:=\int \dif x \frac{\delta F}{\delta\Phi^i}\delta\Phi^i\,.
 \end{equation} 
@@ -201,12 +202,12 @@ scalar field
 \begin{equation}
 \begin{split}
 \frac{\delta
-S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}\\
+S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}
 &=\int \dif x^4 \frac{\delta\sqrt{-g}}{\delta
 \tensor{g}{_\mu_\nu}}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}
-\tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)
-+ \sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\alpha^\rho}\tensor{g}{^\beta^\sigma}
-\tensor{\nabla}{_\alpha}\varphi\tensor{\nabla}{_\beta}\varphi\frac{\delta
+\tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)\\
+&\phantom{=}+
+\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\alpha^\rho}\tensor{g}{^\beta^\sigma} \tensor{\nabla}{_\alpha}\varphi\tensor{\nabla}{_\beta}\varphi\frac{\delta
 \tensor{g}{_\rho_\sigma}}{\delta \tensor{g}{_\mu_\nu}}\right)\\
 &=\frac{1}{2}\int \dif x^4
 \sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
@@ -217,10 +218,81 @@ S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}\\
 \end{equation}
 So that 
 \begin{equation}
-\tensor{T}{^\mu^\nu}(\varphi)=
-\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
-+\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{^\nu}\varphi\right)
+\tensor{T}{^\mu^\nu}(\varphi)
+=-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi
++\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{^\nu}\varphi
+-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
 \end{equation}
 As we have noticed, the Einstein Tensor is covariantly conserved (contracted
 Bianci identities). The Einstein equation then implies that also
-$\tensor{T}{_\mu_\nu^{;\nu}}=0$
+$\tensor{T}{^\mu^\nu_{;\nu}}=0$ this can be checked for the given Tensor 
+\begin{equation}
+\begin{split}
+\tensor{\nabla}{_\mu}\tensor{T}{^\mu^\nu}
+&=\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\mu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi+\square\varphi\tensor{\nabla}{^\nu}\varphi+\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{_\mu}\tensor{\nabla}{^\nu}\varphi
+-\tensor{g}{^\mu^\nu}m^2\varphi\tensor{\nabla}{_\mu}\varphi\\
+&=\tensor{\nabla}{^\nu}\varphi\left(\square-m^2\right)\varphi\\
+&=0
+\end{split}
+\end{equation}
+Where the last equality holds because $\varphi$ satisfies the Klein-Gordon
+equation. The Einstein equations are 10 quasi linear, i.e. the highest order
+derivative apears only linear, differential equations for the metric field
+$\tensor{g}{_\mu_\nu}$. Strictly speaking the Einstein equations are
+\emph{nonlinear}. 
+\begin{sidenote}
+If you substract the constrains imposed by the Bianci identities you end with 2
+DOFs, which are associated with the polarisation states of the graviton.
+\end{sidenote}
+How do we find a solution to this equations?
+\begin{enumerate}
+  \item Prescribe $\tensor{T}{_\mu_\nu}$. This is only possible for high
+  symmetry problems, e.g. the Schwazschild solution and the cosmological
+  solutions (Friedmans equations)
+  \item Assume $\tensor{g}{_\mu_\nu}$, then compute $\tensor{T}{_\mu_\nu}$ and
+  (try!) to interprete this.
+\end{enumerate}
+Intrinsic vs extrinsic curvature ????
+\subsection{ADM-Decomposition}
+(Bild)
+Erklärung einschieben was passiert!!!
+Assume we know (??)
+\begin{itemize}
+  \item $\tensor{g}{_\mu_\nu}$ on $\Sigma_{t_0}$
+  \item $\tensor{g}{_\mu_\nu_{;j}}$, $\tensor{g}{_\mu_\nu_{;0}}$ on
+  $\Sigma_{t_0}$ also allowed
+\end{itemize}
+In vakuum the field equation are 
+\begin{equation}
+0=G=R-2R\implies\tensor{R}{_\mu_\nu}=0
+\end{equation} 
+The resulting set of equations is (prüfen!!!)
+\begin{align}
+0&=\tensor{R}{_0_0}=-\frac{1}{2}\tensor{g}{^i^j}\tensor{g}{_i_j_{,00}}+\tensor{M}{_0_0}\\
+0&=\tensor{R}{_0_i}=-\frac{1}{2}\tensor{g}{^0^j}\tensor{g}{_i_j_{,00}}+\tensor{M}{_0_i}\\
+0&=\tensor{R}{_i_j}=-\frac{1}{2}\tensor{g}{^0^0}\tensor{g}{_i_j_{,00}}+\tensor{M}{_i_j}
+\end{align}
+Where $\tensor{M}{_\mu_\nu}$ is a rest term containing lower order derivaties.
+This shows that ther are no second order time derivatives of
+$\tensor{g}{_0_\mu}$. We have 10 euations and 6 undetetrmined functions. The
+DOFs can be used for a coordinate transformation, so that
+$\tensor{g}{_0_\mu_{,00}}=0$ on $\Sigma_{t_0}$. This is allways possible but we
+will not proof this. It can be further shown, by means of the contracted Bianci
+identities, that this implies $\tensor{g}{_0_\mu_{,00}}=0$ on \emph{all}
+hypersurfaces $\Sigma_{t}$.
+\begin{equation}
+\tensor{\partial}{_0}\tensor{G}{^0^\nu}=
+\tensor{\partial}{_i}\tensor{G}{^i^\nu}
+-\cSym{\nu}{0}{\lambda}\tensor{G}{^\lambda^\nu}
+-\cSym{0}{\nu}{\lambda}\tensor{G}{^\mu^\lambda}
+\end{equation}
+Hier muss man nochmal schauen das macht noch nicht viel sinn\ldots\ldots.
+We have the freedom to choose four coodinates 
+\begin{equation}
+\tensor{x}{^{\mu^\prime}}=\tensor{f}{^{\mu^\prime}}\left(\tensor{x}{^\mu}\right)
+\end{equation}
+One typical choice is the \emph{harmonic\footnote{a function $f$ satisfying
+$\square f = 0$ is called harmonic.} gauge}
+\begin{equation}
+\square\tensor{x}{^\mu}=0\,.
+\end{equation}
