@@ -1,7 +1,7 @@
 \chapter{Linearized theory and Newtonian limit}
 \section{Linearized theory}
 Consider a weak gravitational field. Then we can split the full spacetime metric $g_{\mu\nu}(x)$ into two parts.
-\begin{definition}{Linearization of the metric field.}
+\begin{definition}[Linearization of the metric field.]
     \begin{equation}
         g_{\mu\nu}(x) = \eta_{\mu\nu} + h_{\mu\nu}(x) + \landauO(h^2) \, .
     \end{equation}
@@ -92,7 +92,7 @@ with the (linearized) d'Alembert operator
 \begin{equation}
     \Box^{\text{(L)}} = \Box = \partial_\mu\partial_\nu \eta^{\mu\nu}=\partial_\mu\partial^\mu
 \end{equation}
-\begin{definition}{Linearized Einstein equations}
+\begin{definition}[Linearized Einstein equations]
     \begin{equation}
         \label{eq:lineinsteineqs}
         -\frac{1}{2} \Box \overline{h}_{\mu\nu} + \partial_\rho \tensor{\partial}{_(_\mu}\tensor{\overline{h}}{_\nu_)^\rho}
@@ -144,7 +144,7 @@ $\implies$ The perturbation $h_{\mu\nu}$ transforms under infinitesimal diffeomo
         &= h_{\mu\nu}(x) + \left(\liedif{\xi}{\eta} \right)_{\mu\nu}
     \end{split}
 \end{equation}
-\begin{definition}{Lie derivative}
+\begin{definition}[Lie derivative]
     The Lie derivative off a tensor field $T$ with $k$ contravariant and $l$ covariant indices along the vector $\xi$ is given by
     \begin{equation}
         \begin{split}
@@ -187,11 +187,11 @@ Plug this into Einstein's equations (term by term)
 \begin{align}
     -\frac{1}{2}\Box \overline{h'}_{\mu\nu} &= -\frac{1}{2}\Box\overline{h}_{\mu\nu} - \frac{1}{2}\Box\tensor{\xi}{_\mu_,_\nu}
     -\frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu} + \frac{1}{2} \eta_{\mu\nu}\Box\tensor{\xi}{^\rho_,_\rho} \\
-    -\frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma \overline{h'}^{\rho\sigma} &= 
-    -\frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma \left( \tensor{\xi}{^\rho^,^\sigma} + \tensor{\xi}{^\sigma^,^\rho} 
+    -\frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma \overline{h'}^{\rho\sigma} &=
+    -\frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma \left( \tensor{\xi}{^\rho^,^\sigma} + \tensor{\xi}{^\sigma^,^\rho}
     - \eta^{\rho\sigma} \tensor{\xi}{^\alpha_,_\alpha} \right) - \frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma \overline{h}^{\rho\sigma} \\
-    \partial^\rho \tensor{\partial}{_(_\mu} \tensor{\overline{h'}}{_\nu_)_\rho} &= 
-    \partial^\rho \tensor{\partial}{_(_\mu} \tensor{\overline{h}}{_\nu_)_\rho} + \frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu} 
+    \partial^\rho \tensor{\partial}{_(_\mu} \tensor{\overline{h'}}{_\nu_)_\rho} &=
+    \partial^\rho \tensor{\partial}{_(_\mu} \tensor{\overline{h}}{_\nu_)_\rho} + \frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu}
     + \frac{1}{2}\Box\eta_{\mu\nu}
 \end{align}
 Therefore
@@ -200,17 +200,17 @@ Therefore
         & -\frac{1}{2} \Box \overline{h'}_{\mu\nu} + \partial_\rho \tensor{\partial}{_(_\mu}\tensor{\overline{h'}}{_\nu_)^\rho}
         - \frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma \overline{h'}^{\rho\sigma} \\
         =\ & -\frac{1}{2}\Box\overline{h}_{\mu\nu} - \mathunderline{blue}{\frac{1}{2}\Box\tensor{\xi}{_\mu_,_\nu}}
-        -\mathunderline{blue}{\frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu}} 
-        + \mathunderline{green}{\frac{1}{2} \eta_{\mu\nu}\Box\tensor{\xi}{^\rho_,_\rho}} 
+        -\mathunderline{blue}{\frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu}}
+        + \mathunderline{green}{\frac{1}{2} \eta_{\mu\nu}\Box\tensor{\xi}{^\rho_,_\rho}}
         + \partial^\rho \tensor{\partial}{_(_\mu}\tensor{\overline{h}}{_\nu_)_\rho} \\
-        & + \mathunderline{blue}{\Box\tensor{\xi}{_(_\mu_,_\nu_)}} 
-        - \mathunderline{green}{\frac{1}{2}\eta_{\mu\nu}\Box\tensor{\xi}{^\rho_,_\rho}} 
+        & + \mathunderline{blue}{\Box\tensor{\xi}{_(_\mu_,_\nu_)}}
+        - \mathunderline{green}{\frac{1}{2}\eta_{\mu\nu}\Box\tensor{\xi}{^\rho_,_\rho}}
         - \frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma \overline{h}^{\rho\sigma} \\
         =\ & -\frac{1}{2} \Box \overline{h}_{\mu\nu} + \partial_\rho \tensor{\partial}{_(_\mu}\tensor{\overline{h}}{_\nu_)^\rho}
         - \frac{1}{2} \eta_{\mu\nu}\partial_\rho\partial_\sigma \overline{h}^{\rho\sigma}
     \end{split}
 \end{equation}
-This shows that the Einstein equations are invariant under an infinitesimal diffeomorphisms. 
+This shows that the Einstein equations are invariant under an infinitesimal diffeomorphisms.
 Therefore $\overline{h}_{\mu\nu}$ and $\overline{h'}_{\mu\nu}$ are the same \emph{physical} field.
 
 \subsubsection{Harmonic gauge in linearized gravity}
@@ -220,7 +220,7 @@ This can ge done with the gauge condition
     \chi_\nu \left[ \overline{h} \right] \coloneqq \partial^\mu \overline{h}_{\mu\nu} = 0.
 \end{equation}
 In therms of the original field this condition reads
-\begin{definition}{de Donder gauge, harmonic gauge}
+\begin{definition}[de Donder gauge, harmonic gauge]
     \begin{equation}
         \chi_\nu \left[ h \right] = \partial^\mu h_{\mu\nu} - \frac{1}{2} h_{\mu\nu} \partial^\mu h = 0
     \end{equation}
@@ -240,6 +240,6 @@ Solve for $\Box\xi_\nu$
 Since $\overline{h}_{\mu\nu}$ and $\overline{h'}_{\mu\nu}$ correspond to the same physical field configuration, we can drop the prime.
 \begin{definition}{Linearized field equations in de Donder gauge.}
     \begin{equation}
-    \Box \overline{h}_{\mu\nu} = - 2 \kappa T_{\mu\nu}
-\end{equation}
+        \Box \overline{h}_{\mu\nu} = - 2 \kappa T_{\mu\nu}
+    \end{equation}
 \end{definition}
