@@ -81,7 +81,16 @@
 
 %tikz
 \usepackage{tikz}
+\usetikzlibrary{decorations.markings,arrows.meta}
 
+\tikzset{
+	->-/.style={decoration={
+			markings,
+			mark=at position .85 with {\arrow{Latex}}},postaction={decorate}},
+	-<-/.style={decoration={
+			markings,
+			mark=at position .15 with {\arrow{Latex[reversed]}}},postaction={decorate}},
+}
 %tables
 \usepackage{tabularx}	% tab­u­lars with ad­justable-width columns
 \usepackage{multirow}	% create tab­u­lar cells span­ning mul­ti­ple rows

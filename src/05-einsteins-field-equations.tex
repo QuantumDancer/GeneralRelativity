@@ -254,7 +254,28 @@ How do we find a solution to this equations?
 \end{enumerate}
 Intrinsic vs extrinsic curvature ????
 \subsection{ADM-Decomposition}
-(Bild)
+\begin{figure}
+\centering
+\begin{tikzpicture}[x={(170:1cm)},y={(55:.7cm)},z={(90:1cm)}]
+  \draw (2.5,-2.5,2) node[above right] {$\hspace{0.4cm}\Sigma_{t}$} -- (2.5,2.5,2) -- (-2.5,2.5,2) -- (-2.5,-2.5,2) -- cycle;
+  \draw[looseness=0.4] (2.5,-2.5,-1) node[above right] {$\hspace{0.2cm}\Sigma_{t_0}$}
+  to[bend left] (2.5,2.5,-1)
+  to[bend left] coordinate (mp) (-2.5,2.5,-1)
+  to[bend right] (-2.5,-2.5,-1)
+  to[bend right] coordinate (mm) (2.5,-2.5,-1)
+  -- cycle;
+  \node at  (0,-1,-3) (a) {} ;
+  \node[inner sep=1pt,circle,fill=black] at  (0,0,-1) (b) {} ;
+     \node[inner sep=1pt,circle,fill=black] at  (0,0,2) (c) {} ;
+     
+     \node at  (0,1,3) (d) {} ;
+ 
+ \draw (a) edge[in=-70,out=110,-,-] (b);
+ \draw (b) edge[in=-70,out=110,-,-](c);
+   \draw (c) edge[in=-110,out=110,-,->-] node[pos=0.2,right]{$t$}(d);
+\end{tikzpicture}
+\caption{Foliation of spacetime into spaceial hypersurfaces $\Sigma_t$.}
+\end{figure}
 Erklärung einschieben was passiert!!!
 Assume we know (??)
 \begin{itemize}
@@ -317,8 +338,8 @@ zero component, so that
 -\tensor{\partial}{_i}\left[\tensor{\partial}{_0}\left(g^{\nicefrac{1}{2}}\tensor{g}{^0^\mu}\right)\right]\,
 ,\end{equation}
 which fixes the second order time derivatives of the relevant components
-$\tensor{g}{^0^\mu}$. Therefore now the time evolution can solved. (Fehlt hier
-was???)
+$\tensor{g}{^0^\mu}$. Therefore now the time evolution can be solved. (Fehlt
+hier was???)
 \subsubsection{Degrees of freedom}
 \begin{itemize}
   \item[\color{section_color}\textsf{\textbf{10}}]
@@ -386,7 +407,7 @@ Thus if $\tensor{A}{_\mu}$ is a solution to the field
 equation $\tensor*{A}{*_\mu^\prime}$ is and therefore both are physically
 undistinguishable. We can also fix a gauge for example the \emph{Lorentz gauge}:
 \begin{equation}
-\partial_\mu\tensor{A}{^\mu}=0
+\partial_\mu\tensor{A}{^\mu}=0\, .
 \end{equation}
 If we derive this by the 0 component we get
 \begin{equation}
@@ -397,9 +418,9 @@ the other components. There is still one residual gauge condition, namely we can
 still transform
 \begin{equation}
 \tensor{A}{_\mu}\to\tensor*{A}{*_\mu^\prime}=
-\tensor{A}{_\mu}+\partial_\mu\Gamma\, ,
+\tensor{A}{_\mu}+\partial_\mu\Lambda\, ,
 \end{equation}
-but to keep the gauge we have also to demand that $\square\Gamma=0$.
+but to keep the gauge, we have to demand that $\square\Lambda=0$.
 Again we count the DOFs:
 \begin{itemize}
   \item[\color{section_color}\textsf{\textbf{4}}] components of the potential
