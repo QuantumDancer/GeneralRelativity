@@ -110,7 +110,7 @@ $(x_1,y_1)$ and $(x_2,y_2)$ by the Pythagorean theorem
 \end{equation}
 For an infinitesimal distance $\dif l$ we recover
 \begin{equation}
-    \dif l^2=\dif x^2+\dif y^2=\delta_{ij}\dif x^i\dif x^j\, .
+    \dif l^2=\dif x^2+\dif y^2=\tensor{\delta}{_i_j}\dif x^i\dif x^j\, .
 \end{equation}
 If we introduce
 \begin{equation}
@@ -234,7 +234,8 @@ dimension of the underlying space.
 Since we are considering 4d spacetime, there are $6$ generators.
 The transformations can be created from the generators
 \begin{equation}
-    \tensor{L}{^\sigma_\nu}=\exp\left(\imI\tensor{\omega}{_\mu_\nu}\tensor{L}{^\mu^\nu}\right)\,.
+    \tensor{L}{^\sigma_\nu}=\exp\left(\imI\tensor{\omega}{_\mu_\nu}\tensor{L}{^\mu^\nu}\right)\,.(Hier
+    stimmt was nicht\ldots)
 \end{equation}
 We can
 classify the resulting transformations into two groups
@@ -561,8 +562,7 @@ inertial systems. The dispersion relation reads as
     \tensor{K}{^\mu}\tensor{K}{_\mu}=-\omega^2+\vec{k}^2=0\, .
 \end{equation}
 It is equivalent to the on shell condition \eqref{eq:onshell}, when we identify
-the photons energy $E=\hbar\omega$ and momentum $\vec{p}=\hbar\vec{k}$ and set
-$m=0$.
+the photons energy $E=\omega$ momentum $\vec{p}=\vec{k}$ and mass $m=0$.
 \subsection{The Energy Momentum Tensor}
 Evtl. aus anderer Quelle, arges Durcheinander mit komplexer Notation\ldots
 \begin{sidenote}
