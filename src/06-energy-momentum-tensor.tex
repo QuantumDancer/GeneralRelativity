@@ -1,1 +1,95 @@
 \chapter{The Energy Momentum Tensor}
+In special relativity we have seen that the energy momentum tensor
+$\tensor{T}{^\mu^\nu}$ is conserved or divergencefree respectively, i.e.
+\begin{equation}
+\tensor{\partial}{_\mu}\tensor{T}{^\mu^\nu}=0\,.
+\end{equation}
+The problem we are faced in general relativity is the very definition of local
+energy. Because gravity shurely contributes to the energy, a problem arises
+as we can always transform to local flat space.
+We start by revisiting the example of dust
+\begin{example}[Dust]
+\begin{equation}
+\tensor{T}{^\mu^\nu}=\rho_0\tensor{u}{^\mu}\tensor{u}{^\nu}\,.
+\end{equation}
+\end{example}
+In special relativity:
+${\tensor{u}{^\mu}=\od{\tensor{x}{^\mu}}{\tau}=\gamma(1,\vec{v})\transpose}$,
+${\tensor{T}{^0^0}=\rho_0\left(\od{t}{\tau}\right)^2}=\gamma^2\rho_0:=\rho$.
+Where $\rho$ is the density with respect to an observer at rest. For the Volume
+we have $V=\gamma^{-1}V_0$. For the Energy $E=\gamma\omega_0$. Then the density
+is given by $\rho=\frac{E}{V}=\gamma^2\rho_0$. The conservation of
+$\tensor{T}{^0^\nu}$ implies
+\begin{equation}
+\begin{split}
+0&=\tensor{T}{^0^\nu_{,\nu}}\\
+&=\tensor{T}{^0^0_{,0}}+\tensor{T}{^0^i_{,i}}\\
+&=\tensor{\partial}{_t}\left(\rho_0\gamma^2\right)
++\tensor{\partial}{_i}\left(\rho_0\gamma^2\tensor{v}{^i}\right)\\
+&=\tensor{\partial}{_t}\rho
++\tensor{\partial}{_i}\left(\rho \tensor{v}{^i}\right)\\
+&=\dot{\rho}
++\boldsymbol{\nabla}\left(\rho \vec{v}\right)\,,
+\end{split}
+\end{equation}
+The \emph{continuity equation}. For the remaining spatial components we get
+\begin{equation}
+\begin{split}
+0&=\tensor{T}{^i^\nu_{,\nu}}\\
+&=\tensor{T}{^i^0_{,0}}+\tensor{T}{^j^i_{,i}}\\
+&=\dot{\rho}\tensor{v}{^i}
++\rho\tensor{\dot{v}}{^i}
++\tensor{v}{^i}\tensor{\partial}{_j}\left(\rho\tensor{v}{^j}\right)
++\tensor{\dot{v}}{^j}\rho\tensor{\partial}{_j}\tensor{v}{^i}\\
+&=\tensor{v}{^i}\left[\dot{\rho}+\tensor{\partial}{_j}\left(\rho\tensor{\dot{v}}{^j}\right)\right]
++\rho\left(\tensor{\dot{v}}{^i}+\tensor{\dot{v}}{^j}\tensor{\partial}{_j}\tensor{v}{^i}\right)\\
+&=\rho\left(\tensor{\dot{v}}{^i}+\tensor{\dot{v}}{^j}\tensor{\partial}{_j}\tensor{v}{^i}\right)\,,
+\end{split}
+\end{equation}
+the \emph{Euler equation} for vanishing pressure (which was the key assumption
+for dust). It is natural to generalize equation (???) to curved space 
+\begin{equation}
+\tensor{T}{^\mu^\nu_{;\nu}}=0
+\end{equation}
+\begin{equation}
+\begin{split}
+0
+&=\tensor{\nabla}{_\nu}\left(\rho_0\tensor{u}{^\mu}\tensor{u}{^\nu}\right)\\
+&=\tensor{{\rho_0}}{_{;\nu}}\tensor{u}{^\mu}\tensor{u}{^\nu}
++\rho_0\tensor{u}{^\mu_{;\nu}}\tensor{u}{^\nu}
++\rho_0\tensor{u}{^\mu}\tensor{u}{^\nu_{;\nu}}\\
+&=\tensor{u}{^\mu}\left(\rho_0\tensor{u}{^\nu_{;\nu}}+\tensor{{\rho_0}}{_{;\nu}}\tensor{u}{^\nu}\right)
++\rho_0\tensor{u}{^\mu_{;\nu}}\tensor{u}{^\nu} \label{eq:DustEnCons}
+\end{split}
+\end{equation}
+We multiply both sides with $\tensor{u}{_\mu}$
+\begin{equation}
+\begin{split}
+0
+&=-\left(\rho_0\tensor{u}{^\nu_{;\nu}}+\tensor{{\rho_0}}{_{;\nu}}\tensor{u}{^\nu}\right)
++\rho_0\tensor{u}{^\nu}\tensor{u}{_\mu}\tensor{u}{^\mu_{;\nu}}\\
+&=-\left(\rho_0\tensor{u}{^\nu_{;\nu}}
++\tensor{{\rho_0}}{_{;\nu}}\tensor{u}{^\nu}\right)
+\end{split}
+\end{equation}
+If we plugg this back into equation \eqref{eq:DustEnCons} we get
+\begin{equation}
+\begin{split}
+0&=\tensor{u}{^\nu}\tensor{\nabla}{_\nu}\tensor{u}{^\mu}\\
+&=\tensor{u}{^\nu}\tensor{\partial}{_\nu}\tensor{u}{^\mu}
++\tensor{u}{^\nu}\cSym{\mu}{\nu}{\rho}\tensor{u}{^\rho}\\
+&=\dod{\tensor{x}{^\nu}}{\tau}\dpd{\tensor{u}{^\mu}}{\tensor{x}{^\nu}}
++\cSym{\mu}{\nu}{\rho}\dod{\tensor{x}{^\nu}}{\tau}\dod{\tensor{x}{^\nu}}{\tau}\\
+&=\dpd[2]{\tensor{x}{^\mu}}{\tau}
++\cSym{\mu}{\nu}{\rho}\dod{\tensor{x}{^\nu}}{\nu}\dod{\tensor{x}{^\nu}}{\tau}\\
+\end{split}
+\end{equation}
+The geodesic equation \eqref{eq:geodeq}
+\begin{remark}
+This is a diference between electrodynamics and general relativity; dust moves
+on geodesics, i.e. the path is determined by the field equations alone. In contrast
+in electrodynamics an additional Force (Lorentz force) has to be
+\emph{postulated} to describe the motion of test particles. The case is not
+settled however e.g. it is unclear wheater the paths of spin particles is also
+determined by the field equations.
+\end{remark}

@@ -2,7 +2,7 @@
 We will derive Einsteins Equations by physical considerations. The poisson
 equation reads as:
 \begin{equation}
-\Delta\Phi=4\pi\rho
+\Delta\Phi=4\pi\varrho
 \end{equation}
 \begin{equation}
 S\textsubscript{EH}=\int\dif x^4 \sqrt{-g}(R-2\Lambda)
@@ -57,7 +57,7 @@ One can think of various contributions to $\mathcal{L}$
 R,\, \square
 R,\,\tensor{\nabla}{^\mu}\tensor{\nabla}{^\mu}\tensor{R}{_\mu_\nu},\,
 \tensor{R}{_\mu_\nu}\tensor{R}{^\mu^\nu}
-,\,\tensor{R}{_\mu_\nu_\sigma_\rho}\tensor{R}{^\mu^\nu^\sigma^\rho}\dots
+,\,\tensor{R}{_\mu_\nu_\sigma_\varrho}\tensor{R}{^\mu^\nu^\sigma^\varrho}\dots
 \end{equation*}
 Which have to be contracted so that the resulting quantity becomes a scalar.
 We have no contributions of the metric because
@@ -98,10 +98,10 @@ S[\Phi]=\int \dif x L(x,\Phi)\, ,
 \end{equation}
 where $L$ is some local function.
 \begin{equation}
-\frac{\delta\tensor{g}{_\rho_\sigma}(x)}{\delta\delta\tensor{g}{_\mu_\nu}(x')}=\tensor*{\delta}{*^\mu*^\nu*_\rho*_\sigma}\delta(x,x')\
+\frac{\delta\tensor{g}{_\varrho_\sigma}(x)}{\delta\delta\tensor{g}{_\mu_\nu}(x')}=\tensor*{\delta}{*^\mu*^\nu*_\varrho*_\sigma}\delta(x,x')\
 \end{equation}
 Where
-$\tensor*{\delta}{*^\mu*^\nu*_\rho*_\sigma}=\frac{1}{2}\left(\tensor*{\delta}{^\nu_\rho}\tensor*{\delta}{^\mu_\sigma}+\tensor*{\delta}{^\mu_\rho}\tensor*{\delta}{^\nu_\sigma}\right)$
+$\tensor*{\delta}{*^\mu*^\nu*_\varrho*_\sigma}=\frac{1}{2}\left(\tensor*{\delta}{^\nu_\varrho}\tensor*{\delta}{^\mu_\sigma}+\tensor*{\delta}{^\mu_\varrho}\tensor*{\delta}{^\nu_\sigma}\right)$
 is the unity of the space of symmetric rank two tensors
 \begin{remark}
 In general $\delta(x,x')\neq \delta(x-x')$
@@ -194,7 +194,7 @@ S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}\,.
 \end{equation}
 \begin{remark}
 Attention $\delta_g
-\tensor{g}{^\mu^\nu}=-\tensor{g}{^\rho^{(\mu}}\tensor{g}{^{\nu)}^\sigma}\delta_g
+\tensor{g}{^\mu^\nu}=-\tensor{g}{^\varrho^{(\mu}}\tensor{g}{^{\nu)}^\sigma}\delta_g
 \tensor{g}{_\mu_\nu}$
 \end{remark}
 We can now proceed in calculating the quantity we have ust introduced for a
@@ -207,19 +207,19 @@ S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}
 \tensor{g}{_\mu_\nu}}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}
 \tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)\\
 &\phantom{=}+
-\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\alpha^\rho}\tensor{g}{^\beta^\sigma} \tensor{\nabla}{_\alpha}\varphi\tensor{\nabla}{_\beta}\varphi\frac{\delta
-\tensor{g}{_\rho_\sigma}}{\delta \tensor{g}{_\mu_\nu}}\right)\\
+\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\alpha^\varrho}\tensor{g}{^\beta^\sigma} \tensor{\nabla}{_\alpha}\varphi\tensor{\nabla}{_\beta}\varphi\frac{\delta
+\tensor{g}{_\varrho_\sigma}}{\delta \tensor{g}{_\mu_\nu}}\right)\\
 &=\frac{1}{2}\int \dif x^4
-\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
+\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\varrho}\varphi\tensor{\nabla}{^\varrho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
 +\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{^\nu}\varphi\right)\delta(x,x')\\
-&=\frac{1}{2}\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
+&=\frac{1}{2}\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\varrho}\varphi\tensor{\nabla}{^\varrho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
 +\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{^\nu}\varphi\right)
 \end{split}
 \end{equation}
 So that
 \begin{equation}
 \tensor{T}{^\mu^\nu}(\varphi)
-=-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi
+=-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\varrho}\varphi\tensor{\nabla}{^\varrho}\varphi
 +\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{^\nu}\varphi
 -\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
 \end{equation}
@@ -229,7 +229,7 @@ $\tensor{T}{^\mu^\nu_{;\nu}}=0$ this can be checked for the given Tensor
 \begin{equation}
 \begin{split}
 \tensor{\nabla}{_\mu}\tensor{T}{^\mu^\nu}
-&=\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\mu}\tensor{\nabla}{_\rho}\varphi\tensor{\nabla}{^\rho}\varphi+\square\varphi\tensor{\nabla}{^\nu}\varphi+\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{_\mu}\tensor{\nabla}{^\nu}\varphi
+&=\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\mu}\tensor{\nabla}{_\varrho}\varphi\tensor{\nabla}{^\varrho}\varphi+\square\varphi\tensor{\nabla}{^\nu}\varphi+\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{_\mu}\tensor{\nabla}{^\nu}\varphi
 -\tensor{g}{^\mu^\nu}m^2\varphi\tensor{\nabla}{_\mu}\varphi\\
 &=\tensor{\nabla}{^\nu}\varphi\left(\square-m^2\right)\varphi\\
 &=0
@@ -320,15 +320,15 @@ $\square f = 0$ is called harmonic.} gauge}
 \end{equation}
 \begin{equation}
 \begin{split}
-\square\tensor{x}{^\mu}&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\rho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\rho^\sigma}\tensor{\partial}{_\sigma}\tensor{x}{^\mu}\right)\\
-&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\rho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\rho^\sigma}\tensor{\delta}{_\sigma^\mu}\right)\\
-&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\rho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\rho^\mu}\right)\\
+\square\tensor{x}{^\mu}&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\sigma}\tensor{\partial}{_\sigma}\tensor{x}{^\mu}\right)\\
+&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\sigma}\tensor{\delta}{_\sigma^\mu}\right)\\
+&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\mu}\right)\\
 \end{split}
 \end{equation}
 (Formel für $\square$ die hier genutzt wurde referenzieren)
 The harmonic gauge is therefore equivalent to
 \begin{equation}
-\tensor{\partial}{_\rho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\rho^\mu}\right)=0\,
+\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\mu}\right)=0\,
 .\\
 \end{equation}
 The equation can be sorted in spatial and time components and derive by the
