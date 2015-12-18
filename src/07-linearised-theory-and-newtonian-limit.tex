@@ -243,3 +243,52 @@ Since $\overline{h}_{\mu\nu}$ and $\overline{h'}_{\mu\nu}$ correspond to the sam
         \Box \overline{h}_{\mu\nu} = - 2 \kappa T_{\mu\nu}
     \end{equation}
 \end{definition}
+\afterpage{
+\clearpage
+\thispagestyle{empty}
+\begin{landscape}
+    \begin{table}[h]
+        \caption{Comparison between linearized gravity and electrodynamics.}
+        \centering
+        \begin{tabulars}{lcc}
+            \toprule
+            & linearized gravity & electrodynamics \\
+            \midrule
+            
+            basic field 
+            & $\overline{h}_{\mu\nu}$ ($h_{\mu\nu}$), spin 2, \emph{graviton} 
+            & $A_\mu$, spin 1, \emph{gauge boson}, \emph{gauge potential} \\
+            
+
+            field equations 
+            & $ \underbrace{\Box \overline{h}_{\mu\nu}}_{\Box\text{``field''}} - \underbrace{2 \partial_\rho \tensor{\partial}{_(_\mu}\tensor{\overline{h}}{_\nu_)^\rho} - \eta_{\mu\nu}\partial_\rho\partial_\sigma \overline{h}^{\rho\sigma}}_{\text{ensures gauge inv.}} = -\underbrace{2 \kappa T_{\mu\nu}}_{\text{``source''}}$ 
+            & $\underbrace{\Box A_\mu}_{\Box\text{``field''}} - \underbrace{\partial_\mu \left( \partial_\nu A^\nu \right)}_{\text{ensures gauge inv.}} = - \underbrace{4 \pi j_\mu}_{\text{source}}$ \\
+
+            transf. under inf. gauge trafos
+            & $\overline{h'}_{\mu\nu} = h_{\mu\nu}+\tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu} - \eta_{\mu\nu} \tensor{\xi}{^\rho_,_\rho}$ 
+            & $A'_\mu = A_\mu + \partial_\mu\lambda(x)$\\
+            
+            & inf. coordinate transformation 
+            & internal symmetry \\
+            
+            inv. of field eqs 
+            & yes 
+            & yes \\
+            
+            specific gauges
+            & de Donder gauge, $\partial_\mu \overline{h}^{\mu\nu}=0$
+            & Lorentz gauge, $\partial_\mu A^\mu = 0$ \\
+            
+            field eqs. in specific gauges
+            & $\Box \overline{h}_{\mu\nu} = - 2 \kappa T_{\mu\nu}$
+            & $\Box A_\mu = - 4 \pi j_\mu$ \\
+            
+            inv. tensors under gauge trafo
+            & $\tensor{R^{(L)}'}{^\rho_\mu_\nu_\rho} = \tensor{R^{(L)}}{^\rho_\mu_\nu_\rho}$
+            & $F'_{\mu\nu} = F_{\mu\nu}$\\
+            
+            \bottomrule
+        \end{tabulars}
+    \end{table}
+\end{landscape}
+}
