@@ -241,8 +241,8 @@ in a natural way to a linear form $g(A,\cdot)$,
 \begin{equation}
 \begin{split}
  g(A,\cdot)\,\colon T_pM &\to \Reals\\
- X &\mapsto g(A,X)
-\end{split}\, ,
+ X &\mapsto g(A,X)\, ,
+\end{split}
 \end{equation}
 i.e. a dual vector. The components of this dual vector are given by its action
 on the Basis elemts of the tangentspace
@@ -302,7 +302,22 @@ tensor, by inspecting \eqref{eq:covdev} and applying the quotient theorem.
 Covariant Derivative in Electrodynamics] Example from Electrodynamics concerning the covariant derivative. 
 The theory is invariant under transformations $\phi\to e^{\imI \alpha}\phi$, 
 because $\phi^*\phi$ and $\phi^*\nabla\phi-\phi\nabla\phi^*$ do not change.
-Vervollständigen\ldots
+In order to make the lagrangian gauge invariant we exchange
+\begin{equation}
+\tensor{\partial}{_\mu}\to\tensor{D}{_\mu}+\imI\tensor{A}{_\mu}\, ,
+\end{equation}
+which effectively produces aditional terms in the lagrangian, namely
+\begin{equation}
+\imI\tensor{A}{^\mu}\left(\phi^*\tensor{\partial}{_\mu}\phi
+-\phi\tensor{\partial}{_\mu}\phi^*\right)=\imI\tensor{A}{^\mu}\tensor{J}{_\mu}\,,
+\quad\tensor{A}{_\mu}\tensor{A}{^\mu}\phi^2\,.
+\end{equation}
+The commutator between the covariant derivatives calculates to  
+\begin{equation}
+\left[\tensor{D}{_\mu},\tensor{D}{_\nu}\right]=\imI \tensor{F}{_\mu_\nu}\,.
+\end{equation}
+So the noncomutativity is associated with the presence of a field. This is
+simmillar to GR where it was related with curvature. 
 \end{remark}
 Since we have now established a relation between vectors and dual vectors, we
 can also determine the covariant derivative of a dual vector. Therefore we
@@ -349,13 +364,19 @@ Because of the symmetrie this are all independent contractions. Notice that at
 this point we cannot raise or lower indices to contract different indices.
 Since we can express the Rieman tensor in terms of commutators ther is a also a
 symmetry that can be derived from the Jacobi identity:
+\begin{equation}
+\left[A\left[B,C\right]\right]
++\left[C\left[A,B\right]\right]
++\left[B\left[C,A\right]\right]=0\,.
+\end{equation}
 Physics can be described in terms of differential equations. We for example
 would like to have a object similiar to the laplacian in curved coordinates.
 However $\partial_i\partial_i$ is not coordinate invariant. We therefore
 introduce a metric. The equivalence principle implies that space is locally
 Minkovski.
 \begin{sidenote}
-There are several theories that do not need a metric. For example 3d gravity.
+There are certain theories that can be formulated without a metric. An example
+beeing threedimensional gravity.
 \end{sidenote}
 Inner product 
 \begin{equation}
@@ -381,7 +402,52 @@ A curve is a map $\gamma:\Reals\to M$. The parametrisation is arbitary e.g.
 \begin{bmatrix}
 1 \\
 1
-\end{bmatrix}
-\end{split}\, ,
+\end{bmatrix}\, ,
+\end{split}
 \end{equation}
-clearly describes a straight line with $y=x$ 
+clearly describes a straight line with $y=x$.
+We notice that $\od{\tensor{\gamma}{^i}}{t}$ is parallel to
+$\od[2]{\tensor{\gamma}{^i}}{t}$. This gives rise to annother possible
+generalisation of a straight line.
+In curved coordinates we have (warum?)
+\begin{equation}
+\od[2]{\tensor{x}{^i}}{t}+\affin{i}{j}{k}\od{\tensor{x}{^j}}{t}\od{\tensor{x}{^k}}{t}
+=\lambda(t)\od{\tensor{x}{^j}}{t}\,.
+\end{equation}
+If we demand that this is equal to the minimazation of the arc length we get a
+preffered connection. 
+Suppose we have a different parametrisation $s(t)$
+\begin{equation}
+\od{\tensor{x}{^i}}{t}=\od{\tensor{x}{^i}}{s}\od{s}{t}\,,\quad
+\od[2]{\tensor{x}{^i}}{t}=\od[2]{\tensor{x}{^i}}{s}\left(\dod{s}{t}\right)^2
++\od{\tensor{x}{^i}}{s}\dod[2]{s}{t}
+\end{equation} 
+\begin{equation}
+\left(\dod[2]{\tensor{x}{^i}}{s}+\affin{i}{j}{k}\dod{\tensor{x}{^j}}{s}\dod{\tensor{x}{^k}}{s}
+\right)\left(\dod{s}{t}\right)^2+\dod[2]{s}{t}\dod{\tensor{x}{^i}}{s}
+=\lambda(t)\dod{\tensor{x}{^j}}{t}\dod{s}{t}\,.
+\end{equation}
+To get to the usual form of the geodesic equation we choose $s$ so that
+\begin{equation}
+\dod[2]{s}{t}=\lambda(t)\dod{s}{t}\label{eq:bedaffpara}
+\end{equation}
+Which is an ordinary differential equation of type $\ddot{s}=\lambda\dot{s}$
+that shoud posses a solution. 
+For this special choice of parametrisation we have
+\begin{equation}
+\dod[2]{\tensor{x}{^i}}{s}+\affin{i}{j}{k}\dod{\tensor{x}{^j}}{s}\od{\tensor{x}{^k}}{s}
+=0\,.\label{eq:affingeod}
+\end{equation}
+We therefore have a preferred set of parameters
+called affine parameters that satisfy \eqref{eq:bedaffpara}. The character
+of the differential equation implies that the affine parameter is only
+defined modulo affine transformations $s\to as+b$. This freedom once more
+reflects some kind of gauge invariance.
+\begin{remark}
+Only the symmetric part of the affinity does contribute to
+the geodesic equation \eqref{eq:affingeod}. As long as you are on a geodesic you
+can always compare lengths without needing a metric, by the affine parameter.
+The 'length' defined this way does not have to concede with the length given by
+the metric and is also defined for example for lightlike curves (which cannot
+be parametrised by the arc length)
+\end{remark}
