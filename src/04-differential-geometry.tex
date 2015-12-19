@@ -17,7 +17,7 @@ meaning that $U^\varphi$ is open, $\varphi$ is bijective and both $\varphi$ and 
 Further for any two $\varphi,\psi\in \mathcal{A}$, the coordinate changes 
 $\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$ be infinitely often differentiable.
 \end{remark}
-\begin{figure}[htb]
+\begin{figure}
     \begin{center}
         \begin{tikzpicture}
             \draw [->] (1,1.5) -- (0,0);
@@ -285,6 +285,7 @@ $\affin{l}{i}{k}$ is called \emph{affine connection} or short affinity.
 We can always find a coordinate system in wich $\affin{l}{i}{k}\equiv 0$, this
 system is called \emph{Riemanian normal coordinate system} (RNCS).
 \end{remark}
+(Evtl. Konstruktion, wird im skript angedeutet, auch geodesic coordinates\ldots)
 We notice that if 
 \begin{equation}
 \left(\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\right)\delta x^k = 0\,
@@ -451,3 +452,26 @@ The 'length' defined this way does not have to concede with the length given by
 the metric and is also defined for example for lightlike curves (which cannot
 be parametrised by the arc length)
 \end{remark}
+(Nochmal variation der Bogenlänge\ldots)
+Notice that \eqref{eq:affingeod} is identical to \eqref{eq:geodeq} if we choose
+the affinity to be $\affin{k}{i}{j}=\cSym{k}{i}{j}$. This is called the
+\emph{metric} or \emph{Christoffel connection}, and we will
+always assume it in the following.
+A general metric compatible connection ($\tensor{\nabla}{_k}\tensor{g}{_i_j}=0$)
+satisfies
+\begin{equation}
+\affin{k}{i}{j}=\cSym{k}{i}{j}+\tensor{T}{^k_i_j}
++\tensor{g}{^i^r}\left(\tensor{T}{^s_j_r}\tensor{g}{_s_i}+\tensor{T}{^s_i_r}\tensor{g}{_s_j}\right)
+\end{equation}
+with the torsion tensor
+\begin{equation}
+\tensor{T}{^k_i_j}=\frac{1}{2}\left(\affin{k}{i}{j}-\affin{k}{j}{i}\right)
+\end{equation}
+So that the Christoffel connection is the only metric compatible symmetric
+connection.
+\begin{remark}
+Non-Christoffel connections play a role, for example when dealing with spinors.
+\end{remark}
+\begin{equation}
+\tensor{R}{ijkl}=\frac{1}{2}\left(\dmd{{\tensor{g}{_i_l}}}{2}{x}{}{x}{}\right)
+\end{equation}

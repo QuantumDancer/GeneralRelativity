@@ -174,13 +174,14 @@ We can use the metric to raise and lower indices:
 \begin{equation}
     x_\nu=\tensor{\eta}{_\mu_\nu}x^\mu\, ,\quad x^\mu=\tensor{\eta}{^\mu^\nu}x_\nu\, .
 \end{equation}
-For example, the \emph{trace} of the metric is given by
+One has to pay attention with the matrix form, for example, the \emph{trace} of
+the metric is given by
 \begin{equation}
     \tensor{\eta}{^\mu_\mu}=\tensor{\eta}{^\mu^\nu}\tensor{\eta}{_\nu_\mu}
     =\tensor{\delta}{^\mu_\mu}=4\, .
 \end{equation}
 We say $\tensor{\eta}{_\mu_\nu}$ has signature $(-,+,+,+)$ or $(1,3)$, because
-it has 1 negative and three positive eigenvalues.
+it has one negative and three positive eigenvalues.
 \subsection{Poincaré-transformation}
 To be consistent with a constant speed of light a transformation between two
 coordinate systems must leave the line element invariant, i.e.
@@ -233,12 +234,13 @@ $\tensor{\omega}{_\nu_\mu}=-\tensor{\omega}{_\mu_\nu}$, i.e. be antisymmetric.
 In general we have $\frac{n(n-1)}{2}$ of these objects, where $n$ is the
 dimension of the underlying space.
 Since we are considering fourdimensional spacetime, there are six generators.
-The finite transformations can be created from the generators
+The finite transformations by an generalized angle $\alpha\in\Complex$ can be
+obtained from the generators via
 \begin{equation}
     \tensor{L}{^\mu_\nu}=\exp\left(\imI\alpha\tensor{\omega}{^\mu_\nu}\right)\,.
 \end{equation}
 We can
-classify the resulting transformations into two groups
+classify the resulting transformations into two groups:
 \subsubsection{Rotations}
 Rotations mix the spatial coordinates, but leave the time fixed. Consider for
 example an rotation around $z$-axis. Then we have
@@ -301,7 +303,7 @@ The generator is
         0&0 &0 &0
     \end{bmatrix}\,.
 \end{equation}
-The matrixform of the transformation is
+The matrix form of the transformation is
 \begin{equation}
     \begin{bmatrix}
         t\\
@@ -322,8 +324,8 @@ The matrixform of the transformation is
         z^\prime
     \end{bmatrix}\, .
 \end{equation}
-The parameter $\psi$ is not related to a physical quantity yet. We may ask to which
-velocity $v$ does this boost correspond.
+The rapidity $\psi$ is not related to a physical quantity yet. We may ask to
+which velocity $v$ does this boost correspond.
 Therefore we consider the line $x^\prime= 0$.
 Then
 \begin{equation}
@@ -341,7 +343,7 @@ follows
 \end{equation}
 In terms of these we find
 \begin{equation}
-    \sinh\psi = \beta\gamma\, , \quad \cosh\psi=\gamma
+    \sinh\psi = \beta\gamma\, , \quad \cosh\psi=\gamma\,.
 \end{equation}
 Therefore an alternative form is given by
 \begin{equation}
@@ -350,13 +352,13 @@ Therefore an alternative form is given by
 \beta\gamma&\gamma &0&0\\
 0&0&1 &0\\
 0&0 &0 &1
-\end{bmatrix}
+\end{bmatrix}\, .
 \end{equation}
-Which gives
-\begin{align}
-    t&=\gamma\left(t^\prime+vx^\prime\right)\, ,\\
-    x&=\gamma\left(x^\prime+vt^\prime\right)\, .
-\end{align}
+And the coordinates are therfore related by
+\begin{equation}
+    t=\gamma\left(t^\prime+\beta x^\prime\right)\,,\quad
+    x=\gamma\left(x^\prime+\beta t^\prime\right)\, .
+\end{equation}
 All together we have ten independent (affine) transformations that leave the
 line element invariant. Namely:
 \begin{itemize}
@@ -447,7 +449,7 @@ Therefore we consider massive particles, i.e. timelike paths. As a postulate we
 take that the action $S$ is proportional to the proper time (as a generalized
 ``distance'') $\dif \tau:=\sqrt{-\dif s^2}$
 \begin{equation}
-    S= \alpha \int_a^b\dif s = -\alpha
+    S= -\alpha \int_a^b\dif \tau = -\alpha
     \int_{t_1}^{t^2}\sqrt{1-\vec{v}^2}\dif t =: \int_{t_1}^{t^2}L\dif t\, ,
 \end{equation}
 whith $\alpha$ a constant, that has to be determined. The Lagrangian $L$ is
@@ -546,7 +548,9 @@ The matrix form is
         E_3 &  -B_2 & B_1 &   0  \\
     \end{bmatrix}\, .
 \end{equation}
-In tensor form the maxwell equations take the particular simple form
+Therefore the tensor $\tensor{F}{^\mu^\nu}$ takes the role of the fields
+$\vec{E},\vec{B}$. In tensor form \textsc{Maxwell} equations take the particular
+simple form, namely
 \begin{equation}
     \partial_\nu\tensor{F}{^\mu^\nu}=4\pi\tensor{J}{^\mu}\,, \quad
     \partial_\alpha\tensor{F}{_\mu_\nu}
@@ -575,10 +579,11 @@ inertial systems. The dispersion relation reads as
 It is equivalent to the on shell condition \eqref{eq:onshell}, when we identify
 the photons energy $E=\omega$ momentum $\vec{p}=\vec{k}$ and mass $m=0$.
 \subsection{The Energy Momentum Tensor}
-Evtl. aus anderer Quelle, arges Durcheinander mit komplexer Notation\ldots
+Evtl. aus anderer Quelle, arges Durcheinander mit komplexer Notation\ldots kommt
+später auch nochmal
 \begin{sidenote}
 Above a certain limit a system cannot be stabilized by pressure, because the
-gravity cupples to the pressure and therefore increasing the pressure would lead
+gravity cuples to the pressure and therefore increasing the pressure would lead
 to a stronger attraction due to gravity and hence inevetiable collapse.
 \end{sidenote}
 The energy momentum tensor is symmetric
@@ -602,7 +607,7 @@ Putting both terms together gives
 \begin{equation}
     \partial_\mu(\tensor{T}{^\mu^\nu}+\tensor{S}{^\mu^\nu})=0\,,
 \end{equation}
-Which can be interpretet as the total energy conservation
+Which can be interpretet as the total energy conservation.
 \subsection{Noether's Theorem}
 We introduce a tensorial generalisation of the angular momentum (density???)
 \begin{equation}
@@ -620,8 +625,10 @@ It can be shown that it is a conserved quantity
     =\tensor{T}{^\mu^\lambda}-\tensor{T}{^\lambda^\mu}+\tensor{x}{^\lambda}
     \tensor{T}{^\mu^\nu_,_\nu}-\tensor{x}{^\nu}\tensor{T}{^\lambda^\nu_,_\nu}=0\, .
 \end{equation}
-The ecistence of a conserved symmetric tensor $\tensor{T}{^\mu^\nu}$ is
+\begin{remark}
+The existence of a conserved symmetric tensor $\tensor{T}{^\mu^\nu}$ is
 nessecary in order to build a relativistic theory
+\end{remark}
 \begin{example}[Electrodynamics]
 We start by inspecting the Lorentz Force $\tensor{F}{^\mu}$ which is given by
 \begin{equation}
@@ -631,7 +638,7 @@ We start by inspecting the Lorentz Force $\tensor{F}{^\mu}$ which is given by
 We now ask whether ther is a potential $\tensor{S}{^\mu^\nu}$ so that
 $\tensor{D}{^\mu}=-\tensor{S}{^\mu^\nu_{,\nu}}$. Indeed a potential is given by
 \begin{equation}
-    \tensor{S}{^\mu^\nu}=\tensor{F}{^\mu_\alpha}\tensor{F}{^\mu^\alpha}-\frac{1}{4}\tensor{\eta}{^\mu^\nu}\tensor{F}{_\alpha_\beta}\tensor{F}{^\alpha^\beta}\,
+    \tensor{S}{^\mu^\nu}=\tensor{F}{^\mu_\alpha}\tensor{F}{^\nu^\alpha}-\frac{1}{4}\tensor{\eta}{^\mu^\nu}\tensor{F}{_\alpha_\beta}\tensor{F}{^\alpha^\beta}\,
     .
 \end{equation}
 We can check
@@ -646,28 +653,33 @@ We can check
     &=\tensor{F}{^\mu_\nu_{,\alpha}}\tensor{F}{^\alpha^\nu}
     =\tensor{F}{^\nu_\mu_{,\alpha}}\tensor{F}{^\nu^\alpha}
     \\
-    \tensor{F}{^\mu_\alpha}\tensor{F}{^\nu^\alpha_{,\nu}}&=\\
+    %\tensor{F}{^\mu_\alpha}\tensor{F}{^\nu^\alpha_{,\nu}}&=\\
     \tensor{\eta}{^\mu^\nu}\tensor{F}{_\alpha_\beta_{,\nu}}\tensor{F}{^\alpha^\beta}
     &=\tensor{F}{_\alpha_\nu^{,\mu}}\tensor{F}{^\alpha^\nu}
     = -\tensor{F}{_\alpha_\nu^{,\mu}}\tensor{F}{^\nu^\alpha}
     \,
     .
 \end{align}
+\begin{equation}
+\tensor{S}{^\mu^\nu_{,\nu}}=\tensor{F}{^\nu_\mu_{,\alpha}}\tensor{F}{^\nu^\alpha}
++\frac{1}{2}\tensor{F}{_\alpha_\nu^{,\mu}}\tensor{F}{^\nu^\alpha}
+\end{equation}
 The Lagrangian of electrodynamics is given by
 \begin{equation}
     \mathcal{L}=-\frac{1}{2}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}+\tensor{J}{_\mu}\tensor{A}{^\mu}-\frac{1}{2}m^2\tensor{A}{_\mu}\tensor{A}{^\mu}\,
     .
 \end{equation}
-Was ist s haben wir ko oder kontravariante form ist die matrix so richtig?
-%\begin{equation}
-%\tensor{S}{_\mu_\nu}=
-%\begin{pmatrix}
-%u&\vec{S}^\transpose\\
-%\vec{S}& \tensor{t}{_i_j}
-%\end{pmatrix}
-%\end{equation}
+ The tensor $S$ is known as \emph{electromagnetic stress–energy tensor}.
+\begin{equation}
+\tensor{S}{^\mu^\nu}=
+\begin{pmatrix}
+u&\vec{S}\transpose\\
+\vec{S}& -\tensor{\sigma}{_i_j}
+\end{pmatrix}
+\end{equation}
 Where
-$\tensor{t}{_i_j}=\tensor{E}{_i}\tensor{E}{_j}+\tensor{E}{_i}\tensor{E}{_j}-\frac{1}{2}\tensor{\delta}{_i_j}\left(\vec{E}^2+\vec{B}^2\right)$
-Poynting vector $\vec{S}=\vec{E}\times\vec{B}$ and energy density $u
-=\frac{1}{2}\left(\vec{E}^2+\vec{B}^2\right)$
+$\tensor{\sigma}{_i_j}=\tensor{E}{_i}\tensor{E}{_j}+\tensor{E}{_i}\tensor{E}{_j}-\frac{1}{2}\tensor{\delta}{_i_j}\left(\vec{E}^2+\vec{B}^2\right)$
+is the \emph{Maxwell stress tensor}, $\vec{S}=\vec{E}\times\vec{B}$
+\emph{Poynting vector} and energy density $u
+=\frac{1}{2}\left(\vec{E}^2+\vec{B}^2\right)$.
 \end{example}

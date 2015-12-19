@@ -210,7 +210,7 @@ principle.
 \section{Introduction of Matter}
 In the gravitational kontext we mean be \emph{matter} any non gravitational
 fields this include scalar fields $\varphi$, spinor fields $\Psi$, gauge fields
-$\tensor{A}{^\mu}$,\dots. We collect all of them in a multivariable $\Phi$
+$\tensor{A}{^\mu}$,\dots. We collect all of them in a multivariable $\Phi$.
 A local action can be written as
 \begin{equation}
 S\textsubscript{m}[\Phi,g]=\int \dif x^4\sqrt{-g}
@@ -218,11 +218,12 @@ L\textsubscript{m}\left(\Phi,\tensor{\nabla}{_\mu}\Phi,g\right)
 \end{equation}
 $\tensor{g}{^\mu^\nu}$ appears in $L\textsubscript{m}$ because the derivatives
 $\tensor{\nabla}{_\mu}, \tensor{\partial}{_\mu}$ must be contracted.
-Additionally it enters via $\sqrt{-g}$
-\begin{example}[free scalar field in Minkowski space]
+Additionally it enters via $\sqrt{-g}$.
+\begin{example}[Free scalar field]
+The action of a free scalar field in Minkovski space has the form
 \begin{equation}
 S\textsubscript{m}=\int \dif x^4 \left(-\frac{1}{2}\tensor{\eta}{^\mu^\nu}
-\tensor{\partial}{_\mu}\varphi\tensor{\partial}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)
+\tensor{\partial}{_\mu}\varphi\tensor{\partial}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)\,.
 \end{equation}
 The minus sign in front of the partial derivative should come as no surprise
 since we have $\tensor{\eta}{^0^0}=-1\, \dot{\varphi}^2>0$. In a non inertial
@@ -230,32 +231,32 @@ frame we have to make the usual replacements
 \begin{equation}
 \tensor{\eta}{_\mu_\nu}\to \tensor{g}{_\mu_\nu}\, , \quad
 \tensor{\partial}{_\mu}\to
-\tensor{\nabla}{_\mu}\, \quad \dif x^4\to \dif x^4\sqrt{-g}\, .
+\tensor{\nabla}{_\mu}\,, \quad \dif x^4\to \dif x^4\sqrt{-g}\, ,
 \end{equation}
-\end{example}
-\emph{minimal cuppling description} (Kontext???) The action reads as
+which is also known as a \emph{minimal cuppling description}. The action for a
+scalar $\varphi$ in the presence of gravity, 
+i.e. a dynamical $\tensor{g}{_\mu_\nu}(x)$, reads as
 \begin{equation}
 S\textsubscript{m}=\int \dif x^4 \sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}
-\tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)
+\tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi
+-\frac{1}{2}m^2\varphi^2\right)\,.
 \end{equation}
-which is the action for a scalar $\varphi$ in the presence of gravity, i.e. a
-dynamical $\tensor{g}{_\mu_\nu}(x)$. The combined action of scalar field and
+ The combined action of scalar field and
 gravity is given as
 \begin{equation}
-S[g,\varphi]=S\textsubscript{g}[g]+S\textsubscript{m}[g,\varphi]
+S[g,\varphi]=S\textsubscript{g}[g]+S\textsubscript{m}[g,\varphi]\,.
 \end{equation}
-The Euler Lagange Equations in terms of the scalar field read as
+The variation with respect to the field $\varphi$ is 
 \begin{equation}
+\begin{split}
 \frac{\delta S[g,\varphi]}{\delta
-\varphi\left(x'\right)}=\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta \varphi\left(x'\right)}
-\end{equation}
-
-\begin{equation}
-\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta \varphi\left(x'\right)}=\int
-\dif x^4\sqrt{-g}\left[-\tensor{g}{^\mu^\nu}
+\varphi\left(x'\right)}&=\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta
+\varphi\left(x'\right)}\\
+&=\int \dif x^4\sqrt{-g}\left[-\tensor{g}{^\mu^\nu}
 \tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\left(\frac{\delta
 \varphi(x)}{\delta \varphi\left(x'\right)}\right)-m^2\varphi\frac{\delta
-\varphi(x)}{\delta \varphi\left(x'\right)}\right]
+\varphi(x)}{\delta \varphi\left(x'\right)}\right]\,,
+\end{split}
 \end{equation}
 where we used that the $\delta$ and $\tensor{\nabla}{_\mu}$ commute. Partial
 integration yields
@@ -264,11 +265,11 @@ integration yields
 \frac{\delta S\textsubscript{m}[g,\varphi]}{\delta \varphi\left(x'\right)}&=\int
 \dif
 x^4\sqrt{-g}\left(\square_{g}-m^2\right)\varphi\delta(x,x')\\
-&=\sqrt{-g}\left(\square_{g}-m^2\right)\varphi
+&=\sqrt{-g}\left(\square_{g}-m^2\right)\varphi\, ,
 \end{split}
 \end{equation}
-where $\square_{g}:=\tensor{g}{^\mu^\nu}
-\tensor{\nabla}{_\mu}\tensor{\nabla}{_\nu} $ is the
+with $\square_{g}:=\tensor{g}{^\mu^\nu}
+\tensor{\nabla}{_\mu}\tensor{\nabla}{_\nu} $ the
 \emph{Laplace–Beltrami operator}, a generalisation of the ordinary laplacian to
 curved space.
 Demanding that the variation with respect to $\varphi$ vanishes implies the
@@ -276,7 +277,8 @@ Demanding that the variation with respect to $\varphi$ vanishes implies the
 \begin{equation}
 \left(\square_g-m^2\right)\varphi=0
 \end{equation}
-Variing with respect to the metric $\tensor{g}{_\mu_\nu}$
+We can also vary the action with respect to the metric
+field $\tensor{g}{_\mu_\nu}$ resulting in 
 \begin{equation}
 \frac{\delta S[g,\varphi]}{\delta
 \tensor{g}{_\mu_\nu}\left(x'\right)}=
@@ -286,9 +288,10 @@ Variing with respect to the metric $\tensor{g}{_\mu_\nu}$
 \tensor{g}{_\mu_\nu}\left(x'\right)}
 =\frac{\sqrt{-g}}{2\kappa}\left(\tensor{G}{^\mu^\nu}+\Lambda\tensor{g}{^\mu^\nu}
 \right)+\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta
-\tensor{g}{_\mu_\nu}\left(x'\right)}
+\tensor{g}{_\mu_\nu}\left(x'\right)}\,.
 \end{equation}
-This makes it convenient to define the energy-momentum tensor (Vorzeichen????)
+To recover the Einstein equations it is convenient to define the
+energy-momentum tensor (Vorzeichen????)
 \begin{equation}
 \tensor{T}{^\mu^\nu}:=\frac{2}{\sqrt{-g}}\frac{\delta
 S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}\,.
@@ -337,14 +340,16 @@ $\tensor{T}{^\mu^\nu_{;\nu}}=0$ this can be checked for the given Tensor
 \end{split}
 \end{equation}
 Where the last equality holds because $\varphi$ satisfies the Klein-Gordon
-equation. The Einstein equations are 10 quasi linear, i.e. the highest order
+equation. 
+\end{example}
+The Einstein equations are ten quasi linear, i.e. the highest order
 derivative apears only linear, differential equations for the metric field
 $\tensor{g}{_\mu_\nu}$. Strictly speaking the Einstein equations are
 \emph{nonlinear}.
-\begin{sidenote}
-If you substract the constrains imposed by the Bianci identities you end with 2
-DOFs, which are associated with the polarisation states of the graviton.
-\end{sidenote}
+% \begin{sidenote}
+% If you substract the constrains imposed by the Bianci identities you end with
+% two DOFs, which are associated with the polarisation states of the graviton.
+% \end{sidenote}
 How do we find a solution to this equations?
 \begin{enumerate}
   \item Prescribe $\tensor{T}{_\mu_\nu}$. This is only possible for high
@@ -419,11 +424,12 @@ $\square f = 0$ is called harmonic.} gauge}
 \begin{equation}
 \square\tensor{x}{^\mu}=0\,.
 \end{equation}
+We can expand the d'Alembertian to
 \begin{equation}
 \begin{split}
 \square\tensor{x}{^\mu}&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\sigma}\tensor{\partial}{_\sigma}\tensor{x}{^\mu}\right)\\
 &=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\sigma}\tensor{\delta}{_\sigma^\mu}\right)\\
-&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\mu}\right)\\
+&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\mu}\right)\,.\\
 \end{split}
 \end{equation}
 (Formel für $\square$ die hier genutzt wurde referenzieren)
@@ -445,7 +451,7 @@ hier was???)
 \subsubsection{Degrees of freedom}
 \begin{itemize}
   \item[\color{section_color}\textsf{\textbf{10}}]
-  componnents for every spacetime point from the symmetric $\tensor{g}{_\mu_\nu}(x)$
+  componnents for every spacetime point from the symmetric $\tensor{g}{_\mu_\nu}$
   \item[\color{section_color}\textsf{\textbf{-4}}] from the
   constraint equation $\tensor{G}{_\mu_\nu^{;\nu}}=0$
   \begin{itemize}
@@ -461,7 +467,7 @@ hier was???)
   \item[\color{section_color}\textsf{\textbf{-4}}] due to the freedom
   to choose coordinates (i.e. a gauge).
 \end{itemize}
-We are left with 2 physical degrees of freedom which may be interpreted as the
+We are left with two physical degrees of freedom which may be interpreted as the
 polarisation states of the graviton field.
 \subsubsection{Comparison with electrodynamics in flat spacetime}
 In electrodynamics instead of the einstein equations we have the field equations
@@ -470,8 +476,8 @@ for the four potential $\tensor{A}{_\mu}$:
 \square\tensor{A}{_\mu}-\partial_\mu\left(\partial_\nu\tensor{A}{^\nu}
 \right)=0\,.
 \end{equation}
-As we did for the gravitational field we take a look
-at the 0 component. We find
+As we did for the gravitational field, we take a look
+at the zero component. We find
 \begin{equation}
 \begin{split}
 0&=-\partial_0^2\tensor{A}{_0}+\partial_i\partial^i\tensor{A}{_0}
@@ -511,12 +517,12 @@ undistinguishable. We can also fix a gauge for example the \emph{Lorentz gauge}:
 \begin{equation}
 \partial_\mu\tensor{A}{^\mu}=0\, .
 \end{equation}
-If we derive this by the 0 component we get
+If we derive this by the zero component we get
 \begin{equation}
 \partial_{0}^2\tensor{A}{^0}=-\partial_i\partial_0\tensor{A}{^i}\, ,
 \end{equation}
-so as with $\tensor{g}{_0_0}$ the evolution of the 0 component is now related to
-the other components. There is still one residual gauge condition, namely we can
+so as with $\tensor{g}{_0_0}$ the evolution of the zero component is now related
+to the other components. There is still one residual gauge condition, namely we can
 still transform
 \begin{equation}
 \tensor{A}{_\mu}\to\tensor*{A}{*_\mu^\prime}=
