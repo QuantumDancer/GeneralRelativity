@@ -124,12 +124,57 @@ m\textsubscript{I}\vec{\ddot{x}}
 =-m_{\text{g}}\frac{G\textsubscript{N}M_{\text{g}}}{r^2}\vec{e}_r 
 =-m_{\text{g}}\vec{g}\,.
 \end{equation}
-As a experimental result all bodys recive the same acceleration due to gravity
-$\ddot{\vec{x}}\sim \vec{g}$. By a 'proper' choice of units of the flight-time
-$t=\sqrt{\frac{m\textsubscript{I}}{m\textsubscript{g}}}\sqrt{\frac{2h}{g}}$,
+As a experimental result that has been measured up to a high accuracy (compare
+tabular~\ref{tab:WEPExp}) all bodys recive the same acceleration due to gravity
+$\ddot{\vec{x}}\sim \vec{g}$. By a 'proper' choice of units of the flight-time $t=\sqrt{\frac{m\textsubscript{I}}{m\textsubscript{g}}}\sqrt{\frac{2h}{g}}$,
 we get
 \begin{equation}
 m\textsubscript{I}=m\textsubscript{g}=:m\,.
+\end{equation}
+\begin{table}
+\centering
+\begin{tabulars}{rllr}
+\toprule
+Year&Experimenter&Experiment&accuracy\\
+\midrule
+1636&Galilei&inclined planes&$10^{-2}$\\
+1689&Newton&pendulum&$10^{-3}$\\
+1832&Bessel&pendulum&$10^{-5}$\\
+1922&Eötvös&pendulum&$10^{-9}$\\
+1922&Shapro et al.&pendulum&$10^{-12}$\\
+1999&Baesler&torsion balance&$10^{-14}$\\
+\bottomrule
+\end{tabulars}
+\caption{Experiments measuring the ratio
+$\frac{m\textsubscript{I}}{m\textsubscript{g}}$.\label{tab:WEPExp}}
+\end{table}
+\subsection{Tidal forces}
+Assume we have a body of finite extention in a gravitationational potantial
+potential $\Phi$, an example beeing the earth in the potential of the moon.
+On the center of the body we have 
+%TODO masses???
+\begin{equation}
+\dod[2]{\tensor{x}{^i}}{t}=-\dpd{\Phi}{\tensor{x}{_i}}\,.
+\end{equation}
+If we consider a point shifted by $\tensor{\chi}{^i}$ from the center then the
+acceleration is given as
+\begin{equation}
+\begin{split}
+\dod[2]{}{t}\left(\tensor{x}{^i}+\tensor{\chi}{^i}\right)
+&=-\dpd{\Phi\left(\tensor{x}{^i}+\tensor{\chi}{^i}\right)}{\tensor{x}{_i}}\\
+&\simeq-\dpd{\Phi\left(\tensor{x}{^i}\right)}{\tensor{x}{_i}}
+-\dmd{\Phi\left(\tensor{x}{^i}\right)}{2}{\tensor{x}{_i}}{}{\tensor{x}{_j}}{}\tensor{\chi}{^j}\,.
+\end{split}
+\end{equation}
+Subtracting the previous equations yields the tidal force
+\begin{equation}
+\dod[2]{\tensor{\chi}{^i}}{t}=-\dmd{\Phi\left(\tensor{x}{^i}\right)}{2}{\tensor{x}{_i}}{}{\tensor{x}{_j}}{}\tensor{\chi}{^j}\,.
+\end{equation}
+The tidal force tensor $\dmd{\Phi}{2}{\tensor{x}{_i}}{}{\tensor{x}{_j}}{}$ is of
+the form
+\begin{equation}
+\dmd{\Phi}{2}{\tensor{x}{_i}}{}{\tensor{x}{_j}}{}
+=\frac{G\textsubscript{N}M}{r^3}\left(\tensor{\delta}{_i_j}-3\frac{\tensor{x}{_i}\tensor{x}{_j}}{r^2}\right)\,.
 \end{equation}
 %TODO newtons laws?
 %TODO picture
