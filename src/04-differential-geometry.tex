@@ -1,11 +1,13 @@
 \chapter{Differential Geometry}
-As we have noted before general relativity is a inherent local theory. It is convenient to formulate it in terms of differential geometry.
+As we have noted before, general relativity is a inherent local theory. It is
+convenient to formulate it in terms of differential geometry.
 \section{Manifolds}
 \begin{definition}
 A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis, that
 is locally homeomorphic to $\mathbb{R}^n$. We will give a short introduction to
 the most important terms.
 \end{definition}
+%TODO picture
 \begin{remark}
 The requirements Hausdorff and countable basis are of a more technical nature and are satisfied for most of the objects one can imagine 
 except some pathological examples (we won't go into the details on this).
@@ -15,7 +17,8 @@ $(\varphi,U^\varphi)$ called an \emph{atlas} $\mathcal{A}$ with $\cup_{\varphi\i
 i.e. the charts cover the whole manifold. The maps $\varphi:U^\varphi\to \varphi(U^\varphi)\subset\mathbb{R}^n $ are homoemorphisms, 
 meaning that $U^\varphi$ is open, $\varphi$ is bijective and both $\varphi$ and $\varphi^{-1}$ are continuous.
 Further for any two $\varphi,\psi\in \mathcal{A}$, the coordinate changes 
-$\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$ be infinitely often differentiable.
+$\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$
+be smooth\footnotemark .
 \end{remark}
 \begin{figure}
     \begin{center}
@@ -32,11 +35,13 @@ $\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$
         \end{tikzpicture}
     \end{center}
     \caption{Coordinate change.} %TODO better caption.
+    %TODO mor space.
 \end{figure}
-
+\footnotetext{Infinitely often differentiable or short $C^\infty$.}
 We can now reduce differentiation on the manifold to the ordinary differentiation in $\mathbb{R}^n$. 
 Since physical laws are described in terms of differential equations, we can formulate them on $M$. 
-The fact that the coordinate changes are $C^\infty$ ensures that differentiability is well defined (and thus the physical laws are).
+The fact that the coordinate changes are smooth ensures that differentiability
+is well defined (and thus the physical laws are).
 
 \begin{sidenote}[Differentiability depends on the Differential Structure]
 There can be different \emph{differential structures} on a manifold, 
@@ -45,7 +50,7 @@ could not be merged because the coordinate changes would not be $C^\infty$. Thos
 Remarkably this may even play a role in some physical theories. 
 As an example an 11d-supergravity can be described as a product
 $\Reals^{3+1}\times \Sphere^7$.
-Where $\Sphere^7$ is the 7-sphere and $\Reals^{3+1}$ Mikovski space.
+Where $\Sphere^7$ is the seven-sphere and $\Reals^{3+1}$ Mikovski space.
 This means on every point in the $\mathbb{R}^{3+1}$ there is a (small) $\Sphere^7$  located that contains additional spatial dimensions. 
 The $\Sphere^7$ has 28 different differential structures, so the choice of
 such a structure affects the theory for the above reasons.
@@ -59,7 +64,8 @@ For example a torus can be thought of as a square with the opposite sides identi
 \begin{sidenote}[Topology of the Universe]
 In addition to the local structure, we may question the global, i.e. the
 topological structure of the universe.
-On may for example imagine that we live on the surface of a 3-sphere (finite but boundless universe). 
+On may for example imagine that we live on the surface of a three-sphere (finite
+but boundless universe).
 However this might be observable in crosscorelation in the cosmic microwave background from photons reaching us 
 from different directions but coming from the same event. There is no evidence of such phenomena so far. 
 Most models can be excluded to some certainty. A cylindrical
@@ -67,27 +73,28 @@ universe is still possible (finite in one, infinite in the
 other directions).
 \end{sidenote}
 \section{Vectors}
-Vectors are important objects describing physics. The naive view as an "arrow pointing frow one point to another" is flawed. 
+Vectors are important objects describing physics. The naive view as an 'arrow
+pointing frow one point to another' is flawed.
 For example on a sphere an arrow connecting two points does not make much sense.
 We want to find a description of vectors as objects that are naturally related to the structure of the manifold independent of the embedding.
 \subsection{Definitions}
 There are three equivalent definitions for a
-vector:
+(contravariant) vector:
 \begin{enumerate}
-    \item Algebraic 
-    \item Physical
-    \item Geometrical 
+    \item algebraic 
+    \item physical
+    \item geometrical.
 \end{enumerate}
 We start by giving the algebraic definition which is the most
 abstract and prefered by mathematicans, because it is suitable for proofs.
 Vectors are identified with derivatices, which are formally defined by
 \begin{definition}[Derivation]
-A derivation $D$ satisfies the following rules for all $f,g\in
+A derivation $D$ satisfies the following rules, for all $f,g\in
 C^\infty(M,\Reals)$ and $\lambda \in \Reals$:
 \begin{align}
-    D(af+bg) &=Df+Dg\\
-    D(\lambda f)&=\lambda f\\
-    D(fg)&= (Df)g+f(Dg)
+    D(af+bg) &=Df+Dg\,,\\
+    D(\lambda f)&=\lambda f\,,\\
+    D(fg)&= (Df)g+f(Dg)\,.
 \end{align}
 \end{definition}
 We then define a vector by 
@@ -98,7 +105,7 @@ The germ is the set of all functions $f\in C^\infty(M,\Reals)$, where we
 identify all functions that are equal in some neighbourhood of $p$, i.e. vectors are local objects.
 Given two vectors we can construct a new one, the \emph{Lie bracket}
 \begin{equation}
-    [X,Y]f:=X(Yf)-Y(Xf)\, .
+    [X,Y]f:=X(Yf)-Y(Xf)\, .\label{eq:LieBraket}
 \end{equation}
 The only property that has to be checked is that it satisfies the Leibniz rule.
 \begin{equation}
@@ -138,30 +145,32 @@ Comparing the coefficients gives the vector transformation law
 physical] A vector with components $A^i$ is a object that transforms according
 to \ref{eq:coefftrafo} under a change of coordinates.
 \end{definition}
-Consider a curve on $M$, i.e. a map $\gamma:\mathbb{R}\to M$, with
-$\gamma(0)=p$, $\dot{\gamma}(0)=X$. Then $D_X f=\od{}{t}(f\circ\gamma)(0)$ is
+Consider a curve on a Manifold $M$, i.e. a
+map $\gamma:\mathbb{R}\to M$, with $\gamma(0)=p$, $\dot{\gamma}(0)=X$. Then $D_X f=\od{}{t}(f\circ\gamma)(0)$ is
 a derivative, namely the directional derivative along $X$.
-For the special curves $\gamma_i(t)=p+te_i$, 
-$D_{\dot{\gamma}_i} f=\partial_if$, so we can identify the derivatives with
-the geometrical tangent space.
+Consider the special curves $\gamma_i(t)=\varphi(p+te_i)$, with $\varphi$ a
+chart of $M$. Then $D_{\dot{\gamma}_i} f=\partial_if$,  so $D_{\dot{\gamma}_i}$
+represents a the directional derivative and we can relate derivatives to the
+geometrical tangent space.
 
-Since we have a basis, we can work in local coordinates.
+Since we have a basis, we can work in (local) coordinates and will do so most of
+the time.
 \begin{example}[Lie brackets in local coordinates]
-Let $A=A^i\pd{}{{x^i}}$, $B=B^i\pd{}{{x^i}}$ be vectors, then the Lie bracket
-reads
+Let $A=A^i\partial_i$, $B=B^i\partial_i$ be vectors, then the Lie bracket
+\eqref{eq:LieBraket} in local coordinates is given as
 \begin{equation}
     [A,B]^j=A^i\partial_iB^j-B^i\partial_iA^i\, .
 \end{equation}
 \end{example}
 Since the tangent space is a vector space, we can define its dual space
-\begin{definition}[Cotangentspace] The Cotangentspace is defined as the set of
-linear maps from $T_pM$ to $\mathbb{R}$
+\begin{definition}[Cotangent space] The cotangent space $T_pM^*$ is the set of
+linear maps from $T_pM$ to $\mathbb{R}$, i.e.
 \begin{equation}
     T_pM^*=\{L:T_pM\to \mathbb{R}\, |\, L \text{ linear}\}\, .
 \end{equation}
 \end{definition}
-The Cotangentspace is again a vector space of the same dimension. Its elements
-are called dual or covariant vectors.
+The cotangent space is again a vector space of the same dimension. Its elements
+are called \emph{dual} or \emph{covariant} vectors.
 We can define a basis on $	T_pM^*$, which we denote by $\dif x^i$ and  which acts on $T_pM$ via
 \begin{equation}
     \dif x^i(\partial_j)=\delta^i_j\, . \label{eq:orthdual}
@@ -174,10 +183,10 @@ It can easily deduced by \eqref{eq:orthdual} that the components of a dual vecto
 If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the components of a vector and a
 dual vector respectively, then the transformation can be written in matrix form
 \begin{align}
-    \vec{a}&\to V\vec{a}\, ,\\
-    \vec{b}&\to\left(V\transpose\right)^{-1}\vec{b}\, ,
+    \vec{a}&\to\overline{\vec{a}}= V\vec{a}\, ,\\
+    \vec{b}&\to\overline{\vec{b}}=\left(V\transpose\right)^{-1}\vec{b}\, ,
 \end{align}
-with $V=\left(\pd{\overline{x}^i}{{x^j}}\right)_{ij}$ the
+with $V_{ij}=\dpd{\overline{x}^i}{{x^j}}$ the
 Jacobian of the transformation.
 In normal calculus we restrict ourself to orthogonal transformations (i.e.
 mapping orthonormal bases onto each other) for which
@@ -213,9 +222,10 @@ We have not yet established a relation between upper and lower indices, i.e. we 
 \begin{equation}
     \tensor{T}{^a_b}=\tensor{T}{^b_a}
 \end{equation}
-make no sense, since they can not be true in every system.
+therefore make no sense.
 \end{remark}
 \section{The Metric}
+%TODO sort sections
 So far we have not defined a length scale on manifolds yet. We will do so now by
 introducing a \emph{metric} 
 \begin{definition}[Metric]
@@ -254,24 +264,24 @@ multiply this equation by it to obtain $A^i$ in terms of $A_i$.
 \end{remark}
 \section{Parallel Transport}
 Idea: Generalize parralel transport from flat space.
-(PICTURES) 
+%TODO pictures
 If we express a vector in non-cartesian coordinates and shift it it's
 coordinates do not change.
 We take a look on two operations:
 \begin{enumerate}
 \item the change of the vector itself
-\item the change of its coordinates
+\item the change of its coordinates.
 \end{enumerate}
 Let $A_i$ be the coordinates of a vector in a system $x^i$ and $B_i$ the in a
 system associated with coordinates $y^i$ respectively.
 \begin{equation}
-A_i\pd{{y^j}}{{x^i}}B_j\, ,\quad B_i\pd{{x^j}}{{y^i}}A_j\, .
+A_i=\dpd{{y^j}}{{x^i}}B_j\, ,\quad B_i=d\pd{{x^j}}{{y^i}}A_j\, .
 \end{equation}
 We look at vectors whose coodinates in the system $y^i$ do not change i.e.
 $\delta B_i=0$ The variation of $A_i$ is given by
 \begin{equation}
 \delta
-A_i=\delta\left(\pd{{y^j}}{{x^i}}\right)B_j
+A_i=\delta\left(\dpd{{y^j}}{{x^i}}\right)B_j
 =\md{{y^j}}{2}{{x^i}}{}{{x^k}}{}\delta
 x^k B_j\, .
 \end{equation}
@@ -285,7 +295,7 @@ $\affin{l}{i}{k}$ is called \emph{affine connection} or short affinity.
 We can always find a coordinate system in wich $\affin{l}{i}{k}\equiv 0$, this
 system is called \emph{Riemanian normal coordinate system} (RNCS).
 \end{remark}
-(Evtl. Konstruktion, wird im skript angedeutet, auch geodesic coordinates\ldots)
+%TODO construction i.e. geodesic coordinates
 We notice that if 
 \begin{equation}
 \left(\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\right)\delta x^k = 0\,
@@ -307,6 +317,7 @@ In order to make the lagrangian gauge invariant we exchange
 \begin{equation}
 \tensor{\partial}{_\mu}\to\tensor{D}{_\mu}+\imI\tensor{A}{_\mu}\, ,
 \end{equation}
+%TODO what is phi?
 which effectively produces aditional terms in the lagrangian, namely
 \begin{equation}
 \imI\tensor{A}{^\mu}\left(\phi^*\tensor{\partial}{_\mu}\phi
@@ -350,9 +361,10 @@ Similar expressions hold for tensors of arbitary rank where each index gives an
 aditional term containing a contraction with the affinity $\Gamma^i_{jk}$. 
 We now want to consider curved spaces. This can not immediatly be determined by
 the metric, for example the polar coordinates do not look flat even though they
-describe the ordinary $\Reals^2$. (PICTURES)
-\subsection{Riemanian Curvature Tensor}
-\ldots
+describe the ordinary $\Reals^2$.
+%TODO pictures
+\section{Riemanian Curvature Tensor}
+%TODO sort section
 We can contract indices on the Rieman Tensor
 \begin{equation}
 \tensor{R}{^i_i_k_l}=\pd{{\Gamma^i_{il}}}{{x^k}}-\pd{{\Gamma^i_{ik}}}{{x^l}}
@@ -377,23 +389,23 @@ introduce a metric. The equivalence principle implies that space is locally
 Minkovski.
 \begin{sidenote}
 There are certain theories that can be formulated without a metric. An example
-beeing threedimensional gravity.
+beeing threedimensional gravity, which is nondynamic. 
 \end{sidenote}
 Inner product 
 \begin{equation}
-\langle A,B\rangle=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{B}{^j}
+g(A,B)=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{B}{^j}
 \end{equation}
 Pseudo norm
 \begin{equation}
-\|A\|^2=\langle A,A\rangle=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{A}{^j}
+\|A\|^2=g(A,A)=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{A}{^j}
 \end{equation}
 Since the connection and the metric are not related, we stil don't have a lenght
 scale on the manifold
-\begin{equation}
-\tensor{R}{_i_j_k_l}:=\tensor{g}{_i_a}\tensor{R}{^a_j_k_l}
-\end{equation}
-Only useful if $R$ and $g$ are related i.e. metric connection.
-(Bilder)
+% \begin{equation}
+% \tensor{R}{_i_j_k_l}:=\tensor{g}{_i_a}\tensor{R}{^a_j_k_l}
+% \end{equation}
+% Only useful if $R$ and $g$ are related i.e. metric connection.
+% (Bilder)
 A curve is a map $\gamma:\Reals\to M$. The parametrisation is arbitary e.g.
 \begin{equation}
 \begin{split}
@@ -410,19 +422,21 @@ clearly describes a straight line with $y=x$.
 We notice that $\od{\tensor{\gamma}{^i}}{t}$ is parallel to
 $\od[2]{\tensor{\gamma}{^i}}{t}$. This gives rise to annother possible
 generalisation of a straight line.
-In curved coordinates we have (warum?)
+In curved coordinates we have 
 \begin{equation}
 \od[2]{\tensor{x}{^i}}{t}+\affin{i}{j}{k}\od{\tensor{x}{^j}}{t}\od{\tensor{x}{^k}}{t}
 =\lambda(t)\od{\tensor{x}{^j}}{t}\,.
 \end{equation}
+%TODO all steps + reasoning
 If we demand that this is equal to the minimazation of the arc length we get a
 preffered connection. 
 Suppose we have a different parametrisation $s(t)$
 \begin{equation}
 \od{\tensor{x}{^i}}{t}=\od{\tensor{x}{^i}}{s}\od{s}{t}\,,\quad
 \od[2]{\tensor{x}{^i}}{t}=\od[2]{\tensor{x}{^i}}{s}\left(\dod{s}{t}\right)^2
-+\od{\tensor{x}{^i}}{s}\dod[2]{s}{t}
++\od{\tensor{x}{^i}}{s}\dod[2]{s}{t}\, ,
 \end{equation} 
+then the equation for a straight line reads as
 \begin{equation}
 \left(\dod[2]{\tensor{x}{^i}}{s}+\affin{i}{j}{k}\dod{\tensor{x}{^j}}{s}\dod{\tensor{x}{^k}}{s}
 \right)\left(\dod{s}{t}\right)^2+\dod[2]{s}{t}\dod{\tensor{x}{^i}}{s}
@@ -452,13 +466,14 @@ The 'length' defined this way does not have to concede with the length given by
 the metric and is also defined for example for lightlike curves (which cannot
 be parametrised by the arc length)
 \end{remark}
-(Nochmal variation der Bogenlänge\ldots)
+%TODO at this place there is a repetition of the variation principle. what
+% should we do with it?
 Notice that \eqref{eq:affingeod} is identical to \eqref{eq:geodeq} if we choose
 the affinity to be $\affin{k}{i}{j}=\cSym{k}{i}{j}$. This is called the
 \emph{metric} or \emph{Christoffel connection}, and we will
 always assume it in the following.
-A general metric compatible connection ($\tensor{\nabla}{_k}\tensor{g}{_i_j}=0$)
-satisfies
+A general metric compatible
+connection\footnote{$\tensor{\nabla}{_k}\tensor{g}{_i_j}=0$} satisfies
 \begin{equation}
 \affin{k}{i}{j}=\cSym{k}{i}{j}+\tensor{T}{^k_i_j}
 +\tensor{g}{^i^r}\left(\tensor{T}{^s_j_r}\tensor{g}{_s_i}+\tensor{T}{^s_i_r}\tensor{g}{_s_j}\right)
@@ -472,6 +487,118 @@ connection.
 \begin{remark}
 Non-Christoffel connections play a role, for example when dealing with spinors.
 \end{remark}
+%TODO connect losose ends
 \begin{equation}
-\tensor{R}{ijkl}=\frac{1}{2}\left(\dmd{{\tensor{g}{_i_l}}}{2}{x}{}{x}{}\right)
+\tensor{R}{^i_j_k_l}=-\tensor{R}{^i_j_l_k}\,.
 \end{equation}
+Bianci identites for the Riemann tensor
+\begin{equation}
+\tensor{R}{^i_j_k_l_{;m}}+\tensor{R}{^i_j_m_k_{;l}}+\tensor{R}{^i_j_l_m_{;k}}=0
+\end{equation}
+Proof: If we would write it all out we wold have to write 22 terms. Instead we
+use a RNCS so that the Rieman tensor simplifies to 
+\begin{equation}
+\tensor{R}{^i_j_k_l}
+=\tensor{\partial}{_k}\affin{i}{j}{l}
+-\tensor{\partial}{_l}\affin{i}{j}{k}
+\end{equation}
+And with $\tensor{\nabla}{_k}=\tensor{\partial}{_k}$ we get
+\begin{equation}
+\tensor{R}{^i_j_k_l_{;m}}
+=\tensor{\partial}{_m}\tensor{R}{^i_j_k_l}
+=\tensor{\partial}{_k}\tensor{\partial}{_m}\affin{i}{j}{l}
+-\tensor{\partial}{_l}\tensor{\partial}{_m}\affin{i}{j}{k}\,.
+\end{equation}
+Plugging in gives the result in the RNCS system, but since the equation is
+tensorial, it holds in all systems. Notice the similarity to 
+\begin{equation}
+\tensor{\partial}{_m}\tensor{F}{_a_b}
+=\tensor{\partial}{_b}\tensor{\partial}{_m}\tensor{A}{^a}
+-\tensor{\partial}{_a}\tensor{\partial}{_m}\tensor{A}{^b}
+\end{equation}
+Therefore the Biancci identity is identical to the second set of Maxwells
+equations
+%TODO reference
+If the affinity is symetrical $\affin{k}{i}{j}=\affin{k}{j}{i}$ we further have
+the identity
+\begin{equation}
+\tensor{R}{^i_j_k_l}+\tensor{R}{^i_l_j_k}+\tensor{R}{^i_k_l_j}=0
+\end{equation}
+For a metric affinity $\affin{k}{i}{j}=\cSym{k}{i}{j}$, we can raise and lower
+indices
+\begin{equation}
+\begin{split}
+\tensor{R}{_i_j_k_l}
+&=\tensor{g}{_i_a}\tensor{R}{^a_j_k_l}\\
+&=\tensor{g}{_i_a}\left(\tensor{\partial}{_k}\affin{i}{j}{l}
+-\tensor{\partial}{_l}\affin{i}{j}{k}\right)\\
+&=\tensor{g}{_i_a}\left(\tensor{\partial}{_k}\tensor{g}{^a^s}\csym{j}{l}{s}
+-\tensor{\partial}{_l}\tensor{g}{^a^s}\csym{j}{k}{s}\right)\\
+&=\tensor{\partial}{_k}\csym{j}{l}{i}
+-\tensor{\partial}{_l}\csym{j}{k}{i}\\
+&=\frac{1}{2}\left(
+\dmd{{\tensor{g}{_i_l}}}{2}{\tensor{x}{^j}}{}{\tensor{x}{^k}}{}
++\dmd{{\tensor{g}{_j_k}}}{2}{\tensor{x}{^i}}{}{\tensor{x}{^l}}{}
+-\dmd{{\tensor{g}{_i_k}}}{2}{\tensor{x}{^j}}{}{\tensor{x}{^l}}{}
+-\dmd{{\tensor{g}{_j_l}}}{2}{\tensor{x}{^i}}{}{\tensor{x}{^j}}{}\right)
+\end{split}
+\end{equation}
+where we used the metric compability in the RNCS
+($\tensor{\nabla}{_k}\tensor{g}{_i_j}=\tensor{\partial}{_k}\tensor{g}{_i_j}=0$)
+. Imideatly we can exctract symmetries
+\begin{align}
+\tensor{R}{_i_j_k_l}&=-\tensor{R}{_j_i_k_l}\\
+\tensor{R}{_i_j_k_l}&=-\tensor{R}{_i_j_l_k}
+\end{align} 
+If we further introduce multiindices $A=(i,j)$, $B=(k,l)$ (by antisymmetry
+there are six independent components for $A,B$ each)
+\begin{equation}
+\tensor{R}{_A_B} = \tensor{R}{_B_A}
+\end{equation}
+So $R$ can be thought as a $6\times 6$ maxtrix.
+\begin{table}
+    \centering
+    \begin{tabulars}{rrr}
+      	\toprule
+		Dimension&Riemann tensor &Ricci tensor \\
+		\midrule
+		1&0&0\\
+		2&1&1\\
+		3&6&6\\
+		4&20&10\\
+		$n$&$\frac{1}{12}n^2(n^2-1)$&$\frac{1}{2}n(n+1)$\\
+		\bottomrule
+    \end{tabulars}
+    \caption{Number of independent components of Riemann
+    and Ricci tensor.\label{tab:Nindcomp}}
+\end{table}
+Table~\ref{tab:Nindcomp} lists the number of independent components of the
+curvature tensor and the Ricci tensor in various dimensions. Therby a
+ondimensional space is always flat, a twodimensional is characterised by the
+curvature scalar $R$ alone and in three dimensions the Ricci tensor is
+sufficient to know the Riemann tensor. Therefore four is the lowest dimension in
+which the Rieman tensor contains additional information of the curvature of
+space.
+Formulas 
+\begin{equation}
+\mathrm{div} A=\tensor{\partial}{_i}\tensor{A}{^i}=\cSym{i}{i}{k}\tensor{A}{^k}
+\end{equation}
+\begin{equation}
+\tensor{\partial}{_k}g=2g\cSym{i}{i}{k}
+\end{equation}
+\begin{equation}
+\cSym{i}{i}{k}=\frac{1}{\sqrt{g}}\tensor{\partial}{_k}\sqrt{g}
+\end{equation}
+\begin{equation}
+\mathrm{div}
+A=\frac{1}{\sqrt{g}}\tensor{\partial}{_k}\left(\sqrt{g}\tensor{A}{^k}\right)
+\end{equation}
+If further $A$ is derived from a potential
+$\tensor{A}{_i}=\tensor{\partial}{_i}V$
+\begin{equation}
+\square V
+=\mathrm{div}A
+=\frac{1}{\sqrt{g}}\tensor{\partial}{_k}\left(\sqrt{g}\tensor{g}{^k^i}\tensor{\partial}{_i}V\right)\label{eq:quabla}
+\end{equation}
+%TODO possible outsource to formula section or the like. There are other
+% formulaas as well ..

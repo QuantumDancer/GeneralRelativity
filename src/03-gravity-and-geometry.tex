@@ -3,22 +3,26 @@ The observable universe is stable. There are two obvious configurations in which
 \begin{enumerate}
     \item Static universe, masses are arranged in a grid, all nett forces cancel.
     However small fluctuations cause the system to collapse therefore this is
-    no possible description for the universe. (PICTURE)
+    no possible description for the universe. 
+%TODO picture
     \item Expanding universe, all masses move away from each other, overcoming the gravitational attraction.
     Theoretically such a system can be described by using Newtonian Physics introducing additional energy contributions.
     This turns out to be inconsistent.
 \end{enumerate}
 Since in the second description all particles are accelerated relative to each other, there are no inertial systems.
 A theory in which all observers are equal must therefore be local and thus be described by means of differential geometry.
-Claim: The laws of physics are the same in every system.
-If we assume that the Maxwell equations are right, the Newtonian theory of
-gravity must be wrong.
+We claim that the laws of physics are the same in every system.
+If we assume that the \textsc{Maxwell} equations are right, the
+\textsc{Newton}ian theory of gravity must be wrong.
+%TODO is use of small capitals good practice?
 Implications:
 All free falling systems are equivalent (i.e. indistinguishable by the observer).
 Light must bend, otherwise a beam could be used to deduce whether your system is inertial.
-The following example illustrates that Euclidean geometry is no adequate description of space-time.
+The following example illustrates that \textsc{Euclid}ean geometry is no
+adequate description of space-time.
 \begin{example}[Rotationg Sphere]
 see Introduction to tensor calculus
+%TODO copy or reference page
 \end{example}
 \section{Coordinate Systems}
 We will start by studying coordinate systems in the flat space $\Reals^2$, which
@@ -129,50 +133,91 @@ The length $S$ of a curve $\gamma$ with $\gamma^i(\lambda) = x^i(\lambda)$ is
 given by the integral
 \begin{equation}
     S=\int_{\gamma}\sqrt{\dif s^2} =
-    \int_{\gamma}\sqrt{g_{ij}\dif x^i\dif
-    x^j}=\int_{a}^{b}\sqrt{g_{ij}\dod{x^i}{\lambda} \dod{x^j}{\lambda}}\dif
-    \lambda\, .
+    \int_{\gamma}\sqrt{\tensor{g}{_i_j}\dif \tensor{x}{^i}\dif
+    \tensor{x}{^j}}=\int_{a}^{b}\sqrt{\tensor{g}{_i_j}\dod{\tensor{x}{^i}}{\lambda}
+    \dod{\tensor{x}{^j}}{\lambda}}\dif \lambda\, .
 \end{equation}
-As stated above generalised straight lines satisfy $\delta S = 0$. It is
-convinient to parametrise the curve by the arc length $\dif s$. If we define
-$L:=\left(g_{ij}\od{x^i}{s} \od{x^j}{s}\right)^{\nicefrac{1}{2}}$, $S$ takes a
-form familiar from classical mechanics:
+As stated above generalised straight lines satisfy $\delta S = 0$. If we define
+$L:=\left(\tensor{g}{_i_j}\od{\tensor{x}{^i}}{\lambda}
+\od{\tensor{x}{^j}}{\lambda}\right)^{\nicefrac{1}{2}}$, $S$ takes a form
+familiar from classical mechanics:
 \begin{equation}
-    S=\int_a^b L\dif s\, .
+    S=\int_a^b L\dif \lambda\, .
 \end{equation}
 The extremal condition implies the Euler Lagrange equations
 \begin{equation}
-    \dod{}{\lambda}\pd{L}{\dot{x}_i}-\pd{L}{x_i}
-=0\, .		\end{equation}
-In the case at hand the equations are
+    \dod{}{\lambda}\pd{L}{\left(\pd{\tensor{x}{^i}}{\lambda}\right)}
+    -\pd{L}{\tensor{x}{^i}}
+    =0\, .		\end{equation}
+We can calculate the relevant terms to 
+\begin{align}
+\dpd{L}{\tensor{x}{^i}}&=\frac{1}{2\sqrt{g_{ij}\od{x^i}{\lambda}
+\od{x^j}{\lambda}}}\tensor{g}{_j_k_{,i}}\dod{x^j}{\lambda}
+\dod{x^k}{\lambda}\,,\\
+\dpd{L}{\left(\pd{\tensor{x}{^i}}{\lambda}\right)}
+&=\frac{1}{\sqrt{g_{ij}\od{x^i}{\lambda}
+\od{x^j}{\lambda}}}\tensor{g}{_j_i}\dod{x^j}{\lambda}\, .
+\end{align}
+If we choose the parameter $\lambda$ so that we are parametrised by the arc
+length\footnote{this is impossible for null i.e. lightlike geodesics, it can be
+shown however, that the resulting equation also holds true for null geodesics.}
+i.e.
 \begin{equation}
-    0=\tensor{g}{_i_l}\tensor{\ddot{x}}{^j}+\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} -
-    \partial_l g_{ij}\right)\dot{x}^j\dot{x}^l\, . \label{eq:PreGeo}
+\od{}{\lambda}\left(\sqrt{g_{ij}\od{x^i}{\lambda}\od{x^j}{\lambda}}\right)=0\,,
+\end{equation}
+the Euler Lagrange equations simplify to
+\begin{equation}
+0=\frac{1}{\sqrt{\tensor{g}{_i_j}\od{\tensor{x}{^j}}{\lambda}
+\od{\tensor{x}{^j}}{\lambda}}}\dod{}{\lambda}
+\left(\tensor{g}{_j_i}\dod{\tensor{x}{^j}}{\lambda}\right)
+-\frac{1}{2\sqrt{\tensor{g}{_i_j}\od{x^i}{\lambda}
+\od{\tensor{x}{^j}}{\lambda}}}\tensor{g}{_j_k_{,i}}\dod{\tensor{x}{^j}}{\lambda}
+\dod{\tensor{x}{^k}}{\lambda}\,,
+\end{equation}
+or equivalently
+\begin{equation}
+\begin{split}
+0
+&=\dod{}{\lambda}\left(\tensor{g}{_j_i}\dod{\tensor{x}{^j}}{\lambda}\right)
+-\frac{1}{2}\tensor{g}{_j_k_{,i}}\dod{x^a}{\lambda}
+\dod{x^k}{\lambda}\\
+&=\tensor{g}{_j_i_{,k}}\dod{\tensor{x}{^j}}{\lambda}\dod{\tensor{x}{^k}}{\lambda}
++\tensor{g}{_j_i}\dod[2]{\tensor{x}{^j}}{\lambda}
+-\frac{1}{2}\tensor{g}{_j_k_{,i}}\dod{\tensor{x}{^j}}{\lambda}\\
+&=\tensor{g}{_j_i}\dod[2]{\tensor{x}{^j}}{\lambda}
++\frac{1}{2}\left(\tensor{g}{_j_i_{,k}}+\tensor{g}{_i_j_{,k}}
+-\tensor{g}{_j_k_{,i}}\right)\dod{\tensor{x}{^j}}{\lambda}
+\dod{\tensor{x}{^k}}{\lambda}\label{eq:PreGeo}\,.
+\end{split}
 \end{equation}
 The term invoking derivatives of the metric defines the \emph{Christoffel
 symbols of the first kind}
 \begin{equation}
-    \csym{i}{j}{l}:=\frac{1}{2} \left(\partial_i g_{jl} + \partial_j g_{il} -
-    \partial_l g_{ij}\right)\, .
+    \csym{j}{k}{i}:=\frac{1}{2}
+    \left(\tensor{g}{_j_i_{,k}}+\tensor{g}{_i_j_{,k}} -\tensor{g}{_j_k_{,i}}\right)\, .
 \end{equation}
-It is convenient to multiply \eqref{eq:PreGeo} by the inverse metric $g^{ki}$ so that we obtain the \emph{geodesic equation}
+It is convenient to multiply \eqref{eq:PreGeo} by the inverse metric $g^{li}$ so
+that we obtain the \emph{geodesic equation}
 \begin{equation}
-    0 = \od[2]{x^i}{s}+\cSym{i}{j}{k}\od{x^j}{s}\od{x^k}{s}\, .\label{eq:geodeq}
+    0 =
+    \od[2]{\tensor{x}{^l}}{\lambda}
+    +\cSym{l}{j}{k}\od{\tensor{x}{^j}}{\lambda}\od{\tensor{x}{^k}}{\lambda}\,
+    .\label{eq:geodeq}
 \end{equation}
-Where $\cSym{i}{j}{k}$ are the \emph{Christoffel symbols of the second kind}
+Where $\cSym{l}{j}{k}$ are the \emph{Christoffel symbols of the second kind}
 \begin{equation}
-    \cSym{i}{j}{k}:=g^{km}\csym{m}{j}{k}=\frac{1}{2}g^{il}\left(\partial_i
-    g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\, .
+    \cSym{l}{j}{k}:=g^{li}\csym{j}{k}{i}=\frac{1}{2}g^{li}
+    \left(\tensor{g}{_j_i_{,k}}+\tensor{g}{_i_j_{,k}} -\tensor{g}{_j_k_{,i}}\right)\, .
 \end{equation}
 % remark is obsolete as long as bracket notation for christoffel symbols is used
 %\begin{remark}
 %Although the notation looks as the Christoffel symbols form a tensor, however
 % they do not.
 %\end{remark}
-In flat space we have $g_{ij}=\eta_{ij}$ and can easily check that all
-Christoffel symbols vanish. We therefore recover the ordinary equation of motion for a free particle
+In flat space we have $\tensor{g}{_i_j}=\tensor{\eta}{_i_j}$ and can easily
+check that all Christoffel symbols vanish. We therefore recover the ordinary equation of motion for a free particle
 \begin{equation}
-    0 = \od[2]{x^i}{s}\, .
+    0 = \od[2]{\tensor{x}{^i}}{\lambda}\, .
 \end{equation}
 % \begin{example}
 % Suppose a observer follows a free falling body in a homogeneous field.

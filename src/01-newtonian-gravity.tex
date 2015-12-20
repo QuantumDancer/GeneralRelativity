@@ -1,13 +1,15 @@
 \chapter{Newtonian Gravity}
-In Newtonian physics we assume that we have absolute space and time that can be described by the a set of numbers $x^1,x^2,x^3,t$.
+In \textsc{Newton}ian physics we assume that we have absolute space and time
+that can be described by the a set of numbers $x^1,x^2,x^3,t$.
 We express the coordinates as functions of time.
 \section{Forces}
 The force $\vec{F}_{AB}$, which a massive body $A$ with mass $m_A$ exerts on another massive body $B$ with mass $m_B$, is given by
 \begin{equation}
     \vec{F}_{AB}=-m_B\frac{G\textsubscript{N}m_A}{r^2}\vec{e}_r\, ,
 \end{equation}
-where $G\textsubscript{N}$ denotes \emph{Newton's constant}, numerically equal
-to $G\textsubscript{N}\approx \unitfrac[6.673\cdot 10^{-11}]{m^3}{kg\,s}$.
+%TODO remove subscript of G
+where $G\textsubscript{N}$ denotes \emph{\textsc{Newton}'s constant},
+numerically equal to $G\textsubscript{N}\approx \unitfrac[6.673\cdot 10^{-11}]{m^3}{kg\,s}$.
 Although there is no need for $G\textsubscript{N}$ to be constant over time,
 there is evidence that the relative variation is less than $10^{-12}$ per year.
 The force can be expressed in terms of \emph{gravitational potential} $\Phi$:
@@ -34,11 +36,11 @@ The classical theory of gravity bears a striking similarity to electrostatics.
 To make this clearer, we introduce the gravitational field
 $\vec{g}(\vec{r}):= -\nabla\Phi(\vec{r})$.
 \begin{table}[htb]
-    \caption{Comparison of electrostatics and Newtonian gravity.}
+    \caption{Comparison of electrostatics and \textsc{Newton}ian gravity.}
     \begin{center}
         \begin{tabulars}{lll}
             \toprule
-            &Newtonian Gravity&Electrostatics\\
+            &\textsc{Newton}ian Gravity&Electrostatics\\
             \midrule
             Force&$\displaystyle\vec{F}=q\frac{kQ}{r^2}\vec{e}_r$&$\vec{F}=m\frac{G\textsubscript{N}M}{r^2}\vec{e}_r$\\
             Potential
@@ -84,20 +86,51 @@ Together the gravitational field is given by
 % An inertial system is a system in which force-free particles move with constant uniform velocity on straight lines.
 % \end{definition}
 \subsection*{Weak Equivalence Principle (WEP)}
-Newtons first law reads
+\textsc{Newton}'s first law reads
 \begin{equation}
-    \vec{F}=m\textsubscript{I} \ddot{\vec{x}} \, ,
+    \vec{F}=m\textsubscript{I} \vec{\ddot{x}} \, ,
 \end{equation}
 where $m\textsubscript{I}$ is the inertial mass that works against the acceleration of the body.
-The force which a body with ``active'' mass $m\textsubscript{g,act.}$ exerts on another
-body with mass $m\textsubscript{g,pass.}$ is given by 
+The force which a body with ``active'' mass $m\textsubscript{g,a}$ exerts on
+another body with mass $m\textsubscript{g,p}$ is given by 
 \begin{equation}
-    \vec{F}=m\textsubscript{g,pass.}\frac{G\textsubscript{N}m\textsubscript{g,act.}}{r^2}\vec{e}_r \, .
+    \vec{F}=m\textsubscript{g,p}\frac{G\textsubscript{N}m\textsubscript{g,a}}{r^2}\vec{e}_r \, .
 \end{equation}
 A priori, there is no reason to assume any relation between this masses.
 The first question one might ask is whether the active and the passive mass are equal.
-Suppose we have two masses $A$ and $B$. Using Newtons first law, we can explicitly write
+Suppose we have two masses $A$ and $B$. Using \textsc{Newton}'s first law, we
+can explicitly write
+\begin{align}
+    m^{B}_{\text{I}}\vec{\ddot{x}}&=\vec{F}_{AB}=-
+    m^{B}_{\text{g,p}}\frac{G\textsubscript{N}m^{A}_{\text{g,a}}}{r^2}\vec{e}_r
+    \, ,\\
+    m^{A}_{\text{I}}\vec{\ddot{x}}&=\vec{F}_{BA}=-
+    m^{A}_{\text{g,p}}\frac{G\textsubscript{N}m^{B}_{\text{g,a}}}{r^2}\vec{e}_r
+    \, .
+\end{align}
+By the third law $\vec{F}_{AB}=-\vec{F}_{BA}$ we have
 \begin{equation}
-    m^{B}_{\text{i}}\ddot{\vec{x}}=\vec{F}_{AB}=-	m^{B}_{\text{p}}\frac{G\textsubscript{N}m^{A}_{\text{a}}}{r^2}\vec{e}_r \, .
+\frac{m^{B}_{\text{g,p}}}{m^{B}_{\text{g,a}}}=\frac{m^{B}_{\text{g,p}}}{m^{B}_{\text{g,a}}}\,.
 \end{equation}
+By proper choice of mass units we can set this quotient to one so that 
+\begin{equation}
+m\textsubscript{g,a}=m\textsubscript{g,p}=:m\textsubscript{g}
+\end{equation}
+The next question is wheater the inertial mass equivalent to the gravitional
+mass.
+By \textsc{Newton}'s first law we have
+\begin{equation}
+m\textsubscript{I}\vec{\ddot{x}}
+=-m_{\text{g}}\frac{G\textsubscript{N}M_{\text{g}}}{r^2}\vec{e}_r 
+=-m_{\text{g}}\vec{g}\,.
+\end{equation}
+As a experimental result all bodys recive the same acceleration due to gravity
+$\ddot{\vec{x}}\sim \vec{g}$. By a 'proper' choice of units of the flight-time
+$t=\sqrt{\frac{m\textsubscript{I}}{m\textsubscript{g}}}\sqrt{\frac{2h}{g}}$,
+we get
+\begin{equation}
+m\textsubscript{I}=m\textsubscript{g}=:m\,.
+\end{equation}
+%TODO newtons laws?
+%TODO picture
 %TODO finish chapter 1

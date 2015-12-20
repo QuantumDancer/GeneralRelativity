@@ -1,4 +1,5 @@
 \chapter{Special Relativity}
+%TODO parts of chapter 1 and 2 that are not assigned yet
 \section{Postulates and Definitions}
 Special relativity is based on two main postulates, namely
 \begin{enumerate}
@@ -45,7 +46,7 @@ drop the sumation and assume that terms of type
 $\tensor{x}{_\mu}\tensor{x}{^\mu}$ are always summed over.
 \section{Propagation of Light Waves and the Line Element}
 For vividness, we restore factors of $c$ in this section.
-(Pictures)\\
+%TODO picture
 Inertial System $I$:
 \begin{itemize}
     \item $P:$ Event of emission of the ray $(ct_1,x_1,y_1,z_1)$
@@ -77,7 +78,7 @@ We define an infinitesimal interval, or \emph{line element}:
 \begin{equation}
     \dif s^2=-c^2\dif t^2+\dif x^2+\dif y^2+\dif z^2\, .
 \end{equation}
-(PICTURE)
+%TODO picture
 Our preliminary considerations lead to the following statement: if the interval
 is zero in one inertial system, it should be zero in all.
 To relate the linelements of different systems to each other, we make the following thought:
@@ -103,7 +104,7 @@ free to chose $\alpha\equiv 1$. Therefore the line element has to stay
 invariant.
 \section{Invariant Distances, Metric and Signature}
 In flat space we can calculate the distance $\Delta l$ between two points
-$(x_1,y_1)$ and $(x_2,y_2)$ by the Pythagorean theorem
+$(x_1,y_1)$ and $(x_2,y_2)$ by the \textsc{Pythagoras}' theorem
 \begin{equation}
     \Delta l^2=\Delta x^2+\Delta y^2\, ,
     \quad \Delta x=x_2-x_1\,,\quad \Delta
@@ -163,7 +164,7 @@ Which we do to point out the similarity to the line element $\dif s^2$
     \end{bmatrix}=:\eta_{\mu\nu}\dif x^\mu\dif x^\nu\, .
 \end{equation}
 We call the matrix $\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$ the
-\emph{Minkowski-metric}. It has some obvious properties:
+\emph{\textsc{Minkowski}-metric}. It has some obvious properties:
 \begin{itemize}
     \item constancy: $\tensor{\eta}{_\mu_\nu_,_\varrho}=0$
     \item symmetry: $\tensor{\eta}{_\mu_\nu}=\tensor{\eta}{_\nu_\mu}$
@@ -194,8 +195,8 @@ We consider afine coordinate transformations
 \begin{equation}
     {x^\prime}^\mu= f^\mu(x^\nu)=\tensor{L}{^\mu_\nu}x^\nu+a^\mu\, .
 \end{equation}
-Where $\tensor{L}{^\mu_\nu}$ is a a Lorentz transformation and $a^\mu$ is a
-constant shift.\\
+Where $\tensor{L}{^\mu_\nu}$ is a a \textsc{Lorentz} transformation and $a^\mu$
+is a constant shift.\\
 We can now inspect the transformation properties of an allowed transformation.
 The invariance of the line element implies
 \begin{equation}
@@ -240,7 +241,7 @@ obtained from the generators via
     \tensor{L}{^\mu_\nu}=\exp\left(\imI\alpha\tensor{\omega}{^\mu_\nu}\right)\,.
 \end{equation}
 We can
-classify the resulting transformations into two groups:
+classify the resulting transformations into two classes:
 \subsubsection{Rotations}
 Rotations mix the spatial coordinates, but leave the time fixed. Consider for
 example an rotation around $z$-axis. Then we have
@@ -367,23 +368,23 @@ line element invariant. Namely:
     $\boldsymbol{\theta}=(\theta_1,\theta_2,\theta_3)\transpose$ (Euler angles)
     \item three boosts with constant velocity $\vec{v}=(v_1,v_2,v_3)\transpose$
 \end{itemize}
-The Poincaré transformations form a ten parameter group.
+The \textsc{Poincaré} transformations form a ten parameter group.
 \begin{table}
     \centering
     \begin{tabulars}{lll}
         \toprule
-        &Newton&Einstein (SR)\\
+        &\textsc{Newton}&\textsc{Einstein} (SR)\\
         \midrule
         & Law of inertia
         & Law of inertia \\
-        Newton's Laws
+        \textsc{Newton}'s Laws
         & $\vec{F}=m\ddot{\vec{x}}=m\od{\vec{p}}{t}$
         &$\vec{F}=m\od{\vec{p}}{\tau}$\\
         & $\vec{F}_{12}=-\vec{F}_{21}$
         & Momentum conservations (postulate)\\
         Transformations
-        & boosts
-        & Galilei Transformation\\
+        & \textsc{Poincaré} transformations
+        & \textsc{Galilei} transformations\\
         
         & absolute structure
         & absolute time\\
@@ -399,13 +400,15 @@ The Poincaré transformations form a ten parameter group.
 f_0\\
 \vec{f}
 \end{smallmatrix}\right)$\\
-&$\Delta \Phi =4\pi\varrho$ &Maxwell equations
+&$\Delta \Phi =4\pi\varrho$ &\textsc{Maxwell}'s equations
 \\
 \bottomrule
     \end{tabulars}
-    \caption{Comparison of Newtonian theory and special relativity}
+    \caption{Comparison of \textsc{Newton}ian theory and special relativity}
+    %TODO consistency
 \end{table}
 \subsection{Fourvectors}
+%TODO consider merging with Vectors and Tensors in SRT
 There are three types of vectors\footnote{We could also put up a fourth class,
 containing solely the zero vector.}:
 \begin{enumerate}
@@ -413,10 +416,10 @@ containing solely the zero vector.}:
     \item \emph{Lightlike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}=0$
     \item \emph{Timelike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}<0$
 \end{enumerate}
-All classes are transfomed into themself by Lorentz transformation. There is a
-set of transformations that is forbidden by physical considerations: namely the
-Parity change $\vec{x}\to -\vec{x}$ and time reversal $t\to -t$ because this are
-no real symmetries of nature.
+All classes are transfomed into themself by \textsc{Lorentz} transformation.
+There is a set of transformations that is forbidden by physical considerations: namely the
+parity change $\vec{x}\to -\vec{x}$ and time reversal $t\to -t$ because this are
+no real symmetries of nature\footnote{both violated in weak interactions.}.
 We will mainly deal with timelike and lightlike vectors for which the time order
 does not change. For spacelike intervals the order can change. To remain causal
 all particles have to move at velocity $v\leq c$. This is in contrast to
@@ -452,6 +455,7 @@ take that the action $S$ is proportional to the proper time (as a generalized
     S= -\alpha \int_a^b\dif \tau = -\alpha
     \int_{t_1}^{t^2}\sqrt{1-\vec{v}^2}\dif t =: \int_{t_1}^{t^2}L\dif t\, ,
 \end{equation}
+%TODO explain minus sign
 whith $\alpha$ a constant, that has to be determined. The Lagrangian $L$ is
 given by
 \begin{equation}
@@ -464,8 +468,8 @@ the lowest order kinetic term is
     T=\frac{1}{2}\alpha \vec{v}^2\, .
 \end{equation}
 Comparing with the classical kinetic energy $T=\frac{1}{2}m\vec{v}^2$ yields
-$\alpha=m$. If we substitute $\alpha$ we recover the Lagrangian of special
-relativity
+$\alpha=m$. If we substitute $\alpha$ we recover the Lagrangian of
+special relativity
 \begin{equation}
     L\textsubscript{SR}=-m\sqrt{1-\vec{v}^2}=-m\gamma^{-1}\, .
 \end{equation}
@@ -482,7 +486,7 @@ Expanded in $\vec{v}^2$ the energy reads as
     E=m+\frac{1}{2}m\vec{v}^2+\ldots\, .
 \end{equation}
 If we restore units of $c$ for a moment we get that the constant term is
-equal to $mc^2$. This is Einsteins famous $E=mc^2$.
+equal to $mc^2$. This is \textsc{Einstein}'s famous $E=mc^2$.
 We can further relate energy and momentum to each other. Therefore consider the
 square of the momentum $\vec{p}$
 \begin{equation}
@@ -557,7 +561,7 @@ simple form, namely
     +\partial_\nu\tensor{F}{_\alpha_\mu}
     +\partial_\mu\tensor{F}{_\nu_\alpha}=0\,.
 \end{equation}
-The Lorentz force is given by
+The \textsc{Lorentz} force is given by
 \begin{equation}
     \tensor{F}{^\mu}=q\tensor{F}{^\mu^\nu}\tensor{u}{_\nu}
 \end{equation}
@@ -577,15 +581,16 @@ inertial systems. The dispersion relation reads as
     \tensor{K}{^\mu}\tensor{K}{_\mu}=-\omega^2+\vec{k}^2=0\, .
 \end{equation}
 It is equivalent to the on shell condition \eqref{eq:onshell}, when we identify
-the photons energy $E=\omega$ momentum $\vec{p}=\vec{k}$ and mass $m=0$.
+the photons energy $E=\omega$, momentum $\vec{p}=\vec{k}$ and mass $m=0$.
 \subsection{The Energy Momentum Tensor}
-Evtl. aus anderer Quelle, arges Durcheinander mit komplexer Notation\ldots kommt
-später auch nochmal
+%TODO consider using different source. 
+%TODO consider merging with The Energy Momentum Tensor
 \begin{sidenote}
 Above a certain limit a system cannot be stabilized by pressure, because the
 gravity cuples to the pressure and therefore increasing the pressure would lead
 to a stronger attraction due to gravity and hence inevetiable collapse.
 \end{sidenote}
+%TODO sidenote does not fit context
 The energy momentum tensor is symmetric
 \begin{equation}
     \tensor{T}{^\mu^\nu}=\tensor{T}{^\nu^\mu}\, .
@@ -609,16 +614,17 @@ Putting both terms together gives
 \end{equation}
 Which can be interpretet as the total energy conservation.
 \subsection{Noether's Theorem}
-We introduce a tensorial generalisation of the angular momentum (density???)
+We introduce a tensorial generalisation of the angular momentum
 \begin{equation}
     \tensor{T}{^\lambda^\mu^\nu}:=
     \tensor{x}{^\lambda}\tensor{T}{^\mu^\nu}-\tensor{x}{^\mu}\tensor{T}{^\lambda^\nu}\,
     .
 \end{equation}
-The angular momentum is given by (etwas viele Komponenten?)
+The angular momentum is given by
 \begin{equation}
     \tensor{L}{^i^j} = \int\dif{}^3 x \tensor{M}{^i^j^0}\, .
 \end{equation}
+%TODO what doe the components mean
 It can be shown that it is a conserved quantity
 \begin{equation}
     \tensor{\partial}{_\nu}\left(\tensor{x}{^\lambda}\tensor{T}{^\mu^\nu}-\tensor{x}{^\nu}\tensor{T}{^\lambda^\nu}\right)
@@ -630,7 +636,8 @@ The existence of a conserved symmetric tensor $\tensor{T}{^\mu^\nu}$ is
 nessecary in order to build a relativistic theory
 \end{remark}
 \begin{example}[Electrodynamics]
-We start by inspecting the Lorentz Force $\tensor{F}{^\mu}$ which is given by
+We start by inspecting the \textsc{Lorentz} Force $\tensor{F}{^\mu}$ which is
+given by
 \begin{equation}
     \tensor{F}{^\mu}=e\tensor{F}{^\mu^\nu}\tensor{u}{_\nu}=\tensor{F}{^\mu^\nu}\tensor{J}{_\nu}=\tensor{D}{^\mu}\,
     .
@@ -660,6 +667,7 @@ We can check
     \,
     .
 \end{align}
+%TODO calculation
 \begin{equation}
 \tensor{S}{^\mu^\nu_{,\nu}}=\tensor{F}{^\nu_\mu_{,\alpha}}\tensor{F}{^\nu^\alpha}
 +\frac{1}{2}\tensor{F}{_\alpha_\nu^{,\mu}}\tensor{F}{^\nu^\alpha}
@@ -669,17 +677,18 @@ The Lagrangian of electrodynamics is given by
     \mathcal{L}=-\frac{1}{2}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}+\tensor{J}{_\mu}\tensor{A}{^\mu}-\frac{1}{2}m^2\tensor{A}{_\mu}\tensor{A}{^\mu}\,
     .
 \end{equation}
- The tensor $S$ is known as \emph{electromagnetic stress–energy tensor}.
+ The tensor $S$ is known as \emph{electromagnetic stress–energy tensor} and
+ given in contravariant form as
 \begin{equation}
 \tensor{S}{^\mu^\nu}=
 \begin{pmatrix}
 u&\vec{S}\transpose\\
 \vec{S}& -\tensor{\sigma}{_i_j}
-\end{pmatrix}
+\end{pmatrix}\,.
 \end{equation}
 Where
 $\tensor{\sigma}{_i_j}=\tensor{E}{_i}\tensor{E}{_j}+\tensor{E}{_i}\tensor{E}{_j}-\frac{1}{2}\tensor{\delta}{_i_j}\left(\vec{E}^2+\vec{B}^2\right)$
-is the \emph{Maxwell stress tensor}, $\vec{S}=\vec{E}\times\vec{B}$
-\emph{Poynting vector} and energy density $u
+is the \emph{\textsc{Maxwell} stress tensor}, $\vec{S}=\vec{E}\times\vec{B}$
+\emph{\textsc{Poynting} vector} and energy density $u
 =\frac{1}{2}\left(\vec{E}^2+\vec{B}^2\right)$.
 \end{example}
