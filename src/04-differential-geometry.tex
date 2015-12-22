@@ -43,7 +43,7 @@ Since physical laws are described in terms of differential equations, we can for
 The fact that the coordinate changes are smooth ensures that differentiability
 is well defined (and thus the physical laws are).
 
-\begin{sidenote}[Differentiability depends on the Differential Structure]
+\begin{sidenote}[Differential Structure]
 There can be different \emph{differential structures} on a manifold, 
 which means there are multiple (maximal)alases, which
 could not be merged because the coordinate changes would not be $C^\infty$. Those differentiable structures therefore imply different notions of differentiability. 
@@ -55,8 +55,8 @@ This means on every point in the $\mathbb{R}^{3+1}$ there is a (small) $\Sphere^
 The $\Sphere^7$ has 28 different differential structures, so the choice of
 such a structure affects the theory for the above reasons.
 \end{sidenote}
-All simple examples we come of can be embedded in a higher space. The Whitney
-embedding theorem states that every real $n$-dimensional Manifold
+All simple examples we come of can be embedded in a higher space. The
+\name{Whitney} embedding theorem states that every real $n$-dimensional Manifold
 can be embedded to $\Reals^{2n}$ (This is however not true for complex, i.e. analytic manifolds).
 For example the $\Sphere^2$ can be interpreted as submanifold of the $\Reals^3$.
 However manifolds are objects that exists independent of such embeddings. 
@@ -156,7 +156,7 @@ geometrical tangent space.
 Since we have a basis, we can work in (local) coordinates and will do so most of
 the time.
 \begin{example}[Lie brackets in local coordinates]
-Let $A=A^i\partial_i$, $B=B^i\partial_i$ be vectors, then the Lie bracket
+Let $A=A^i\partial_i$, $B=B^i\partial_i$ be vectors, then the \name{Lie} bracket
 \eqref{eq:LieBraket} in local coordinates is given as
 \begin{equation}
     [A,B]^j=A^i\partial_iB^j-B^i\partial_iA^i\, .
@@ -166,7 +166,7 @@ Since the tangent space is a vector space, we can define its dual space
 \begin{definition}[Cotangent space] The cotangent space $T_pM^*$ is the set of
 linear maps from $T_pM$ to $\mathbb{R}$, i.e.
 \begin{equation}
-    T_pM^*=\{L:T_pM\to \mathbb{R}\, |\, L \text{ linear}\}\, .
+    T_pM^*:=\{L:T_pM\to \mathbb{R}\, |\, L \text{ linear}\}\, .
 \end{equation}
 \end{definition}
 The cotangent space is again a vector space of the same dimension. Its elements
@@ -179,7 +179,7 @@ It can easily deduced by \eqref{eq:orthdual} that the components of a dual vecto
 \begin{equation}
     \overline{a}_i=\pd{x^k}{{\overline{x}^i}}a_k\, .
 \end{equation}
-\begin{remark}[Dual vectors in flat space]
+\begin{remark}[Dual vectors in euclidean space]
 If $\vec{a},\vec{b}\in\mathbb{R}^n$ contain the components of a vector and a
 dual vector respectively, then the transformation can be written in matrix form
 \begin{align}
@@ -298,7 +298,7 @@ system is called \emph{Riemanian normal coordinate system} (RNCS).
 %TODO construction i.e. geodesic coordinates
 We notice that if 
 \begin{equation}
-\left(\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\right)\delta x^k = 0\,
+\left(\dpd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\right)\delta x^k = 0\,
 ,\label{eq:covdev}
 \end{equation}
 The vector $A$ does not change its cordinates. We define a \emph{covariant

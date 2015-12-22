@@ -22,14 +22,17 @@ energy impuls tensor of general relativity is \emph{covariantly} conserved
 \tensor{\nabla}{^\nu}\tensor{T}{_\mu_\nu}=\tensor{T}{_\mu_\nu^{;\nu}}=0
 \end{equation}
 \begin{theorem}[Lovelock]
-For a fourdimensional space\footnote{this does certainly not hold true for
-$d>4$} the most general divergence free tensor $\tensor{A}{_\mu_\nu}$ is given by
+For a fourdimensional space
+\footnotemark{} the most general divergence free tensor $\tensor{A}{_\mu_\nu}$ is
+given by
 \begin{equation}
 \tensor{A}{_\mu_\nu}= c_1\tensor{G}{_\mu_\nu}+c_2\tensor{g}{_\mu_\nu}\, .
 \end{equation}
 Where $\tensor{G}{_\mu_\nu}$ is the \emph{Einstein tensor}
 $\tensor{G}{_\mu_\nu}:=\tensor{R}{_\mu_\nu}-\frac{1}{2}\tensor{g}{_\mu_\nu}R$.
 \end{theorem}
+\footnotetext{this does certainly not hold true for
+$d>4$}
 The Theorem imediatly implies \emph{Einstein's field equations}
 \begin{equation}
 \tensor{R}{_\mu_\nu}-\frac{1}{2}R\tensor{g}{_\mu_\nu}-\Lambda\tensor{g}{_\mu_\nu}
@@ -57,12 +60,12 @@ Since it is small today it has do decay with time.
 There is also an variational derivation dating back to Hilbert that is
 simpler than Einsteins initial derivation. We start by considereing a general action
 \begin{equation}
-S\textsubscript{g}=\int\dif x^4 \tilde{\mathcal{L}}\, 
+S\textsubscript{g}=\fourint  \tilde{\mathcal{L}}\, 
 \end{equation}
 where $\tilde{\mathcal{L}}$ must transform as a (scalar) density. Therefore we
 define a scalar $\mathcal{L}=\frac{\tilde{\mathcal{L}}}{\sqrt{-g}}$
 \begin{equation}
-S\textsubscript{g}=\int\dif x^4 \sqrt{-g}\mathcal{L}
+S\textsubscript{g}=\fourint \sqrt{-g}\mathcal{L}
 \end{equation}
 One can think of various contributions to $\mathcal{L}$, e.g.
 \begin{equation*}
@@ -88,14 +91,20 @@ called ghost fields which are associated with the additional degrees of freedom
 we get.
 \end{sidenote}
 \begin{remark}[Dimensions]
-In natural units\footnote{So that length has dimension of inverse mass.}, the
-line element $\dif s^2$ has dimension, ${[\dif s^2]=\textrm{M}^{-2}}$\footnote{Where M referes to the dimenson of mass.}.
-Since further ${\left[\tensor{x}{^\mu}\right]=\textrm{M}^{-1}}$ ,
-the Lagrange density must have Dimension ${\left[\mathcal{L}\right]=\textrm{M}^{4}}$
-\end{remark}
+\pushftn
+In natural units\footnote{So that length has dimension of inverse mass.} the
+line element $\dif s^2$ has dimension, ${[\dif
+s^2]=\textrm{M}^{-2}}$.\footnote{Where M referes to the dimenson of mass.} 
+Since further ${\left[\tensor{x}{^\mu}\right]=\textrm{M}^{-1}}$,
+the Lagrange density must have Dimension
+${\left[\mathcal{L}\right]=\textrm{M}^{4}}$.
+\end{remark}\popftn
+%TODO fix footnotes
+%\footnotetext{So that length has dimension of inverse mass.}
+%\footnotetext{Where M referes to the dimenson of mass.}
 This constraint leads to the \emph{Einstein-Hilbert-action}
 \begin{equation}
-S\textsubscript{EH}=\frac{1}{2\kappa}\int\dif x^4 \sqrt{-g}(R-2\Lambda)
+S\textsubscript{EH}=\frac{1}{2\kappa}\fourint \sqrt{-g}(R-2\Lambda)
 \end{equation}
 We now check that its variation indeed reproduces Einstein's equations. To do
 so we introduce the formalism of \emph{functional derivative}. Let therefore
@@ -103,11 +112,11 @@ $\Phi=\{\varphi,\tensor{A}{^\mu},\Psi,\dots\}$ be a collection of fields.
 $F[\Phi]$ a functional.
 We define the variation of $F$ as
 \begin{equation}
-\delta F:=\int \dif x \frac{\delta F}{\delta\Phi^i}\delta\Phi^i\,.
+\delta F:=\int \dif x\, \frac{\delta F}{\delta\Phi^i}\delta\Phi^i\,.
 \end{equation}
 Typically the functionals are givenn in the form
 \begin{equation}
-S[\Phi]=\int \dif x L(x,\Phi)\, ,
+S[\Phi]=\int \dif x\, L(x,\Phi)\, ,
 \end{equation}
 where $L$ is some local function.
 \begin{equation}
@@ -160,31 +169,29 @@ Use
 \begin{equation}
 \begin{split}
 2\kappa\delta S\textsubscript{EH}
-&=\int\dif x^4\left[
+&=\fourint \left[
 (R-2\Lambda)\delta\sqrt{-g}+\sqrt{-g}\delta R\right]\\
-&=\int\dif x^4\left[
+&=\fourint \left[
 \frac{1}{2}\sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{g}{_\mu_\nu}
 (R-2\Lambda)+\sqrt{-g}\left(\tensor{R}{_\mu_\nu}\delta\tensor{g}{^\mu^\nu}
 +\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}\right)\right]\\
-&=\int\dif x^4\sqrt{-g}\left[
+&=\fourint \sqrt{-g}\left[
 \frac{1}{2}\tensor{g}{^\mu^\nu}
 (R-2\Lambda)+\tensor{R}{^\mu^\nu}\right]\delta\tensor{g}{_\mu_\nu}
-+\int\dif x^4\sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}
++\fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}
 \\
 \end{split}
 \end{equation}
 We treat both occuring terms sepertately
 \begin{equation}
 \begin{split}
-\int\dif x^4\sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}
-&=\int\dif x^4\sqrt{-g}\tensor{g}{^\mu^\nu}\left(\tensor{\nabla}{_\rho}\delta
+\fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}
+&=\fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\left(\tensor{\nabla}{_\rho}\delta
 \cSym{\rho}{\mu}{\nu} -\tensor{\nabla}{_\mu}\delta \cSym{\rho}{\rho}{\nu}\right)
 \\
-&=\int\dif 
-x^4\tensor{\nabla}{_\rho}\left(\sqrt{-g}\tensor{g}{^\mu^\nu}\delta
+&=\fourint \tensor{\nabla}{_\rho}\left(\sqrt{-g}\tensor{g}{^\mu^\nu}\delta
 \cSym{\rho}{\mu}{\nu}\right)\\
-&\phantom{=}-\int\dif
-x^4\tensor{\nabla}{_\mu}\left(\sqrt{-g}\tensor{g}{^\mu^\nu}\delta
+&\phantom{=}-\int\dif{}^4 x \tensor{\nabla}{_\mu}\left(\sqrt{-g}\tensor{g}{^\mu^\nu}\delta
 \cSym{\rho}{\rho}{\nu}\right)
 \end{split}
 \end{equation}
@@ -192,7 +199,7 @@ The Integrals vanish by Gauß law (neglegting surface Terms). We are left with
 \begin{equation}
 \begin{split}
 2\kappa\delta S\textsubscript{EH}
-&=\int\dif x^4\sqrt{-g}\left[
+&=\fourint \sqrt{-g}\left[
 \frac{1}{2}\tensor{g}{^\mu^\nu}
 (R-2\Lambda)+\tensor{R}{^\mu^\nu}\right]\delta\tensor{g}{_\mu_\nu}
 \end{split}
@@ -219,7 +226,7 @@ fields this include scalar fields $\varphi$, spinor fields $\Psi$, gauge fields
 $\tensor{A}{^\mu}$,\dots. We collect all of them in a multivariable $\Phi$.
 A local action can be written as
 \begin{equation}
-S\textsubscript{m}[\Phi,g]=\int \dif x^4\sqrt{-g}
+S\textsubscript{m}[\Phi,g]=\fourint  \sqrt{-g}
 L\textsubscript{m}\left(\Phi,\tensor{\nabla}{_\mu}\Phi,g\right)
 \end{equation}
 $\tensor{g}{^\mu^\nu}$ appears in $L\textsubscript{m}$ because the derivatives
@@ -228,7 +235,7 @@ Additionally it enters via $\sqrt{-g}$.
 \begin{example}[Free scalar field]
 The action of a free scalar field in Minkovski space has the form
 \begin{equation}
-S\textsubscript{m}=\int \dif x^4 \left(-\frac{1}{2}\tensor{\eta}{^\mu^\nu}
+S\textsubscript{m}=\fourint  \left(-\frac{1}{2}\tensor{\eta}{^\mu^\nu}
 \tensor{\partial}{_\mu}\varphi\tensor{\partial}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)\,.
 \end{equation}
 The minus sign in front of the partial derivative should come as no surprise
@@ -237,14 +244,14 @@ frame we have to make the usual replacements
 \begin{equation}
 \tensor{\eta}{_\mu_\nu}\to \tensor{g}{_\mu_\nu}\, , \quad
 \tensor{\partial}{_\mu}\to
-\tensor{\nabla}{_\mu}\,, \quad \dif x^4\to \dif x^4\sqrt{-g}\, ,
+\tensor{\nabla}{_\mu}\,, \quad \dif{}^4 x \to \dif{}^4 x\, \sqrt{-g}\, ,
 \end{equation}
 which is also known as a \emph{minimal cuppling description}. The action for a
 scalar $\varphi$ in the presence of gravity, 
 i.e. a dynamical $\tensor{g}{_\mu_\nu}(x)$, reads as
 \begin{equation}
-S\textsubscript{m}=\int \dif x^4 \sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}
-\tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi
+S\textsubscript{m}=\fourint\, 
+\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu} \tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi
 -\frac{1}{2}m^2\varphi^2\right)\,.
 \end{equation}
  The combined action of scalar field and
@@ -258,7 +265,7 @@ The variation with respect to the field $\varphi$ is
 \frac{\delta S[g,\varphi]}{\delta
 \varphi\left(x'\right)}&=\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta
 \varphi\left(x'\right)}\\
-&=\int \dif x^4\sqrt{-g}\left[-\tensor{g}{^\mu^\nu}
+&=\fourint\sqrt{-g}\left[-\tensor{g}{^\mu^\nu}
 \tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\left(\frac{\delta
 \varphi(x)}{\delta \varphi\left(x'\right)}\right)-m^2\varphi\frac{\delta
 \varphi(x)}{\delta \varphi\left(x'\right)}\right]\,,
@@ -268,9 +275,7 @@ where we used that the $\delta$ and $\tensor{\nabla}{_\mu}$ commute. Partial
 integration yields
 \begin{equation}
 \begin{split}
-\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta \varphi\left(x'\right)}&=\int
-\dif
-x^4\sqrt{-g}\left(\square_{g}-m^2\right)\varphi\delta(x,x')\\
+\frac{\delta S\textsubscript{m}[g,\varphi]}{\delta \varphi\left(x'\right)}&=\fourint \sqrt{-g}\left(\square_{g}-m^2\right)\varphi\delta(x,x')\\
 &=\sqrt{-g}\left(\square_{g}-m^2\right)\varphi\, ,
 \end{split}
 \end{equation}
@@ -303,11 +308,11 @@ energy-momentum tensor
 S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}\,.
 \end{equation}
 %TODO consider possible wrong sign
-\begin{remark}
-Attention $\delta_g
-\tensor{g}{^\mu^\nu}=-\tensor{g}{^\varrho^{(\mu}}\tensor{g}{^{\nu)}^\sigma}\delta_g
-\tensor{g}{_\mu_\nu}$
-\end{remark}
+% \begin{remark}
+% Attention $\delta_g
+% \tensor{g}{^\mu^\nu}=-\tensor{g}{^\varrho^{(\mu}}\tensor{g}{^{\nu)}^\sigma}\delta_g
+% \tensor{g}{_\mu_\nu}$
+% \end{remark}
 We can now proceed in calculating the quantity we have ust introduced for a
 scalar field
 \begin{equation}
@@ -401,13 +406,14 @@ In vakuum the field equation are
 \begin{equation}
 0=G=R-2R\implies\tensor{R}{_\mu_\nu}=0
 \end{equation}
-The resulting set of equations is (prüfen!!!)
+The resulting set of equations is
+%TODO check 
 \begin{align}
-0&=\tensor{R}{_0_0}=-\frac{1}{2}\tensor{g}{^i^j}\tensor{g}{_i_j_{,00}}+\tensor{M}{_0_0}\\
-0&=\tensor{R}{_0_i}=-\frac{1}{2}\tensor{g}{^0^j}\tensor{g}{_i_j_{,00}}+\tensor{M}{_0_i}\\
-0&=\tensor{R}{_i_j}=-\frac{1}{2}\tensor{g}{^0^0}\tensor{g}{_i_j_{,00}}+\tensor{M}{_i_j}
+0&=\tensor{R}{_0_0}=-\frac{1}{2}\tensor{g}{^i^j}\tensor{g}{_i_j_{,00}}+\tensor{M}{_0_0}\,,\\
+0&=\tensor{R}{_0_i}=-\frac{1}{2}\tensor{g}{^0^j}\tensor{g}{_i_j_{,00}}+\tensor{M}{_0_i}\,,\\
+0&=\tensor{R}{_i_j}=-\frac{1}{2}\tensor{g}{^0^0}\tensor{g}{_i_j_{,00}}+\tensor{M}{_i_j}\,.
 \end{align}
-Where $\tensor{M}{_\mu_\nu}$ is a rest term containing lower order derivaties.
+Where $\tensor{M}{_i_j}$ is a rest term containing lower order derivaties.
 This shows that ther are no second order time derivatives of
 $\tensor{g}{_0_\mu}$. We have 10 euations and 6 undetetrmined functions. The
 DOFs can be used for a coordinate transformation, so that
@@ -419,15 +425,15 @@ hypersurfaces $\Sigma_{t}$.
 \tensor{\partial}{_0}\tensor{G}{^0^\nu}=
 \tensor{\partial}{_i}\tensor{G}{^i^\nu}
 -\cSym{\nu}{0}{\lambda}\tensor{G}{^\lambda^\nu}
--\cSym{0}{\nu}{\lambda}\tensor{G}{^\mu^\lambda}
+-\cSym{0}{\nu}{\lambda}\tensor{G}{^\mu^\lambda}\,.
 \end{equation}
 %TODO does not make sense yet
 We have the freedom to choose four coodinates
 \begin{equation}
-\tensor{x}{^{\mu^\prime}}=\tensor{f}{^{\mu^\prime}}\left(\tensor{x}{^\mu}\right)
+\tensor{x}{^{\mu^\prime}}=\tensor{f}{^{\mu^\prime}}\left(\tensor{x}{^\mu}\right)\,.
 \end{equation}
-One typical choice is the \emph{harmonic\footnote{a function $f$ satisfying
-$\square f = 0$ is called harmonic.} gauge}
+One typical choice is the \emph{harmonic\footnote{a function $f$ is said to be
+harmonic if it satisfies $\square f = 0$.} gauge}
 \begin{equation}
 \square\tensor{x}{^\mu}=0\,.
 \end{equation}
@@ -452,8 +458,8 @@ zero component, so that
 -\tensor{\partial}{_i}\left[\tensor{\partial}{_0}\left(g^{\nicefrac{1}{2}}\tensor{g}{^0^\mu}\right)\right]\,
 ,\end{equation}
 which fixes the second order time derivatives of the relevant components
-$\tensor{g}{^0^\mu}$. Therefore now the time evolution can be solved. (Fehlt
-hier was???)
+$\tensor{g}{^0^\mu}$. Therefore now the time evolution can be solved. 
+%TODO Missing part?
 \subsubsection{Degrees of freedom}
 \begin{itemize}
   \item[\color{section_color}\textsf{\textbf{10}}]
@@ -502,8 +508,8 @@ gauge invariance of the theory. For any scalar function $\Lambda$
 \tensor{A}{_\mu}+\partial_\mu\Lambda
 \end{equation}
 leaves the physics invariant. It is trivial to check that
-the field strength tensor $\tensor{F}{_\mu_\nu}=\partial_\mu
-\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}$ stays invariant. Perhaps more
+the field strength tensor \\
+${\tensor{F}{_\mu_\nu}=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}}$ stays invariant. Perhaps more
 interesting the field equation is also gauge invariant:
 \begin{equation}
 \begin{split}

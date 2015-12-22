@@ -147,6 +147,8 @@
 \newcommand{\csym}[3]{\ensuremath{[#1 #2,\, #3]}}
 \newcommand{\affin}[3]{\ensuremath{\Gamma^{#1}_{#2 #3}}}
 \newcommand{\landauO}{\mathcal{O}}
+\newcommand{\name}[1]{\textsc{#1}}
+\newcommand{\fourint}{\int\dif{}^4 x\,}
 \DeclareMathOperator{\tr}{Tr}
 \DeclareMathOperator{\re}{Re}
 \DeclareMathOperator{\im}{Im}
@@ -217,6 +219,32 @@
     textwidth = 0.98\textwidth
 }
 ]{example}
+
+\makeatletter
+\newtoks\FTN@ftn
+\def\pushftn{%
+ \let\@footnotetext\FTN@ftntext\let\@xfootnotenext\FTN@xftntext
+  \let\@xfootnote\FTN@xfootnote}
+\def\popftn{%
+ \global\FTN@ftn\expandafter{\expandafter}\the\FTN@ftn}
+\long\def\FTN@ftntext#1{%
+  \edef\@tempa{\the\FTN@ftn\noexpand\footnotetext
+                    [\the\csname c@\@mpfn\endcsname]}%
+  \global\FTN@ftn\expandafter{\@tempa{#1}}}%
+\long\def\FTN@xftntext[#1]#2{%
+  \global\FTN@ftn\expandafter{\the\FTN@ftn\footnotetext[#1]{#2}}}
+\def\FTN@xfootnote[#1]{%
+   \begingroup
+     \csname c@\@mpfn\endcsname #1\relax
+     \unrestored@protected@xdef\@thefnmark{\thempfn}%
+   \endgroup
+   \@footnotemark\FTN@xftntext[#1]}
+
+\makeatother
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+
 %\newtheorem*{sidenote}{Sidenote}
 %\newtheorem*{example}{Example}
 \newenvironment{tabulars}[1]{\renewcommand*{\arraystretch}{2}\tabular{#1}}{\endtabular}		% stretched table
