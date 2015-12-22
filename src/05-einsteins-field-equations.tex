@@ -1,5 +1,5 @@
 \chapter{Einstein's Field Equations}
-We will derive Einsteins Equations by physical considerations. The poisson
+We will derive Einsteins Equations by physical considerations. The Poisson
 equation reads as:
 \begin{equation}
 \Delta\Phi=4\pi\varrho\, ,
@@ -15,14 +15,14 @@ $\tensor{S}{_\mu_\nu}$, related to the geometry, so that we can express
 \tensor{S}{_\mu_\nu}=\tensor{T}{_\mu_\nu}
 \,.
 \end{equation}
-In SR, the energy impuls tensor $\tensor{T}{_\mu_\nu}$ is conserved i.e.
+In SR, the energy momentum tensor $\tensor{T}{_\mu_\nu}$ is conserved i.e.
 $\tensor{T}{_\mu_\nu^{,\nu}}=0$. As a natural extension, we demand that the
-energy impuls tensor of general relativity is \emph{covariantly} conserved
+energy momentum tensor of general relativity is \emph{covariantly} conserved
 \begin{equation}
 \tensor{\nabla}{^\nu}\tensor{T}{_\mu_\nu}=\tensor{T}{_\mu_\nu^{;\nu}}=0
 \end{equation}
 \begin{theorem}[Lovelock]
-For a fourdimensional space
+For a four dimensional space
 \footnotemark{} the most general divergence free tensor $\tensor{A}{_\mu_\nu}$ is
 given by
 \begin{equation}
@@ -33,7 +33,7 @@ $\tensor{G}{_\mu_\nu}:=\tensor{R}{_\mu_\nu}-\frac{1}{2}\tensor{g}{_\mu_\nu}R$.
 \end{theorem}
 \footnotetext{this does certainly not hold true for
 $d>4$}
-The Theorem imediatly implies \emph{Einstein's field equations}
+The theorem immediately implies \emph{Einstein's field equations}
 \begin{equation}
 \tensor{R}{_\mu_\nu}-\frac{1}{2}R\tensor{g}{_\mu_\nu}-\Lambda\tensor{g}{_\mu_\nu}
 =\kappa\tensor{T}{_\mu_\nu}\, ,\label{eq:EinstFG}
@@ -47,7 +47,7 @@ variation, we can rewrite equation \eqref{eq:EinstFG} as
 =\kappa\left(\tensor{T}{_\mu_\nu}-\frac{\Lambda}{\kappa}\tensor{g}{_\mu_\nu}\right)
 \end{equation}
 so that the left hand side represents the geometrical part and the right hand
-side the matter content and we identfy $\Lambda$ with an vacuum energy.
+side the matter content and we identify $\Lambda$ with an vacuum energy.
 Wheeler condenses this in the statement:
 \begin{quote}
 Geometry tells matter how to move, matter tells geometry how to
@@ -58,7 +58,7 @@ In the time of the inflation the cosmological constant must have been large.
 Since it is small today it has do decay with time.
 \end{sidenote}
 There is also an variational derivation dating back to Hilbert that is
-simpler than Einsteins initial derivation. We start by considereing a general action
+simpler than Einsteins initial derivation. We start by considering a general action
 \begin{equation}
 S\textsubscript{g}=\fourint  \tilde{\mathcal{L}}\, 
 \end{equation}
@@ -94,7 +94,7 @@ we get.
 \pushftn
 In natural units\footnote{So that length has dimension of inverse mass.} the
 line element $\dif s^2$ has dimension, ${[\dif
-s^2]=\textrm{M}^{-2}}$.\footnote{Where M referes to the dimenson of mass.} 
+s^2]=\textrm{M}^{-2}}$.\footnote{Where M refers to the dimension of mass.} 
 Since further ${\left[\tensor{x}{^\mu}\right]=\textrm{M}^{-1}}$,
 the Lagrange density must have Dimension
 ${\left[\mathcal{L}\right]=\textrm{M}^{4}}$.
@@ -114,7 +114,7 @@ We define the variation of $F$ as
 \begin{equation}
 \delta F:=\int \dif x\, \frac{\delta F}{\delta\Phi^i}\delta\Phi^i\,.
 \end{equation}
-Typically the functionals are givenn in the form
+Typically the functionals are given in the form
 \begin{equation}
 S[\Phi]=\int \dif x\, L(x,\Phi)\, ,
 \end{equation}
@@ -128,8 +128,8 @@ is the unity of the space of symmetric rank two tensors
 \begin{remark}
 In general $\delta(x,x')\neq \delta(x-x')$
 \end{remark}
-We transform to the origin of an RNCS, so that the christoffel symbols vanish.
-In that coordinate system the kovariant and the partial derivative coincide:
+We transform to the origin of an RNCS, so that the Christoffel symbols vanish.
+In that coordinate system the covariant and the partial derivative coincide:
 $\tensor{\partial}{_\mu}=\tensor{\nabla}{_\mu}$.
 \begin{equation}
 \begin{split}
@@ -182,7 +182,7 @@ Use
 \\
 \end{split}
 \end{equation}
-We treat both occuring terms sepertately
+We treat both occurring terms separately
 \begin{equation}
 \begin{split}
 \fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}
@@ -195,7 +195,8 @@ We treat both occuring terms sepertately
 \cSym{\rho}{\rho}{\nu}\right)
 \end{split}
 \end{equation}
-The Integrals vanish by Gauß law (neglegting surface Terms). We are left with
+The Integrals vanish by \name{Gauß} law (neglecting surface Terms). We are left
+with
 \begin{equation}
 \begin{split}
 2\kappa\delta S\textsubscript{EH}
@@ -221,7 +222,7 @@ so we have finally derived Einsteins field equations from an variational
 principle.
 %TODO add some text, to much formulas
 \section{Introduction of Matter}
-In the gravitational kontext we mean be \emph{matter} any non gravitational
+In the gravitational context we mean be \emph{matter} any non gravitational
 fields this include scalar fields $\varphi$, spinor fields $\Psi$, gauge fields
 $\tensor{A}{^\mu}$,\dots. We collect all of them in a multivariable $\Phi$.
 A local action can be written as
@@ -246,7 +247,7 @@ frame we have to make the usual replacements
 \tensor{\partial}{_\mu}\to
 \tensor{\nabla}{_\mu}\,, \quad \dif{}^4 x \to \dif{}^4 x\, \sqrt{-g}\, ,
 \end{equation}
-which is also known as a \emph{minimal cuppling description}. The action for a
+which is also known as a \emph{minimal coupling description}. The action for a
 scalar $\varphi$ in the presence of gravity, 
 i.e. a dynamical $\tensor{g}{_\mu_\nu}(x)$, reads as
 \begin{equation}
@@ -281,8 +282,8 @@ integration yields
 \end{equation}
 with $\square_{g}:=\tensor{g}{^\mu^\nu}
 \tensor{\nabla}{_\mu}\tensor{\nabla}{_\nu} $ the
-\emph{Laplace–Beltrami operator}, a generalisation of the ordinary laplacian to
-curved space.
+\emph{\name{Laplace–Beltrami} operator}, a generalisation of the ordinary
+Laplacian to curved space.
 Demanding that the variation with respect to $\varphi$ vanishes implies the
 \emph{Klein-Gordon equation}
 \begin{equation}
@@ -313,7 +314,7 @@ S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}\,.
 % \tensor{g}{^\mu^\nu}=-\tensor{g}{^\varrho^{(\mu}}\tensor{g}{^{\nu)}^\sigma}\delta_g
 % \tensor{g}{_\mu_\nu}$
 % \end{remark}
-We can now proceed in calculating the quantity we have ust introduced for a
+We can now proceed in calculating the quantity we have just introduced for a
 scalar field
 \begin{equation}
 \begin{split}
@@ -355,7 +356,7 @@ Where the last equality holds because $\varphi$ satisfies the Klein-Gordon
 equation. 
 \end{example}
 The Einstein equations are ten quasi linear, i.e. the highest order
-derivative apears only linear, differential equations for the metric field
+derivative appears only linear, differential equations for the metric field
 $\tensor{g}{_\mu_\nu}$. Strictly speaking the Einstein equations are
 \emph{nonlinear}.
 % \begin{sidenote}
@@ -365,10 +366,10 @@ $\tensor{g}{_\mu_\nu}$. Strictly speaking the Einstein equations are
 How do we find a solution to this equations?
 \begin{enumerate}
   \item Prescribe $\tensor{T}{_\mu_\nu}$. This is only possible for high
-  symmetry problems, e.g. the Schwazschild solution and the cosmological
-  solutions (Friedmans equations)
+  symmetry problems, e.g. the \name{Schwazschild} solution and the cosmological
+  solutions (\name{Friedmann}'s equations)
   \item Assume $\tensor{g}{_\mu_\nu}$, then compute $\tensor{T}{_\mu_\nu}$ and
-  (try!) to interprete this.
+  (try!) to interpret this.
 \end{enumerate}
 %TODO part about Intrinsic vs extrinsic curvature 
 \subsection{ADM-Decomposition}
@@ -392,17 +393,17 @@ to[bend right] coordinate (mm) (2.5,-2.5,-1)
 \node[inner sep=1pt,circle,fill=black] at  (0,0,2)  {} ;
 \draw (c) edge[in=-110,out=110,->-,-] node[pos=0.2,right]{$t$}(d);
 \end{tikzpicture}
-\caption{Foliation of spacetime into spaceial hypersurfaces $\Sigma_t$.}
+\caption{Foliation of spacetime into spatial hypersurfaces $\Sigma_t$.}
 \end{figure}
 %TODO explanation what happens!
-Assume we know eighter
+Assume we know either
 \begin{itemize}
   \item $\tensor{g}{_\mu_\nu}$ on $\Sigma_{t_0}$
   \item $\tensor{g}{_\mu_\nu_{;j}}$, $\tensor{g}{_\mu_\nu_{;0}}$ on
   $\Sigma_{t_0}$
 \end{itemize}
 $\Sigma_t=\left\{\tensor{x}{^0}=t\right\}$
-In vakuum the field equation are
+In vacuum the field equation are
 \begin{equation}
 0=G=R-2R\implies\tensor{R}{_\mu_\nu}=0
 \end{equation}
@@ -415,9 +416,9 @@ The resulting set of equations is
 \end{align}
 Where $\tensor{M}{_i_j}$ is a rest term containing lower order derivaties.
 This shows that ther are no second order time derivatives of
-$\tensor{g}{_0_\mu}$. We have 10 euations and 6 undetetrmined functions. The
+$\tensor{g}{_0_\mu}$. We have 10 equations and 6 undetermined functions. The
 DOFs can be used for a coordinate transformation, so that
-$\tensor{g}{_0_\mu_{,00}}=0$ on $\Sigma_{t_0}$. This is allways possible but we
+$\tensor{g}{_0_\mu_{,00}}=0$ on $\Sigma_{t_0}$. This is always possible but we
 will not proof this. It can be further shown, by means of the contracted Bianci
 identities, that this implies $\tensor{g}{_0_\mu_{,00}}=0$ on \emph{all}
 hypersurfaces $\Sigma_{t}$.
@@ -473,7 +474,7 @@ $\tensor{g}{^0^\mu}$. Therefore now the time evolution can be solved.
     $\Sigma_{t_0}$.
     \item
     $\tensor{G}{^i^0}=\kappa \tensor{T}{^i^0}$ ensures that the time
-    evolution is independent of the way we foliated sacetime into spacial
+    evolution is independent of the way we foliated spacetime into spacial
     hypersurfaces $\Sigma_{t}.    $
   \end{itemize}
   \item[\color{section_color}\textsf{\textbf{-4}}] due to the freedom
@@ -482,8 +483,8 @@ $\tensor{g}{^0^\mu}$. Therefore now the time evolution can be solved.
 We are left with two physical degrees of freedom which may be interpreted as the
 polarisation states of the graviton field.
 \subsubsection{Comparison with electrodynamics in flat spacetime}
-In electrodynamics instead of the einstein equations we have the field equations
-for the four potential $\tensor{A}{_\mu}$:
+In electrodynamics instead of \name{Einstein}'s equations we have the field
+equations for the four potential $\tensor{A}{_\mu}$:
 \begin{equation}
 \square\tensor{A}{_\mu}-\partial_\mu\left(\partial_\nu\tensor{A}{^\nu}
 \right)=0\,.
@@ -497,10 +498,10 @@ at the zero component. We find
 &= \partial_i\partial^i\tensor{A}{_0}-\partial_0\partial_iA^i
 \end{split}
 \end{equation}
-This equation is equivalent to $\nabla\vec{E}=0$ and the bianci identities.
+This equation is equivalent to $\nabla\vec{E}=0$ and the Bianchi identities.
 So once again $\tensor{A}{_0}$ is \emph{not} determined by the dynamical
 evolution equation because there is no second order time derivative analogous to
-$\tensor{g}{_0_0}$. Since $\tensor{A}{_0}$ is not determinend and cannot be
+$\tensor{g}{_0_0}$. Since $\tensor{A}{_0}$ is not determined and cannot be
 specified on initial time slice. This reflects some internal redundancy namely
 gauge invariance of the theory. For any scalar function $\Lambda$
 \begin{equation}
@@ -525,7 +526,7 @@ interesting the field equation is also gauge invariant:
 \end{equation}
 Thus if $\tensor{A}{_\mu}$ is a solution to the field
 equation $\tensor*{A}{*_\mu^\prime}$ is and therefore both are physically
-undistinguishable. We can also fix a gauge for example the \emph{Lorentz gauge}:
+indistinguishable. We can also fix a gauge for example the \emph{Lorentz gauge}:
 \begin{equation}
 \partial_\mu\tensor{A}{^\mu}=0\, .
 \end{equation}

@@ -50,7 +50,7 @@ could not be merged because the coordinate changes would not be $C^\infty$. Thos
 Remarkably this may even play a role in some physical theories. 
 As an example an 11d-supergravity can be described as a product
 $\Reals^{3+1}\times \Sphere^7$.
-Where $\Sphere^7$ is the seven-sphere and $\Reals^{3+1}$ Mikovski space.
+Where $\Sphere^7$ is the seven-sphere and $\Reals^{3+1}$ Minkovski space.
 This means on every point in the $\mathbb{R}^{3+1}$ there is a (small) $\Sphere^7$  located that contains additional spatial dimensions. 
 The $\Sphere^7$ has 28 different differential structures, so the choice of
 such a structure affects the theory for the above reasons.
@@ -86,8 +86,8 @@ There are three equivalent definitions for a
     \item geometrical.
 \end{enumerate}
 We start by giving the algebraic definition which is the most
-abstract and prefered by mathematicans, because it is suitable for proofs.
-Vectors are identified with derivatices, which are formally defined by
+abstract and preferred by mathematicians, because it is suitable for proofs.
+Vectors are identified with derivatives, which are formally defined by
 \begin{definition}[Derivation]
 A derivation $D$ satisfies the following rules, for all $f,g\in
 C^\infty(M,\Reals)$ and $\lambda \in \Reals$:
@@ -112,10 +112,10 @@ The only property that has to be checked is that it satisfies the Leibniz rule.
     XY(fg)=X[(Yf)g+f(Yg)]=(XYf)g+(Yf)(Xg)+(Yg)(Xf)+(XYg)f\\
 \end{equation}
 Subtracting $YX(fg)$ proves that $[X,Y]$ is indeed a vector. The fact that we
-have a natural vectorspace structure on the set of vectors at $p$ motivates the
+have a natural vector space structure on the set of vectors at $p$ motivates the
 following
 \begin{definition}
-The Tangentspace $T_pM$ is the space of all vectors in $p\in M$.
+The tangent space $T_pM$ is the space of all vectors in $p\in M$.
 \end{definition}
 A basis of $T_pM$ is given by the derivation along the
 coordinates $\partial_i$, therefore its dimension is equal to that of the manifold $M$.
@@ -240,9 +240,9 @@ We have already seen examples of metrics for the flat space, e.g. in spherical c
         0 & r^2\\
     \end{bmatrix}\,.
 \end{equation}
-A metric that is positive definite is called \emph{Riemanian metric}. In
-relativity we deal with \emph{Lorentzian metrics}, for which there are vectors
-beside the zero vector which have zero 'length'. In flat space we have
+A metric that is positive definite is called \emph{\name{Riemann}ian metric}. In
+relativity we deal with \emph{\name{Lorentz}ian metrics}, for which there are
+vectors beside the zero vector which have zero 'length'. In flat space we have
 $\tensor{g}{_i_j}=\tensor{\eta}{_i_j}$.
 \begin{remark}[About
 raising and lowering indices] Supose we have given a vector $A=A^i\partial_i$
@@ -255,7 +255,7 @@ in a natural way to a linear form $g(A,\cdot)$,
 \end{split}
 \end{equation}
 i.e. a dual vector. The components of this dual vector are given by its action
-on the Basis elemts of the tangentspace
+on the basis elements of the tangent space
 \begin{equation}
 A_i=g(A,\partial_i)=A^jg(\partial_j,\partial_i)=g_{ji}A^j\,,
 \end{equation}
@@ -263,9 +263,9 @@ which is exactly the law for lowering indices. Given the inverse metric we can
 multiply this equation by it to obtain $A^i$ in terms of $A_i$.
 \end{remark}
 \section{Parallel Transport}
-Idea: Generalize parralel transport from flat space.
+The idea is to generalize parallel transport from flat space.
 %TODO pictures
-If we express a vector in non-cartesian coordinates and shift it it's
+If we express a vector in non-Cartesian coordinates and shift it it's
 coordinates do not change.
 We take a look on two operations:
 \begin{enumerate}
@@ -277,7 +277,7 @@ system associated with coordinates $y^i$ respectively.
 \begin{equation}
 A_i=\dpd{{y^j}}{{x^i}}B_j\, ,\quad B_i=d\pd{{x^j}}{{y^i}}A_j\, .
 \end{equation}
-We look at vectors whose coodinates in the system $y^i$ do not change i.e.
+We look at vectors whose coordinates in the system $y^i$ do not change i.e.
 $\delta B_i=0$ The variation of $A_i$ is given by
 \begin{equation}
 \delta
@@ -292,8 +292,8 @@ Expressing $B_i$ in terms of $A_i$ yields
 \end{equation}
 $\affin{l}{i}{k}$ is called \emph{affine connection} or short affinity.
 \begin{remark}
-We can always find a coordinate system in wich $\affin{l}{i}{k}\equiv 0$, this
-system is called \emph{Riemanian normal coordinate system} (RNCS).
+We can always find a coordinate system in which $\affin{l}{i}{k}\equiv 0$, this
+system is called \emph{\name{Riemann}ian normal coordinate system} (RNCS).
 \end{remark}
 %TODO construction i.e. geodesic coordinates
 We notice that if 
@@ -307,18 +307,18 @@ derivative}
 \tensor{A}{_i_;_j}:=\tensor{\nabla}{_j}\tensor{A}{_i}:=\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\,
 .
 \end{equation}
-It can easyly be seen that the covariant derivative of a tensor transforms as a
+It can easily be seen that the covariant derivative of a tensor transforms as a
 tensor, by inspecting \eqref{eq:covdev} and applying the quotient theorem.
 \begin{remark}[The
 Covariant Derivative in Electrodynamics] Example from Electrodynamics concerning the covariant derivative. 
 The theory is invariant under transformations $\phi\to e^{\imI \alpha}\phi$, 
 because $\phi^*\phi$ and $\phi^*\nabla\phi-\phi\nabla\phi^*$ do not change.
-In order to make the lagrangian gauge invariant we exchange
+In order to make the Lagrangian gauge invariant we exchange
 \begin{equation}
 \tensor{\partial}{_\mu}\to\tensor{D}{_\mu}+\imI\tensor{A}{_\mu}\, ,
 \end{equation}
 %TODO what is phi?
-which effectively produces aditional terms in the lagrangian, namely
+which effectively produces additional terms in the Lagrangian, namely
 \begin{equation}
 \imI\tensor{A}{^\mu}\left(\phi^*\tensor{\partial}{_\mu}\phi
 -\phi\tensor{\partial}{_\mu}\phi^*\right)=\imI\tensor{A}{^\mu}\tensor{J}{_\mu}\,,
@@ -328,8 +328,8 @@ The commutator between the covariant derivatives calculates to
 \begin{equation}
 \left[\tensor{D}{_\mu},\tensor{D}{_\nu}\right]=\imI \tensor{F}{_\mu_\nu}\,.
 \end{equation}
-So the noncomutativity is associated with the presence of a field. This is
-simmillar to GR where it was related with curvature. 
+So the noncommutativity is associated with the presence of a field. This is
+similar to GR where it was related with curvature. 
 \end{remark}
 Since we have now established a relation between vectors and dual vectors, we
 can also determine the covariant derivative of a dual vector. Therefore we
@@ -349,7 +349,7 @@ If we put in the covariant derivative of a we get
 \begin{equation}
 \tensor{A}{_i}\tensor{B}{^i_;_j}=\tensor{A}{_i}\left(\pd{}{{x^j}}B^i+\Gamma^i_{kj}\tensor{B}{^k}\right)
 \end{equation}
-Since $A$ was arbitary, we can deduce that
+Since $A$ was arbitrary, we can deduce that
 \begin{equation}
 \tensor{B}{^i_;_j}=\left(\pd{}{{x^j}}B^i+\Gamma^i_{kj}\tensor{B}{^k}\right)
 \end{equation}
@@ -357,9 +357,9 @@ for a (1,1)-tensor we get:
 \begin{equation}
 \tensor{A}{^i_j_;_k}=\pd{}{{x^k}}\tensor{A}{^i_j}-\Gamma^a_{jk}\tensor{A}{^i_a}+\Gamma^i_{ak}\tensor{A}{^a_j}\,
 .\end{equation}
-Similar expressions hold for tensors of arbitary rank where each index gives an
-aditional term containing a contraction with the affinity $\Gamma^i_{jk}$. 
-We now want to consider curved spaces. This can not immediatly be determined by
+Similar expressions hold for tensors of arbitrary rank where each index gives an
+additional term containing a contraction with the affinity $\Gamma^i_{jk}$. 
+We now want to consider curved spaces. This can not immediately be determined by
 the metric, for example the polar coordinates do not look flat even though they
 describe the ordinary $\Reals^2$.
 %TODO pictures
@@ -373,23 +373,23 @@ which is zero for a metric affinity. The Ricci tensor is given by
 \begin{equation}
 \tensor{R}{_j_k}=\tensor{R}{^i_j_k_i}\, .
 \end{equation}
-Because of the symmetrie this are all independent contractions. Notice that at
+Because of the symmetry this are all independent contractions. Notice that at
 this point we cannot raise or lower indices to contract different indices.
-Since we can express the Rieman tensor in terms of commutators ther is a also a
-symmetry that can be derived from the Jacobi identity:
+Since we can express the \name{Riemann} tensor in terms of commutators there is
+a also a symmetry that can be derived from the Jacobi identity:
 \begin{equation}
 \left[A\left[B,C\right]\right]
 +\left[C\left[A,B\right]\right]
 +\left[B\left[C,A\right]\right]=0\,.
 \end{equation}
 Physics can be described in terms of differential equations. We for example
-would like to have a object similiar to the laplacian in curved coordinates.
+would like to have a object similar to the Laplacian in curved coordinates.
 However $\partial_i\partial_i$ is not coordinate invariant. We therefore
 introduce a metric. The equivalence principle implies that space is locally
 Minkovski.
 \begin{sidenote}
 There are certain theories that can be formulated without a metric. An example
-beeing threedimensional gravity, which is nondynamic. 
+being three dimensional gravity, which is non-dynamic. 
 \end{sidenote}
 Inner product 
 \begin{equation}
@@ -399,14 +399,14 @@ Pseudo norm
 \begin{equation}
 \|A\|^2=g(A,A)=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{A}{^j}
 \end{equation}
-Since the connection and the metric are not related, we stil don't have a lenght
+Since the connection and the metric are not related, we still don't have a length
 scale on the manifold
 % \begin{equation}
 % \tensor{R}{_i_j_k_l}:=\tensor{g}{_i_a}\tensor{R}{^a_j_k_l}
 % \end{equation}
 % Only useful if $R$ and $g$ are related i.e. metric connection.
 % (Bilder)
-A curve is a map $\gamma:\Reals\to M$. The parametrisation is arbitary e.g.
+A curve is a map $\gamma:\Reals\to M$. The parametrisation is arbitrary e.g.
 \begin{equation}
 \begin{split}
 \gamma:\, &\Reals\to \Reals^2\\
@@ -420,7 +420,7 @@ A curve is a map $\gamma:\Reals\to M$. The parametrisation is arbitary e.g.
 \end{equation}
 clearly describes a straight line with $y=x$.
 We notice that $\od{\tensor{\gamma}{^i}}{t}$ is parallel to
-$\od[2]{\tensor{\gamma}{^i}}{t}$. This gives rise to annother possible
+$\od[2]{\tensor{\gamma}{^i}}{t}$. This gives rise to another possible
 generalisation of a straight line.
 In curved coordinates we have 
 \begin{equation}
@@ -428,8 +428,8 @@ In curved coordinates we have
 =\lambda(t)\od{\tensor{x}{^j}}{t}\,.
 \end{equation}
 %TODO all steps + reasoning
-If we demand that this is equal to the minimazation of the arc length we get a
-preffered connection. 
+If we demand that this is equal to the minimization of the arc length we get a
+preferred connection. 
 Suppose we have a different parametrisation $s(t)$
 \begin{equation}
 \od{\tensor{x}{^i}}{t}=\od{\tensor{x}{^i}}{s}\od{s}{t}\,,\quad
@@ -447,7 +447,7 @@ To get to the usual form of the geodesic equation we choose $s$ so that
 \dod[2]{s}{t}=\lambda(t)\dod{s}{t}\label{eq:bedaffpara}
 \end{equation}
 Which is an ordinary differential equation of type $\ddot{s}=\lambda\dot{s}$
-that shoud posses a solution. 
+that should posses a solution. 
 For this special choice of parametrisation we have
 \begin{equation}
 \dod[2]{\tensor{x}{^i}}{s}+\affin{i}{j}{k}\dod{\tensor{x}{^j}}{s}\od{\tensor{x}{^k}}{s}
@@ -491,7 +491,7 @@ Non-Christoffel connections play a role, for example when dealing with spinors.
 \begin{equation}
 \tensor{R}{^i_j_k_l}=-\tensor{R}{^i_j_l_k}\,.
 \end{equation}
-Bianci identites for the Riemann tensor
+Bianci identities for the Riemann tensor
 \begin{equation}
 \tensor{R}{^i_j_k_l_{;m}}+\tensor{R}{^i_j_m_k_{;l}}+\tensor{R}{^i_j_l_m_{;k}}=0
 \end{equation}
@@ -516,7 +516,7 @@ tensorial, it holds in all systems. Notice the similarity to
 =\tensor{\partial}{_b}\tensor{\partial}{_m}\tensor{A}{^a}
 -\tensor{\partial}{_a}\tensor{\partial}{_m}\tensor{A}{^b}
 \end{equation}
-Therefore the Biancci identity is identical to the second set of Maxwells
+Therefore the Bianchi identity is identical to the second set of Maxwells
 equations
 %TODO reference
 If the affinity is symetrical $\affin{k}{i}{j}=\affin{k}{j}{i}$ we further have
@@ -543,9 +543,9 @@ indices
 -\dmd{{\tensor{g}{_j_l}}}{2}{\tensor{x}{^i}}{}{\tensor{x}{^j}}{}\right)
 \end{split}
 \end{equation}
-where we used the metric compability in the RNCS
+where we used the metric compatibility in the RNCS
 ($\tensor{\nabla}{_k}\tensor{g}{_i_j}=\tensor{\partial}{_k}\tensor{g}{_i_j}=0$)
-. Imideatly we can exctract symmetries
+. Immediately we can extract symmetries
 \begin{align}
 \tensor{R}{_i_j_k_l}&=-\tensor{R}{_j_i_k_l}\\
 \tensor{R}{_i_j_k_l}&=-\tensor{R}{_i_j_l_k}
@@ -555,7 +555,7 @@ there are six independent components for $A,B$ each)
 \begin{equation}
 \tensor{R}{_A_B} = \tensor{R}{_B_A}
 \end{equation}
-So $R$ can be thought as a $6\times 6$ maxtrix.
+So $R$ can be thought as a $6\times 6$ matrix.
 \begin{table}
     \centering
     \begin{tabulars}{rrr}
@@ -570,14 +570,14 @@ So $R$ can be thought as a $6\times 6$ maxtrix.
 		\bottomrule
     \end{tabulars}
     \caption{Number of independent components of Riemann
-    and Ricci tensor.\label{tab:Nindcomp}}
+    and \name{Ricci} tensor.\label{tab:Nindcomp}}
 \end{table}
 Table~\ref{tab:Nindcomp} lists the number of independent components of the
-curvature tensor and the Ricci tensor in various dimensions. Therby a
-ondimensional space is always flat, a twodimensional is characterised by the
+curvature tensor and the \name{Ricci} tensor in various dimensions. Thereby a
+one dimensional space is always flat, a two dimensional is characterised by the
 curvature scalar $R$ alone and in three dimensions the Ricci tensor is
 sufficient to know the Riemann tensor. Therefore four is the lowest dimension in
-which the Rieman tensor contains additional information of the curvature of
+which the Riemann tensor contains additional information of the curvature of
 space.
 Formulas 
 \begin{equation}

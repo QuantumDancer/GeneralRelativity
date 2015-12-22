@@ -26,7 +26,7 @@ relativity:
     \begin{equation}
         x^\mu: (x^0,x^1,x^2,x^3)\, .
     \end{equation}
-    For example in cartesian coordinates, we have
+    For example in Cartesian coordinates, we have
     \begin{equation}
         (x^0,x^1,x^2,x^3) = (ct,x,y,z)\, .
     \end{equation}
@@ -42,7 +42,7 @@ relativity:
 Since we will have to deal which many indices, we will find a way to keep
 notation as compact as possible. We agree that whenever we have a summation over an
 upper and a lower index like $\sum_\mu \tensor{x}{_\mu}\tensor{x}{^\mu}$, we
-drop the sumation and assume that terms of type
+drop the summation and assume that terms of type
 $\tensor{x}{_\mu}\tensor{x}{^\mu}$ are always summed over.
 \section{Propagation of Light Waves and the Line Element}
 For vividness, we restore factors of $c$ in this section.
@@ -81,7 +81,8 @@ We define an infinitesimal interval, or \emph{line element}:
 %TODO picture
 Our preliminary considerations lead to the following statement: if the interval
 is zero in one inertial system, it should be zero in all.
-To relate the linelements of different systems to each other, we make the following thought:
+To relate the lineelements of different systems to each other, we make the
+following thought:
 Suppose we have three inertial Systems $I,I_1,I_2$.
 The Systems $I_1$ and $I_2$ move at constant velocity $\vec{v}_1$ and $\vec{v}_2$ relative to $I$. Further
 $I_2$ moves with velocity $\vec{v}_{12}$ relative to $I_1$. The demand implies
@@ -205,7 +206,7 @@ The invariance of the line element implies
     x^\mu\dif x^\nu \stackrel{!}{=} \dif s^2\,,
 \end{equation}
 independent of the shift $a^\mu$. We will therefore focus our attention towards
-the linerar transformation $\tensor{L}{^\mu_\nu}$. Equation
+the linear transformation $\tensor{L}{^\mu_\nu}$. Equation
 \eqref{eq:invarline} implies that
 \begin{equation}
     \eta_{\mu\nu}=\tensor{L}{^\varrho_\nu}\eta_{\varrho\sigma}\tensor{L}{^\sigma_\nu}\,.\label{eq:invariance}
@@ -229,12 +230,12 @@ $\varepsilon^2$ results in
         .
     \end{split}
 \end{equation}
-Since this must hold true for arbitary $\varepsilon$, the generators
+Since this must hold true for arbitrary $\varepsilon$, the generators
 $\tensor{\omega}{_\nu_\mu}$ must satisfy
 $\tensor{\omega}{_\nu_\mu}=-\tensor{\omega}{_\mu_\nu}$, i.e. be antisymmetric.
 In general we have $\frac{n(n-1)}{2}$ of these objects, where $n$ is the
 dimension of the underlying space.
-Since we are considering fourdimensional spacetime, there are six generators.
+Since we are considering four dimensional spacetime, there are six generators.
 The finite transformations by an generalized angle $\alpha\in\Complex$ can be
 obtained from the generators via
 \begin{equation}
@@ -248,7 +249,7 @@ example an rotation around $z$-axis. Then we have
 \begin{equation}
     x^\prime=x\cos\alpha+y\sin\alpha \, ,\quad y^\prime=-x\sin\alpha+y\cos\alpha \, .
 \end{equation}
-The infinitisimal generator is
+The infinitesimal generator is
 \begin{equation}
     \tensor{\omega}{^\mu_\nu}
     =
@@ -355,7 +356,7 @@ Therefore an alternative form is given by
 0&0 &0 &1
 \end{bmatrix}\, .
 \end{equation}
-And the coordinates are therfore related by
+And the coordinates are therefore related by
 \begin{equation}
     t=\gamma\left(t^\prime+\beta x^\prime\right)\,,\quad
     x=\gamma\left(x^\prime+\beta t^\prime\right)\, .
@@ -414,11 +415,11 @@ f_0\\
 There are three types of vectors\footnote{We could also put up a fourth class,
 containing solely the zero vector.}:
 \begin{enumerate}
-    \item \emph{Spacalike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}>0$
+    \item \emph{Spacelike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}>0$
     \item \emph{Lightlike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}=0$
     \item \emph{Timelike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}<0$
 \end{enumerate}
-All classes are transfomed into themself by \name{Lorentz} transformation.
+All classes are transformed into themself by \name{Lorentz} transformation.
 There is a set of transformations that is forbidden by physical considerations: namely the
 parity change $\vec{x}\to -\vec{x}$ and time reversal $t\to -t$ because this are
 no real symmetries of nature\footnote{both violated in weak interactions.}.
@@ -427,7 +428,7 @@ does not change. For spacelike intervals the order can change. To remain causal
 all particles have to move at velocity $v\leq c$. This is in contrast to
 Newtonian theory where everything can affect everything, because the velocities
 are unbounded. A direct consequence of this is for example that even the two
-body problem has no exakt solution in special relativity.
+body problem has no exact solution in special relativity.
 Tabular~\ref{tab:fourvecs} shows a list of the dynamic fourvectors in SR,
 notice that in contrast to the classical, theory the fouraccelaration
 $\tensor{a}{_\mu}$ has no importance in SR.
@@ -507,13 +508,13 @@ The equation \eqref{eq:onshell} is called the \emph{on shell condition}.
 There is nothing in the theory that predicts that the photon is massless. It
 could be possible that its mass is only really small and that in fact that the
 photon does not travel at the speed of light. (This would make it
-convinient to rename the constant $c$) Even though the mass should be so small
+convenient to rename the constant $c$) Even though the mass should be so small
 that the de Broglie wavelength is of the order of the size of the universe,
 massive photons would have a huge impact.
 \end{sidenote}
 \begin{sidenote}[Complex Time]
 We could in principle make a substitution $t\to \imI t$. Which would free us
-from the need to distingish between co- and contravariant vectors, because the
+from the need to distinguish between co- and contravariant vectors, because the
 inner product would be given as
 \begin{equation}
     g(x,y)=\left(\imI x^0\right)\left(\imI
@@ -537,7 +538,7 @@ accordingly, i.e.
     \tensor{T}{^\mu^\nu}\to
     \tensor{L}{^\mu_\alpha}\tensor{L}{^\nu_\beta}\tensor{F}{^\alpha^\beta}\,
 \end{equation}
-and similar for an arbitary number of indices. A typical example is the field strength tensor
+and similar for an arbitrary number of indices. A typical example is the field strength tensor
 $\tensor{F}{^\mu^\nu}$ of electrodynamics given in terms of the
 vector potential $\tensor{A}{_\mu}$:
 \begin{equation}
@@ -567,7 +568,7 @@ The \name{Lorentz} force is given by
     \tensor{F}{^\mu}=q\tensor{F}{^\mu^\nu}\tensor{u}{_\nu}
 \end{equation}
 Where $\tensor{u}{^\mu}=(1,\vec{v})\transpose$ is the four velocity. As
-annother example we can take a look at plane waves. The vector potential of a plane wave is
+another example we can take a look at plane waves. The vector potential of a plane wave is
 \begin{equation}
     \tensor{A}{^\mu}=\tensor{\hat{A}}{^\mu}
     \exp\left[\imI(\vec{k}\cdot\vec{r}-\omega
@@ -588,8 +589,8 @@ the photons energy $E=\omega$, momentum $\vec{p}=\vec{k}$ and mass $m=0$.
 %TODO consider merging with The Energy Momentum Tensor
 \begin{sidenote}
 Above a certain limit a system cannot be stabilized by pressure, because the
-gravity cuples to the pressure and therefore increasing the pressure would lead
-to a stronger attraction due to gravity and hence inevetiable collapse.
+gravity couples to the pressure and therefore increasing the pressure would lead
+to a stronger attraction due to gravity and hence unfetchable collapse.
 \end{sidenote}
 %TODO sidenote does not fit context
 The energy momentum tensor is symmetric
@@ -605,7 +606,7 @@ given by
 \begin{equation}
     \tensor{T}{^\mu^\nu_,_\nu}=\tensor{D}{^\mu}\,  .
 \end{equation}
-Where the external momentum is itselve given as the divergence
+Where the external momentum is itself given as the divergence
 \begin{equation}
     \tensor{D}{^\mu} =-\tensor{S}{^\mu^\nu_,_\nu}\, .
 \end{equation}
@@ -613,7 +614,7 @@ Putting both terms together gives
 \begin{equation}
     \partial_\mu(\tensor{T}{^\mu^\nu}+\tensor{S}{^\mu^\nu})=0\,,
 \end{equation}
-Which can be interpretet as the total energy conservation.
+Which can be interpreted as the total energy conservation.
 \subsection{Noether's Theorem}
 We introduce a tensorial generalisation of the angular momentum
 \begin{equation}
@@ -634,7 +635,7 @@ It can be shown that it is a conserved quantity
 \end{equation}
 \begin{remark}
 The existence of a conserved symmetric tensor $\tensor{T}{^\mu^\nu}$ is
-nessecary in order to build a relativistic theory
+necessary in order to build a relativistic theory
 \end{remark}
 \begin{example}[Electrodynamics]
 We start by inspecting the \name{Lorentz} Force $\tensor{F}{^\mu}$ which is
@@ -643,7 +644,7 @@ given by
     \tensor{F}{^\mu}=e\tensor{F}{^\mu^\nu}\tensor{u}{_\nu}=\tensor{F}{^\mu^\nu}\tensor{J}{_\nu}=\tensor{D}{^\mu}\,
     .
 \end{equation}
-We now ask whether ther is a potential $\tensor{S}{^\mu^\nu}$ so that
+We now ask whether there is a potential $\tensor{S}{^\mu^\nu}$ so that
 $\tensor{D}{^\mu}=-\tensor{S}{^\mu^\nu_{,\nu}}$. Indeed a potential is given by
 \begin{equation}
     \tensor{S}{^\mu^\nu}=\tensor{F}{^\mu_\alpha}\tensor{F}{^\nu^\alpha}-\frac{1}{4}\tensor{\eta}{^\mu^\nu}\tensor{F}{_\alpha_\beta}\tensor{F}{^\alpha^\beta}\,
