@@ -151,6 +151,7 @@ Equation~\eqref{eq:lineinsteineqs} can be written in this form:
     + \eta_{\mu\nu}\partial_\varrho \overline{h}^{\varrho\sigma}}_{\text{ensures gauge invariance of equation}}
     = \underbrace{-2\kappa T_{\mu\nu}}_{\text{``source''}}
 \end{equation}
+
 %TODO Michi: mathematical background \\%TODO mathematical background @Michi
 We are now considering infinitesimal diffeomorphisms, which are given by affine
 transformations
@@ -351,3 +352,114 @@ Since $\overline{h}_{\mu\nu}$ and $\overline{h'}_{\mu\nu}$ correspond to the sam
 \end{landscape}
 }
 
+\begin{remark}[Fierz-Pauli action, 1939]
+\begin{equation}
+    \lagrangian_{\text{FP}} =
+    \frac{1}{2} \left( \partial_\mu h^{\mu\nu} \right) \left( \partial_\nu h \right)
+    - \partial_\mu h^{\rho \sigma} \partial_\rho \tensor{h}{^\mu_\sigma}
+    + \frac{1}{2} \eta^{\mu\nu} \left( \partial_\mu h^{\rho\sigma} \right) \left( \partial_\nu h_{\rho \sigma} \right)
+    - \frac{1}{2} \eta^{\mu\nu} \left( \partial_\mu h \right) \left( \partial_\nu h \right)
+\end{equation}
+For vacuum this is the Lagrangian of a massless spin-2 field $h_{\mu\nu}(x)$ (``the graviton'') in flat spacetime $h^{\mu\nu}$. \\
+Problem: non-linearity (in electrodynamics: linear coupling)
+\begin{equation}
+    T_{\mu\nu}h^{\mu\nu} \rightarrow h_{\mu\nu}^{(2)} \propto \left( h_{\mu\nu}^{(1)}  \right)^2
+\end{equation}
+$\rightarrow$ Deser 1970: Iterative procedure \\
+$\hookrightarrow$ including gravitational self energy and resuming one recovers the full nonlinear Einstein equations.
+\end{remark}
+
+\newpage
+
+\section{Newtonian Limit}
+Empirically we know
+\begin{enumerate}
+    \item Newtonian gravity describes the dynamics in our solar system to a high accuracy
+    \item On earth, we can measure the gravitation constant $G_\text{N}$ e.g.\ by Cavendish-type  experiments
+\end{enumerate}
+If General Relativity is a more fundamental gravitational theory than Newton's theory it should
+\begin{enumerate}
+    \item recover \name{Newton}'s theory in appropriate limit, i.e.\ in the domain where Newtonian Gravity is a good description
+    \item be more accurate than Newton's theory, i.e.\ it should predict small corrections to Newtonian Gravity.
+\end{enumerate}
+Conditions for the Newtonian limit:
+\begin{enumerate}
+    \item $v \ll c$ (sources move slowly) \\
+    slowly changing geometry $\approx$ static: no $\dif{x}^i\dif(t)$ terms in $\dif{s}^2$ (would violate $t\rightarrow -t$ invariance)
+    \item $g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}$ with $\abs{h_{\mu\nu}} \ll 1$ (weak gravitational field)
+    \item $p \ll \rho$ (sources have low internal pressure)
+\end{enumerate}
+\begin{enumerate}[{ad} 1.]
+    \item $v\ll c$ is required as (special) relativistic effects must be small
+    \item Consider the solar system as a closed system: Then a particle in the outer region with $v\ll c$ initially,
+    will fall into the inner region (center of mass) and it will be accelerated by gravity. It will be then have a kinetic energy
+    $E_\text{kin} = \frac{1}{2} m v^2 \sim \abs{m \Phi}$, where $\Phi < 0$ is the gravitational Newtonian potential with boundary condition
+    $\Phi(\infty) = 0$. Small velocities of the sources imply weak gravitational fields.
+    \item Speed of sound
+    \begin{align}
+        & c_s \coloneqq \abs{\frac{T_{ij}}{T_{00}}} \quad \text{with} \quad T_{\mu\nu} = \diag \left( \rho, \frac{p}{c^2}, \frac{p}{c^2}, \frac{p}{c^2} \right) \quad \text{(perfect fluid)} \\
+        & c_s \sim \left( \frac{p}{\rho} \right)^{1/2}
+    \end{align}
+    The internal pressure of the sources must be small, otherwise they would also create (fast) motion of sound waves. \\
+    $\implies p \ll \rho$ \\
+    $\implies$ energy-momentum tensor of dust
+    \begin{align}
+        T^{\mu\nu} &= \rho_0 t^\mu t^\nu \\
+        t^\mu &= \delta^\mu_0 = \left( \frac{\partial}{\partial x^0} \right)^\mu
+    \end{align}
+    $t^\mu$ is the ``direction'' of an internal coordinate system of time
+    \begin{equation}
+        \Box \overline{h}_{\mu\nu} \approx \Delta \overline{h}_{\mu\nu}
+    \end{equation}
+    alternatively $\Box = - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} + \Delta \approx \Delta$ as 
+    $\frac{1}{c} \frac{\partial}{\partial t} = \frac{1}{c} \frac{\partial}{\partial x} \frac{\partial x}{\partial t} 
+    \sim \frac{v}{c} \frac{\partial}{\partial x} \ll \frac{\partial}{\partial x}$
+\end{enumerate}
+
+For the Newtonian limit, we must look for solutions to $\Box \overline{h}_{\mu\nu} = - 2 \kappa T_{\mu\nu}$, where time-derivatives are 
+negligible and where the energy-momentum tensor is the one of dust. 
+\begin{equation}
+    \Delta \overline{h}_{\mu\nu} = 
+    \begin{cases}
+    	-2 \kappa \rho_0 & \mu=\nu=0 \\
+    	0 & \text{else}
+    \end{cases}
+\end{equation}
+Consider first the \name{Poisson} equation with vanishing sources. 
+The unique solution is $\overline{h}_{\mu\nu} = \const$. The $\const$ can be always adjusted to zero by a residual gauge transformation:
+\begin{equation}
+    \overline{h}_{\mu\nu} = 0, \quad \mu \neq \nu = 0
+\end{equation}
+Residual gauge transformation
+\begin{equation}
+    \partial^\mu \overline{h'}_{_\mu\nu} = \underbrace{\partial^\mu \overline{h}_{\mu\nu}}_{=0} + \Box \xi_\nu = 0
+\end{equation}
+This means that all gauge transformations $\xi_\mu$ with $\Box \xi_\mu = 0$ are compatible with the de Donder gauge 
+(i.e.\ that doesn't lead out of the de Donder gauge). \\
+As far we know:
+\begin{align}
+    \overline{h}_{\mu\nu} &= 0 \qquad \text{for the 0-0 component } \\
+    \Delta \overline{h}_{00} &= - 2\kappa \rho_0 \qquad \mu \neq \nu = 0
+\end{align}
+We identify the gravitational potential as
+\begin{equation}
+    \Phi \coloneqq -\frac{1}{4} \overline{h}_{00}
+\end{equation}
+We obtain the \name{Poisson} equation
+\begin{equation}
+    \Delta \Phi = \frac{\kappa}{2} \rho_0 = 4 \pi G_\text{N} \rho_0
+\end{equation}
+Solution in terms of the original field $h_{\mu\nu}$:
+\begin{equation}
+    h_{\mu\nu} = \overline{h}_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu} \overline{h} 
+    = \overline{h}_{00} \left( \tensor{\delta}{_\mu^0} \tensor{\delta}{_\nu^0} + \frac{1}{2} \eta_{\mu\nu} \right) 
+    = - 4\Phi \left( \tensor{\delta}{_\mu^0} \tensor{\delta}{_\nu^0} + \frac{1}{2} \eta_{\mu\nu} \right)
+\end{equation}
+We have used $\overline{h}=\eta^{\rho\sigma}\overline{h}_{\rho\sigma} = -\overline{h}_{00} = 4 \Phi$
+\begin{align}
+    & \implies h_{00}=-2\Phi \qquad h_{ij}=-2\Phi\delta_{ij} \qquad h_{0\mu}=0 \\
+    & \implies \dif{s}^2 = g_{\mu\nu} \dif{x}^\mu \dif{x}^\nu = - (1+2\Phi)\dif{t}^2 + (1-2\Phi)\delta_{ij} \dif{x}^i \dif{x}^j
+\end{align}
+This is the Newtonian geometry.
+%TODO ref to first appearance newt. geo.
+\subsection{Motion of test particles in Newtonian Geometry}
