@@ -1,16 +1,19 @@
 \chapter{Linearized theory and Newtonian limit}
 \section{Linearized theory}
-Consider a weak gravitational field. Then we can split the full spacetime metric $g_{\mu\nu}(x)$ into two parts.
+Consider a weak gravitational field. Then we can split the full spacetime metric $\tensor{g}{_\mu_\nu}(x)$ into two parts.
 \begin{definition}[Linearization of the metric field.]
     \begin{equation}
-        g_{\mu\nu}(x) = \eta_{\mu\nu} + h_{\mu\nu}(x) + \landauO(h^2) \, .
+        \tensor{g}{_\mu_\nu}(x) = \tensor{\eta}{_\mu_\nu} +
+        \tensor{h}{_\mu_\nu}(x) + \landauO(h^2) \, .
     \end{equation}
 \end{definition}
-$\eta_{\mu\nu}$ is the flat, constant ``background'' metric of Minkowski space, i.e.\ there is no gravitational field present.
+Thereby $\tensor{h}{_\mu_\nu}$ is the flat, constant ``background'' metric of Minkowski
+space, i.e.\ there is no gravitational field present.
 The field $h_{\mu\nu}(x)$ can be interpreted as a perturbation on the fixed background $\eta_{\mu\nu}$.
 One can identify a spin-2 particle, the so-called \emph{graviton}, with the excitations (quantized fluctuations) of this field.
 Because only the linear order of $h$ is considered, the nonlinearity of Einstein's equations is lost.
-We can raise and lower indices with $\eta_{\mu\nu}$ and $\eta^{\mu\nu}$.
+We can raise and lower indices with $\tensor{h}{_\mu_\nu}$ and
+$\tensor{h}{^\mu^\nu}$.
 
 \begin{remark}
 This works only for a weak gravitational field, since a strong gravitational field produces a strong back reaction of ``matter''
@@ -23,7 +26,7 @@ In the following we neglect all terms with $\landauO(h^2)$.
 Our goal is to express Einstein's field equations in the linearized approximation.
 For this we need to calculate the Christoffel symbols, the Riemann tensor, the Ricci tensor and the Ricci scalar.
 
-Christoffel symbols of the first kind:
+\subsubsection*{Christoffel symbols}
 \begin{equation}
     \csym{\mu}{\nu}{\varrho} = \frac{1}{2} \left( \tensor{h}{_\mu_\varrho_,_\nu} + \tensor{h}{_\nu_\varrho_,_\mu}
     - \tensor{h}{_\mu_\nu_,_\varrho} \right) + \landauO(h^2) \, .
@@ -33,65 +36,100 @@ Christoffel symbols of the second kind:
     \cSym{\varrho}{\mu}{\nu} = g^{\varrho\sigma} \csym{\mu}{\nu}{\sigma} = \eta^{\varrho\sigma} \csym{\mu}{\nu}{\sigma} + \landauO(h^2)
     = \frac{1}{2} \left( \tensor{h}{_\mu^\varrho_,_\nu} + \tensor{h}{_\nu^\varrho_,_\mu} - \tensor{h}{_\mu_\nu^,^\varrho} \right) + \landauO(h^2) \, .
 \end{equation}
-Riemann tensor:
+\subsubsection*{Riemann tensor}
+The Riemann tensor can be calculated to
 \begin{equation}
     \begin{split}
         \tensor{R}{^\varrho_\sigma_\mu_\nu}
         &= \partial_\mu \cSym{\varrho}{\nu}{\sigma} - \partial_\nu \cSym{\varrho}{\mu}{\sigma}
         + \underbrace{\cSym{\varrho}{\mu}{\lambda} \cSym{\lambda}{\nu}{\sigma} - \cSym{\varrho}{\nu}{\lambda} \cSym{\lambda}{\mu}{\sigma}}_{\landauO(h^2)} \\
-        &= \frac{1}{2} \left( \tensor{h}{_\nu^\varrho_,_\sigma_\mu} + \mathunderline{blue}{\tensor{h}{^\varrho_\sigma_,_\nu_\mu}} - \tensor{h}{_\nu_\sigma^,^\varrho_\mu}
-        - \mathunderline{blue}{\tensor{h}{^\varrho_\mu_,_\sigma_\nu}} + \tensor{h}{^\varrho_\sigma_,_\mu_\nu} + \tensor{h}{_\mu_\sigma^,^\varrho_\nu} \right) + \landauO(h^2) \\
+        &= \frac{1}{2} \left( \tensor{h}{_\nu^\varrho_,_\sigma_\mu} +
+        {\tensor{h}{_\sigma^\varrho_,_\nu_\mu}} - \tensor{h}{_\nu_\sigma^,^\varrho_\mu} - \tensor{h}{^\varrho_\mu_,_\sigma_\nu} -
+        {\tensor{h}{_\sigma^\varrho_,_\mu_\nu}} +
+        \tensor{h}{_\mu_\sigma^,^\varrho_\nu} \right) + \landauO(h^2) \\
         &= \frac{1}{2} \left( \tensor{h}{_\nu^\varrho_,_\sigma_\mu} - \tensor{h}{_\nu_\sigma^,^\varrho_\mu}
-        - \tensor{h}{^\varrho_\sigma_,_\mu_\nu} + \tensor{h}{_\mu_\sigma^,^\varrho_\nu} \right) + \landauO(h^2) \, .
+        - \tensor{h}{^\varrho_\mu_,_\sigma_\nu} +
+        \tensor{h}{_\mu_\sigma^,^\varrho_\nu} \right) + \landauO(h^2) \, .
     \end{split}
 \end{equation}
-%TODO color does not fit
-Ricci tensor
+By contracting we get the Ricci tensor
 \begin{equation}
     \tensor{R}{_\sigma_\nu} = \tensor{R}{^\varrho_\sigma_\varrho_\nu}
     = \frac{1}{2} \left( \tensor{h}{_\nu^\varrho_,_\sigma_\varrho} - \tensor{h}{_\nu_\sigma^,^\varrho_\varrho}
     - \tensor{h}{_,_\sigma_\nu} + \tensor{h}{_\varrho_\sigma^,^\varrho_\nu} \right) + \landauO(h^2)\, ,
 \end{equation}
-with $h\coloneqq h_{\mu\nu}\eta^{\mu\nu}$
-
-Ricci scalar
+where for convenience the trace of $h$ is denoted with $h\coloneqq
+h_{\mu\nu}\eta^{\mu\nu}$. Lastly the Ricci scalar is given by
 \begin{equation}
     R = g^{\sigma\nu}R_{\sigma\nu} = \eta^{\sigma\nu}R_{\sigma\nu} + \landauO(h^2)
     = \tensor{h}{^\sigma^\nu_,_\sigma_\nu} - \tensor{h}{_,_\sigma^\sigma} + \landauO(h^2)
 \end{equation}
 We define
 \begin{equation}
-    \overline{h}_{\mu\nu} \coloneqq h_{\mu\nu} - \frac{1}{2} \eta_{\mu_\nu}h\,.
+    \overline{h}_{\mu\nu} \coloneqq h_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu}h\,.
 \end{equation}
-With the following two lines we can show that $\overline{\overline{h}} = h$:
-\begin{align}
-    \overline{h} \coloneqq &\ \overline{h}_{\mu\nu}\eta^{\mu\nu} = h - 2h = -h \\
-    h_{\mu_\nu} =&\ \overline{h}_{\mu\nu} + \frac{1}{2} \eta_{\mu\nu}h = \overline{h}_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu}\overline{h}
-\end{align}
-
+The trace is given by
+\begin{equation}
+    \overline{h} \coloneqq  \overline{h}_{\mu\nu}\eta^{\mu\nu} = h -   
+    \frac{h}{2} = \frac{h}{2}\,.
+\end{equation}
+If we repeat the procedure we arrive at the initial metric:
+\begin{equation}
+    \overline{\overline{h}}_{\mu\nu} = \overline{h}_{\mu\nu} - \frac{1}{2}
+    \eta_{\mu\nu}\overline{h} = \overline{h}_{\mu\nu} + \frac{1}{2}
+    \eta_{\mu\nu}h= h_{\mu\nu}\,.
+\end{equation}
+%TODO stimmt die Korrektur?
+% \begin{align}
+%     \overline{h} \coloneqq &\ \overline{h}_{\mu\nu}\eta^{\mu\nu} = h - 2h = -h \\
+%     h_{\mu_\nu} =&\ \overline{h}_{\mu\nu} + \frac{1}{2} \eta_{\mu\nu}h = \overline{h}_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu}\overline{h}
+% \end{align}
 \subsubsection{Linearized Einstein tensor \texorpdfstring{$G_{\mu\nu}$}{Gmunu} in terms of \texorpdfstring{$\overline{h}_{\mu\nu}$}{hbarmunu}}
-
+The linearized Einstein Tensor is given as
 \begin{equation}
     \begin{split}
         G_{\mu\nu}^{\text{(L)}} =\ & R_{\mu\nu}^{\text{(L)}} - \frac{1}{2} \eta_{\mu\nu} R^{\text{(L)}} \\
         =\ & \frac{1}{2} \partial_\mu \partial_\varrho \tensor{h}{_\nu^\varrho} + \frac{1}{2} \partial_\nu \partial_\varrho \tensor{h}{_\mu^\varrho}
-        - \frac{1}{2} \Box h_{\mu\nu} - \frac{1}{2} \partial_{\mu\nu}h-\frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma h^{\varrho\sigma}
-        + \frac{1}{2} \eta_{\mu_\nu}\Box h \\
+        - \frac{1}{2} \Box h_{\mu\nu} - \frac{1}{2}
+        \partial_{\mu}\partial_\nu h-\frac{1}{2}
+        \eta_{\mu\nu}\partial_\varrho\partial_\sigma h^{\varrho\sigma} + \frac{1}{2} \eta_{\mu\nu}\Box h \\
         =\ & \frac{1}{2} \partial_\mu\partial_\varrho \tensor{\overline{h}}{_\nu^\varrho}
-        - \mathunderline{blue}{\frac{1}{4}\partial_\mu\partial_\nu\overline{h}}
+        - {\frac{1}{4}\partial_\mu\partial_\nu\overline{h}}
         + \frac{1}{2} \partial_\nu\partial_\varrho\tensor{\overline{h}}{_\mu^\varrho}
-        - \mathunderline{blue}{\frac{1}{4}\partial_\nu\partial_\mu\overline{h}} - \frac{1}{2}\Box\overline{h}_{\mu\nu} \\
-        & + \mathunderline{green}{\frac{1}{2}\eta_{\mu\nu}\Box\overline{h}} + \mathunderline{blue}{\frac{1}{2}\partial_\mu\partial_\nu\overline{h}}
+        - {\frac{1}{4}\partial_\nu\partial_\mu\overline{h}} - \frac{1}{2}\Box\overline{h}_{\mu\nu} \\
+        & + {\frac{1}{2}\eta_{\mu\nu}\Box\overline{h}} + {\frac{1}{2}\partial_\mu\partial_\nu\overline{h}}
         - \frac{1}{2}\eta_{\mu\nu}\partial_\varrho\partial_\sigma\overline{h}^{\varrho\sigma}
-        + \mathunderline{green}{\frac{1}{4}\eta_{\mu\nu}\Box\overline{h}} - \mathunderline{green}{\frac{1}{2}\eta_{\mu\nu}\Box\overline{h}} \\
+        + {\frac{1}{4}\eta_{\mu\nu}\Box\overline{h}} - {\frac{1}{2}\eta_{\mu\nu}\Box\overline{h}} \\
         =\ & -\frac{1}{2} \Box \overline{h}_{\mu\nu} + \partial_\varrho \tensor{\partial}{_(_\mu}\tensor{\overline{h}}{_\nu_)^\varrho}
-        - \frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma \overline{h}^{\varrho\sigma} \\
-        \overset{!}{=}\ & \kappa T_{\mu\nu}
+        - \frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma
+        \overline{h}^{\varrho\sigma}\,,
     \end{split}
-\end{equation} %TODO introduce symmetration brackets somewhere
+\end{equation} 
+% \begin{equation}
+%     \begin{split}
+%         G_{\mu\nu}^{\text{(L)}} =\ & R_{\mu\nu}^{\text{(L)}} - \frac{1}{2} \eta_{\mu\nu} R^{\text{(L)}} \\
+%         =\ & \frac{1}{2} \partial_\mu \partial_\varrho \tensor{h}{_\nu^\varrho} + \frac{1}{2} \partial_\nu \partial_\varrho \tensor{h}{_\mu^\varrho}
+%         - \frac{1}{2} \Box h_{\mu\nu} - \frac{1}{2}
+%         \partial_{\mu}\partial_\nu h-\frac{1}{2}
+%         \eta_{\mu\nu}\partial_\varrho\partial_\sigma h^{\varrho\sigma} + \frac{1}{2} \eta_{\mu\nu}\Box h \\
+%         =\ & \frac{1}{2} \partial_\mu\partial_\varrho \tensor{\overline{h}}{_\nu^\varrho}
+%         - \mathunderline{blue}{\frac{1}{4}\partial_\mu\partial_\nu\overline{h}}
+%         + \frac{1}{2} \partial_\nu\partial_\varrho\tensor{\overline{h}}{_\mu^\varrho}
+%         - \mathunderline{blue}{\frac{1}{4}\partial_\nu\partial_\mu\overline{h}} - \frac{1}{2}\Box\overline{h}_{\mu\nu} \\
+%         & + \mathunderline{green}{\frac{1}{2}\eta_{\mu\nu}\Box\overline{h}} + \mathunderline{blue}{\frac{1}{2}\partial_\mu\partial_\nu\overline{h}}
+%         - \frac{1}{2}\eta_{\mu\nu}\partial_\varrho\partial_\sigma\overline{h}^{\varrho\sigma}
+%         + \mathunderline{green}{\frac{1}{4}\eta_{\mu\nu}\Box\overline{h}} - \mathunderline{green}{\frac{1}{2}\eta_{\mu\nu}\Box\overline{h}} \\
+%         =\ & -\frac{1}{2} \Box \overline{h}_{\mu\nu} + \partial_\varrho \tensor{\partial}{_(_\mu}\tensor{\overline{h}}{_\nu_)^\varrho}
+%         - \frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma \overline{h}^{\varrho\sigma} \\
+%         \overset{!}{=}\ & \kappa T_{\mu\nu}
+%     \end{split}
+% \end{equation}
+%TODO introduce symmetration brackets somewhere
+%TODO Vorzeichen der Transformation inkosistent!!!
 with the (linearized) d'Alembert operator
 \begin{equation}
-    \Box^{\text{(L)}} = \Box = \partial_\mu\partial_\nu \eta^{\mu\nu}=\partial_\mu\partial^\mu
+    \Box^{\text{(L)}} = \Box = \partial_\mu\partial_\nu
+    \eta^{\mu\nu}=\partial_\mu\partial^\mu\,.
 \end{equation}
 \begin{definition}[Linearized Einstein equations]
     \begin{equation}
@@ -104,7 +142,7 @@ with the (linearized) d'Alembert operator
 \subsubsection{Gauge transformations}
 Usually field equations are in the form of
 \begin{equation}
-    \Box \text{``field''} = \text{``source''}
+    \Box \text{``field''} = \text{``source''}\,.
 \end{equation}
 Equation~\eqref{eq:lineinsteineqs} can be written in this form:
 \begin{equation}
@@ -113,15 +151,14 @@ Equation~\eqref{eq:lineinsteineqs} can be written in this form:
     + \eta_{\mu\nu}\partial_\varrho \overline{h}^{\varrho\sigma}}_{\text{ensures gauge invariance of equation}}
     = \underbrace{-2\kappa T_{\mu\nu}}_{\text{``source''}}
 \end{equation}
-
 %TODO Michi: mathematical background \\%TODO mathematical background @Michi
-Infinitesimal diffeomorphisms = affine transformations
-\begin{definition}
-    \begin{equation}
-        x^\mu = x'^\mu + \xi^\mu(x'^\mu), \qquad \xi^\mu \ll 1
-    \end{equation}
-\end{definition}
-In the following we neglect terms with $\landauO(\xi^2)$, $\landauO(\xi h)$, and $\landauO(h^2)$ and higher order terms.
+We are now considering infinitesimal diffeomorphisms, which are given by affine
+transformations
+\begin{equation}
+    x^\mu = x'^\mu + \xi^\mu(x'^\mu), \qquad \xi^\mu \ll 1
+\end{equation}
+In the following we neglect terms with $\landauO(\xi^2)$, $\landauO(\xi h)$, and
+$\landauO(h^2)$ and higher order terms, which we denote by $\landauO$.
 The transformed metric reads
 \begin{equation}
     \begin{split}
@@ -129,24 +166,28 @@ The transformed metric reads
         &= \frac{\partial x^\varrho}{\partial x'^\mu} \frac{\partial x^\sigma}{\partial x'^\nu} g_{\varrho\sigma}(x) \\
         &= \frac{\partial \left( x'^\varrho + \xi^\varrho \right)}{\partial x'^\mu}
         \frac{\partial \left( x'^\sigma + \xi^\sigma \right)}{\partial x'^\nu}
-        \left( \eta_{\varrho\sigma} + h_{\varrho\sigma}(x) \right) + \landauO(\xi^2) \\
+        \left( \eta_{\varrho\sigma} + h_{\varrho\sigma}(x) \right) + \landauO \\
         &= \left( \tensor{\delta}{_\mu^\varrho} + \tensor{\xi}{^\varrho_,_\mu} \right)
         \left( \tensor{\delta}{_\nu^\sigma} + \tensor{\xi}{^\sigma_,_\nu} \right)
-        \left( \eta_{\varrho\sigma} + h_{\varrho\sigma}(x) \right) + \landauO(\xi^2) \\
+        \left( \eta_{\varrho\sigma} + h_{\varrho\sigma}(x) \right) + \landauO \\
         &= \left( \tensor{\delta}{_\mu^\varrho} + \tensor{\xi}{^\varrho_,_\mu} \right)
-        \left( \eta_{\varrho\nu} + h_{\varrho\nu} + \tensor{\xi}{_\varrho_,_\nu} \right) + \landauO(\xi^2)  \\
-        &= \eta_{\mu\nu} + h_{\mu\nu} + \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu} + \landauO(\xi^2,h^2,\xi h)
+        \left( \eta_{\varrho\nu} + h_{\varrho\nu} + \tensor{\xi}{_\varrho_,_\nu}
+        \right) + \landauO \\
+        &= \eta_{\mu\nu} + h_{\mu\nu} + \tensor{\xi}{_\mu_,_\nu} +
+        \tensor{\xi}{_\nu_,_\mu} + \landauO\,.
     \end{split}
 \end{equation}
-$\implies$ The perturbation $h_{\mu\nu}$ transforms under infinitesimal diffeomorphisms in the following way
+The perturbation $h_{\mu\nu}$ therefore transforms  under infinitesimal
+diffeomorphisms in the following way
 \begin{equation}
     \begin{split}
         h'_{\mu\nu}(x) &= h_{\mu\nu}(x) + \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu} \\
-        &= h_{\mu\nu}(x) + \left(\liedif{\xi}{\eta} \right)_{\mu\nu}
+        &= h_{\mu\nu}(x) + \left(\liedif{\xi}{\eta} \right)_{\mu\nu}\,.
     \end{split}
 \end{equation}
 \begin{definition}[Lie derivative]
-    The Lie derivative off a tensor field $T$ with $k$ contravariant and $l$ covariant indices along the vector $\xi$ is given by
+    The Lie derivative off a tensor field $T$ with $k$ contravariant and $l$
+    covariant indices along the vector $\xi$ is defined as
     \begin{equation}
         \begin{split}
             \left( \liedif{\xi}{T} \right)^{\alpha_1\ldots\alpha_k}_{\beta_1\ldots\beta_l}
@@ -154,58 +195,71 @@ $\implies$ The perturbation $h_{\mu\nu}$ transforms under infinitesimal diffeomo
             & - \left( \partial_\mu \xi^{\alpha_1} \right) T^{\mu\alpha_2\ldots\alpha_k}_{\beta_1\ldots\beta_l} - \ldots
             - \left( \partial_\mu \xi^{\alpha_k} \right) T^{\alpha_1\ldots\alpha_{k-1}\mu}_{\beta_1\ldots\beta_l} \\
             & + \left( \partial_{\beta_1} \xi^\mu \right) T^{\alpha_1\ldots\alpha_k}_{\mu\beta_2\ldots\beta_l} + \ldots
-            + + \left( \partial_{\beta_l} \xi^\mu \right) T^{\alpha_1\ldots\alpha_k}_{\beta_1\ldots\beta_{l-1}\mu}
+            +  \left( \partial_{\beta_l} \xi^\mu \right)
+            T^{\alpha_1\ldots\alpha_k}_{\beta_1\ldots\beta_{l-1}\mu}\,.
         \end{split}
     \end{equation}
 \end{definition}
 Therefore
 \begin{equation}
-    \left( \liedif{\xi}{\eta} \right)_{\mu_\nu} = \underbrace{\xi^\varrho\partial_\varrho\eta_{\mu\nu}}_{=0}
-    + \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu} = \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu}
+    \left( \liedif{\xi}{\eta} \right)_{\mu\nu} = \underbrace{\xi^\varrho\partial_\varrho\eta_{\mu\nu}}_{=0}
+    + \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu} =
+    \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu}\,.
 \end{equation}
-If the derivative of a metric vanishes for a given $\xi^\mu$, then one obtains the killing equations for $\xi^\mu$ and the solution of the
-killing equations are denoted killing vector field.
+If the derivative of a metric vanishes for a given $\xi^\mu$, then one obtains
+the killing equations 
 \begin{equation}
     \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu}=0  %TODO order of indices in second term?
 \end{equation}
+for $\xi^\mu$ and the solutions are referred to as \emph{killing vector fields}.
 In Minkowski-space the ten infinitesimal killing vectors correspond to the Poincaré-generators.
 \begin{sidenote}
-Lie-derivative on metric $\implies$ detect symmetries of Manifold.
+We can use the Lie-derivative on metric to detect symmetries of the Manifold.
 \end{sidenote}
-\subsubsection{Check that linearized field equations are invariant under infinitesimal diffeomorphisms}
+\subsubsection{Invariance of the linearized field equations under infinitesimal
+diffeomorphisms} 
+We now check that linearized field equations are invariant under infinitesimal
+diffeomorphism
 \begin{equation}
-    h'_{\mu\nu} = h_{\mu\nu} + \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu}
+    h'_{\mu\nu} = h_{\mu\nu} + \tensor{\xi}{_\mu_,_\nu} +
+    \tensor{\xi}{_\nu_,_\mu}\,.
 \end{equation}
+The barred metric transforms as
 \begin{equation}
     \begin{split}
         \overline{h'}_{\mu\nu} &= h'_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu}h' \\
         &= h_{\mu\nu} + \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu} - \frac{1}{2} \eta_{\mu\nu}h
         -\frac{1}{2}\eta_{\mu\nu}\partial^\varrho\xi_\varrho - \frac{1}{2} \eta_{\mu\nu}\partial^\varrho\xi_\varrho \\
-        &= \overline{h}_{\mu\nu} + \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu} - \eta_{\mu\nu}\tensor{\xi}{^\varrho_,_\varrho}
+        &= \overline{h}_{\mu\nu} + \tensor{\xi}{_\mu_,_\nu} +
+        \tensor{\xi}{_\nu_,_\mu} -
+        \eta_{\mu\nu}\tensor{\xi}{^\varrho_,_\varrho}\,.
     \end{split}
 \end{equation}
-Plug this into Einstein's equations (term by term)
+We proceed by plugging this into Einstein's equations, the relevant terms are
 \begin{align}
     -\frac{1}{2}\Box \overline{h'}_{\mu\nu} &= -\frac{1}{2}\Box\overline{h}_{\mu\nu} - \frac{1}{2}\Box\tensor{\xi}{_\mu_,_\nu}
-    -\frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu} + \frac{1}{2} \eta_{\mu\nu}\Box\tensor{\xi}{^\varrho_,_\varrho} \\
+    -\frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu} + \frac{1}{2}
+    \eta_{\mu\nu}\Box\tensor{\xi}{^\varrho_,_\varrho}\,, \\
     -\frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma \overline{h'}^{\varrho\sigma} &=
     -\frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma \left( \tensor{\xi}{^\varrho^,^\sigma} + \tensor{\xi}{^\sigma^,^\varrho}
-    - \eta^{\varrho\sigma} \tensor{\xi}{^\alpha_,_\alpha} \right) - \frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma \overline{h}^{\varrho\sigma} \\
+    - \eta^{\varrho\sigma} \tensor{\xi}{^\alpha_,_\alpha} \right) - \frac{1}{2}
+    \eta_{\mu\nu}\partial_\varrho\partial_\sigma \overline{h}^{\varrho\sigma}\,,
+    \\
     \partial^\varrho \tensor{\partial}{_(_\mu} \tensor{\overline{h'}}{_\nu_)_\varrho} &=
     \partial^\varrho \tensor{\partial}{_(_\mu} \tensor{\overline{h}}{_\nu_)_\varrho} + \frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu}
-    + \frac{1}{2}\Box\eta_{\mu\nu}
+    + \frac{1}{2}\Box\eta_{\mu\nu}\,.
 \end{align}
 Therefore
 \begin{equation}
     \begin{split}
         & -\frac{1}{2} \Box \overline{h'}_{\mu\nu} + \partial_\varrho \tensor{\partial}{_(_\mu}\tensor{\overline{h'}}{_\nu_)^\varrho}
         - \frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma \overline{h'}^{\varrho\sigma} \\
-        =\ & -\frac{1}{2}\Box\overline{h}_{\mu\nu} - \mathunderline{blue}{\frac{1}{2}\Box\tensor{\xi}{_\mu_,_\nu}}
-        -\mathunderline{blue}{\frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu}}
-        + \mathunderline{green}{\frac{1}{2} \eta_{\mu\nu}\Box\tensor{\xi}{^\varrho_,_\varrho}}
+        =\ & -\frac{1}{2}\Box\overline{h}_{\mu\nu} - {\frac{1}{2}\Box\tensor{\xi}{_\mu_,_\nu}}
+        -{\frac{1}{2}\Box\tensor{\xi}{_\nu_,_\mu}}
+        + {\frac{1}{2} \eta_{\mu\nu}\Box\tensor{\xi}{^\varrho_,_\varrho}}
         + \partial^\varrho \tensor{\partial}{_(_\mu}\tensor{\overline{h}}{_\nu_)_\varrho} \\
-        & + \mathunderline{blue}{\Box\tensor{\xi}{_(_\mu_,_\nu_)}}
-        - \mathunderline{green}{\frac{1}{2}\eta_{\mu\nu}\Box\tensor{\xi}{^\varrho_,_\varrho}}
+        & + {\Box\tensor{\xi}{_(_\mu_,_\nu_)}}
+        - {\frac{1}{2}\eta_{\mu\nu}\Box\tensor{\xi}{^\varrho_,_\varrho}}
         - \frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma \overline{h}^{\varrho\sigma} \\
         =\ & -\frac{1}{2} \Box \overline{h}_{\mu\nu} + \partial_\varrho \tensor{\partial}{_(_\mu}\tensor{\overline{h}}{_\nu_)^\varrho}
         - \frac{1}{2} \eta_{\mu\nu}\partial_\varrho\partial_\sigma \overline{h}^{\varrho\sigma}
@@ -215,7 +269,8 @@ This shows that the Einstein equations are invariant under an infinitesimal diff
 Therefore $\overline{h}_{\mu\nu}$ and $\overline{h'}_{\mu\nu}$ are the same \emph{physical} field.
 
 \subsubsection{Harmonic gauge in linearized gravity}
-We would like to have the linearized field equations in the form $\Box\text{``field''}=\text{``source''}$ (wave equation).
+As described above we want to bring the field equation in the form
+$\Box\text{``field''}=\text{``source''}$, i.e. a wave equation.
 This can ge done with the gauge condition
 \begin{equation}
     \chi_\nu \left[ \overline{h} \right] \coloneqq \partial^\mu \overline{h}_{\mu\nu} = 0.
@@ -226,7 +281,7 @@ In therms of the original field this condition reads
         \chi_\nu \left[ h \right] = \partial^\mu h_{\mu\nu} - \frac{1}{2} h_{\mu\nu} \partial^\mu h = 0
     \end{equation}
 \end{definition}
-Proof:
+Proof: %TODO of what?
 \begin{equation}
     \begin{split}
         \partial^\mu \overline{h'}_{\mu\nu} &= \partial^\mu \overline{h}_{\mu\nu} + \Box \xi_\nu + \partial_\nu \partial^\mu \xi_\mu -
@@ -251,14 +306,15 @@ Since $\overline{h}_{\mu\nu}$ and $\overline{h'}_{\mu\nu}$ correspond to the sam
     \begin{table}[h]
         \caption{Comparison between linearized gravity and electrodynamics.}
         \centering
-        \begin{tabulars}{lcc}
+        \begin{tabulars}{lll}
             \toprule
             & linearized gravity & electrodynamics \\
             \midrule
 
             basic field
-            & $\overline{h}_{\mu\nu}$ ($h_{\mu\nu}$), spin 2, \emph{graviton}
-            & $A_\mu$, spin 1, \emph{gauge boson}, \emph{gauge potential} \\
+            & $\overline{h}_{\mu\nu}$ ($h_{\mu\nu}$), spin-2, \emph{graviton}
+            & $A_\mu$, spin-1, \emph{gauge boson}, \emph{gauge potential}
+            \\%Photon????
 
 
             field equations
@@ -287,6 +343,7 @@ Since $\overline{h}_{\mu\nu}$ and $\overline{h'}_{\mu\nu}$ correspond to the sam
             inv. tensors under gauge trafo
             & $\tensor{{R^{(L)\prime}}}{^\rho_\mu_\nu_\rho} =
              \tensor{{R^{(L)}}}{^\rho_\mu_\nu_\rho}$ 
+%TODO Ricci statt Riemann?
             & $F'_{\mu\nu} =F_{\mu\nu}$\\
             \bottomrule
         \end{tabulars}

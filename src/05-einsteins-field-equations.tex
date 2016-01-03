@@ -98,8 +98,7 @@ s^2]=\textrm{M}^{-2}}$.\footnote{Where M refers to the dimension of mass.}
 Since further ${\left[\tensor{x}{^\mu}\right]=\textrm{M}^{-1}}$,
 the Lagrange density must have Dimension
 ${\left[\mathcal{L}\right]=\textrm{M}^{4}}$.
-\end{remark}\popftn
-%TODO fix footnotes
+\end{remark}%TODO fix footnotes
 %\footnotetext{So that length has dimension of inverse mass.}
 %\footnotetext{Where M referes to the dimenson of mass.}
 This constraint leads to the \emph{Einstein-Hilbert-action}
@@ -107,7 +106,7 @@ This constraint leads to the \emph{Einstein-Hilbert-action}
 S\textsubscript{EH}=\frac{1}{2\kappa}\fourint \sqrt{-g}(R-2\Lambda)
 \end{equation}
 We now check that its variation indeed reproduces Einstein's equations. To do
-so we introduce the formalism of \emph{functional derivative}. Let therefore
+so we introduce the formalism of \emph{functional derivation}. Let therefore
 $\Phi=\{\varphi,\tensor{A}{^\mu},\Psi,\dots\}$ be a collection of fields.
 $F[\Phi]$ a functional.
 We define the variation of $F$ as
@@ -305,15 +304,9 @@ field $\tensor{g}{_\mu_\nu}$ resulting in
 To recover the Einstein equations it is convenient to define the
 energy-momentum tensor 
 \begin{equation}
-\tensor{T}{^\mu^\nu}:=\frac{2}{\sqrt{-g}}\frac{\delta
+\tensor{T}{^\mu^\nu}:=-\frac{2}{\sqrt{-g}}\frac{\delta
 S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}\,.
 \end{equation}
-%TODO consider possible wrong sign
-% \begin{remark}
-% Attention $\delta_g
-% \tensor{g}{^\mu^\nu}=-\tensor{g}{^\varrho^{(\mu}}\tensor{g}{^{\nu)}^\sigma}\delta_g
-% \tensor{g}{_\mu_\nu}$
-% \end{remark}
 We can now proceed in calculating the quantity we have just introduced for a
 scalar field
 \begin{equation}
@@ -395,63 +388,66 @@ to[bend right] coordinate (mm) (2.5,-2.5,-1)
 \end{tikzpicture}
 \caption{Foliation of spacetime into spatial hypersurfaces $\Sigma_t$.}
 \end{figure}
-%TODO explanation what happens!
+The formulation of initial value problems is not as easy as it is in classical
+physics.\footnote{in fact it can be impossible}
 Assume we know either
 \begin{itemize}
   \item $\tensor{g}{_\mu_\nu}$ on $\Sigma_{t_0}$
   \item $\tensor{g}{_\mu_\nu_{;j}}$, $\tensor{g}{_\mu_\nu_{;0}}$ on
   $\Sigma_{t_0}$
 \end{itemize}
-$\Sigma_t=\left\{\tensor{x}{^0}=t\right\}$
-In vacuum the field equation are
+We then see the spacetime as a
+collection of spacelike hypersurfaces
+at time $t$ $\Sigma_t=\left\{\tensor{x}{^0}=t\right\}$. For simplicity we
+consider a vacuum solution to the Einstein equations, i.e. 
 \begin{equation}
-0=G=R-2R\implies\tensor{R}{_\mu_\nu}=0
+0=G=R-2R\implies\tensor{R}{_\mu_\nu}=0\,.
 \end{equation}
-The resulting set of equations is
-%TODO check 
+Divided into the respective parts the field equations are
 \begin{align}
 0&=\tensor{R}{_0_0}=-\frac{1}{2}\tensor{g}{^i^j}\tensor{g}{_i_j_{,00}}+\tensor{M}{_0_0}\,,\\
 0&=\tensor{R}{_0_i}=-\frac{1}{2}\tensor{g}{^0^j}\tensor{g}{_i_j_{,00}}+\tensor{M}{_0_i}\,,\\
 0&=\tensor{R}{_i_j}=-\frac{1}{2}\tensor{g}{^0^0}\tensor{g}{_i_j_{,00}}+\tensor{M}{_i_j}\,.
 \end{align}
-Where $\tensor{M}{_i_j}$ is a rest term containing lower order derivaties.
-This shows that ther are no second order time derivatives of
+Where $\tensor{M}{_\mu_\nu}$ is a rest term containing lower order
+time derivatives.
+This shows that there are no second order time derivatives of
 $\tensor{g}{_0_\mu}$. We have 10 equations and 6 undetermined functions. The
 DOFs can be used for a coordinate transformation, so that
 $\tensor{g}{_0_\mu_{,00}}=0$ on $\Sigma_{t_0}$. This is always possible but we
 will not proof this. It can be further shown, by means of the contracted Bianci
 identities, that this implies $\tensor{g}{_0_\mu_{,00}}=0$ on \emph{all}
 hypersurfaces $\Sigma_{t}$.
-\begin{equation}
-\tensor{\partial}{_0}\tensor{G}{^0^\nu}=
-\tensor{\partial}{_i}\tensor{G}{^i^\nu}
--\cSym{\nu}{0}{\lambda}\tensor{G}{^\lambda^\nu}
--\cSym{0}{\nu}{\lambda}\tensor{G}{^\mu^\lambda}\,.
-\end{equation}
-%TODO does not make sense yet
-We have the freedom to choose four coodinates
+% \begin{equation}
+% \tensor{\partial}{_0}\tensor{G}{^0^\nu}=
+% \tensor{\partial}{_i}\tensor{G}{^i^\nu}
+% -\cSym{\nu}{0}{\lambda}\tensor{G}{^\lambda^\nu}
+% -\cSym{0}{\nu}{\lambda}\tensor{G}{^\mu^\lambda}\,.
+% \end{equation}
+Since we have to much freedom the solution will not be unique. We have the
+freedom to choose four coordinates
 \begin{equation}
 \tensor{x}{^{\mu^\prime}}=\tensor{f}{^{\mu^\prime}}\left(\tensor{x}{^\mu}\right)\,.
 \end{equation}
-One typical choice is the \emph{harmonic\footnote{a function $f$ is said to be
+One typical choice is the \emph{harmonic\footnote{A function $f$ is said to be
 harmonic if it satisfies $\square f = 0$.} gauge}
 \begin{equation}
 \square\tensor{x}{^\mu}=0\,.
 \end{equation}
-We can expand the d'Alembertian to
+We can expand the d'Alembertian, using \eqref{eq:quabla}, to
 \begin{equation}
 \begin{split}
 \square\tensor{x}{^\mu}&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\sigma}\tensor{\partial}{_\sigma}\tensor{x}{^\mu}\right)\\
 &=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\sigma}\tensor{\delta}{_\sigma^\mu}\right)\\
-&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\mu}\right)\,.\\
+&=g^{-\nicefrac{1}{2}}\tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\mu}\right)\,,\\
 \end{split}
 \end{equation}
-Using \eqref{eq:quabla}, the harmonic gauge is therefore equivalent to
+the harmonic gauge is therefore equivalent to
 \begin{equation}
 \tensor{\partial}{_\varrho}\left(g^{\nicefrac{1}{2}}\tensor{g}{^\varrho^\mu}\right)=0\,
 .\\
 \end{equation}
-The equation can be sorted in spatial and time components and derive by the
+The equation can be divided into spatial and time components and derive by the
 zero component, so that
 \begin{equation}
 \tensor*{\partial}{*_0^2}\left(g^{\nicefrac{1}{2}}\tensor{g}{^0^\mu}\right)
@@ -502,11 +498,12 @@ This equation is equivalent to $\nabla\vec{E}=0$ and the Bianchi identities.
 So once again $\tensor{A}{_0}$ is \emph{not} determined by the dynamical
 evolution equation because there is no second order time derivative analogous to
 $\tensor{g}{_0_0}$. Since $\tensor{A}{_0}$ is not determined and cannot be
-specified on initial time slice. This reflects some internal redundancy namely
-gauge invariance of the theory. For any scalar function $\Lambda$
+specified on the initial time slice. This reflects some internal redundancy
+namely gauge invariance of the theory. For any scalar function $\Lambda$, the
+transformation
 \begin{equation}
 \tensor{A}{_\mu}\to\tensor*{A}{*_\mu^\prime}=
-\tensor{A}{_\mu}+\partial_\mu\Lambda
+\tensor{A}{_\mu}+\partial_\mu\Lambda\,,
 \end{equation}
 leaves the physics invariant. It is trivial to check that
 the field strength tensor \\

@@ -14,8 +14,9 @@ except some pathological examples (we won't go into the details on this).
 
 Locally homeomorphic to $\mathbb{R}^n$ means there exists a set of \emph{charts} 
 $(\varphi,U^\varphi)$ called an \emph{atlas} $\mathcal{A}$ with $\cup_{\varphi\in\mathcal{A}} U^\varphi =M$, 
-i.e. the charts cover the whole manifold. The maps $\varphi:U^\varphi\to \varphi(U^\varphi)\subset\mathbb{R}^n $ are homoemorphisms, 
-meaning that $U^\varphi$ is open, $\varphi$ is bijective and both $\varphi$ and $\varphi^{-1}$ are continuous.
+i.e. the charts cover the whole manifold. The maps $\varphi:U^\varphi\to \varphi(U^\varphi)\subset\mathbb{R}^n $ are homeomorphisms, 
+meaning that $U^\varphi$ is open, $\varphi$ is onto and both $\varphi$ and
+$\varphi^{-1}$ are continuous.
 Further for any two $\varphi,\psi\in \mathcal{A}$, the coordinate changes 
 $\varphi\circ\psi^{-1}:\psi(U^\psi\cup U^\varphi)\to \phi(U^\psi\cup U^\varphi)$
 be smooth\footnotemark .
@@ -43,7 +44,7 @@ Since physical laws are described in terms of differential equations, we can for
 The fact that the coordinate changes are smooth ensures that differentiability
 is well defined (and thus the physical laws are).
 
-\begin{sidenote}[Differential Structure]
+\begin{sidenote}[Differential Structures]
 There can be different \emph{differential structures} on a manifold, 
 which means there are multiple (maximal)alases, which
 could not be merged because the coordinate changes would not be $C^\infty$. Those differentiable structures therefore imply different notions of differentiability. 
@@ -58,7 +59,8 @@ such a structure affects the theory for the above reasons.
 All simple examples we come of can be embedded in a higher space. The
 \name{Whitney} embedding theorem states that every real $n$-dimensional Manifold
 can be embedded to $\Reals^{2n}$ (This is however not true for complex, i.e. analytic manifolds).
-For example the $\Sphere^2$ can be interpreted as submanifold of the $\Reals^3$.
+For example the $\Sphere^2$ can be interpreted as submanifold of the
+$\Reals^3$.
 However manifolds are objects that exists independent of such embeddings. 
 For example a torus can be thought of as a square with the opposite sides identified (leaving to the left results in re-entering in the left).
 \begin{sidenote}[Topology of the Universe]
@@ -66,8 +68,8 @@ In addition to the local structure, we may question the global, i.e. the
 topological structure of the universe.
 On may for example imagine that we live on the surface of a three-sphere (finite
 but boundless universe).
-However this might be observable in crosscorelation in the cosmic microwave background from photons reaching us 
-from different directions but coming from the same event. There is no evidence of such phenomena so far. 
+However this might be observable in cross-corelation in the cosmic microwave
+background from photons reaching us from different directions but coming from the same event. There is no evidence of such phenomena so far. 
 Most models can be excluded to some certainty. A cylindrical
 universe is still possible (finite in one, infinite in the
 other directions).
@@ -127,7 +129,8 @@ Proof sketch:
 \end{enumerate}
 Every vector $A$ can be written as $A=A^i\pd{}{{x^i}}$, where $A^i$ are the
 components of the vector. We can now look how the components of the vector
-transform under a change of coordinates (the vector itself is invariant!). 
+transform under a change of coordinates \footnote{The vector itself is
+invariant!}.
 We usually denote the elements of the transformed systems with a bar.
 By the chain rule we have
 \begin{equation}
@@ -188,7 +191,7 @@ dual vector respectively, then the transformation can be written in matrix form
 \end{align}
 with $V_{ij}=\dpd{\overline{x}^i}{{x^j}}$ the
 Jacobian of the transformation.
-In normal calculus we restrict ourself to orthogonal transformations (i.e.
+In normal calculus we restrict ourselves to orthogonal transformations (i.e.
 mapping orthonormal bases onto each other) for which
 $\left(O\transpose\right)^{-1}=O$.
 Which is the reason why we do not bother to distinguish between vectors and dual vectors because they transform identically. 
@@ -245,8 +248,8 @@ relativity we deal with \emph{\name{Lorentz}ian metrics}, for which there are
 vectors beside the zero vector which have zero 'length'. In flat space we have
 $\tensor{g}{_i_j}=\tensor{\eta}{_i_j}$.
 \begin{remark}[About
-raising and lowering indices] Supose we have given a vector $A=A^i\partial_i$
-with coodinates $A^i$, then we can relate it 
+raising and lowering indices] Suppose we have given a vector $A=A^i\partial_i$
+with coordinates $A^i$, then we can relate it 
 in a natural way to a linear form $g(A,\cdot)$,
 \begin{equation}
 \begin{split}
@@ -301,7 +304,7 @@ We notice that if
 \left(\dpd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\right)\delta x^k = 0\,
 ,\label{eq:covdev}
 \end{equation}
-The vector $A$ does not change its cordinates. We define a \emph{covariant
+The vector $A$ does not change its coordinates. We define a \emph{covariant
 derivative} 
 \begin{equation}
 \tensor{A}{_i_;_j}:=\tensor{\nabla}{_j}\tensor{A}{_i}:=\pd{{A_i}}{{x^j}}-\affin{l}{i}{k}A_l\,
@@ -320,8 +323,8 @@ In order to make the Lagrangian gauge invariant we exchange
 %TODO what is phi?
 which effectively produces additional terms in the Lagrangian, namely
 \begin{equation}
-\imI\tensor{A}{^\mu}\left(\phi^*\tensor{\partial}{_\mu}\phi
--\phi\tensor{\partial}{_\mu}\phi^*\right)=\imI\tensor{A}{^\mu}\tensor{J}{_\mu}\,,
+\tensor{A}{^\mu}\left(\phi^*\tensor{\partial}{_\mu}\phi
+-\phi\tensor{\partial}{_\mu}\phi^*\right)=\tensor{A}{^\mu}\tensor{J}{_\mu}\,,
 \quad\tensor{A}{_\mu}\tensor{A}{^\mu}\phi^2\,.
 \end{equation}
 The commutator between the covariant derivatives calculates to  
@@ -363,9 +366,9 @@ We now want to consider curved spaces. This can not immediately be determined by
 the metric, for example the polar coordinates do not look flat even though they
 describe the ordinary $\Reals^2$.
 %TODO pictures
-\section{Riemanian Curvature Tensor}
+\section{Riemannian Curvature Tensor}
 %TODO sort section
-We can contract indices on the Rieman Tensor
+We can contract indices on the Riemann Tensor
 \begin{equation}
 \tensor{R}{^i_i_k_l}=\pd{{\Gamma^i_{il}}}{{x^k}}-\pd{{\Gamma^i_{ik}}}{{x^l}}
 \end{equation}
@@ -496,7 +499,7 @@ Bianci identities for the Riemann tensor
 \tensor{R}{^i_j_k_l_{;m}}+\tensor{R}{^i_j_m_k_{;l}}+\tensor{R}{^i_j_l_m_{;k}}=0
 \end{equation}
 Proof: If we would write it all out we wold have to write 22 terms. Instead we
-use a RNCS so that the Rieman tensor simplifies to 
+use a RNCS so that the Riemann tensor simplifies to 
 \begin{equation}
 \tensor{R}{^i_j_k_l}
 =\tensor{\partial}{_k}\affin{i}{j}{l}
@@ -516,10 +519,10 @@ tensorial, it holds in all systems. Notice the similarity to
 =\tensor{\partial}{_b}\tensor{\partial}{_m}\tensor{A}{^a}
 -\tensor{\partial}{_a}\tensor{\partial}{_m}\tensor{A}{^b}
 \end{equation}
-Therefore the Bianchi identity is identical to the second set of Maxwells
+Therefore the Bianchi identity is identical to the second set of Maxwell's
 equations
 %TODO reference
-If the affinity is symetrical $\affin{k}{i}{j}=\affin{k}{j}{i}$ we further have
+If the affinity is symmetrical $\affin{k}{i}{j}=\affin{k}{j}{i}$ we further have
 the identity
 \begin{equation}
 \tensor{R}{^i_j_k_l}+\tensor{R}{^i_l_j_k}+\tensor{R}{^i_k_l_j}=0
@@ -550,7 +553,7 @@ where we used the metric compatibility in the RNCS
 \tensor{R}{_i_j_k_l}&=-\tensor{R}{_j_i_k_l}\\
 \tensor{R}{_i_j_k_l}&=-\tensor{R}{_i_j_l_k}
 \end{align} 
-If we further introduce multiindices $A=(i,j)$, $B=(k,l)$ (by antisymmetry
+If we further introduce multi-indices $A=(i,j)$, $B=(k,l)$ (by antisymmetry
 there are six independent components for $A,B$ each)
 \begin{equation}
 \tensor{R}{_A_B} = \tensor{R}{_B_A}
