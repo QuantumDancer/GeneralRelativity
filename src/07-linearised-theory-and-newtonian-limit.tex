@@ -463,3 +463,60 @@ We have used $\overline{h}=\eta^{\rho\sigma}\overline{h}_{\rho\sigma} = -\overli
 This is the Newtonian geometry.
 %TODO ref to first appearance newt. geo.
 \subsection{Motion of test particles in Newtonian Geometry}
+Test particles carry clocks that read universal time in Newton Geometry.
+\begin{align}
+    & \frac{\dif{}^2 x^i}{\dif{} t^2} = \frac{\dif{}^2 x^i}{\dif{} \tau^2} 
+    = - \cSym{i}{\alpha}{\beta} \frac{\dif x^\alpha}{\dif \tau} \frac{\dif x^\beta}{\dif \tau}
+    = - \cSym{i}{0}{0}
+    = - \csym{0}{0}{i}
+    = \frac{1}{2} \tensor{h}{_0_0_,_i} - \tensor{h}{_0_i_,_0} 
+    = \frac{1}{2} \tensor{h}{_0_0_,_i} = - \tensor{\Phi}{_,_i} \\
+    & \implies \frac{\dif{}^2 x^i}{\dif{} t^2} =  - \tensor{\Phi}{_,_i} \qquad \left( \quad \widehat{=} \quad \vec{a} = -\nabla \Phi \right) 
+\end{align}
+where we used $\frac{\dif \tau}{\dif t} = 1$,$v^i \sim \abs{\frac{\dif x^i}{\dif \tau}} \ll 1$, $g_{\mu\nu}=\eta_{\mu\nu}$, and
+$\dif{}_t \sim \frac{v^i}{c} \dif{}_{x_i} \ll 1$.
+In Newtonian Gravity, we have two equations
+\begin{enumerate}
+    \item ``field equations'': $\Delta \Phi = 4 \pi G_\text{N} \rho_0$ (Poisson equation), describes how the gravitational potential
+    (geometry in General Relativity) reacts on matter $\rho_0$
+    \item ``geodesic equation'': $\frac{\dif{}^2 x^i}{\dif{}t^2} = - \tensor{\Phi}{_,_i}$, describes how matter (test particles, dust)
+    moves under the influence of the gravitational potential $\Phi$ (in General Relativity: moves in curved geometry)
+\end{enumerate}
+
+\subsection{Geodesic deviation in Newtonian Geometry}
+From the last analysis, we know
+\begin{equation}
+    \cSym{i}{0}{0} = \tensor{\Phi}{^,^i} \qquad \text{(all other components are zero).}
+\end{equation} 
+Insert this in the Riemannian curvature tensor:
+\begin{equation}
+    \tensor{R}{^i_0_j_0} = -\tensor{R}{^i_0_0_j} = \tensor{\Phi}{^,^i_j} \qquad \text{(all other components are zero).}
+\end{equation}
+Ricci-tensor: 
+\begin{equation}
+    R_{00} = \Delta \Phi = 4 \pi G_\text{N} \rho_0
+\end{equation}
+
+\subsubsection{geodesic deviation}
+(image)
+\begin{equation}
+    \frac{\difD^2 \eta^i}{\difD \tau^2} \approx \frac{\dif{}^2 \eta^i}{\dif{} \tau^2} 
+    = - \tensor{R}{^i_0_j_0} \eta^j = - \tensor{\Phi}{^,^i_j}\tensor{\eta}{^j}
+\end{equation}
+where we used that
+\begin{equation}
+    \frac{\difD{} \eta^i}{\difD{} \tau} = \nabla_j \eta^i \frac{\dif x^j}{\dif \tau} = \partial_j \eta^i x^j = \frac{\dif \eta^i}{\dif t}
+\end{equation}
+Compare to the deviation equation due to tidal forces in Newtonian Gravity.
+\begin{equation}
+    \begin{split}
+        \frac{\dif{}^2 \eta^i}{\dif \tau^2} &= \frac{\dif{}^2 \left( x^i + \eta^i \right)}{\dif{} t^2} - \frac{\dif{}^2 x^i}{\dif{}t^2} \\
+        &= - \left. \frac{\partial \Phi}{\partial x_i} \right|_{x+\eta} + \left. \frac{\partial \Phi}{\partial x_i} \right|_{x} \\
+        &= - \left. \frac{\partial \Phi}{\partial x_i} \right|_{x} 
+        - \left. \frac{\partial^2 \Phi}{\partial x_i \partial x^j} \right|_{x} \eta^j 
+        + \left. \frac{\partial \Phi}{\partial x_i} \right|_{x} \\
+        &= - \tensor{\Phi}{^,^i_j} \eta^j
+    \end{split}
+\end{equation}
+This shows again that tidal forces are a genuine gravitational effect that is related to curvature of spacetime (in General Relativity) 
+and cannot be transformed away.
