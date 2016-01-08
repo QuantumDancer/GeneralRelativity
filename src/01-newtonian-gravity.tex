@@ -7,7 +7,6 @@ The force $\vec{F}_{AB}$, which a massive body $A$ with mass $m_A$ exerts on ano
 \begin{equation}
     \vec{F}_{AB}=-m_B\frac{G\textsubscript{N}m_A}{r^2}\vec{e}_r\, ,
 \end{equation}
-%TODO remove subscript of G
 where $G\textsubscript{N}$ denotes \emph{\name{Newton}'s constant},
 numerically equal to $G\textsubscript{N}\approx \unitfrac[6.673\cdot 10^{-11}]{m^3}{kg\,s}$.
 Although there is no need for $G\textsubscript{N}$ to be constant over time,
@@ -152,15 +151,14 @@ $\frac{m\textsubscript{I}}{m\textsubscript{g}}$.\label{tab:WEPExp}}
 Assume we have a body of finite extension in a gravitational
 potential $\Phi$, an example being the earth in the potential of the moon.
 On the center of the body we have 
-%TODO masses???
 \begin{equation}
-\dod[2]{\tensor{x}{^i}}{t}=-\dpd{\Phi}{\tensor{x}{_i}}\,.
+m \dod[2]{\tensor{x}{^i}}{t}=-\dpd{\Phi}{\tensor{x}{_i}}\,.
 \end{equation}
 If we consider a point shifted by $\tensor{\chi}{^i}$ from the center then the
 acceleration is given as
 \begin{equation}
 \begin{split}
-\dod[2]{}{t}\left(\tensor{x}{^i}+\tensor{\chi}{^i}\right)
+m \dod[2]{}{t}\left(\tensor{x}{^i}+\tensor{\chi}{^i}\right)
 &=-\dpd{\Phi\left(\tensor{x}{^i}+\tensor{\chi}{^i}\right)}{\tensor{x}{_i}}\\
 &\simeq-\dpd{\Phi\left(\tensor{x}{^i}\right)}{\tensor{x}{_i}}
 -\dmd{\Phi\left(\tensor{x}{^i}\right)}{2}{\tensor{x}{_i}}{}{\tensor{x}{_j}}{}\tensor{\chi}{^j}\,.
@@ -168,7 +166,7 @@ acceleration is given as
 \end{equation}
 Subtracting the previous equations yields the tidal force
 \begin{equation}
-\dod[2]{\tensor{\chi}{^i}}{t}=-\dmd{\Phi\left(\tensor{x}{^i}\right)}{2}{\tensor{x}{_i}}{}{\tensor{x}{_j}}{}\tensor{\chi}{^j}\,.
+m \dod[2]{\tensor{\chi}{^i}}{t}=-\dmd{\Phi\left(\tensor{x}{^i}\right)}{2}{\tensor{x}{_i}}{}{\tensor{x}{_j}}{}\tensor{\chi}{^j}\,.
 \end{equation}
 The tidal force tensor $\dmd{\Phi}{2}{\tensor{x}{_i}}{}{\tensor{x}{_j}}{}$ is of
 the form
@@ -178,4 +176,3 @@ the form
 \end{equation}
 %TODO newtons laws?
 %TODO picture
-%TODO finish chapter 1

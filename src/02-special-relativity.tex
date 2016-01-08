@@ -372,20 +372,21 @@ line element invariant. Namely:
 The \name{Poincaré} transformations form a ten parameter group.
 \begin{table}
     \centering
+    \caption{Comparison of \name{Newton}ian theory and special relativity.}
     \begin{tabulars}{lll}
         \toprule
         &\name{Newton}&\name{Einstein} (SR)\\
         \midrule
-        & Law of inertia
-        & Law of inertia \\
+        & law of inertia
+        & law of inertia \\
         \name{Newton}'s Laws
         & $\vec{F}=m\ddot{\vec{x}}=m\od{\vec{p}}{t}$
         &$\vec{F}=m\od{\vec{p}}{\tau}$\\
         & $\vec{F}_{12}=-\vec{F}_{21}$
-        & Momentum conservation\\
+        & momentum conservation\\
         &
         &(postulate)\\
-        Transformations
+        transformations
         & \name{Poincaré} transformations
         & \name{Galilei} transformations\\
         
@@ -394,32 +395,34 @@ The \name{Poincaré} transformations form a ten parameter group.
         
         & $c=\mathrm{const.}$
         & $t^\prime=t$\\
-        Force
+        force
         &$\vec{F}=\frac{G\textsubscript{N}m_1m_2}{r^2}$
         &$F^\alpha= \frac{q}{m} U_\beta
         \tensor{F}{^\alpha^\beta}$,\,  $F
-        =\gamma\left(\begin{smallmatrix}
-\beta
-f_0\\
-\vec{f}
-\end{smallmatrix}\right)$\\
-&$\Delta \Phi =4\pi\varrho$ &\name{Maxwell}'s equations
-\\
-\bottomrule
+        =\gamma\left(
+        \begin{smallmatrix}
+            \beta
+            f_0\\
+            \vec{f}
+        \end{smallmatrix}
+        \right)$\\
+        &$\Delta \Phi =4\pi\varrho$ &\name{Maxwell}'s equations
+        \\
+        \bottomrule
     \end{tabulars}
-    \caption{Comparison of \name{Newton}ian theory and special relativity}
-    %TODO consistency
 \end{table}
+
+\section{Vectors and Tensors in SRT}
+%TODO connect subsections
 \subsection{Fourvectors}
-%TODO consider merging with Vectors and Tensors in SRT
 There are three types of vectors\footnote{We could also put up a fourth class,
 containing solely the zero vector.}:
 \begin{enumerate}
-    \item \emph{Spacelike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}>0$
-    \item \emph{Lightlike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}=0$
-    \item \emph{Timelike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}<0$
+    \item \emph{spacelike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}>0$
+    \item \emph{lightlike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}=0$
+    \item \emph{timelike} $\Delta\tensor{x}{^\mu}\Delta\tensor{x}{_\mu}<0$
 \end{enumerate}
-All classes are transformed into themself by \name{Lorentz} transformation.
+All classes are transformed into themselves by \name{Lorentz} transformation.
 There is a set of transformations that is forbidden by physical considerations: namely the
 parity change $\vec{x}\to -\vec{x}$ and time reversal $t\to -t$ because this are
 no real symmetries of nature\footnote{both violated in weak interactions.}.
@@ -435,96 +438,22 @@ $\tensor{a}{_\mu}$ has no importance in SR.
 \begin{table}
     \centering
     \begin{tabulars}{lll}
-      	\toprule
-		Fourvector&Definition&Normalisation\\
-		\midrule
-		Velocity
-		&$\tensor{u}{^\mu}=\od{\tensor{x}{^\mu}}{\tau}=\gamma(1,\vec{v})^{\transpose}$
-		&$\tensor{u}{_\mu}\tensor{u}{^\mu}=-1$\\
-		Momentum
-		&$\tensor{p}{^\mu}:=m\tensor{u}{^\mu}$
-		&$\tensor{p}{_\mu}\tensor{p}{^\mu}=-m^2$\\
-		Acceleration&$\tensor{a}{^\mu}:=\od{\tensor{u}{^\mu}}{\tau}$&$\tensor{a}{_\mu}\tensor{a}{^\mu}=0$\\
-		\bottomrule
+        \toprule
+        Fourvector&Definition&Normalisation\\
+        \midrule
+        Velocity
+        &$\tensor{u}{^\mu}=\od{\tensor{x}{^\mu}}{\tau}=\gamma(1,\vec{v})^{\transpose}$
+        &$\tensor{u}{_\mu}\tensor{u}{^\mu}=-1$\\
+        Momentum
+        &$\tensor{p}{^\mu}:=m\tensor{u}{^\mu}$
+        &$\tensor{p}{_\mu}\tensor{p}{^\mu}=-m^2$\\
+        Acceleration&$\tensor{a}{^\mu}:=\od{\tensor{u}{^\mu}}{\tau}$&$\tensor{a}{_\mu}\tensor{a}{^\mu}=0$\\
+        \bottomrule
     \end{tabulars}
     \caption{Examples of fourvectors and normalisation.\label{tab:fourvecs}}
 \end{table}
-\section{Lagrangian Formalism}
-We want to formulate special relativity in terms of a variation principle.
-Therefore we consider massive particles, i.e. timelike paths. As a postulate we
-take that the action $S$ is proportional to the proper time (as a generalized
-``distance'') $\dif \tau:=\sqrt{-\dif s^2}$
-\begin{equation}
-    S= -\alpha \int_a^b\dif \tau = -\alpha
-    \int_{t_1}^{t^2}\sqrt{1-\vec{v}^2}\dif t =: \int_{t_1}^{t^2}L\dif t\, ,
-\end{equation}
-%TODO explain minus sign
-whith $\alpha$ a constant, that has to be determined. The Lagrangian $L$ is
-given by
-\begin{equation}
-    L=-\alpha\sqrt{1-\vec{v}^2}\simeq
-    -\alpha\left(1-\frac{1}{2}\vec{v}^2+\ldots\right) \, .
-\end{equation}
-We demand that we recover the classical theory in the limit $\vec{v}\to 0$. The
-the lowest order kinetic term is
-\begin{equation}
-    T=\frac{1}{2}\alpha \vec{v}^2\, .
-\end{equation}
-Comparing with the classical kinetic energy $T=\frac{1}{2}m\vec{v}^2$ yields
-$\alpha=m$. If we substitute $\alpha$ we recover the Lagrangian of
-special relativity
-\begin{equation}
-    L\textsubscript{SR}=-m\sqrt{1-\vec{v}^2}=-m\gamma^{-1}\, .
-\end{equation}
-We can proceed calculate the generalized momenta
-\begin{equation}
-    p_i=\dpd{L}{v_i}=\frac{mv_i}{\sqrt{1-\vec{v}^2}}=\gamma m v_i\, .
-\end{equation}
-The energy can be calculated via the Hamiltonian $H$
-\begin{equation}
-    E=H=\vec{p}\cdot\vec{v}-L=\gamma m \vec{v}^2 + m\gamma^{-1} =\gamma m\, .
-\end{equation}
-Expanded in $\vec{v}^2$ the energy reads as
-\begin{equation}
-    E=m+\frac{1}{2}m\vec{v}^2+\ldots\, .
-\end{equation}
-If we restore units of $c$ for a moment we get that the constant term is
-equal to $mc^2$. This is \name{Einstein}'s famous $E=mc^2$.
-We can further relate energy and momentum to each other. Therefore consider the
-square of the momentum $\vec{p}$
-\begin{equation}
-    \vec{p}^2=\frac{m\vec{v}^2}{1-\vec{v}^2}\, .
-\end{equation}
-Solving for $\vec{v}^2$ yields
-\begin{equation}
-    \vec{v}^2=\frac{\vec{p}^2}{\vec{p}^2+m^2}\, .
-\end{equation}
-Which we can insert in the expression for the energy
-\begin{equation}
-    E^2=\frac{m^2}{1-\vec{v}^2}=\vec{p}^2+m^2 \label{eq:onshell}\, .
-\end{equation}
-The equation \eqref{eq:onshell} is called the \emph{on shell condition}.
-\begin{sidenote}[On massive photons]
-There is nothing in the theory that predicts that the photon is massless. It
-could be possible that its mass is only really small and that in fact that the
-photon does not travel at the speed of light. (Of course this would make it
-convenient to rename the constant $c$) Even though the mass should be so small
-that the de Broglie wavelength is of the order of the size of the universe,
-massive photons would have a huge impact.
-\end{sidenote}
-\begin{sidenote}[Complex Time]
-We could in principle make a substitution $t\to \imI t$. Which would free us
-from the need to distinguish between co- and contravariant vectors, because the
-inner product would be given as
-\begin{equation}
-    g(x,y)=\left(\imI x^0\right)\left(\imI
-    y^0\right)+\vec{x}\cdot\vec{y}=-x^0y^0+\vec{x}\cdot\vec{y}
-\end{equation}
-and hence $\tensor{g}{_i_j}=\tensor{\delta}{_i_j}$, which basically means we can
-raise and lower indices at will. This is practical whenever you do calculations,
-e.g. in computer simulations.
-\end{sidenote}
-\section{Vectors and Tensors in SRT}
+
+
 At this point we will just list some objects, that we call vectors and tensors
 and delay the definition of those to a later chapter.
 An example of a vector is the four current $J^\mu$:
@@ -558,6 +487,7 @@ Therefore the tensor $\tensor{F}{^\mu^\nu}$ takes the role of the fields
 $\vec{E},\vec{B}$. In tensor form \name{Maxwell} equations take the particular
 simple form, namely
 \begin{equation}
+    \label{eq:maxwell_eqs}
     \partial_\nu\tensor{F}{^\mu^\nu}=4\pi\tensor{J}{^\mu}\,, \quad
     \partial_\alpha\tensor{F}{_\mu_\nu}
     +\partial_\nu\tensor{F}{_\alpha_\mu}
@@ -585,7 +515,7 @@ inertial systems. The dispersion relation reads as
 It is equivalent to the on shell condition \eqref{eq:onshell}, when we identify
 the photons energy $E=\omega$, momentum $\vec{p}=\vec{k}$ and mass $m=0$.
 \subsection{The Energy Momentum Tensor}
-%TODO consider using different source. 
+%TODO consider using different source.
 %TODO consider merging with The Energy Momentum Tensor
 \begin{sidenote}
 Above a certain limit a, system cannot be stabilized by pressure, because the
@@ -671,22 +601,22 @@ We can check
 \end{align}
 %TODO calculation
 \begin{equation}
-\tensor{S}{^\mu^\nu_{,\nu}}=\tensor{F}{^\nu_\mu_{,\alpha}}\tensor{F}{^\nu^\alpha}
-+\frac{1}{2}\tensor{F}{_\alpha_\nu^{,\mu}}\tensor{F}{^\nu^\alpha}
+    \tensor{S}{^\mu^\nu_{,\nu}}=\tensor{F}{^\nu_\mu_{,\alpha}}\tensor{F}{^\nu^\alpha}
+    +\frac{1}{2}\tensor{F}{_\alpha_\nu^{,\mu}}\tensor{F}{^\nu^\alpha}
 \end{equation}
 The Lagrangian of electrodynamics is given by
 \begin{equation}
     \mathcal{L}=-\frac{1}{2}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}+\tensor{J}{_\mu}\tensor{A}{^\mu}-\frac{1}{2}m^2\tensor{A}{_\mu}\tensor{A}{^\mu}\,
     .
 \end{equation}
- The tensor $S$ is known as \emph{electromagnetic stress–energy tensor} and
- given in contravariant form as
+The tensor $S$ is known as \emph{electromagnetic stress–energy tensor} and
+given in contravariant form as
 \begin{equation}
-\tensor{S}{^\mu^\nu}=
-\begin{pmatrix}
-u&\vec{S}\transpose\\
-\vec{S}& -\tensor{\sigma}{_i_j}
-\end{pmatrix}\,.
+    \tensor{S}{^\mu^\nu}=
+    \begin{pmatrix}
+        u&\vec{S}\transpose\\
+        \vec{S}& -\tensor{\sigma}{_i_j}
+    \end{pmatrix}\,.
 \end{equation}
 Where
 $\tensor{\sigma}{_i_j}=\tensor{E}{_i}\tensor{E}{_j}+\tensor{E}{_i}\tensor{E}{_j}-\frac{1}{2}\tensor{\delta}{_i_j}\left(\vec{E}^2+\vec{B}^2\right)$
@@ -694,3 +624,78 @@ is the \emph{\name{Maxwell} stress tensor}, $\vec{S}=\vec{E}\times\vec{B}$
 \emph{\name{Poynting} vector} and energy density $u
 =\frac{1}{2}\left(\vec{E}^2+\vec{B}^2\right)$.
 \end{example}
+
+\section{Lagrangian Formalism}
+We want to formulate special relativity in terms of a variation principle.
+Therefore we consider massive particles, i.e. timelike paths. As a postulate we
+take that the action $S$ is proportional to the proper time (as a generalized
+``distance'') $\dif \tau:=\sqrt{-\dif s^2}$
+\begin{equation}
+    S= -\alpha \int_a^b\dif \tau = -\alpha
+    \int_{t_1}^{t^2}\sqrt{1-\vec{v}^2}\dif t =: \int_{t_1}^{t^2}L\dif t\, ,
+\end{equation}
+with $\alpha$ a constant, that has to be determined. The Lagrangian $L$ is
+given by
+\begin{equation}
+    L=-\alpha\sqrt{1-\vec{v}^2}\simeq
+    -\alpha\left(1-\frac{1}{2}\vec{v}^2+\ldots\right) \, .
+\end{equation}
+We demand that we recover the classical theory in the limit $\vec{v}\to 0$. The
+the lowest order kinetic term is
+\begin{equation}
+    T=\frac{1}{2}\alpha \vec{v}^2\, .
+\end{equation}
+Comparing with the classical kinetic energy $T=\frac{1}{2}m\vec{v}^2$ yields
+$\alpha=m$. If we substitute $\alpha$ we recover the Lagrangian of
+special relativity
+\begin{equation}
+    L\textsubscript{SR}=-m\sqrt{1-\vec{v}^2}=-m\gamma^{-1}\, .
+\end{equation}
+We can proceed calculate the generalized momenta
+\begin{equation}
+    p_i=\dpd{L}{v_i}=\frac{mv_i}{\sqrt{1-\vec{v}^2}}=\gamma m v_i\, .
+\end{equation}
+The energy can be calculated via the Hamiltonian $H$
+\begin{equation}
+    E=H=\vec{p}\cdot\vec{v}-L=\gamma m \vec{v}^2 + m\gamma^{-1} =\gamma m\, .
+\end{equation}
+Expanded in $\vec{v}^2$ the energy reads as
+\begin{equation}
+    E=m+\frac{1}{2}m\vec{v}^2+\ldots\, .
+\end{equation}
+If we restore units of $c$ for a moment we get that the constant term is
+equal to $mc^2$. This is \name{Einstein}'s famous $E=mc^2$.
+We can further relate energy and momentum to each other. Therefore consider the
+square of the momentum $\vec{p}$
+\begin{equation}
+    \vec{p}^2=\frac{m\vec{v}^2}{1-\vec{v}^2}\, .
+\end{equation}
+Solving for $\vec{v}^2$ yields
+\begin{equation}
+    \vec{v}^2=\frac{\vec{p}^2}{\vec{p}^2+m^2}\, .
+\end{equation}
+Which we can insert in the expression for the energy
+\begin{equation}
+    E^2=\frac{m^2}{1-\vec{v}^2}=\vec{p}^2+m^2 \label{eq:onshell}\, .
+\end{equation}
+The equation \eqref{eq:onshell} is called the \emph{on shell condition}.
+\begin{sidenote}[On massive photons]
+There is nothing in the theory that predicts that the photon is massless. It
+could be possible that its mass is only really small and that in fact that the
+photon does not travel at the speed of light. (Of course this would make it
+convenient to rename the constant $c$) Even though the mass should be so small
+that the de Broglie wavelength is of the order of the size of the universe,
+massive photons would have a huge impact.
+\end{sidenote}
+\begin{sidenote}[Complex Time]
+We could in principle make a substitution $t\to \imI t$. Which would free us
+from the need to distinguish between co- and contravariant vectors, because the
+inner product would be given as
+\begin{equation}
+    g(x,y)=\left(\imI x^0\right)\left(\imI
+    y^0\right)+\vec{x}\cdot\vec{y}=-x^0y^0+\vec{x}\cdot\vec{y}
+\end{equation}
+and hence $\tensor{g}{_i_j}=\tensor{\delta}{_i_j}$, which basically means we can
+raise and lower indices at will. This is practical whenever you do calculations,
+e.g. in computer simulations.
+\end{sidenote}

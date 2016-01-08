@@ -79,11 +79,6 @@ If we repeat the procedure we arrive at the initial metric:
     \eta_{\mu\nu}\overline{h} = \overline{h}_{\mu\nu} + \frac{1}{2}
     \eta_{\mu\nu}h= h_{\mu\nu}\,.
 \end{equation}
-%TODO stimmt die Korrektur?
-% \begin{align}
-%     \overline{h} \coloneqq &\ \overline{h}_{\mu\nu}\eta^{\mu\nu} = h - 2h = -h \\
-%     h_{\mu_\nu} =&\ \overline{h}_{\mu\nu} + \frac{1}{2} \eta_{\mu\nu}h = \overline{h}_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu}\overline{h}
-% \end{align}
 \subsubsection{Linearized Einstein tensor \texorpdfstring{$G_{\mu\nu}$}{Gmunu} in terms of \texorpdfstring{$\overline{h}_{\mu\nu}$}{hbarmunu}}
 The linearized Einstein Tensor is given as
 \begin{equation}
@@ -124,8 +119,9 @@ The linearized Einstein Tensor is given as
 %         \overset{!}{=}\ & \kappa T_{\mu\nu}
 %     \end{split}
 % \end{equation}
+
+
 %TODO introduce symmetration brackets somewhere
-%TODO Vorzeichen der Transformation inkosistent!!!
 with the (linearized) d'Alembert operator
 \begin{equation}
     \Box^{\text{(L)}} = \Box = \partial_\mu\partial_\nu
@@ -152,7 +148,6 @@ Equation~\eqref{eq:lineinsteineqs} can be written in this form:
     = \underbrace{-2\kappa T_{\mu\nu}}_{\text{``source''}}
 \end{equation}
 
-%TODO Michi: mathematical background \\%TODO mathematical background @Michi
 We are now considering infinitesimal diffeomorphisms, which are given by affine
 transformations
 \begin{equation}
@@ -210,7 +205,7 @@ Therefore
 If the derivative of a metric vanishes for a given $\xi^\mu$, then one obtains
 the killing equations 
 \begin{equation}
-    \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu}=0  %TODO order of indices in second term?
+    \tensor{\xi}{_\mu_,_\nu} + \tensor{\xi}{_\nu_,_\mu}=0 
 \end{equation}
 for $\xi^\mu$ and the solutions are referred to as \emph{killing vector fields}.
 In Minkowski-space the ten infinitesimal killing vectors correspond to the Poincaré-generators.
@@ -282,7 +277,7 @@ In therms of the original field this condition reads
         \chi_\nu \left[ h \right] = \partial^\mu h_{\mu\nu} - \frac{1}{2} h_{\mu\nu} \partial^\mu h = 0
     \end{equation}
 \end{definition}
-Proof: %TODO of what?
+Proof:
 \begin{equation}
     \begin{split}
         \partial^\mu \overline{h'}_{\mu\nu} &= \partial^\mu \overline{h}_{\mu\nu} + \Box \xi_\nu + \partial_\nu \partial^\mu \xi_\mu -
@@ -342,9 +337,8 @@ Since $\overline{h}_{\mu\nu}$ and $\overline{h'}_{\mu\nu}$ correspond to the sam
             & $\Box A_\mu = - 4 \pi j_\mu$ \\
 
             inv. tensors under gauge trafo
-            & $\tensor{{R^{(L)\prime}}}{^\rho_\mu_\nu_\rho} =
-             \tensor{{R^{(L)}}}{^\rho_\mu_\nu_\rho}$ 
-%TODO Ricci statt Riemann?
+            & $\tensor{{R^{(L)\prime}}}{_\mu_\nu} =
+             \tensor{{R^{(L)}}}{_\mu_\nu}$ 
             & $F'_{\mu\nu} =F_{\mu\nu}$\\
             \bottomrule
         \end{tabulars}

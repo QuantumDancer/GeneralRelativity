@@ -35,8 +35,7 @@ be smooth\footnotemark .
             \node [below] at (1.5,-0.35) {$h_{\alpha\beta}= h_\beta \circ h_\alpha^{-1}$};
         \end{tikzpicture}
     \end{center}
-    \caption{Coordinate change.} %TODO better caption.
-    %TODO mor space.
+    \caption{Coordinate change.}
 \end{figure}
 \footnotetext{Infinitely often differentiable or short $C^\infty$.}
 We can now reduce differentiation on the manifold to the ordinary differentiation in $\mathbb{R}^n$. 
@@ -228,7 +227,6 @@ We have not yet established a relation between upper and lower indices, i.e. we 
 therefore make no sense.
 \end{remark}
 \section{The Metric}
-%TODO sort sections
 So far we have not defined a length scale on manifolds yet. We will do so now by
 introducing a \emph{metric} 
 \begin{definition}[Metric]
@@ -320,7 +318,6 @@ In order to make the Lagrangian gauge invariant we exchange
 \begin{equation}
 \tensor{\partial}{_\mu}\to\tensor{D}{_\mu}+\imI\tensor{A}{_\mu}\, ,
 \end{equation}
-%TODO what is phi?
 which effectively produces additional terms in the Lagrangian, namely
 \begin{equation}
 \tensor{A}{^\mu}\left(\phi^*\tensor{\partial}{_\mu}\phi
@@ -427,10 +424,10 @@ $\od[2]{\tensor{\gamma}{^i}}{t}$. This gives rise to another possible
 generalisation of a straight line.
 In curved coordinates we have 
 \begin{equation}
+\nabla \left( \dod{\tensor{x}{^j}}{t} \right)  = 
 \od[2]{\tensor{x}{^i}}{t}+\affin{i}{j}{k}\od{\tensor{x}{^j}}{t}\od{\tensor{x}{^k}}{t}
 =\lambda(t)\od{\tensor{x}{^j}}{t}\,.
 \end{equation}
-%TODO all steps + reasoning
 If we demand that this is equal to the minimization of the arc length we get a
 preferred connection. 
 Suppose we have a different parametrisation $s(t)$
@@ -469,8 +466,6 @@ The 'length' defined this way does not have to concede with the length given by
 the metric and is also defined for example for lightlike curves (which cannot
 be parametrised by the arc length)
 \end{remark}
-%TODO at this place there is a repetition of the variation principle. what
-% should we do with it?
 Notice that \eqref{eq:affingeod} is identical to \eqref{eq:geodeq} if we choose
 the affinity to be $\affin{k}{i}{j}=\cSym{k}{i}{j}$. This is called the
 \emph{metric} or \emph{Christoffel connection}, and we will
@@ -490,7 +485,6 @@ connection.
 \begin{remark}
 Non-Christoffel connections play a role, for example when dealing with spinors.
 \end{remark}
-%TODO connect losose ends
 \begin{equation}
 \tensor{R}{^i_j_k_l}=-\tensor{R}{^i_j_l_k}\,.
 \end{equation}
@@ -520,8 +514,7 @@ tensorial, it holds in all systems. Notice the similarity to
 -\tensor{\partial}{_a}\tensor{\partial}{_m}\tensor{A}{^b}
 \end{equation}
 Therefore the Bianchi identity is identical to the second set of Maxwell's
-equations
-%TODO reference
+equations \eqref{eq:maxwell_eqs}.
 If the affinity is symmetrical $\affin{k}{i}{j}=\affin{k}{j}{i}$ we further have
 the identity
 \begin{equation}
@@ -604,4 +597,4 @@ $\tensor{A}{_i}=\tensor{\partial}{_i}V$
 =\frac{1}{\sqrt{g}}\tensor{\partial}{_k}\left(\sqrt{g}\tensor{g}{^k^i}\tensor{\partial}{_i}V\right)\label{eq:quabla}
 \end{equation}
 %TODO possible outsource to formula section or the like. There are other
-% formulaas as well ..
+% formulaas as well ..  - YES

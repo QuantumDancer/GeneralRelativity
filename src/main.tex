@@ -69,16 +69,6 @@
   qed = ,
 ]{myrmstyle} %remarks
 
-%TODO outdated package, produces warnings, use package 'titlesec' to control sectioning format -- Ben 7.12
-
-% TODO I disabled the sectsty package for the moment, this fixes the messed up spacing between chapter number and description -- Ben 7.12
-% \usepackage{sectsty}	 % con­trol sec­tional head­ers
-% \chapterfont{\color{section_color}}
-% \sectionfont{\color{section_color}}
-% \subsectionfont{\color{section_color}}
-% \subsubsectionfont{\color{section_color}}
-% \paragraphfont{\color{section_color}}
-
 \renewcommand{\labelitemi}{\color{section_color}\scriptsize$\blacksquare$} 
 \renewcommand{\labelenumi}{\color{section_color}\textsf{\textbf{\arabic{enumi}}}.}
 
@@ -223,30 +213,26 @@ textwidth = 0.98\textwidth
     textwidth = 0.98\textwidth
 }
 ]{example}
-
-\makeatletter
-\newtoks\FTN@ftn
-\def\pushftn{%
- \let\@footnotetext\FTN@ftntext\let\@xfootnotenext\FTN@xftntext
-  \let\@xfootnote\FTN@xfootnote}
-\def\popftn{%
- \global\FTN@ftn\expandafter{\expandafter}\the\FTN@ftn}
-\long\def\FTN@ftntext#1{%
-  \edef\@tempa{\the\FTN@ftn\noexpand\footnotetext
-                    [\the\csname c@\@mpfn\endcsname]}%
-  \global\FTN@ftn\expandafter{\@tempa{#1}}}%
-\long\def\FTN@xftntext[#1]#2{%
-  \global\FTN@ftn\expandafter{\the\FTN@ftn\footnotetext[#1]{#2}}}
-\def\FTN@xfootnote[#1]{%
-   \begingroup
-     \csname c@\@mpfn\endcsname #1\relax
-     \unrestored@protected@xdef\@thefnmark{\thempfn}%
-   \endgroup
-   \@footnotemark\FTN@xftntext[#1]}
-
-\makeatother
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-
+% 
+% \makeatletter
+% \newtoks\FTN@ftn
+% \def\pushftn{%
+%  \let\@footnotetext\FTN@ftntext\let\@xfootnotenext\FTN@xftntext
+%   \let\@xfootnote\FTN@xfootnote}
+% \def\popftn{%
+%  \global\FTN@ftn\expandafter{\expandafter}\the\FTN@ftn}
+% \long\def\FTN@ftntext#1{%
+%   \edef\@tempa{\the\FTN@ftn\noexpand\footnotetext
+%                     [\the\csname c@\@mpfn\endcsname]}%
+%   \global\FTN@ftn\expandafter{\@tempa{#1}}}%
+% \long\def\FTN@xftntext[#1]#2{%
+%   \global\FTN@ftn\expandafter{\the\FTN@ftn\footnotetext[#1]{#2}}}
+% \def\FTN@xfootnote[#1]{%
+%    \begingroup
+%      \csname c@\@mpfn\endcsname #1\relax
+%      \unrestored@protected@xdef\@thefnmark{\thempfn}%
+%    \endgroup
+%    \@footnotemark\FTN@xftntext[#1]}
 
 
 %\newtheorem*{sidenote}{Sidenote}

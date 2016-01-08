@@ -12,15 +12,14 @@ The observable universe is stable. There are two obvious configurations in which
 Since in the second description all particles are accelerated relative to each other, there are no inertial systems.
 A theory in which all observers are equal must therefore be local and thus be described by means of differential geometry.
 We claim that the laws of physics are the same in every system.
-If we assume that the \name{Maxwell} equations are right, the
-\name{Newton}ian theory of gravity must be wrong.
-%TODO is use of small capitals good practice?
+If we assume that the \name{Maxwell}'s equations are right, the
+Newtonian theory of gravity must be wrong.
 Implications:
 All free falling systems are equivalent (i.e. indistinguishable by the observer).
 Light must bend, otherwise a beam could be used to deduce whether your system is inertial.
-The following example illustrates that \name{Euclid}ean geometry is no
+The following example illustrates that Euclidean geometry is no
 adequate description of space-time.
-\begin{example}[Rotationg Sphere]
+\begin{example}[Rotating Sphere]
 see Introduction to tensor calculus
 %TODO copy or reference page
 \end{example}
@@ -32,20 +31,6 @@ Cartesian coordinates are described by two coordinates $x,y$ that are measured
 in two orthogonal directions from the origin. The distance $s$ between two
 arbitrary points $(x_1,y_1)$ and $(x_2,y_2)$ can be calculated using
 \name{Pythagoras}' theorem
-% \begin{figure}[htb]
-%     \begin{center}
-%         \begin{tikzpicture}[scale=2]
-%             \draw [<->,thick] (0,2) |- (2,0);
-%             \draw [help lines,dashed](0,1.25) -| (1.25,0);
-%             \draw [->] (0,0) -- (1.25,1.25);
-%             %\node [above] at (.6250,1.25) {$x$};
-%             %\node [right] at (1.25,.6250) {$y$};
-%             \node [left]at (0,1.25) {$y$};
-%             \node [below]at (1.25,0) {$x$};
-%         \end{tikzpicture}
-%     \end{center}
-%     \caption{Cartesian coordinates.}
-% \end{figure}
 \begin{equation}
     s^2=(x_1-x_2)^2+(y_1-y_2)^2\,.
 \end{equation}
@@ -77,8 +62,6 @@ Plugging this into \eqref{eq:cartline} gives the line element in polar coordinat
             \draw [<->,thick] (0,2) node [above] {$\phantom{y}$} |- (2,0) node
             [right] {$\phantom{x}$}; \draw [help lines,dashed](0,1.25) -|
             (1.25,0); \draw [->] (0,0) -- (1.25,1.25);
-            %\node [above] at (.6250,1.25) {$x$};
-            %\node [right] at (1.25,.6250) {$y$};
             \node [left]at (0,1.25) {$y$};
             \node [below]at (1.25,0) {$x$};
         \end{tikzpicture}
@@ -126,6 +109,7 @@ The idea is to keep the law of inertia, i.e. particles still move on straight
 line. However, we need to generalize the concept of a 'straight' line, in a
 curved space.
 \section{Variation Principle}
+\label{sec:varprinc}
 We know that straight lines are curves minimizing the distance between two
 points. We generalize this concept to curved space by an variation principle.
 Again we take a look at flat space, but with curved coordinates.
