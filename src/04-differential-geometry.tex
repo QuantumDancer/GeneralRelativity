@@ -4,10 +4,11 @@ convenient to formulate it in terms of differential geometry.
 \section{Manifolds}
 \begin{definition}
 A $n$ dimensional manifold $M$ is a Hausdorff space with countable basis, that
-is locally homeomorphic to $\mathbb{R}^n$. We will give a short introduction to
-the most important terms.
+is locally homeomorphic to $\mathbb{R}^n$. 
 \end{definition}
 %TODO picture
+We will give a short introduction to
+the most important terms.
 \begin{remark}
 The requirements Hausdorff and countable basis are of a more technical nature and are satisfied for most of the objects one can imagine 
 except some pathological examples (we won't go into the details on this).
@@ -245,26 +246,41 @@ A metric that is positive definite is called \emph{\name{Riemann}ian metric}. In
 relativity we deal with \emph{\name{Lorentz}ian metrics}, for which there are
 vectors beside the zero vector which have zero 'length'. In flat space we have
 $\tensor{g}{_i_j}=\tensor{\eta}{_i_j}$.
+A metric gives two natural notions on the tangent space of the manifold.
+Inner product 
+\begin{equation}
+g(A,B)=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{B}{^j}
+\end{equation}
+Pseudo\footnote{Not positive definite.} norm
+\begin{equation}
+g(A,A)=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{A}{^j}
+\end{equation}
 \begin{remark}[About
 raising and lowering indices] Suppose we have given a vector $A=A^i\partial_i$
 with coordinates $A^i$, then we can relate it 
-in a natural way to a linear form $g(A,\cdot)$,
+in a natural way to a linear form $A^\flat\footnote{The symbols
+$\flat$ and $\sharp$ are borrowed from musical notation.}:=g(A,\cdot)$,
 \begin{equation}
 \begin{split}
- g(A,\cdot)\,\colon T_pM &\to \Reals\\
+ A^\flat\,\colon T_pM &\to \Reals\\
  X &\mapsto g(A,X)\, ,
 \end{split}
 \end{equation}
 i.e. a dual vector. The components of this dual vector are given by its action
 on the basis elements of the tangent space
 \begin{equation}
-A_i=g(A,\partial_i)=A^jg(\partial_j,\partial_i)=g_{ji}A^j\,,
+A_i:=(A^\flat)_i=g(A,\partial_i)=A^jg(\partial_j,\partial_i)=g_{ji}A^j\,,
 \end{equation}
 which is exactly the law for lowering indices. Given the inverse metric we can
-multiply this equation by it to obtain $A^i$ in terms of $A_i$.
+multiply this equation by it to obtain $A^i$ in terms of $A_i$. 
 \end{remark}
-\section{Parallel Transport}
-The idea is to generalize parallel transport from flat space.
+\section{Affine Connections}
+To derive a vector field, we have to relate different tangent spaces. The idea
+is again to generalize from flat space. The connection is established by
+introducing a affine connection.
+\subsection{Parallel Transport}
+We consider a the parallel transport of a
+vector.
 %TODO pictures
 If we express a vector in non-Cartesian coordinates and shift it it's
 coordinates do not change.
@@ -273,10 +289,11 @@ We take a look on two operations:
 \item the change of the vector itself
 \item the change of its coordinates.
 \end{enumerate}
-Let $A_i$ be the coordinates of a vector in a system $x^i$ and $B_i$ the in a
-system associated with coordinates $y^i$ respectively.
+Let $A_i$ be the coordinates of a vector in a system $x^i$ and $B_i$ in a
+system associated with coordinates $y^i$ respectively. They are therefore
+related by
 \begin{equation}
-A_i=\dpd{{y^j}}{{x^i}}B_j\, ,\quad B_i=d\pd{{x^j}}{{y^i}}A_j\, .
+A_i=\dpd{{y^j}}{{x^i}}B_j\, ,\quad B_i=\pd{{x^j}}{{y^i}}A_j\, .
 \end{equation}
 We look at vectors whose coordinates in the system $y^i$ do not change i.e.
 $\delta B_i=0$ The variation of $A_i$ is given by
@@ -337,7 +354,7 @@ consider the scalar $A_iB^i$. Since the covariant derivative satisfies the
 Leibniz rule we get
 \begin{align}
 \tensor{(A_iB^i)}{_{;j}} =
-\tensor{A}{_i_;_j}\tensor{B}{^i}+\tensor{A}{_i}\tensor{B}{^i_;_j}
+\tensor{A}{_i_;_j}\tensor{B}{^i}+\tensor{A}{_i}\tensor{B}{^i_;_j}\,.
 \end{align}
 But for scalars the covariant derivative is identical to the normal derivative
 so that 
@@ -347,65 +364,22 @@ so that
 \end{align}
 If we put in the covariant derivative of a we get 
 \begin{equation}
-\tensor{A}{_i}\tensor{B}{^i_;_j}=\tensor{A}{_i}\left(\pd{}{{x^j}}B^i+\Gamma^i_{kj}\tensor{B}{^k}\right)
+\tensor{A}{_i}\tensor{B}{^i_;_j}=\tensor{A}{_i}\left(\tensor{B}{^i_{,j}}+\Gamma^i_{kj}\tensor{B}{^k}\right)
 \end{equation}
 Since $A$ was arbitrary, we can deduce that
 \begin{equation}
-\tensor{B}{^i_;_j}=\left(\pd{}{{x^j}}B^i+\Gamma^i_{kj}\tensor{B}{^k}\right)
+\tensor{B}{^i_;_j}=\left(\tensor{B}{^i_{,j}}+\Gamma^i_{kj}\tensor{B}{^k}\right)
 \end{equation}
 for a (1,1)-tensor we get:
 \begin{equation}
-\tensor{A}{^i_j_;_k}=\pd{}{{x^k}}\tensor{A}{^i_j}-\Gamma^a_{jk}\tensor{A}{^i_a}+\Gamma^i_{ak}\tensor{A}{^a_j}\,
+\tensor{A}{^i_j_;_k}=\tensor{A}{^i_j_{,k}}-\Gamma^a_{jk}\tensor{A}{^i_a}+\Gamma^i_{ak}\tensor{A}{^a_j}\,
 .\end{equation}
-Similar expressions hold for tensors of arbitrary rank where each index gives an
-additional term containing a contraction with the affinity $\Gamma^i_{jk}$. 
+Similar expressions hold for tensors of arbitrary rank, where each index gives
+an additional term containing a contraction with the affinity $\Gamma^i_{jk}$. 
 We now want to consider curved spaces. This can not immediately be determined by
 the metric, for example the polar coordinates do not look flat even though they
 describe the ordinary $\Reals^2$.
-%TODO pictures
-\section{Riemannian Curvature Tensor}
-%TODO sort section
-We can contract indices on the Riemann Tensor
-\begin{equation}
-\tensor{R}{^i_i_k_l}=\pd{{\Gamma^i_{il}}}{{x^k}}-\pd{{\Gamma^i_{ik}}}{{x^l}}
-\end{equation}
-which is zero for a metric affinity. The Ricci tensor is given by
-\begin{equation}
-\tensor{R}{_j_k}=\tensor{R}{^i_j_k_i}\, .
-\end{equation}
-Because of the symmetry this are all independent contractions. Notice that at
-this point we cannot raise or lower indices to contract different indices.
-Since we can express the \name{Riemann} tensor in terms of commutators there is
-a also a symmetry that can be derived from the Jacobi identity:
-\begin{equation}
-\left[A\left[B,C\right]\right]
-+\left[C\left[A,B\right]\right]
-+\left[B\left[C,A\right]\right]=0\,.
-\end{equation}
-Physics can be described in terms of differential equations. We for example
-would like to have a object similar to the Laplacian in curved coordinates.
-However $\partial_i\partial_i$ is not coordinate invariant. We therefore
-introduce a metric. The equivalence principle implies that space is locally
-Minkovski.
-\begin{sidenote}
-There are certain theories that can be formulated without a metric. An example
-being three dimensional gravity, which is non-dynamic. 
-\end{sidenote}
-Inner product 
-\begin{equation}
-g(A,B)=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{B}{^j}
-\end{equation}
-Pseudo norm
-\begin{equation}
-\|A\|^2=g(A,A)=\tensor{g}{_i_j}\tensor{A}{^i}\tensor{A}{^j}
-\end{equation}
-Since the connection and the metric are not related, we still don't have a length
-scale on the manifold
-% \begin{equation}
-% \tensor{R}{_i_j_k_l}:=\tensor{g}{_i_a}\tensor{R}{^a_j_k_l}
-% \end{equation}
-% Only useful if $R$ and $g$ are related i.e. metric connection.
-% (Bilder)
+\subsection{Geodesics}
 A curve is a map $\gamma:\Reals\to M$. The parametrisation is arbitrary e.g.
 \begin{equation}
 \begin{split}
@@ -419,7 +393,7 @@ A curve is a map $\gamma:\Reals\to M$. The parametrisation is arbitrary e.g.
 \end{split}
 \end{equation}
 clearly describes a straight line with $y=x$.
-We notice that $\od{\tensor{\gamma}{^i}}{t}$ is parallel to
+However, we notice that $\od{\tensor{\gamma}{^i}}{t}$ is parallel to
 $\od[2]{\tensor{\gamma}{^i}}{t}$. This gives rise to another possible
 generalisation of a straight line.
 In curved coordinates we have 
@@ -428,8 +402,6 @@ In curved coordinates we have
 \od[2]{\tensor{x}{^i}}{t}+\affin{i}{j}{k}\od{\tensor{x}{^j}}{t}\od{\tensor{x}{^k}}{t}
 =\lambda(t)\od{\tensor{x}{^j}}{t}\,.
 \end{equation}
-If we demand that this is equal to the minimization of the arc length we get a
-preferred connection. 
 Suppose we have a different parametrisation $s(t)$
 \begin{equation}
 \od{\tensor{x}{^i}}{t}=\od{\tensor{x}{^i}}{s}\od{s}{t}\,,\quad
@@ -464,27 +436,75 @@ the geodesic equation \eqref{eq:affingeod}. As long as you are on a geodesic you
 can always compare lengths without needing a metric, by the affine parameter.
 The 'length' defined this way does not have to concede with the length given by
 the metric and is also defined for example for lightlike curves (which cannot
-be parametrised by the arc length)
+be parametrised by the arc length).
 \end{remark}
-Notice that \eqref{eq:affingeod} is identical to \eqref{eq:geodeq} if we choose
-the affinity to be $\affin{k}{i}{j}=\cSym{k}{i}{j}$. This is called the
-\emph{metric} or \emph{Christoffel connection}, and we will
-always assume it in the following.
+If we demand that the two definitions of a geodesic \eqref{eq:affingeod} is
+identical to \eqref{eq:geodeq} coincide, we get a preferred
+connection.
+This corresponds to the choice $\affin{k}{i}{j}=\cSym{k}{i}{j}$.
+This is called the \emph{metric}, \emph{Levi-Civita} or \emph{Christoffel
+connection}, and we will always choose it in the following.
 A general metric compatible
 connection\footnote{$\tensor{\nabla}{_k}\tensor{g}{_i_j}=0$} satisfies
 \begin{equation}
 \affin{k}{i}{j}=\cSym{k}{i}{j}+\tensor{T}{^k_i_j}
-+\tensor{g}{^i^r}\left(\tensor{T}{^s_j_r}\tensor{g}{_s_i}+\tensor{T}{^s_i_r}\tensor{g}{_s_j}\right)
++\tensor{g}{^i^r}\left(\tensor{T}{^s_j_r}\tensor{g}{_s_i}+\tensor{T}{^s_i_r}\tensor{g}{_s_j}\right)\,,
 \end{equation}
 with the torsion tensor
 \begin{equation}
-\tensor{T}{^k_i_j}=\frac{1}{2}\left(\affin{k}{i}{j}-\affin{k}{j}{i}\right)
+\tensor{T}{^k_i_j}=\frac{1}{2}\left(\affin{k}{i}{j}-\affin{k}{j}{i}\right)\,.
 \end{equation}
-So that the Christoffel connection is the only metric compatible symmetric
-connection.
+Therefore the Christoffel connection is the unique metric compatible
+symmetric connection.
 \begin{remark}
 Non-Christoffel connections play a role, for example when dealing with spinors.
 \end{remark}
+%TODO pictures
+\section{The Riemannian Curvature Tensor}
+%TODO Missing definition of R
+We can contract indices on the Riemann Tensor
+\begin{equation}
+\tensor{R}{^i_i_k_l}=\pd{{\Gamma^i_{il}}}{{x^k}}-\pd{{\Gamma^i_{ik}}}{{x^l}}\,,
+\end{equation}
+which is zero for a metric affinity. The Ricci tensor is given by
+\begin{equation}
+\tensor{R}{_j_k}=\tensor{R}{^i_j_k_i}\, .
+\end{equation}
+Because of the symmetry this are all independent
+contractions.
+Notice that at this point we cannot raise or lower indices to contract different indices.
+Given a metric the curvature or Ricci skalar is defined as 
+\begin{equation}
+\tensor{R}{^i_i}=\tensor{g}{^i^j}\tensor{R}{_j_i}\, .
+\end{equation}
+%TODO here we assume we have not metric..
+Since we can express the \name{Riemann} tensor in terms of commutators there is
+a also a symmetry that can be derived from the Jacobi identity:
+\begin{equation}
+\left[A\left[B,C\right]\right]
++\left[C\left[A,B\right]\right]
++\left[B\left[C,A\right]\right]=0\,.
+\end{equation}
+Physics can be described in terms of differential equations. We for example
+would like to have a object similar to the Laplacian in curved coordinates.
+However $\partial_i\partial_i$ is not coordinate invariant. We therefore
+introduce a metric. The equivalence principle implies that space is locally
+Minkovski.
+\begin{sidenote}
+There are certain theories that can be formulated without a metric. An example
+being three dimensional gravity, which is non-dynamic. 
+\end{sidenote}
+Since the connection and the metric are not related, we still don't have a length
+scale on the manifold
+% \begin{equation}
+% \tensor{R}{_i_j_k_l}:=\tensor{g}{_i_a}\tensor{R}{^a_j_k_l}
+% \end{equation}
+% Only useful if $R$ and $g$ are related i.e. metric connection.
+% (Bilder)
+% TODO the following is fits better into parallel transport section, we can
+% possibly leave out what is written there
+
+\subsection{Symmetries of the Riemann Tensor}
 \begin{equation}
 \tensor{R}{^i_j_k_l}=-\tensor{R}{^i_j_l_k}\,.
 \end{equation}
@@ -513,14 +533,14 @@ tensorial, it holds in all systems. Notice the similarity to
 =\tensor{\partial}{_b}\tensor{\partial}{_m}\tensor{A}{^a}
 -\tensor{\partial}{_a}\tensor{\partial}{_m}\tensor{A}{^b}
 \end{equation}
-Therefore the Bianchi identity is identical to the second set of Maxwell's
-equations \eqref{eq:maxwell_eqs}.
+Therefore the second set of Maxwell's
+equations \eqref{eq:maxwell_eqs} is in fact a the Bianchi identity.
 If the affinity is symmetrical $\affin{k}{i}{j}=\affin{k}{j}{i}$ we further have
 the identity
 \begin{equation}
 \tensor{R}{^i_j_k_l}+\tensor{R}{^i_l_j_k}+\tensor{R}{^i_k_l_j}=0
 \end{equation}
-For a metric affinity $\affin{k}{i}{j}=\cSym{k}{i}{j}$, we can raise and lower
+Given a metric $\tensor{g}{_i_j}$, we can raise and lower
 indices
 \begin{equation}
 \begin{split}
@@ -539,9 +559,7 @@ indices
 -\dmd{{\tensor{g}{_j_l}}}{2}{\tensor{x}{^i}}{}{\tensor{x}{^j}}{}\right)
 \end{split}
 \end{equation}
-where we used the metric compatibility in the RNCS
-($\tensor{\nabla}{_k}\tensor{g}{_i_j}=\tensor{\partial}{_k}\tensor{g}{_i_j}=0$)
-. Immediately we can extract symmetries
+Immediately we can extract symmetries
 \begin{align}
 \tensor{R}{_i_j_k_l}&=-\tensor{R}{_j_i_k_l}\\
 \tensor{R}{_i_j_k_l}&=-\tensor{R}{_i_j_l_k}
@@ -554,9 +572,11 @@ there are six independent components for $A,B$ each)
 So $R$ can be thought as a $6\times 6$ matrix.
 \begin{table}
     \centering
+        \caption{Number of independent components of Riemann
+    and \name{Ricci} tensor.\label{tab:Nindcomp}}
     \begin{tabulars}{rrr}
       	\toprule
-		Dimension&Riemann tensor &Ricci tensor \\
+		dimension&Riemann tensor &Ricci tensor \\
 		\midrule
 		1&0&0\\
 		2&1&1\\
@@ -565,8 +585,6 @@ So $R$ can be thought as a $6\times 6$ matrix.
 		$n$&$\frac{1}{12}n^2(n^2-1)$&$\frac{1}{2}n(n+1)$\\
 		\bottomrule
     \end{tabulars}
-    \caption{Number of independent components of Riemann
-    and \name{Ricci} tensor.\label{tab:Nindcomp}}
 \end{table}
 Table~\ref{tab:Nindcomp} lists the number of independent components of the
 curvature tensor and the \name{Ricci} tensor in various dimensions. Thereby a
@@ -575,26 +593,3 @@ curvature scalar $R$ alone and in three dimensions the Ricci tensor is
 sufficient to know the Riemann tensor. Therefore four is the lowest dimension in
 which the Riemann tensor contains additional information of the curvature of
 space.
-Formulas 
-\begin{equation}
-\mathrm{div} A=\tensor{\partial}{_i}\tensor{A}{^i}=\cSym{i}{i}{k}\tensor{A}{^k}
-\end{equation}
-\begin{equation}
-\tensor{\partial}{_k}g=2g\cSym{i}{i}{k}
-\end{equation}
-\begin{equation}
-\cSym{i}{i}{k}=\frac{1}{\sqrt{g}}\tensor{\partial}{_k}\sqrt{g}
-\end{equation}
-\begin{equation}
-\mathrm{div}
-A=\frac{1}{\sqrt{g}}\tensor{\partial}{_k}\left(\sqrt{g}\tensor{A}{^k}\right)
-\end{equation}
-If further $A$ is derived from a potential
-$\tensor{A}{_i}=\tensor{\partial}{_i}V$
-\begin{equation}
-\square V
-=\mathrm{div}A
-=\frac{1}{\sqrt{g}}\tensor{\partial}{_k}\left(\sqrt{g}\tensor{g}{^k^i}\tensor{\partial}{_i}V\right)\label{eq:quabla}
-\end{equation}
-%TODO possible outsource to formula section or the like. There are other
-% formulaas as well ..  - YES

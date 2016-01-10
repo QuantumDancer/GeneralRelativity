@@ -9,20 +9,20 @@ Special relativity is based on two main postulates, namely
     The speed of light in vacuum is constant ${c\approx\unitfrac[3\cdot
     10^8]{m}{s}}$.
 \end{enumerate}
-We further define a series of objects that will come handy when describing
+We further define a series of objects, that will come handy when describing
 relativity:
 \begin{definition}[System of reference]
-    A system of reference $K$ is a system of three spacial coordinates to indicate
-    the position and one time coordinate to indicate the time.
+    A \emph{system of reference} $K$ is a system of three spacial coordinates
+    to indicate the position and one time coordinate to indicate the time.
 \end{definition}
 \begin{definition}[Inertial system]
-    An inertial system $I$ belongs to a particular subspace of reference systems in
-    which a freely moving bodies, i.e. that are not subject to any external
+    An \emph{inertial system} $I$ belongs to a particular subspace of reference
+    systems in which a freely moving bodies, i.e. that are not subject to any external
     force, move with constant velocity on an straight lines.
 \end{definition}
 \begin{definition}[Event]
-    An event or world point $x$ is a point in spacetime. In any system of reference
-    it can be described by four coordinates
+    An \emph{event} or \emph{world point} $x$ is a point in spacetime. In any
+    system of reference it can be described by four coordinates
     \begin{equation}
         x^\mu: (x^0,x^1,x^2,x^3)\, .
     \end{equation}
@@ -32,8 +32,8 @@ relativity:
     \end{equation}
 \end{definition}
 \begin{definition}[Worldline]
-    A worldline $\gamma$ is a parametrised curve in spacetime. To each parameter,
-    there corresponds an event that lies on the worldline
+    A \emph{worldline} $\gamma$ is a parametrised curve in spacetime. To each
+    parameter, there corresponds an event that lies on the worldline
     \begin{equation}
         \tensor{\gamma}{^\mu}(\lambda)=\tensor{x}{^\mu}(\lambda)\, .
     \end{equation}
@@ -45,9 +45,10 @@ upper and a lower index like $\sum_\mu \tensor{x}{_\mu}\tensor{x}{^\mu}$, we
 drop the summation and assume that terms of type
 $\tensor{x}{_\mu}\tensor{x}{^\mu}$ are always summed over.
 \section{Propagation of Light Waves and the Line Element}
-For vividness, we restore factors of $c$ in this section.
+%For vividness, we restore factors of $c$ in this section.
 %TODO picture
-Inertial System $I$:
+We consider the propagation of a light ray, characterized by two events $P$ and
+$Q$, in an Inertial System $I$:
 \begin{itemize}
     \item $P:$ Event of emission of the ray $(ct_1,x_1,y_1,z_1)$
     \item $Q:$ Event of absorption of the ray $(ct_2,x_2,y_2,z_2)$
@@ -67,13 +68,14 @@ We construct the quantity
 \end{equation}
 so that ${\Delta s}^2=0$ for light.
 
-We consider another Inertial System $I'$, in which we the events are given by
+In another Inertial System $I'$, the events are given by
 \begin{itemize}
     \item $P:$ Event of emission $(ct_1^\prime,x_1^\prime,y_1^\prime,z_1^\prime)$
     \item $Q:$ Event of absorption
     $(ct_2^\prime,x_2^\prime,y_2^\prime,z_2^\prime)$
 \end{itemize}
-By the same reasoning we have ${\Delta s^\prime}^2=0$ for light.
+By the same reasoning and the invariance of the physical laws and the
+constancy of the speed of light, we have ${\Delta s^\prime}^2=0$ for light.
 We define an infinitesimal interval, or \emph{line element}:
 \begin{equation}
     \dif s^2=-c^2\dif t^2+\dif x^2+\dif y^2+\dif z^2\, .
@@ -399,13 +401,7 @@ The \name{Poincaré} transformations form a ten parameter group.
         &$\vec{F}=\frac{G\textsubscript{N}m_1m_2}{r^2}$
         &$F^\alpha= \frac{q}{m} U_\beta
         \tensor{F}{^\alpha^\beta}$,\,  $F
-        =\gamma\left(
-        \begin{smallmatrix}
-            \beta
-            f_0\\
-            \vec{f}
-        \end{smallmatrix}
-        \right)$\\
+        =\gamma(f_0,\vec{f})\transpose$\\
         &$\Delta \Phi =4\pi\varrho$ &\name{Maxwell}'s equations
         \\
         \bottomrule
@@ -414,6 +410,73 @@ The \name{Poincaré} transformations form a ten parameter group.
 
 \section{Vectors and Tensors in SRT}
 %TODO connect subsections
+At this point we will just list some objects, that we call vectors and tensors
+and delay the definition of those to a later chapter.
+A bit sloppy we refer to a vector $V$ with components $\tensor{V}{^\mu}$, as a
+object that transforms as
+\begin{equation}
+    \tensor{V}{^\mu}\to
+    \tensor{L}{^\mu_\alpha}\tensor{V}{^\alpha}\,
+\end{equation}
+and to a tensor as a 'vector with more indices' that
+transforms accordingly, i.e.
+\begin{equation}
+    \tensor{T}{^\mu^\nu}\to
+    \tensor{L}{^\mu_\alpha}\tensor{L}{^\nu_\beta}\tensor{T}{^\alpha^\beta}\,,
+\end{equation}
+and so forth.
+An example of a vector is the four current $J^\mu$:
+\begin{equation}
+    J^\mu=\gamma(\varrho,\vec{j})\transpose\, ,
+\end{equation}
+with $\varrho$ the charge density and $\vec{j}$ the 3-current density.
+A typical example is the field strength tensor
+$\tensor{F}{^\mu^\nu}$ of electrodynamics given in terms of the
+vector potential $\tensor{A}{_\mu}$:
+\begin{equation}
+    \tensor{F}{_\mu_\nu}=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,.
+\end{equation}
+The matrix form is
+\begin{equation}
+    \tensor{F}{_\mu_\nu}=
+    \begin{bmatrix}
+        0  &   E_1 &  E_2 &  E_3 \\
+        -E_1 &   0  &  -B_3 & B_2 \\
+        -E_2 & B_3 &   0  &  -B_1 \\
+        -E_3 &  -B_2 & B_1 &   0  \\
+    \end{bmatrix}\, .
+\end{equation}
+Therefore the tensor $\tensor{F}{^\mu^\nu}$ takes the role of the fields
+$\vec{E},\vec{B}$. In tensor form \name{Maxwell} equations take the particular
+simple form, namely
+\begin{equation}
+    \label{eq:maxwell_eqs}
+    \partial_\nu\tensor{F}{^\mu^\nu}=4\pi\tensor{J}{^\mu}\,, \quad
+    \partial_\alpha\tensor{F}{_\mu_\nu}
+    +\partial_\nu\tensor{F}{_\alpha_\mu}
+    +\partial_\mu\tensor{F}{_\nu_\alpha}=0\,.
+\end{equation}
+The \name{Lorentz} force is given by
+\begin{equation}
+    \tensor{F}{^\mu}=q\tensor{F}{^\mu^\nu}\tensor{u}{_\nu}
+\end{equation}
+Where $\tensor{u}{^\mu}=\gamma(1,\vec{v})\transpose$ is the four velocity. As
+another example we can take a look at plane waves. The vector potential of a plane wave is
+\begin{equation}
+    \tensor{A}{^\mu}=\tensor{\hat{A}}{^\mu}
+    \exp\left[\imI(\vec{k}\cdot\vec{r}-\omega
+    t)\right]
+    =\tensor{\hat{A}}{^\mu}\exp\left(\imI\tensor{K}{^\mu} \tensor{X}{_\mu}\right)\,
+    .
+\end{equation}
+Where $\tensor{K}{^\mu}=\left(\omega,\vec{k}\right)\transpose$ must be a four
+vector, because otherwise we could use plane waves to distinguish between
+inertial systems. The dispersion relation reads as
+\begin{equation}
+    \tensor{K}{^\mu}\tensor{K}{_\mu}=-\omega^2+\vec{k}^2=0\, .
+\end{equation}
+It is equivalent to the on shell condition \eqref{eq:onshell}, when we identify
+the photons energy $E=\omega$, momentum $\vec{p}=\vec{k}$ and mass $m=0$.
 \subsection{Fourvectors}
 There are three types of vectors\footnote{We could also put up a fourth class,
 containing solely the zero vector.}:
@@ -443,7 +506,7 @@ $\tensor{a}{_\mu}$ has no importance in SR.
         fourvector&definition&normalisation\\
         \midrule
         velocity
-        &$\tensor{u}{^\mu}=\od{\tensor{x}{^\mu}}{\tau}=\gamma(1,\vec{v})^{\transpose}$
+        &$\tensor{u}{^\mu}=\od{\tensor{x}{^\mu}}{\tau}=\gamma(1,\vec{v})\transpose$
         &$\tensor{u}{_\mu}\tensor{u}{^\mu}=-1$\\
         momentum
         &$\tensor{p}{^\mu}:=m\tensor{u}{^\mu}$
@@ -452,68 +515,6 @@ $\tensor{a}{_\mu}$ has no importance in SR.
         \bottomrule
     \end{tabulars}
 \end{table}
-
-
-At this point we will just list some objects, that we call vectors and tensors
-and delay the definition of those to a later chapter.
-An example of a vector is the four current $J^\mu$:
-\begin{equation}
-    J^\mu=\gamma(\varrho,\vec{j})\, ,
-\end{equation}
-with $\varrho$ the charge density and $\vec{j}$ the 3-current density. A bit sloppy
-we refer to a tensor as a 'vector with more indices' that transforms
-accordingly, i.e.
-\begin{equation}
-    \tensor{T}{^\mu^\nu}\to
-    \tensor{L}{^\mu_\alpha}\tensor{L}{^\nu_\beta}\tensor{F}{^\alpha^\beta}\,
-\end{equation}
-and similar for an arbitrary number of indices. A typical example is the field strength tensor
-$\tensor{F}{^\mu^\nu}$ of electrodynamics given in terms of the
-vector potential $\tensor{A}{_\mu}$:
-\begin{equation}
-    \tensor{F}{_\mu_\nu}=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,.
-\end{equation}
-The matrix form is
-\begin{equation}
-    \tensor{F}{^\mu^\nu}=
-    \begin{bmatrix}
-        0  &   -E_1 &  -E_2 &  -E_3 \\
-        E_1 &   0  &  -B_3 & B_2 \\
-        E_2 & B_3 &   0  &  -B_1 \\
-        E_3 &  -B_2 & B_1 &   0  \\
-    \end{bmatrix}\, .
-\end{equation}
-Therefore the tensor $\tensor{F}{^\mu^\nu}$ takes the role of the fields
-$\vec{E},\vec{B}$. In tensor form \name{Maxwell} equations take the particular
-simple form, namely
-\begin{equation}
-    \label{eq:maxwell_eqs}
-    \partial_\nu\tensor{F}{^\mu^\nu}=4\pi\tensor{J}{^\mu}\,, \quad
-    \partial_\alpha\tensor{F}{_\mu_\nu}
-    +\partial_\nu\tensor{F}{_\alpha_\mu}
-    +\partial_\mu\tensor{F}{_\nu_\alpha}=0\,.
-\end{equation}
-The \name{Lorentz} force is given by
-\begin{equation}
-    \tensor{F}{^\mu}=q\tensor{F}{^\mu^\nu}\tensor{u}{_\nu}
-\end{equation}
-Where $\tensor{u}{^\mu}=(1,\vec{v})\transpose$ is the four velocity. As
-another example we can take a look at plane waves. The vector potential of a plane wave is
-\begin{equation}
-    \tensor{A}{^\mu}=\tensor{\hat{A}}{^\mu}
-    \exp\left[\imI(\vec{k}\cdot\vec{r}-\omega
-    t)\right]
-    =\tensor{\hat{A}}{^\mu}\exp\left(\imI\tensor{K}{^\mu} \tensor{X}{_\mu}\right)\,
-    .
-\end{equation}
-Where $\tensor{K}{^\mu}=\left(\omega,\vec{k}\right)\transpose$ must be a four
-vector, because otherwise we could use plane waves to distinguish between
-inertial systems. The dispersion relation reads as
-\begin{equation}
-    \tensor{K}{^\mu}\tensor{K}{_\mu}=-\omega^2+\vec{k}^2=0\, .
-\end{equation}
-It is equivalent to the on shell condition \eqref{eq:onshell}, when we identify
-the photons energy $E=\omega$, momentum $\vec{p}=\vec{k}$ and mass $m=0$.
 \subsection{The Energy Momentum Tensor}
 %TODO consider using different source.
 %TODO consider merging with The Energy Momentum Tensor

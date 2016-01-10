@@ -1,10 +1,9 @@
 \chapter{Einstein's Field Equations}
-We will derive Einsteins Equations by physical considerations. The Poisson
-equation reads as:
+We will derive Einsteins Equations by physical considerations. Remember that the
+Poisson equation reads 
 \begin{equation}
-\Delta\Phi=4\pi\varrho\, ,
+\Delta\Phi=4\pi\varrho\, .
 \end{equation}
-%TODO relate passages
 So matter (energy) is the source of the gravitational field $\Phi$.  From SR we
 know that the energy momentum tensor $\tensor{T}{_\mu_\nu}$ is an adequate
 generalisation of energy.
@@ -86,19 +85,17 @@ have up to second derivatives of $g$ the only allowed term in the Lagrangian is
 $R$.
 \begin{sidenote}[On higher derivatives]
 If we include higher order derivatives of $g$ in the right way we can make the
-resulting theory renormalizable. However we violate unitarity and introduce so
-called ghost fields which are associated with the additional degrees of freedom
-we get.
+resulting theory renormalizable. However we violate unitarity and introduce
+so-called ghost fields which are associated with the additional degrees of freedom we get.
 \end{sidenote}
 \begin{remark}[Dimensions]
 In natural units\footnote{So that length has dimension of inverse mass.} the
-line element $\dif s^2$ has dimension, ${[\dif
+line element $\dif s^2$ has dimension, \\${[\dif
 s^2]=\textrm{M}^{-2}}$.\footnote{Where M refers to the dimension of mass.} 
 Since further ${\left[\tensor{x}{^\mu}\right]=\textrm{M}^{-1}}$,
 the Lagrange density must have Dimension
 ${\left[\mathcal{L}\right]=\textrm{M}^{4}}$.
 \end{remark}
-%TODO fix footnotes
 This constraint leads to the \emph{Einstein-Hilbert-action}
 \begin{equation}
 S\textsubscript{EH}=\frac{1}{2\kappa}\fourint \sqrt{-g}(R-2\Lambda)
@@ -156,13 +153,7 @@ This holds in a general frame since it is a tensor equation.
 +\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}\\
 \end{split}
 \end{equation}
-Use 
-\begin{align}
-\delta\tensor{g}{^\mu^\nu}
-&=-\tensor{g}{^\varrho^{(\mu}}\tensor{g}{^{\nu)}^\sigma}\delta\tensor{g}{_\mu_\nu}\\
-\delta\det g&=\det g \tensor{g}{^\mu^\nu}\delta
-\tensor{g}{_\mu_\nu}
-\end{align}
+Use \eqref{eq:grels}
 \begin{equation}
 \begin{split}
 2\kappa\delta S\textsubscript{EH}
@@ -311,13 +302,13 @@ scalar field
 \begin{split}
 \frac{\delta
 S\textsubscript{m}[g,\varphi]}{\delta \tensor{g}{_\mu_\nu}\left(x'\right)}
-&=\int \dif x^4 \frac{\delta\sqrt{-g}}{\delta
+&=\int \dif{}^4x \frac{\delta\sqrt{-g}}{\delta
 \tensor{g}{_\mu_\nu}}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}
 \tensor{\nabla}{_\mu}\varphi\tensor{\nabla}{_\nu}\varphi-\frac{1}{2}m^2\varphi^2\right)\\
 &\phantom{=}+
 \sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\alpha^\varrho}\tensor{g}{^\beta^\sigma} \tensor{\nabla}{_\alpha}\varphi\tensor{\nabla}{_\beta}\varphi\frac{\delta
 \tensor{g}{_\varrho_\sigma}}{\delta \tensor{g}{_\mu_\nu}}\right)\\
-&=\frac{1}{2}\int \dif x^4
+&=\frac{1}{2}\int \dif{}^4 x
 \sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\varrho}\varphi\tensor{\nabla}{^\varrho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
 +\tensor{\nabla}{^\mu}\varphi\tensor{\nabla}{^\nu}\varphi\right)\delta(x,x')\\
 &=\frac{1}{2}\sqrt{-g}\left(-\frac{1}{2}\tensor{g}{^\mu^\nu}\tensor{\nabla}{_\varrho}\varphi\tensor{\nabla}{^\varrho}\varphi-\frac{1}{2}\tensor{g}{^\mu^\nu}m^2\varphi^2
@@ -387,8 +378,8 @@ to[bend right] coordinate (mm) (2.5,-2.5,-1)
 \caption{Foliation of spacetime into spatial hypersurfaces $\Sigma_t$.}
 \end{figure}
 The formulation of initial value problems is not as easy as it is in classical
-physics.\footnote{in fact it can be impossible}
-Assume we know either
+physics.\footnote{In fact, depending on the setting, a well defined formulation
+can be impossible.} Assume we know either
 \begin{itemize}
   \item $\tensor{g}{_\mu_\nu}$ on $\Sigma_{t_0}$
   \item $\tensor{g}{_\mu_\nu_{;j}}$, $\tensor{g}{_\mu_\nu_{;0}}$ on
@@ -457,9 +448,9 @@ $\tensor{g}{^0^\mu}$. Therefore now the time evolution can be solved.
 %TODO Missing part?
 \subsubsection{Degrees of freedom}
 \begin{itemize}
-  \item[\color{section_color}\textsf{\textbf{10}}]
+  \item[\textsf{\textbf{10}}]
   componnents for every spacetime point from the symmetric $\tensor{g}{_\mu_\nu}$
-  \item[\color{section_color}\textsf{\textbf{-4}}] from the
+  \item[\textsf{\textbf{-4}}] from the
   constraint equation $\tensor{G}{_\mu_\nu^{;\nu}}=0$
   \begin{itemize}
     \item
@@ -471,7 +462,7 @@ $\tensor{g}{^0^\mu}$. Therefore now the time evolution can be solved.
     evolution is independent of the way we foliated spacetime into spacial
     hypersurfaces $\Sigma_{t}.    $
   \end{itemize}
-  \item[\color{section_color}\textsf{\textbf{-4}}] due to the freedom
+  \item[\textsf{\textbf{-4}}] due to the freedom
   to choose coordinates (i.e. a gauge).
 \end{itemize}
 We are left with two physical degrees of freedom which may be interpreted as the
@@ -539,11 +530,11 @@ still transform
 but to keep the gauge, we have to demand that $\square\Lambda=0$.
 Again we count the DOFs:
 \begin{itemize}
-  \item[\color{section_color}\textsf{\textbf{4}}] components of the potential
+  \item[\textsf{\textbf{4}}] components of the potential
   $\tensor{A}{_\mu}$.
-  \item[\color{section_color}\textsf{\textbf{-1}}] from constraint
+  \item[\textsf{\textbf{-1}}] from constraint
   $\nabla\vec{E}=0$.
-  \item[\color{section_color}\textsf{\textbf{-1}}] from gauge freedom
+  \item[\textsf{\textbf{-1}}] from gauge freedom
   $\Lambda$.
 \end{itemize}
 This leaves two physical degrees of freedom, the polarisation states of a
