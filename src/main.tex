@@ -163,56 +163,62 @@
   %\setlength{\shadeboxrule}{1.5pt}%
   \begin{thms}[#1]\hspace*{1mm}%
 }{\end{thms}}
+\newtheorem{theorem}{Theorem}
+% \declaretheorem[
+%   style = mythmstyle,
+%   name = Theorem,
+%   shaded = {
+%     bgcolor = MyGray,
+%     padding = 2mm,
+%     textwidth = 0.98\textwidth
+% }
+% ]{theorem}
 \theoremstyle{definition}
-\declaretheorem[
-  style = mythmstyle,
-  name = Theorem,
-  shaded = {
-    bgcolor = MyGray,
-    padding = 2mm,
-    textwidth = 0.98\textwidth
-}
-]{theorem}
-\declaretheorem[
-  style = mythmstyle,
-  name = Definition,
-  numberlike=theorem,
-  shaded = {
-    bgcolor = MyGray,
-    padding = 2mm,
-    textwidth = 0.98\textwidth
-}
-]{definition}
-\declaretheorem[
-  style = myrmstyle,
-  name = Remark,
-  numberlike=theorem,
-  shaded = {
-    bgcolor = white,
-    padding = 2mm,
-    textwidth = 0.98\textwidth
-}
-]{remark}
-\declaretheorem[
-style = myrmstyle,
-name = Aside,
-numberlike=theorem,
-shaded = {
-bgcolor = white,
-padding = 2mm,
-textwidth = 0.98\textwidth
-}
-]{sidenote}
-\declaretheorem[
-  style = myrmstyle,
-  name = Example,
-  numberlike=theorem,
-  shaded = {
-    bgcolor = white,
-    padding = 2mm,
-    textwidth = 0.98\textwidth
-}
-]{example}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{sidenote}{Aside}
+\newtheorem{example}{Example}
+% \declaretheorem[
+%   style = mythmstyle,
+%   name = Definition,
+%   numberlike=theorem,
+%   shaded = {
+%     bgcolor = MyGray,
+%     padding = 2mm,
+%     textwidth = 0.98\textwidth
+% }
+% ]{definition}
+% \declaretheorem[
+%   style = myrmstyle,
+%   name = Remark,
+%   numberlike=theorem,
+%   shaded = {
+%     bgcolor = white,
+%     padding = 2mm,
+%     textwidth = 0.98\textwidth
+% }
+% ]{remark}
+% \declaretheorem[
+% style = myrmstyle,
+% name = Aside,
+% numberlike=theorem,
+% shaded = {
+% bgcolor = white,
+% padding = 2mm,
+% textwidth = 0.98\textwidth
+% }
+% ]{sidenote}
+% \declaretheorem[
+%   style = myrmstyle,
+%   name = Example,
+%   numberlike=theorem,
+%   shaded = {
+%     bgcolor = white,
+%     padding = 2mm,
+%     textwidth = 0.98\textwidth
+% }
+% ]{example}
 % 
 % \makeatletter
 % \newtoks\FTN@ftn
