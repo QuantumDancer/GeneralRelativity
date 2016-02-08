@@ -85,3 +85,68 @@ There where several proposed explanations for this including
   \item effects due the suns quadrupole moment 
 \end{itemize}
 We will now look at what is predicted by GR.
+The trajectories of planets $K=-1$ are given by
+\begin{equation}
+\dot{r}^2-\frac{2M}{r}+\frac{L^2}{r^2}-\frac{2ML^2}{r^3}=E^2-1\label{eq:planeteq}
+\end{equation}
+If we think of the radius as a function of the angle, we can write
+\begin{equation}
+\dot{r}=\od{r}{\varphi}\od{\varphi}{\lambda}\,.
+\end{equation}
+Multiplying \eqref{eq:planeteq} with
+%TODO choose between varphi and phi
+$\left(\od{\varphi}{\lambda}\right)^{-2}=\frac{1}{\dot{\phi}}=\frac{r^4}{L^2}$
+yields
+\begin{equation}
+\left(\od{r}{\varphi}\right)^2-\frac{2Mr^3}{L^2}+r^2-2Mr
+=\left(E^2-1\right)\frac{r^4}{L^2}\,.\label{eq:orbitrphi}
+\end{equation}
+Similar to the treatment of the Keppler problem in classical mechanics, we
+define
+\begin{equation}
+u(\phi)=\frac{L^2}{Mr(\phi)}\,.
+\end{equation}
+This implies
+\begin{equation}
+\dif r=-\frac{L^2}{Mu^2}\dif u\,,\quad
+\left(\dod{r}{\phi}\right)^2=\frac{L^2}{Mu^4}\left(\dod{u}{\phi}\right)^2\,.
+\end{equation}
+In terms of the new variables \eqref{eq:orbitrphi} reads
+\begin{equation}
+\left(\dod{u}{\phi}\right)^2-2u+u^2-2\frac{M^2}{L^2}u^3=(E^2-1)\frac{L^2}{M^2}\,.
+\end{equation}
+We differentiate with respect to $\phi$ and get (primes denote $\phi$
+derivatives)
+\begin{equation}
+2u^\prime u^{\prime\prime}-2u^\prime+2u
+u^{\prime}-6\frac{M^2}{L^2}u^2u^\prime=0\,.
+\end{equation}
+Dividing by $2u^\prime$ yields
+\begin{equation}
+u^{\prime\prime}-1+u=\frac{3M^2}{L^2}u^2\,,
+\end{equation}
+which is an equation similar to the Keppler problem. The difference is in the
+right hand side which is equal zero in the classical case.
+We may calculate an approximation by pertubative corrections 
+\begin{equation}
+u=u_0+u_1+u_2+\dots\,.
+\end{equation}
+At zeroth order the quadratic term is neglectible
+\begin{equation}
+u_0^{\prime\prime}-1+u_0=0\,,
+\end{equation}
+which is equal to the exact newtonian solution. At first order we have
+\begin{equation}
+u_1^{\prime\prime}-1+u_1=\frac{3M^2}{L^2}u_0^2\,.
+\end{equation}
+%TODO muss hier die rechnung hin?
+\begin{equation}
+u_0(\phi)=1+\varepsilon\cos\phi
+\end{equation}
+\begin{equation}
+r(\phi)=\frac{p}{1+\varepsilon\cos\phi}
+=\frac{a\left(1-\varepsilon^2\right)}{1+\varepsilon\cos\phi}
+\end{equation}
+\begin{equation}
+u_1^{\prime\prime}-1+u_1=\frac{3M^2}{L^2}\left(1+\varepsilon\cos\phi\right)^2\,.
+\end{equation}
