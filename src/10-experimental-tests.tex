@@ -1,1 +1,87 @@
 \chapter{Experimental Tests in the Solar System}
+How can we test relativistic effects in our solar system?
+\begin{itemize}
+  \item The sum of the mass of all planets is much smaller than the solar mass
+  $M_{\astrosun}\approx \unit[2\cdot 10^{30}]{kg}$. The heaviest planet is
+  Jupiter with a mass of $M_{\jupiter}\approx \unit[2\cdot 10^{27}]{kg}$,
+  therefore we can assume the planets to be testparticles.
+  \item The sun is in good approximation a spherically symmetric object. We can
+  therefore use the Schwarzschild metric.
+\end{itemize}
+Consider the variation of the energy functional 
+\begin{equation}
+\delta
+\int\tensor{g}{_\mu_\nu}\tensor{\dot{x}}{^\mu}\tensor{\dot{x}}{^\nu}\dif\lambda
+\end{equation}
+We define
+$K:=-\tensor{g}{_\mu_\nu}\tensor{\dot{x}}{^\mu}\tensor{\dot{x}}{^\nu}$, which is
+conserved along geodesics and it holds true that
+\begin{equation}
+K=\begin{cases}
+-1& \mathrm{\ timelike\ geodesics}\\
+\phantom{-}0& \mathrm{\ lightlike\ geodesics}
+\end{cases}
+\end{equation}
+We can explicitly write
+\begin{equation}
+K=-e^{2a(r)}\dot{t}^2+e^{2b(r)}\dot{r}^2+r^2\left(\dot{\vartheta}+\sin^2\vartheta
+\dot{\phi}\right)
+\end{equation}
+A Killing-vector $\tensor{\xi}{^\mu}$ satisfies
+\begin{equation}
+\tensor{\xi}{_\mu}\tensor{\dot{x}}{^\mu}=\mathrm{\ const.}
+\end{equation}
+For the Schwarzschild metric, there are four independent Killing-vectors,
+corresponding to 3 rotations, and staticity (time independence).
+Conservation of angular momentum leads to a motion in a plane, w.l.o.g.\ we can
+chose a coordinate system in which $\vartheta=\nicefrac{\pi}{2}$.
+The Killing-Vectors are given by
+\begin{align}
+\tensor*{\xi}{_{(\varphi)}^\mu}&=(\partial_\varphi)^\mu=\tensor*{\delta}{_\varphi^\mu}\,,\\
+\tensor*{\xi}{_{(t)}^\mu}&=(\partial_t)^\mu=\tensor*{\delta}{_t^\mu}\,.\\
+\end{align}
+The associated conserved quantities are
+\begin{align}
+E&:=\tensor*{\xi}{_{(\varphi)}^\mu}\tensor{g}{_\mu_\nu}\tensor{\dot{x}}{^\nu}
+=\tensor{g}{_t_t}\dot{t}
+=e^{2a}\dot{t}
+=\left(1-\frac{2M}{r}\right)\dot{t}
+\\
+L&:=\tensor*{\xi}{_{(t)}^\mu}\tensor{g}{_\mu_\nu}\tensor{\dot{x}}{^\nu}
+=\tensor{g}{_\varphi_\varphi}\dot{\varphi}
+=r^2\dot{\varphi}\,.
+\end{align}
+For massless
+%TODO stimmt das?
+particles we can think of $E$ and $L$ as conserved energy and angular momentum.
+\begin{equation}
+K=-\left(1-\frac{2M}{r}\right)\dot{t}^2+\left(1-\frac{2M}{r}\right)^{-1}\dot{r}^2+r^2\varphi^2
+\end{equation}
+If we insert the conserved quantities $L,E$ and multiply with
+$\left(1-\frac{2M}{r}\right)$, we get
+\begin{equation}
+\frac{E^2}{2}=\frac{\dot{r}^2}{2}
++\left(1-\frac{2M}{r}\right)\left(\frac{L^2}{2r}-\frac{K}{2}\right)\,.
+\end{equation}
+This expression can be rearanged to the Form
+\begin{equation}
+\frac{\dot{r}^2}{2}+V\textsubscript{eff}(r)
+=\varepsilon\,,
+\end{equation}
+where we defined
+\begin{equation}
+V\textsubscript{eff}(r):=\frac{MK}{r}+\frac{L^2}{2r^2}-\frac{ML^2}{r^3}\,,\quad
+\varepsilon:=\frac{E^2+K}{2}\,.
+\end{equation}
+\section{Perihelion Shift of Mercury}
+It has been known for a long time that the perihelion of the mercury moves by
+roughly $5061''\footnote{Where an arcsec $''$ denotes the 3600 part of
+an degree.}/\textrm{century}$, if on subtracts other effects such a
+fraction of $43''/\textrm{century}$. 
+There where several proposed explanations for this including
+\begin{itemize}
+  \item a new planet called vulcan between mercury and the sun
+  \item a change to newtons $1/r^2$-law 
+  \item effects due the suns quadrupole moment 
+\end{itemize}
+We will now look at what is predicted by GR.
