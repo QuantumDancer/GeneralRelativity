@@ -680,6 +680,37 @@ Which we can insert in the expression for the energy
     E^2=\frac{m^2}{1-\vec{v}^2}=\vec{p}^2+m^2 \label{eq:onshell}\, .
 \end{equation}
 The equation \eqref{eq:onshell} is called the \emph{on shell condition}.
+\begin{figure}
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+    xmin=-10,xmax=10,
+    ymin=-5,ymax=10,
+    xlabel={$p$},
+    ylabel={$E$},
+    xtick={0},
+    ytick={0},
+    xticklabels={,,},
+    yticklabels={,,},
+    axis lines=center,
+    axis line style=->]
+    \addplot[] expression[domain=-10:10,samples=100]{(4+x^2)^(1/2)}; 
+    \addplot[red] expression[domain=-10:10,samples=100]{x}; 
+    \addplot[red] expression[domain=-10:10,samples=100]{-x}; 
+    \addplot[dashed] expression[domain=-10:10,samples=100]{2}; 
+    \pgfplotsset{
+    after end axis/.code={
+        \node[above] at (axis cs:7,2){restmass $m$};
+        \node[above,text width=2.5cm,fill=white] at (axis cs:-4,5){``mass shell''\\$E=\sqrt{p^2+m^2}$};
+    }
+}
+  \end{axis}
+\end{tikzpicture}
+\caption{Energy $E$ of a particle with mass $m$, as a function of the momentum
+$p$.}
+\end{figure}
+
+
 \begin{sidenote}[On massive photons]
 There is nothing in the theory that predicts that the photon is massless. It
 could be possible that its mass is only really small and that in fact that the
