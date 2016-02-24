@@ -81,7 +81,7 @@
 \usetikzlibrary[patterns]
 \usetikzlibrary{shapes,arrows}
 \usetikzlibrary{positioning}
-\usetikzlibrary{calc}
+\usetikzlibrary{3d,calc}
 \usepackage{pgfplots}
 
 
@@ -93,6 +93,15 @@
 			markings,
 			mark=at position .15 with {\arrow{Latex[reversed]}}},postaction={decorate}},
 }
+\tikzset{
+  arrows along my path/.style={
+   thick,
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=between positions 0.03 and 3 step 100pt with {\arrow{Stealth[length=5pt]}},
+   }}}}
 %tables
 \usepackage{tabularx}	% tab­u­lars with ad­justable-width columns
 \usepackage{multirow}	% create tab­u­lar cells span­ning mul­ti­ple rows
