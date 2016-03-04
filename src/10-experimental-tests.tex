@@ -15,7 +15,7 @@ How can we test relativistic effects in our solar system?
 We define
 $K:=-\tensor{g}{_\mu_\nu}\tensor{\dot{x}}{^\mu}\tensor{\dot{x}}{^\nu}$, which is
 conserved along geodesics and it holds true that
-\begin{equation}
+\begin{equation} 
 K=\begin{cases}
 -1& \mathrm{\ timelike\ geodesics}\\
 \phantom{-}0& \mathrm{\ lightlike\ geodesics}
@@ -74,21 +74,21 @@ V\textsubscript{eff}(r):=\frac{MK}{r}+\frac{L^2}{2r^2}-\frac{ML^2}{r^3}\,,\quad
 \varepsilon:=\frac{E^2+K}{2}\,.
 \end{equation}
 \section{Perihelion Shift of Mercury}
-\begin{figure}[b]
-\centering
-\begin{tikzpicture}[auto,node distance=3cm,thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
-\draw [black,thick,dashed] (0,0) circle (1/1.6);
-\draw [black,thick,dashed] (0,0) circle (1/0.4);
-\draw [thick, color=red, domain=0:6*pi, samples=200, smooth]
-  plot (xy polar cs:angle=\x r, radius={1/(1-0.6*cos(\x r+0.2*\x r))});
-\node [fill=white] at (0,1) {Perihelion};s
-\node at (0,0) {\Huge\textbullet};
-\node (1) at (40:1/1.6) {\textbullet};
-\node (2) at (90:1/1.6) {\textbullet};
-\node (3) at (140:1/1.6) {\textbullet};
-\end{tikzpicture} 
-\caption{Perhelion shift of mercury (exaggerated)}
-\end{figure}
+% \begin{figure}[b]
+% \centering
+% \begin{tikzpicture}[auto,node distance=3cm,thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+% \draw [black,thick,dashed] (0,0) circle (1/1.6);
+% \draw [black,thick,dashed] (0,0) circle (1/0.4);
+% \draw [thick, color=red, domain=0:6*pi, samples=200, smooth]
+%   plot (xy polar cs:angle=\x r, radius={1/(1-0.6*cos(\x r+0.2*\x r))});
+% \node [fill=white] at (0,1) {Perihelion};s
+% \node at (0,0) {\Huge\textbullet};
+% \node (1) at (40:1/1.6) {\textbullet};
+% \node (2) at (90:1/1.6) {\textbullet};
+% \node (3) at (140:1/1.6) {\textbullet};
+% \end{tikzpicture} 
+% \caption{Perhelion shift of mercury (exaggerated)}
+% \end{figure}
 It has been known for a long time that the perihelion of the mercury moves by
 roughly $5061''\footnote{Where an arcsec $''$ denotes the 3600 part of
 an degree.}/\textrm{century}$, if on subtracts other effects such a
@@ -125,7 +125,7 @@ This implies
 \begin{equation}
 \dif r=-\frac{L^2}{Mu^2}\dif u\,,\quad
 \left(\dod{r}{\phi}\right)^2=\frac{L^4}{M^2u^4}\left(\dod{u}{\phi}\right)^2\,.
-\end{equation}
+\end{equation} 
 In terms of the new variables \eqref{eq:orbitrphi} reads
 \begin{equation}
 \left(\dod{u}{\phi}\right)^2-2u+u^2-\frac{2M^2}{L^2}u^3=(E^2-1)\frac{L^2}{M^2}\,.

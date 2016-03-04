@@ -28,45 +28,157 @@
         \partial^\mu h'_{\mu\nu} = \partial^\mu h_{\mu\nu} + \Box \xi_\nu + \partial_\nu \partial^\mu \xi_\mu \overset{!}{=} 0
     \end{equation}
     Since only gauge transformations that satisfy $\Box \xi_\nu$ are allowed (do not lead out of de Donder gauge), the equation that shoud
-    be solved for $x_\nu$ is
+    be solved for $\xi_\nu$ is
     \begin{equation}
         \partial_\nu \partial^\mu \xi_\mu = - \partial^\mu h_{\mu\nu}
     \end{equation}
     \item In order for the perturbations to be traceless, we need to find a solution to
     \begin{equation}
-        h' = h + \partial_\mu \xi^\mu = 0 \implies \partial_\mu x^\mu = -\frac{1}{2}h
+        h' = h + \partial_\mu \xi^\mu = 0 \implies \partial_\mu \xi^\mu =
+        -\frac{1}{2}h
     \end{equation}
 \end{itemize}
-\begin{figure}
-\centering
-\begin{tikzpicture}[decoration={markings,
-  mark=between positions 0 and 1 step 22.3pt
-  with { \draw [fill] (0,0) circle [radius=2pt];}}]
-\draw[->] (0,1) -- (3,1);
-\draw[->] (0,1) -- (0,4); 
-\node[text width=0.25cm] at (3,1.25){$x$};
-\node[text width=0.25cm] at (0.25,4){$y$};
+% \begin{figure}
+% \centering
+% \begin{tikzpicture}[decoration={markings,
+%   mark=between positions 0 and 1 step 22.3pt
+%   with { \draw [fill] (0,0) circle [radius=2pt];}}]
+% \draw[->] (0,1) -- (3,1);
+% \draw[->] (0,1) -- (0,4); 
+% \node[text width=0.25cm] at (3,1.25){$x$};
+% \node[text width=0.25cm] at (0.25,4){$y$};
+% 
+% \node[text width=2cm, align=center] (1) at (2,5){$\omega t= 0$};
+% \node[text width=2cm, align=center] (1) at (5,5){$\omega t= \frac{\pi}{2}$};
+% \node[text width=2cm, align=center] (1) at (8,5){$\omega t= \pi$};
+% \node[text width=2cm, align=center] (1) at (11,5){$\omega t= \frac{3\pi}{2}$};
+% \node[text width=2cm, align=center] (1) at (14,5){$\omega t= 2\pi$};
+% \begin{scope}[]
+% \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \begin{scope}[shift={(3,-0.5)},transform canvas={yscale=1.2}]
+% \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \begin{scope}[shift={(6,0)}]
+% \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \begin{scope}[shift={(7.2,0)},transform canvas={xscale=1.2}]
+% \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \begin{scope}[shift={(12,0)}]
+% \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \end{tikzpicture}
+% \caption{Gravitational wave.}
+% \end{figure}
+% \begin{figure}
+% \centering
+% \begin{tikzpicture}[decoration={markings,
+%   mark=between positions 0 and 1 step 22.3pt
+%   with { \draw [fill] (0,0) circle [radius=2pt];}}]
+% \draw[->] (0,1) -- (3,1);
+% \draw[->] (0,1) -- (0,4); 
+% \node[text width=0.25cm] at (3,1.25){$x$};
+% \node[text width=0.25cm] at (0.25,4){$y$};
+% 
+% \node[text width=2cm, align=center] (1) at (2,5){$\omega t= 0$};
+% \node[text width=2cm, align=center] (1) at (5,5){$\omega t= \frac{\pi}{2}$};
+% \node[text width=2cm, align=center] (1) at (8,5){$\omega t= \pi$};
+% \node[text width=2cm, align=center] (1) at (11,5){$\omega t= \frac{3\pi}{2}$};
+% \node[text width=2cm, align=center] (1) at (14,5){$\omega t= 2\pi$};
+% \begin{scope}[]
+% \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \begin{scope}[shift={(3,-0.5)},transform canvas={yscale=1.2}]
+% \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \begin{scope}[shift={(6,0)}]
+% \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \begin{scope}[shift={(7.2,0)},transform canvas={xscale=1.2},rotate around
+% ={45,(9.2,3)}] \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \begin{scope}[shift={(12,0)}]
+% \draw[dots along my path]  (2,3) ellipse (1 and 1);
+% \end{scope}
+% \end{tikzpicture}
+% \caption{Gravitational wave.}
+% \end{figure}
 
-\node[text width=2cm, align=center] (1) at (2,5){$\omega t= 0$};
-\node[text width=2cm, align=center] (1) at (5,5){$\omega t= \frac{\pi}{2}$};
-\node[text width=2cm, align=center] (1) at (8,5){$\omega t= \pi$};
-\node[text width=2cm, align=center] (1) at (11,5){$\omega t= \frac{3\pi}{2}$};
-\node[text width=2cm, align=center] (1) at (14,5){$\omega t= 2\pi$};
-\begin{scope}[]
-\draw[dots along my path]  (2,3) ellipse (1 and 1);
-\end{scope}
-\begin{scope}[shift={(3,-0.5)},transform canvas={yscale=1.2}]
-\draw[dots along my path]  (2,3) ellipse (1 and 1);
-\end{scope}
-\begin{scope}[shift={(6,0)}]
-\draw[dots along my path]  (2,3) ellipse (1 and 1);
-\end{scope}
-\begin{scope}[shift={(7.2,0)},transform canvas={xscale=1.2}]
-\draw[dots along my path]  (2,3) ellipse (1 and 1);
-\end{scope}
-\begin{scope}[shift={(12,0)}]
-\draw[dots along my path]  (2,3) ellipse (1 and 1);
-\end{scope}
-\end{tikzpicture}
-\caption{Gravitational wave.}
-\end{figure}
+
+\section{Degrees of Freedom (DoF) and Scalar Vector Tensor (SVT) Decomposition in Space/Time}
+
+Parametrize the line element as
+\begin{equation}
+	\dif s^2 = - \left(1+2\Phi\right)\dif t^2 + \tensor{v}{_i} \left(\dif t \dif \tensor{x}{^i} + \dif t \dif \tensor{x}{^i}\right) + \left(\tensor{\delta}{_{ij}} + \tensor{h}{_{ij}} \right)\dif \tensor{x}{^i}\dif \tensor{x}{^j}\,.
+\end{equation}
+Block Matrix
+\begin{equation}
+	\tensor{h}{_{\mu\nu}} =
+	\begin{bmatrix}
+		\tensor{h}{_{00}} & \tensor{h}{_{0j}} \\
+		\tensor{h}{_{i0}} & \tensor{h}{_{ij}}
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		-2\Phi & \tensor{v}{_{j}} \\
+		\tensor{v}{_{i}} & \tensor{h}{_{ij}}
+	\end{bmatrix}
+	\, , \quad \abs{\Phi},\abs{\tensor{v}{_i}},\abs{\tensor{h}{_{ij}}} \ll 1\,.
+\end{equation}
+In general algebraic decomposition: symmetric/antisymmetric
+\begin{equation}
+	\tensor{T}{_{\mu\nu}} = \tensor*{T}{_{\mu\nu}^{\text{s}}} + \tensor*{T}{_{\mu\nu}^{\text{as}}} = \tensor{T}{_{(\mu\nu)}} + \tensor{T}{_{[\mu\nu]}} = \frac{1}{2}\left(\tensor{T}{_{\mu\nu}}+\tensor{T}{_{\nu\mu}}\right) + \frac{1}{2}\left(\tensor{T}{_{\mu\nu}}-\tensor{T}{_{\nu\mu}}\right)\,.
+\end{equation}
+Can we decompose $\tensor*{T}{_{\mu\nu}^{\text{s}}}$ further?\newline
+Wake the trace
+\begin{equation}
+	\tensor{T}{^{\text{s}}} = \tensor{g}{^{\mu\nu}}\tensor*{T}{_{\mu\nu}^{\text{s}}}\, ,
+\end{equation}
+so we can write $\tensor*{T}{_{\mu\nu}^{\text{s}}}$ as follows:
+\begin{equation}
+	\tensor*{T}{_{\mu\nu}^{\text{s}}} = \tensor*{T}{_{\mu\nu}^{\text{tf}}} + \frac{1}{d}\,\tensor{g}{_{\mu\nu}}\tensor{T}{^{\text{s}}}\,,
+\end{equation}
+where $d$ denotes the dimension of spacetime and $\tensor*{T}{_{\mu\nu}^{\text{tf}}}$ is a tracefree, symmetric tensor.
+Can we decompose $\tensor*{T}{_{\mu\nu}^{\text{tf}}}$ any further? Possible for tensor fields $\tensor{T}{_{\mu\nu}}(x)$ as this involves derivatives.
+Decompose metric perturbations:
+\begin{equation}
+	\tensor{h}{_{00}} = -2\Phi
+\end{equation}
+\begin{equation}
+	\tensor{h}{_{0i}} = \tensor{v}{_i}
+\end{equation}
+\begin{equation}
+	\tensor{h}{_{ij}} = 2\tensor{s}{_{ij}} - 2\Psi\tensor{s}{_{ij}}\,\quad
+	\begin{cases}
+		\Psi := -\frac{1}{6}\tensor{\delta}{^{ij}}\tensor{h}{_{ij}}\,\quad &\text{"trace"} \\
+		\tensor{s}{_{ij}} := \frac{1}{2} \left(\tensor{h}{_{ij}} - \frac{1}{3}\tensor{\delta}{^{kl}}\tensor{h}{_{kl}}\tensor{\delta}{_{ij}}\right)\,\quad &\text{"strain"}
+	\end{cases}
+\end{equation}
+\begin{equation}
+	\dif s^2 = -\left(1+2\Phi\right)\dif t^2 + \tensor{v}{_i} \left(\dif t \dif \tensor{x}{^i} + \dif t \dif \tensor{x}{^i}\right) + \left[\left(1-2\Psi\right)\tensor{\delta}{_{ij}} + 2 \tensor{S}{_{ij}} \right]\dif \tensor{x}{^i}\dif \tensor{x}{^j}
+\end{equation}
+$\tensor{\partial}{_i} = \tensor{k}{_i}$ (momentum space)
+Decompose vector $\tensor{\omega}{_i}$ into transverse and longitudinal components.
+\begin{align}
+	\tensor{v}{_i} = &\tensor{S}{_i} + \tensor{\partial}{_i}B\\
+	&3\,\,+\,\,\,\,\,1\,\,\,\,\underbrace{-1}_{\tensor{\partial}{_i}\tensor{S}{^i}=0}\,\quad \text{DoF}
+\end{align}
+\begin{equation}
+	\tensor{S}{_{ij}} = \tensor{\partial}{_{(i}}\tensor{F}{_{j)}} + \left( \tensor{\partial}{_i}\tensor{\partial}{_j} - \frac{1}{3}\,\tensor{\delta}{_{ij}}\Delta\right) E + \tensor*{h}{_{ij}^{\text{\tiny TT}}}
+\end{equation}
+\begin{center}
+\begin{tabular}{c l}
+$4$ & 4 scalars \\
+$+$ & \\
+$2\,(3-1)$ & 2 transverse vectors \\
+$+$ & \\
+$6-1-3$ & 1 symmetric transverse traceless tensor \\
+\midrule
+$10$ & independent components of $\tensor{h}{_{\mu\nu}}$
+\end{tabular}
+\end{center}
+valid for (reduce free components):
+\begin{equation}
+\tensor{\partial}{_i}\tensor{F}{^i}=0\,,\quad\tensor*{h}{_{ij}^{\text{\tiny TT}}}=\tensor*{h}{_{ji}^{\text{\tiny TT}}}\,,\quad\tensor*{h}{_{ij}^{\text{\tiny TT}}}\tensor{\delta}{^{ij}}=0\,,\quad\tensor{\partial}{^i}\tensor*{h}{_{ij}^{\text{\tiny TT}}}=0
+\end{equation}
