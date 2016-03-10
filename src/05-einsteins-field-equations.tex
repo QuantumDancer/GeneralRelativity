@@ -355,28 +355,28 @@ How do we find a solution to this equations?
 \end{enumerate}
 %TODO part about Intrinsic vs extrinsic curvature, image??
 \subsection{ADM-Decomposition}
-% \begin{figure}
-% \centering
-% \begin{tikzpicture}[x={(170:1cm)},y={(55:.7cm)},z={(90:1cm)}]
-% \node at  (0,-1,-3) (a) {} ;
-% \node[inner sep=1pt,circle,fill=black] at  (0.5,0.5,-1) (b) {} ;
-% \node[inner sep=1pt,circle,fill=black] at  (0,0,2) (c) {} ;
-% \node at  (0,1,3) (d) {} ;
-% %\draw (a) edge[in=-70,out=110,->-,-] (b);
-% \filldraw[fill=gray, draw=black, looseness=0.4,opacity=0.5,text opacity=1, draw opacity=1] (2.5,-2.5,-1) node[above right] {$\hspace{0.2cm}\Sigma_{t_0}$}
-% to[bend left] (2.5,2.5,-1)
-% to[bend left] coordinate (mp) (-2.5,2.5,-1)
-% to[bend right] (-2.5,-2.5,-1)
-% to[bend right] coordinate (mm) (2.5,-2.5,-1)
-% -- cycle;
-% \draw (b) edge[in=-70,out=100,-,->-](c);
-% \filldraw[fill=gray, draw=black,opacity=0.5,text opacity=1, draw opacity=1] (2.5,-2.5,2) node[above right] {$\hspace{0.4cm}\Sigma_{t}$} -- (2.5,2.5,2) -- (-2.5,2.5,2) -- (-2.5,-2.5,2) -- cycle;
-% \node[inner sep=1pt,circle,fill=black] at   (0.5,0.5,-1)   {} ;
-% \node[inner sep=1pt,circle,fill=black] at  (0,0,2)  {} ;
-% \draw (c) edge[in=-110,out=110,->-,-] node[pos=0.2,right]{$t$}(d);
-% \end{tikzpicture}
-% \caption{Foliation of spacetime into spatial hypersurfaces $\Sigma_t$.}
-% \end{figure}
+\begin{figure}
+\centering
+\begin{tikzpicture}[x={(170:1cm)},y={(55:.7cm)},z={(90:1cm)}]
+\node at  (0,-1,-3) (a) {} ;
+\node[inner sep=1pt,circle,fill=black] at  (0.5,0.5,-1) (b) {} ;
+\node[inner sep=1pt,circle,fill=black] at  (0,0,2) (c) {} ;
+\node at  (0,1,3) (d) {} ;
+%\draw (a) edge[in=-70,out=110,->-,-] (b);
+\filldraw[fill=gray, draw=black, looseness=0.4,opacity=0.5,text opacity=1, draw opacity=1] (2.5,-2.5,-1) node[above right] {$\hspace{0.2cm}\Sigma_{t_0}$}
+to[bend left] (2.5,2.5,-1)
+to[bend left] coordinate (mp) (-2.5,2.5,-1)
+to[bend right] (-2.5,-2.5,-1)
+to[bend right] coordinate (mm) (2.5,-2.5,-1)
+-- cycle;
+\draw (b) edge[in=-70,out=100,-,->-](c);
+\filldraw[fill=gray, draw=black,opacity=0.5,text opacity=1, draw opacity=1] (2.5,-2.5,2) node[above right] {$\hspace{0.4cm}\Sigma_{t}$} -- (2.5,2.5,2) -- (-2.5,2.5,2) -- (-2.5,-2.5,2) -- cycle;
+\node[inner sep=1pt,circle,fill=black] at   (0.5,0.5,-1)   {} ;
+\node[inner sep=1pt,circle,fill=black] at  (0,0,2)  {} ;
+\draw (c) edge[in=-110,out=110,->-,-] node[pos=0.2,right]{$t$}(d);
+\end{tikzpicture}
+\caption{Foliation of spacetime into spatial hypersurfaces $\Sigma_t$.}
+\end{figure}
 The formulation of initial value problems is not as easy as it is in classical
 physics.\footnote{In fact, depending on the setting, a well defined formulation
 can be impossible.} Assume we know either
