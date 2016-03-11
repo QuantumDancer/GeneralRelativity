@@ -53,6 +53,12 @@ $Q$, in an Inertial System $I$:
     \item $P:$ Event of emission of the ray $(ct_1,x_1,y_1,z_1)$
     \item $Q:$ Event of absorption of the ray $(ct_2,x_2,y_2,z_2)$
 \end{itemize}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{sphericallightpulse.pdf}
+\caption{A spherical light pulse.}
+\end{figure}
+
 The spatially distance between the events is
 \begin{equation}
     r=\left[(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2\right]^{\frac{1}{2}}\, .
@@ -105,41 +111,84 @@ Together they imply
 but since the velocities where arbitary $\alpha$ has to be constant and we are
 free to chose $\alpha\equiv 1$. Therefore the line element has to stay
 invariant.
-\begin{figure}
+\begin{figure}[hbtp!]
 \centering
-\begin{tikzpicture}[scale=1]
-\draw[->] (-6,0) -- (6,0);
-\draw[-] (0,-6) -- (0,6);
-\node[text width=0.25cm] at (6,0.25){$x$};
-\node[text width=0.25cm] at (0.25,6){$ct$};
-\draw[red,thick,dashed] (-4,-4) -- (4,4);
-\draw[red,thick,dashed] (-4,4) -- (4,-4);
-\draw[arrows along my path] (-4,-2) -- (3,6);
-\draw[arrows along my path] (0,-5) -- (0,5);
-\draw[arrows along my path] (2,-5) -- (2,5);
-\node at (0,2.57143) {\textbullet};
-\node at (2,4.85714) {\textbullet};
-\node at (0,0) {\textbullet};
-\node at (2,0) {\textbullet};
-
-\node[text width=3cm,fill=white] (1) at (-4.3,0.3){
-worldline of observer moving with
-$v\approx c$ relative to resting observers};
-\node[text width=2cm,red] (1) at (4.4,3){lightcone};
-\node[text width=2cm,fill=white] (2) at (-1.3,4.2){
-worldline observer in rest at 0};
-\node[text width=2cm,fill=white] (2) at (3.3,4.2){
-worldline observer in rest at $P$};
-\node[text width=0.2cm,fill=white] (2) at (0.3,-0.3){
-0};
-\node[text width=0.2cm,fill=white] (2) at (2.3,-0.3){
-$P$};
-\node[text width=2cm] (2) at (1.2,2.3){
-event};
-
-\end{tikzpicture}
-\caption{Worldlines of moving observers.}
+ \includegraphics{invariancelineelement.pdf}
+\caption{}
+%TODO Caption
 \end{figure}
+
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{equivprinciple2.pdf}
+\caption{}
+%TODO Caption
+%TODO postition
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{equivprinciple3.pdf}
+\caption{}
+%TODO Caption
+%TODO postition
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{simultaneitytex.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{simultaneitytex2.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{SRTpic1.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{SRTpic2.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{SRTpic3.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{SRTpic4.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{SRTpic5.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{SRTpic6.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{twinParadox.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+
+
+
 \section{Invariant Distances, Metric and Signature}
 In flat space we can calculate the distance $\Delta l$ between two points
 $(x_1,y_1)$ and $(x_2,y_2)$ by the \name{Pythagoras}' theorem
@@ -442,7 +491,20 @@ The \name{Poincaré} transformations form a ten parameter group.
         \bottomrule
     \end{tabulars}
 \end{table}
-
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{absstruct.pdf}
+ \includegraphics{STDiagramRotationAxisBoost.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{equivprinciple.pdf}
+\caption{}
+%TODO Caption
+%TODO postition
+\end{figure}
 \section{Vectors and Tensors in SRT}
 %TODO connect subsections
 At this point we will just list some objects, that we call vectors and tensors
@@ -512,6 +574,12 @@ inertial systems. The dispersion relation reads as
 \end{equation}
 It is equivalent to the on shell condition \eqref{eq:onshell}, when we identify
 the photons energy $E=\omega$, momentum $\vec{p}=\vec{k}$ and mass $m=0$.
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{EMpropagation.pdf}
+\caption{}
+%TODO Caption
+\end{figure}
 \subsection{Fourvectors}
 There are three types of vectors\footnote{We could also put up a fourth class,
 containing solely the zero vector.}:
@@ -533,42 +601,11 @@ body problem has no exact solution in special relativity.
 Tabular~\ref{tab:fourvecs} shows a list of the dynamic fourvectors in SR,
 notice that in contrast to the classical, theory the fouraccelaration
 $\tensor{a}{_\mu}$ has no importance in SR.
-\begin{figure}
+\begin{figure}[hbtp!]
 \centering
-\begin{tikzpicture}[scale=1.1]
-\draw[->] (-5,0) -- (5,0);
-\draw[-] (0,-5) -- (0,3);
-
-\draw[draw=red,thick] (-3,-3) arc (-180:0:3cm and 0.4cm);
-\draw[draw=red,thick,densely dashed] (-3,-3) arc (180:0:3cm and 0.4cm);
-\draw[draw=red,thick] (-3,3) arc (-180:0:3cm and 0.4cm);
-\draw[draw=red,thick] (-3,3) arc (180:0:3cm and 0.4cm);
-\draw[red,thick] (-3,-3) -- (3,3);
-\draw[red,thick] (-3,3) -- (3,-3);
-\draw[red,thick,dashed] (-4,-4) -- (4,4);
-\draw[red,thick,dashed] (-4,4) -- (4,-4);
-\draw (0,0) ;
-\node[text width=1.5cm] at (0.8,1.8){timelike\\$\mathrm{d} s^2< 0$};
-\node[text width=1.5cm] at (-3,0.8){spacelike\\$\mathrm{d} s^2> 0$};
-\node[text width=1.5cm] at (2,-0.8){lightlike\\$\mathrm{d} s^2= 0$};
-\node[text width=1.5cm] at (-0.8,1.8){future\\ $ $};
-\node[text width=1.5cm] at (0.8,-2){$\mathrm{d} s^2< 0$};
-\node[text width=1.5cm] at (-0.8,-2){past};
-\node[text width=0.25cm] at (0.5,0.25){$45^\circ $};
-\node[text width=1.5cm,red] at (2.5,-1.5){$t+x=0$};
-\node[text width=1.5cm,red] at (3.5,2.5){$t-x=0$};
-\node[text width=1.5cm] at (3,1){$\mathrm{d} s^2< 0$};
-\node[red] (1) at (2,4){light cone};
-\node (2) at (0.5,3){};
-\node (3) at (1,-1){};
-\draw[red] (1) -- (2);
-\draw (1,0) arc (0:45:1);
-\node at (0,0) {\textbullet};
-\draw[->] (0,3) -- (0,5);
-\node[text width=0.25cm] at (5,0.25){$x$};
-\node[text width=0.25cm] at (0.25,5){$ct$};
-\end{tikzpicture}
+ \includegraphics{Lightcone.pdf}
 \caption{Lightcone structure in special relativity.}
+%TODO position
 \end{figure}
 \begin{table}
     \centering
@@ -736,6 +773,12 @@ Expanded in $\vec{v}^2$ the energy reads as
 \begin{equation}
     E=m+\frac{1}{2}m\vec{v}^2+\ldots\, .
 \end{equation}
+\begin{figure}[hbtp!]
+\centering
+ \includegraphics{KinEnSRTNewton.pdf}
+\caption{Comparison of the kinetic energies in Newtonian physics and SRT.}
+\end{figure}
+
 If we restore units of $c$ for a moment we get that the constant term is
 equal to $mc^2$. This is \name{Einstein}'s famous $E=mc^2$.
 We can further relate energy and momentum to each other. Therefore consider the
@@ -752,32 +795,9 @@ Which we can insert in the expression for the energy
     E^2=\frac{m^2}{1-\vec{v}^2}=\vec{p}^2+m^2 \label{eq:onshell}\, .
 \end{equation}
 The equation \eqref{eq:onshell} is called the \emph{on shell condition}.
-\begin{figure}
+\begin{figure}[hbtp!]
 \centering
-\begin{tikzpicture}
-  \begin{axis}[
-    xmin=-10,xmax=10,
-    ymin=-5,ymax=10,
-    xlabel={$p$},
-    ylabel={$E$},
-    xtick={0},
-    ytick={0},
-    xticklabels={,,},
-    yticklabels={,,},
-    axis lines=center,
-    axis line style=->]
-    \addplot[] expression[domain=-10:10,samples=100]{(4+x^2)^(1/2)};
-    \addplot[red] expression[domain=-10:10,samples=100]{x};
-    \addplot[red] expression[domain=-10:10,samples=100]{-x};
-    \addplot[dashed] expression[domain=-10:10,samples=100]{2};
-    \pgfplotsset{
-    after end axis/.code={
-        \node[above] at (axis cs:7,2){restmass $m$};
-        \node[above,text width=2.5cm,fill=white] at (axis cs:-4.2,5){``mass
-        shell''\\$E=\sqrt{p^2+m^2}$}; }
-}
-  \end{axis}
-\end{tikzpicture}
+ \includegraphics{massshell.pdf}
 \caption{Energy $E$ of a particle with mass $m$, as a function of the momentum
 $p$.}
 \end{figure}
