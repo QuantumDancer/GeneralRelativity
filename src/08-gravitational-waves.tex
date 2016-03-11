@@ -44,10 +44,10 @@
 %   mark=between positions 0 and 1 step 22.3pt
 %   with { \draw [fill] (0,0) circle [radius=2pt];}}]
 % \draw[->] (0,1) -- (3,1);
-% \draw[->] (0,1) -- (0,4); 
+% \draw[->] (0,1) -- (0,4);
 % \node[text width=0.25cm] at (3,1.25){$x$};
 % \node[text width=0.25cm] at (0.25,4){$y$};
-% 
+%
 % \node[text width=2cm, align=center] (1) at (2,5){$\omega t= 0$};
 % \node[text width=2cm, align=center] (1) at (5,5){$\omega t= \frac{\pi}{2}$};
 % \node[text width=2cm, align=center] (1) at (8,5){$\omega t= \pi$};
@@ -77,10 +77,10 @@
 %   mark=between positions 0 and 1 step 22.3pt
 %   with { \draw [fill] (0,0) circle [radius=2pt];}}]
 % \draw[->] (0,1) -- (3,1);
-% \draw[->] (0,1) -- (0,4); 
+% \draw[->] (0,1) -- (0,4);
 % \node[text width=0.25cm] at (3,1.25){$x$};
 % \node[text width=0.25cm] at (0.25,4){$y$};
-% 
+%
 % \node[text width=2cm, align=center] (1) at (2,5){$\omega t= 0$};
 % \node[text width=2cm, align=center] (1) at (5,5){$\omega t= \frac{\pi}{2}$};
 % \node[text width=2cm, align=center] (1) at (8,5){$\omega t= \pi$};
@@ -110,76 +110,134 @@
 
 Parametrize the line element as
 \begin{equation}
-	\dif s^2 = - \left(1+2\Phi\right)\dif t^2 + \tensor{v}{_i} \left(\dif t \dif \tensor{x}{^i} + \dif t \dif \tensor{x}{^i}\right) + \left(\tensor{\delta}{_{ij}} + \tensor{h}{_{ij}} \right)\dif \tensor{x}{^i}\dif \tensor{x}{^j}\,.
+    \dif s^2 = - \left(1+2\Phi\right)\dif t^2 + \tensor{v}{_i} \left(\dif t \dif \tensor{x}{^i} + \dif t \dif \tensor{x}{^i}\right) + \left(\tensor{\delta}{_{ij}} + \tensor{h}{_{ij}} \right)\dif \tensor{x}{^i}\dif \tensor{x}{^j}\,.
 \end{equation}
 Block matrix
 \begin{equation}
-	\tensor{h}{_{\mu\nu}} =
-	\begin{bmatrix}
-		\tensor{h}{_{00}} & \tensor{h}{_{0j}} \\
-		\tensor{h}{_{i0}} & \tensor{h}{_{ij}}
-	\end{bmatrix}
-	=
-	\begin{bmatrix}
-		-2\Phi & \tensor{v}{_{j}} \\
-		\tensor{v}{_{i}} & \tensor{h}{_{ij}}
-	\end{bmatrix}
-	\, , \quad \abs{\Phi},\abs{\tensor{v}{_i}},\abs{\tensor{h}{_{ij}}} \ll 1\,.
+    \tensor{h}{_{\mu\nu}} =
+    \begin{bmatrix}
+        \tensor{h}{_{00}} & \tensor{h}{_{0j}} \\
+        \tensor{h}{_{i0}} & \tensor{h}{_{ij}}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        -2\Phi & \tensor{v}{_{j}} \\
+        \tensor{v}{_{i}} & \tensor{h}{_{ij}}
+    \end{bmatrix}
+    \, , \quad \abs{\Phi},\abs{\tensor{v}{_i}},\abs{\tensor{h}{_{ij}}} \ll 1\,.
 \end{equation}
 In general algebraic decomposition: symmetric/antisymmetric
 \begin{equation}
-	\tensor{T}{_{\mu\nu}} = \tensor*{T}{_{\mu\nu}^{\text{s}}} + \tensor*{T}{_{\mu\nu}^{\text{as}}} = \tensor{T}{_{(\mu\nu)}} + \tensor{T}{_{[\mu\nu]}} = \frac{1}{2}\left(\tensor{T}{_{\mu\nu}}+\tensor{T}{_{\nu\mu}}\right) + \frac{1}{2}\left(\tensor{T}{_{\mu\nu}}-\tensor{T}{_{\nu\mu}}\right)\,.
+    \tensor{T}{_{\mu\nu}} = \tensor*{T}{_{\mu\nu}^{\text{s}}} + \tensor*{T}{_{\mu\nu}^{\text{as}}} = \tensor{T}{_{(\mu\nu)}} + \tensor{T}{_{[\mu\nu]}} = \frac{1}{2}\left(\tensor{T}{_{\mu\nu}}+\tensor{T}{_{\nu\mu}}\right) + \frac{1}{2}\left(\tensor{T}{_{\mu\nu}}-\tensor{T}{_{\nu\mu}}\right)\,.
 \end{equation}
 Can we decompose $\tensor*{T}{_{\mu\nu}^{\text{s}}}$ further?\newline
 Wake the trace
 \begin{equation}
-	\tensor{T}{^{\text{s}}} = \tensor{g}{^{\mu\nu}}\tensor*{T}{_{\mu\nu}^{\text{s}}}\, ,
+    \tensor{T}{^{\text{s}}} = \tensor{g}{^{\mu\nu}}\tensor*{T}{_{\mu\nu}^{\text{s}}}\, ,
 \end{equation}
 so we can write $\tensor*{T}{_{\mu\nu}^{\text{s}}}$ as follows:
 \begin{equation}
-	\tensor*{T}{_{\mu\nu}^{\text{s}}} = \tensor*{T}{_{\mu\nu}^{\text{tf}}} + \frac{1}{d}\,\tensor{g}{_{\mu\nu}}\tensor{T}{^{\text{s}}}\,,
+    \tensor*{T}{_{\mu\nu}^{\text{s}}} = \tensor*{T}{_{\mu\nu}^{\text{tf}}} + \frac{1}{d}\,\tensor{g}{_{\mu\nu}}\tensor{T}{^{\text{s}}}\,,
 \end{equation}
 where $d$ denotes the dimension of spacetime and $\tensor*{T}{_{\mu\nu}^{\text{tf}}}$ is a tracefree, symmetric tensor.
 Can we decompose $\tensor*{T}{_{\mu\nu}^{\text{tf}}}$ any further? Possible for tensor fields $\tensor{T}{_{\mu\nu}}(x)$ as this involves derivatives.
 Decompose metric perturbations:
 \begin{equation}
-	\tensor{h}{_{00}} = -2\Phi
+    \tensor{h}{_{00}} = -2\Phi
 \end{equation}
 \begin{equation}
-	\tensor{h}{_{0i}} = \tensor{v}{_i}
+    \tensor{h}{_{0i}} = \tensor{v}{_i}
 \end{equation}
 \begin{equation}
-	\tensor{h}{_{ij}} = 2\tensor{s}{_{ij}} - 2\Psi\tensor{s}{_{ij}}\,\quad
-	\begin{cases}
-		\Psi := -\frac{1}{6}\tensor{\delta}{^{ij}}\tensor{h}{_{ij}}\,\quad
-		&\text{``trace''} \\
-		\tensor{s}{_{ij}} := \frac{1}{2} \left(\tensor{h}{_{ij}} - \frac{1}{3}\tensor{\delta}{^{kl}}\tensor{h}{_{kl}}\tensor{\delta}{_{ij}}\right)\,\quad &\text{``strain''}
-	\end{cases}
+    \tensor{h}{_{ij}} = 2\tensor{s}{_{ij}} - 2\Psi\tensor{s}{_{ij}}\,\quad
+    \begin{cases}
+\Psi := -\frac{1}{6}\tensor{\delta}{^{ij}}\tensor{h}{_{ij}}\,\quad
+&\text{``trace''} \\
+\tensor{s}{_{ij}} := \frac{1}{2} \left(\tensor{h}{_{ij}} - \frac{1}{3}\tensor{\delta}{^{kl}}\tensor{h}{_{kl}}\tensor{\delta}{_{ij}}\right)\,\quad &\text{``strain''}
+\end{cases}
 \end{equation}
 \begin{equation}
-	\dif s^2 = -\left(1+2\Phi\right)\dif t^2 + \tensor{v}{_i} \left(\dif t \dif \tensor{x}{^i} + \dif t \dif \tensor{x}{^i}\right) + \left[\left(1-2\Psi\right)\tensor{\delta}{_{ij}} + 2 \tensor{S}{_{ij}} \right]\dif \tensor{x}{^i}\dif \tensor{x}{^j}
+    \dif s^2 = -\left(1+2\Phi\right)\dif t^2 + \tensor{v}{_i} \left(\dif t \dif \tensor{x}{^i} + \dif t \dif \tensor{x}{^i}\right) + \left[\left(1-2\Psi\right)\tensor{\delta}{_{ij}} + 2 \tensor{S}{_{ij}} \right]\dif \tensor{x}{^i}\dif \tensor{x}{^j}
 \end{equation}
 $\tensor{\partial}{_i} = \tensor{k}{_i}$ (momentum space)
 Decompose vector $\tensor{\omega}{_i}$ into transverse and longitudinal components.
 \begin{align}
-	\tensor{v}{_i} = &\tensor{S}{_i} + \tensor{\partial}{_i}B\\
-	&3\,\,+\,\,\,\,\,1\,\,\,\,\underbrace{-1}_{\tensor{\partial}{_i}\tensor{S}{^i}=0}\,\quad \text{DoF}
+    \tensor{v}{_i} = &\tensor{S}{_i} + \tensor{\partial}{_i}B\\
+    &3\,\,+\,\,\,\,\,1\,\,\,\,\underbrace{-1}_{\tensor{\partial}{_i}\tensor{S}{^i}=0}\,\quad \text{DoF}
 \end{align}
 \begin{equation}
-	\tensor{S}{_{ij}} = \tensor{\partial}{_{(i}}\tensor{F}{_{j)}} + \left( \tensor{\partial}{_i}\tensor{\partial}{_j} - \frac{1}{3}\,\tensor{\delta}{_{ij}}\Delta\right) E + \tensor*{h}{_{ij}^{\text{\tiny TT}}}
+    \tensor{S}{_{ij}} = \tensor{\partial}{_{(i}}\tensor{F}{_{j)}} + \left( \tensor{\partial}{_i}\tensor{\partial}{_j} - \frac{1}{3}\,\tensor{\delta}{_{ij}}\Delta\right) E + \tensor*{h}{_{ij}^{\text{\tiny TT}}}
 \end{equation}
 \begin{center}
-\begin{tabular}{c l}
-$4$ & 4 scalars \\
-$+$ & \\
-$2\,(3-1)$ & 2 transverse vectors \\
-$+$ & \\
-$6-1-3$ & 1 symmetric transverse traceless tensor \\
-\midrule
-$10$ & independent components of $\tensor{h}{_{\mu\nu}}$
-\end{tabular}
+    \begin{tabular}{c l}
+        $4$ & 4 scalars \\
+        $+$ & \\
+        $2\,(3-1)$ & 2 transverse vectors \\
+        $+$ & \\
+        $6-1-3$ & 1 symmetric transverse traceless tensor \\
+        \midrule
+        $10$ & independent components of $\tensor{h}{_{\mu\nu}}$
+    \end{tabular}
 \end{center}
 valid for (reduce free components):
 \begin{equation}
-\tensor{\partial}{_i}\tensor{F}{^i}=0\,,\quad\tensor*{h}{_{ij}^{\text{\tiny TT}}}=\tensor*{h}{_{ji}^{\text{\tiny TT}}}\,,\quad\tensor*{h}{_{ij}^{\text{\tiny TT}}}\tensor{\delta}{^{ij}}=0\,,\quad\tensor{\partial}{^i}\tensor*{h}{_{ij}^{\text{\tiny TT}}}=0
+    \tensor{\partial}{_i}\tensor{F}{^i}=0\,,\quad\tensor*{h}{_{ij}^{\text{\tiny TT}}}=\tensor*{h}{_{ji}^{\text{\tiny TT}}}\,,\quad\tensor*{h}{_{ij}^{\text{\tiny TT}}}\tensor{\delta}{^{ij}}=0\,,\quad\tensor{\partial}{^i}\tensor*{h}{_{ij}^{\text{\tiny TT}}}=0
 \end{equation}
+
+\subsection{Decomposition for tensor \emph{fields}}
+Tensor fields depend on the space-time coordinate $x$.
+We can build tensors from derivatives of one-rank tensors.
+%irgendwas mit $\nabla_i = \partial_i$
+Each derivative $\partial_i$ corresponds to $k_i$ in momentum space.
+$k_i$ points in some direction.
+We can decompose e.g.\ $v_i$ with respect to the direction $k_i$.
+\begin{equation}
+    v_i = v_{i,\perp} + v_{i,\parallel},
+\end{equation}
+where $v_{i,\perp}$ is perpendicular and $v_{i,\parallel}$ parallel to $k_i$.
+The transverse vector is divergence free:
+\begin{equation}
+    \tensor{\partial}{_i} \tensor{v}{_\perp^i} = 0 \qquad \left( \implies \vec{k} \perp \vec{v} \right)
+\end{equation}
+The longitudinal vector $\vec{v}_\parallel$ is curl free.
+\begin{equation}
+    \tensor{\epsilon}{^i^j^k} \tensor{\partial}{_j} \tensor{v}{_\perp_k} = 0
+\end{equation}
+$\implies$ conditions for differential equations, makes only sense when applied to a vector field.
+The transverse vector can be represented as curl of some other vector:
+\begin{equation}
+    \tensor{v}{^i_\perp} = \tensor{\epsilon}{^i^j^k} \tensor{\partial}{_i} \tensor{u}{_k} \,.
+\end{equation}
+The choice of $u_i$ is not ??? unless we impose additional conditions on $u$:
+\begin{equation}
+    \tensor{\partial}{_i} \tensor{u}{^i} = 0 \qquad \left( \text{``divergence free''} \right)
+\end{equation}
+The longitudinal vector is the divergence of a scalar function $\lambda(x)$
+\begin{equation}
+    \tensor{v}{_\partial_j} = \tensor{\partial}{_j} \lambda(x)
+\end{equation}
+Similarly, we can decompose the strain vector $\tensor{s}{_i_j}$:
+\begin{equation}
+    \tensor{s}{^i^j} = \tensor{s}{_{\perp}^i^j} + \tensor{s}{_s^i^j} + \tensor{s}{_{\parallel}^i^j}
+    \qquad \left( \text{symmetric, trace free}, \tensor{s}{_i_j} = \tensor{s}{_j_i}, \tensor{\delta}{_i_j} \tensor{s}{^i^j} \right)
+\end{equation}
+with the transverse part $\tensor{s}{_\perp^i^j}$, the solenoidal part $\tensor{s}{_s^i^j}$,
+and the parallel part $\tensor{s}{_\parallel^i^j}$.
+\begin{itemize}
+    \item The transverse part is divergence free $ \tensor{\delta}{_i} \tensor{s}{_\perp^i^j} = 0$.
+    \item The divergence of the solenoidal part is a transverse vector,
+    \begin{equation}
+        \tensor{\partial}{_i} \tensor{\partial}{_j} \tensor{s}{_s^i^j} = 0
+    \end{equation}
+    \item The divergence of the longitudinal part is a longitudinal vector
+    \begin{equation}
+        \tensor{\epsilon}{^j^k^l} \tensor{\partial}{_l} \tensor{\partial}{_i} \tensor{s}{_\parallel^i_j} = 0
+    \end{equation}
+\end{itemize}
+The longitudinal part can be constructed from a scalar field $E$:
+\begin{equation}
+    \tensor{s}{^\parallel_i_j} = \left( \tensor{\partial}{_i} \tensor{\partial}{_j} - \frac{1}{3} \tensor{\partial}{_i_j} \Delta \right) E
+\end{equation}
+The part in the braces is the only object with two derivatives of a scalar with two free indices. 
+The coefficients are fixed by $ \tensor{\delta}{^i^j} \tensor{s}{^\parallel_i_j} = 0$ (trace free).
+The solenoidal part can be constructed from a traversal vector field $F_i$.
