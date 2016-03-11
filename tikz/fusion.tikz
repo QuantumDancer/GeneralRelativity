@@ -1,0 +1,92 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \draw[-latex] (0,0) to (0.5,-1);
+    \draw[-latex] (1,0) to (0.5,-1);
+    \draw[-latex] (0.3,-2) to (0,-2.5);
+    \draw[-latex] (0.7,-2) to (1,-2.5);
+    \draw[-latex] (0.5,-2) to (0.5,-2.8);
+    \draw[-latex] (0.5,-3) to (1,-4);
+    \draw[-latex] (1.5,-3) to (1,-4);
+    \draw[-latex] (1,-5) to (1,-5.7);
+    \draw[-latex] (1,-6) to (2,-7.5);
+    \draw[-latex,photon] (0.6,-4.5) to (0,-5.5);
+    \proton at (0,0);
+    \proton at (1,0);
+    \blackbox at (0.5,-1.5);
+    \neutron at (0.4,-3);
+    \proton at (0.6,-3);
+    \proton at (1.5,-3);
+    \blackbox at (1,-4.5);
+    \proton at (1.1,-5.9);
+    \neutron at (0.9,-6);
+    \proton at (1.1,-6.1);
+    \node at (0.2,-4.5){$\gamma$};
+    \node at (-0.2,-2.6){$\nu_e$};
+    \node at (1.2,-2.6){$e^+$};
+    \node at (-0.1,0.5){${}^1$H};
+    \node at (0.9,0.5){${}^1$H};
+    \node at (1.65,-3.5){${}^1$H};
+    \node at (0.3,-3.5){${}^2$H};
+    \node at (0.8,-6.6){${}^3$He};
+    \node at (0.4,-8.5){${}^1$H};
+
+    \begin{scope}[xshift=4cm,xscale=-1]
+        \draw[-latex] (0,0) to (0.5,-1);
+        \draw[-latex] (1,0) to (0.5,-1);
+        \draw[-latex] (0.3,-2) to (0,-2.5);
+        \draw[-latex] (0.7,-2) to (1,-2.5);
+        \draw[-latex] (0.5,-2) to (0.5,-2.8);
+        \draw[-latex] (0.5,-3) to (1,-4);
+        \draw[-latex] (1.5,-3) to (1,-4);
+        \draw[-latex] (1,-5) to (1,-5.7);
+        \draw[-latex] (1,-6) to (2,-7.5);
+        \draw[-latex,photon] (0.6,-4.5) to (0,-5.5);
+        \proton at (0,0);
+        \proton at (1,0);
+        \blackbox at (0.5,-1.5);
+        \neutron at (0.4,-3);
+        \proton at (0.6,-3);
+        \proton at (1.5,-3);
+        \blackbox at (1,-4.5);
+        \proton at (1.1,-5.9);
+        \neutron at (0.9,-6);
+        \proton at (1.1,-6.1);
+        \node at (0.2,-4.5){$\gamma$};
+        \node at (-0.2,-2.6){$\nu_e$};
+        \node at (1.2,-2.6){$e^+$};
+        \node at (0.1,0.5){${}^1$H};
+        \node at (1.1,0.5){${}^1$H};
+        \node at (1.65,-3.5){${}^1$H};
+        \node at (0.2,-3.5){${}^2$H};
+        \node at (0.8,-6.6){${}^3$He};
+        \node at (0.5,-8.5){${}^1$H};
+    \end{scope}
+    \blackbox at (2,-8);
+    \draw[-latex] (1.7,-8.2) to (0.7,-8.8);
+    \draw[-latex] (2.3,-8.2) to (3.3,-8.8);
+    \draw[-latex] (2,-8.5) to (2,-10);
+    \proton at (0.5,-9);
+    \proton at (3.5,-9);
+
+    \neutron at (2.1,-10.4);
+    \proton at (1.9,-10.5);
+    \neutron at (1.9,-10.7);
+    \proton at (2.1,-10.6);
+    \node at (2,-11.2){${}^4$He};
+    \proton at (5.8,0);
+    \neutron at (5.8,-1);
+    \node at (5.8,-2) {$e^+$};
+    \node at (5.8,-3) {$\nu_e$};
+    \node at (5.8,-4) {$\gamma$};
+    \draw[pattern=north east lines]  (5.8+0.2,-5+0.2) rectangle (5.8-0.2,-5-0.2);
+    \node[label=east:proton] at (6,0) {};
+    \node[label=east:neutron] at (6,-1) {};
+    \node[label=east:positron] at (6,-2) {};
+    \node[label=east:neutrino] at (6,-3) {};
+    \node[label=east:photon] at (6,-4) {};
+    \node[label=east:reaction] at (6,-5) {};
+    \draw (5.3,0.4) --(5.3,-5.4);
+\end{tikzpicture}
+\end{document}

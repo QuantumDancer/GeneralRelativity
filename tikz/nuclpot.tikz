@@ -1,0 +1,25 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+    \draw[fill=lightgray] (0,-3) rectangle (2,0);
+
+    \draw[domain=2:8,smooth,variable=\x,blue,name path=hypa] plot ({\x},{8/\x});
+    \draw[-latex] (0,-4) -- (0,5) node [left] {$V(r)$};
+    \draw[-latex] (-0.5,0) -- (9,0) node [above] {$r$};
+
+    \draw[blue] (2,4) --(2,-3);
+    \draw[blue] (0,-3) --(2,-3);
+    
+    \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=4pt},yshift=0pt]
+          (0,-3) -- (2,-3) node [black,midway,yshift=-0.7cm] {$r_\mathrm{nucl.}$};
+    \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=4pt},yshift=0pt,text width=2cm]
+          (2,4) -- (0,4) node [black,midway,yshift=0.8cm,xshift=0.2cm] {attractive potential};
+    \draw [decorate,decoration={brace,amplitude=5pt,raise=4pt},yshift=0pt]
+          (2,4) -- (8,4) node [black,midway,yshift=0.8cm] {repulsive Coulomb potential};
+
+    \node[label= east:bound state] at (2,0-1) {};
+    \draw[-latex] (1,2) --(5,2) node[right] {quantum tunneling};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,15 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+    \draw[-latex] (0,-0.1) -- (0,5) node [right] {$y$};
+    \draw[-latex] (-0.1,0) -- (5,0) node [above] {$x$};
+    
+    \node[label= south :\circled{1}] (A) at (1,0) {};
+    \node[label= south :\circled{2}] (B) at (3,0) {};
+    \fill (A) circle (0.1);
+    \fill (B) circle (0.1);
+    
+    \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=4pt},yshift=0pt] (B.center) -- (A.center) node [black,midway,yshift=0.7cm] {$L_0$};
+\end{tikzpicture}
+\end{document}

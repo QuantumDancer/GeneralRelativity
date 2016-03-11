@@ -1,0 +1,41 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=2.5]
+\draw (0,0) ellipse (2 and 1 );
+\node (A) at (0,-1){};
+\node (B) at (0,1){};
+\node[label={[text width=2cm]west:aperihelion {$\phi=0$}}] (C) at (-2,0){};
+\node[label={[text width=2cm]east:perihelion {$\phi=\pi$}}] (D) at (2,0){};
+
+\node (plan) at (45:2 and 1){};
+\clip (-2.3,-1) rectangle (2.3,1);
+
+\draw[name path = yline] (A.center)--(B.center);
+\draw[name path = xline] (C.center) --(D.center);
+\draw[name path = circ,draw=none] (0,1) circle(2);
+\path [coordinate,name intersections={of=circ and xline}] (intersection-1) node (s1) {} (intersection-2) node(s2) {}; 
+
+\def\prad{0.03};
+\fill (s1) circle(\prad); 
+\fill[lightgray] (s2) circle(0.17) node[label=south:{\color{black} sun},yshift=-0.25cm] {}; 
+\fill (s2) circle(\prad); 
+\fill (plan) circle(\prad) node[label=north east:planet] {}; 
+\fill (C) circle(\prad); 
+\fill (D) circle(\prad); 
+\node[label=north:$F1$] at (s1){};
+\node[label={[label distance=-0.25cm]60:$F2$}] at (s2){};
+\draw[dashed] (s1.center) --(B.center) node[midway,label=south east:$a$] {};
+\draw[dashed] (s2.center) --(B.center) node[midway,label=south west:$a$] {};
+\draw (s2.center) --(plan.center) node[midway,label=right:$r$] {};
+\draw (s2)++(-0.5,0) arc (180:180-65:0.5) node[near start,right] {$\phi$};
+\draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=2pt},yshift=0pt] 
+(C.center) -- (0,0) node [black,midway,label=south:$a$,yshift=-0.1cm] {};
+\draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=2pt},yshift=0pt] 
+(0,0) -- (s2.center) node [black,midway,label=south:$e$,yshift=-0.1cm] {};
+\draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=2pt},yshift=0pt] 
+(0,0) -- (0,1) node [black,midway,label=right:$b$,xshift=0.1cm] {};
+
+
+\end{tikzpicture}
+\end{document}

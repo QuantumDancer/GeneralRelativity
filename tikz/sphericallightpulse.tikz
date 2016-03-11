@@ -1,0 +1,27 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+    \foreach \x in {1,...,4} {
+        \draw[\darkgreen,dashed] (0,0) circle (\x);
+    };
+    
+    \draw[-latex] (0,-5) --(0,5) node [right] {$y$};
+    \draw[-latex] (-5,0) --(5,0) node [above] {$x$};
+    
+    \draw[\darkgreen,arrows along my path] (0,0) -- (60:5);
+    \draw[\darkgreen,arrows along my path] (0,0) -- (160:5);
+    \draw[\darkgreen,arrows along my path] (0,0) -- (230:5);
+    \draw[\darkgreen,arrows along my path] (0,0) -- (320:5);
+    
+    \node[label=95:$P$] (P) at (0,0) {};
+    \node[label={[label distance=-0.2cm]30:$Q$}] (Q) at (30:4) {};
+    
+    \draw (P.center) -- (Q.center) node[midway, above] {$r$};
+    \fill (P) circle (0.1);
+    \fill (Q) circle (0.1);
+
+    \draw (45:5)--(45:4);
+    \node[fill=white] at (45:5) {wavefront};
+\end{tikzpicture}
+\end{document}

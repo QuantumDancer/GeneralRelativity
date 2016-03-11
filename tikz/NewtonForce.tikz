@@ -1,0 +1,17 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+    \node[label=left:$A$] (A) at (-1,2) {};
+    \node[label=below:$O$] (O) at (0,0) {};
+    \node[label=right:$B$] (B) at (1,1) {};
+    
+    \draw [-latex] (O.center) -- (A.center) node[midway,left]{$\vec{x}_A$};
+    \draw [-latex] (O.center) -- (B.center) node[midway,right]{$\vec{x}_B$};
+    \draw [-latex] (A.center) -- (B.center) node[midway,above]{$\vec{r}$} node[near start,above]{$\vec{e}_r$};
+    
+    \fill (O) circle(0.08);
+    \fill (A) circle(0.08);
+    \fill (B) circle(0.08);
+\end{tikzpicture}
+\end{document}

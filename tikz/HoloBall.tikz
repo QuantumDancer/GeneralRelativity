@@ -1,0 +1,15 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+    \fill[gray!50] (0,0) circle (2cm);
+    \fill[white] (0,0) circle (0.75cm);
+    \draw (0,0) circle (0.75cm);
+    \draw (0,0) circle (2cm);
+    \draw (0,0) node (o){} -- (75:2cm);
+    \draw (0,0) -- (25:0.75cm);
+    \fill (o) circle [radius=1.5pt];
+    \node at (0.7,1.2) {$r_2$};
+    \node at (0.4,-0.1) {$r_1$};    
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document} 
+\begin{tikzpicture}[x={(-10:1cm)},y={(90:1cm)},z={(210:1cm)},scale=1.5]
+    % Axes
+    \draw (-1,0,0) node[above] {$x$} -- (5,0,0);
+    \draw[-latex] (0,0,0) -- (0,2,0) node[above] {$y$};
+    \draw[-latex] (0,0,0) -- (0,0,2) node[left] {$z$};
+    % Propagation
+    \draw[-latex,ultra thick] (5,0,0) -- node[above] {$\vec{k}$} (6,0,0);
+    % Waves
+    \draw[thick,red] plot[domain=0:4.5,samples=200] (\x,{cos(deg(pi*\x))},0);
+    \draw[thick,blue] plot[domain=0:4.5,samples=200] (\x,0,{cos(deg(pi*\x))});
+    % Arrows
+    \foreach \x in {0.1,0.3,...,4.4} {
+      \draw[help lines,red] (\x,0,0) -- (\x,{cos(deg(pi*\x))},0);
+      \draw[help lines,blue] (\x,0,0) -- (\x,0,{cos(deg(pi*\x))});
+    }
+    % Labels
+    \node[above right,red] at (0,1,0) {$\vec{E}$};
+    \node[below,blue] at (0,0,1) {$\vec{B}$};
+  \end{tikzpicture}
+\end{document}

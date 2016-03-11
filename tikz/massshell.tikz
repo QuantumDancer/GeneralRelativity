@@ -1,0 +1,26 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+    \pgfplotsset{ticks=none};
+    \begin{axis}[
+        scale=2,
+        xmin=-9,xmax=9,
+        ymin=-5,ymax=9,
+        xlabel={$p$},
+        ylabel={$E$},
+        axis lines=center,
+        axis line style=-latex]
+        \addplot[] expression[domain=-10:10,samples=100]{(4+x^2)^(1/2)}; 
+        \addplot[red] expression[domain=-10:10,samples=100]{x}; 
+        \addplot[red] expression[domain=-10:10,samples=100]{-x}; 
+        \addplot[dashed] expression[domain=-10:10,samples=100]{2}; 
+        \pgfplotsset{
+        after end axis/.code={
+            \node[above] at (axis cs:7,2){restmass $m$};
+            \node[above,text width=3cm] at (axis cs:-3,5.5){``mass shell''\\$E=\sqrt{p^2+m^2}$};
+            }
+        }
+    \end{axis}
+\end{tikzpicture}
+\end{document}

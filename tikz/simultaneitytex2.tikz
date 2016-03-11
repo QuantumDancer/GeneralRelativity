@@ -1,0 +1,39 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+
+\draw[-latex] (10,-4) -- (10,4) node [right] {$t$};
+\draw[-latex] (6,0) -- (14,0) node [above] {$x$};
+\draw[-latex,\darkgreen] (6,-2) -- (14,2) node [above] {$x^\prime$};
+\draw[-latex,\darkgreen] (8,-4) -- (12,4) node [right] {$t^\prime$};
+\draw[red,dashed] (6,-4) -- (14,4);
+\draw[red,dashed] (6,4) -- (14,-4);
+
+
+\node [label={[label distance=-0.2cm]north east:$A$}] (e) at (8,2) {};
+\node [label={[label distance=-0.3cm]south east:$C$}] (f) at (12,2) {};
+\node[label={[\darkgreen]north:$C^\prime$}] (g) at (13,3) {};
+\node[label={[\darkgreen]north:$A^\prime$}] (h) at (9,1) {};
+\node[label={[\darkgreen,label distance=-0.3cm]north west:$B^\prime$}] (i) at (11,2) {};
+\node[label={[label distance=-0.2cm]north east:$B$}]  (j) at (10,2) {};
+\coordinate (k) at (10,0);
+\def\psize{1.5pt};
+
+\draw (e.center) -- (f.center);
+\draw[\darkgreen] (g.center) -- (h.center);
+
+\fill (e) circle (\psize);
+\fill (f) circle (\psize);
+\fill[\darkgreen] (g) circle (\psize);
+\fill[\darkgreen] (h) circle (\psize);
+\fill[\darkgreen] (i) circle (\psize);
+\fill (j) circle (\psize);
+\fill (k) circle (\psize);
+
+\draw[- latex] (8.5,3) -- (9,2);
+\draw[\darkgreen,- latex] (13,4) -- (12,2.5);
+\node[text width = 2cm,fill=white] at (8.5,3) {simultaneous for $B$};
+\node[\darkgreen,text width = 2cm,fill=white,xshift=-0.5cm] at (13.7,4) {simultaneous for $B^\prime$};
+\end{tikzpicture}
+\end{document}

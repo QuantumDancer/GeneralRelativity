@@ -1,0 +1,30 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+\draw [black,thick,dashed] (0,0) circle (1/1.6);
+\draw [black,thick,dashed] (0,0) circle (1/0.4);
+
+
+\node (plabel) at (0,1.5) {};
+\node (p1) at (40:1/1.6) {};
+\node (p2) at (90:1/1.6) {};
+\node (p3) at (140:1/1.6) {};
+
+\draw (plabel.center) -- (p1.center);
+\draw (plabel.center) -- (p2.center);
+\draw (plabel.center) -- (p3.center);
+
+\node [fill=white] at (plabel) {perihelion};
+
+\draw [thick, color=red, domain=0:5.5*pi, samples=200, smooth] plot (xy polar cs:angle=\x r, radius={1/(1-0.6*cos(\x r+0.2*\x r))});
+
+\def\prad{0.075}
+
+\fill (0,0) circle [radius=2*\prad];
+\fill (p1) circle [radius=\prad];
+\fill (p2) circle [radius=\prad];
+\fill (p3) circle [radius=\prad];
+
+\end{tikzpicture} 
+\end{document}

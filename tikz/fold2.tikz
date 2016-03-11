@@ -1,0 +1,49 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1]
+
+	\def\prad{0.05};
+	 \node (A) at (6,0) {}; 
+	\node[shift={(0,2)}] (B) at (A) {}; 
+	\node[shift={(-1,0)}] (C) at (B) {}; 
+	\node[shift={(1,0)}] (F) at (B) {};  
+	
+	% draw (partial) ellipses
+	\draw (B) [partial ellipse=-240:60:1cm and 0.3cm] node [] (h1){} node [at start] (h2){};
+	\draw (B) [draw=none,name path=uell] ellipse (1 and 0.3);
+	\draw (A) [draw=none,partial ellipse=-240:60:1cm and 0.3cm]node [] (h3){} node [at start] (h4){};
+	\draw (A) [dashed,partial ellipse=-240:-180:1cm and 0.3cm]node [at end] (E){};
+	\draw (A) [dashed,partial ellipse=0:60:1cm and 0.3cm]node [at start] (D){};
+	\draw (A) [partial ellipse=-180:0:1cm and 0.3cm];
+	
+	% determine area that is covered by cylinder 
+	\draw[draw=none,name path = help1] (h2.center) --(h4.center);
+	\draw[draw=none,name path = help2] (h1.center) --(h3.center);
+	\node (sect1)[name intersections={of=help1 and uell}] at (intersection-1) {}; 
+	\node (sect2)[name intersections={of=help1 and uell}] at (intersection-2) {}; 
+	\node (sect3)[name intersections={of=help2 and uell}] at (intersection-1) {}; 
+	\node (sect4)[name intersections={of=help2 and uell}] at (intersection-2) {}; 
+	
+	% determine draw vertical lines 
+	\draw(sect1.center) --(sect2.center);
+	\draw(sect4.center) --(sect3.center);
+	 \draw[dashed](h3.center) --(sect4.center);
+	 \draw[dashed](h4.center) --(sect2.center);
+	 \draw (C.center) --(E.center);
+	 \draw (D.center) --(F.center);
+	 
+	 % draw curve
+	\draw[thick,dashed](h4.center) .. controls (5,0.6)  and (5.1,0.6) .. (5,0.7);
+	\draw[thick]		(5,0.7) .. controls (5.3,1.3)  and (6.8,1.) .. (7,1.7);
+	\draw[thick,dashed](h1.center) .. controls (7,2)  and (7,2) .. (7,1.7);
+	
+
+	 % draw points
+	\fill (5,0.6) circle (\prad) ;
+	\fill (6,1.15) circle (\prad) ;
+	\fill (h1.center) circle (\prad) ;
+	
+  
+\end{tikzpicture}
+\end{document}

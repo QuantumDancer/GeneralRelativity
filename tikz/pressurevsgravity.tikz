@@ -1,0 +1,20 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+	\def\ra{1}
+	\def\rb{2}
+	\def\rc{3}
+    \coordinate (1) at (40:\ra);
+    \coordinate (2) at (40:\rb);
+    \coordinate (3) at (40:\rc);
+    \coordinate (O) at (0,0);
+    
+    \draw[fill=lightgray]   (-14:0) node (v1) {} circle (\rb);
+    
+    \node[below,yshift=-0.5cm] at (O) {star};
+    \draw[-latex] (O) + (1) to node[left,xshift=-5] {pressure}+ (2);
+    \draw[latex-] (O) + (2) to node[right,xshift=2] {gravity} +(3);
+	\fill (O) circle (0.1);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,52 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+
+\begin{tikzpicture}[scale=1.5]
+\def\prad{1.5pt};
+\draw[-latex,name path = taxis] (0,-5) node[below] {e${}^-$} -- (0,5) node[right] {$t$};
+\draw[-latex,name path = xaxis] (-5,0) -- (5,0) node[above] {$x$};
+\draw[red,name path = cone1] (-5,-5) -- (5,5);
+\draw[red,name path = cone2] (-5,5) -- (5,-5);
+
+\draw[\darkgreen,name path=xprime,-latex] (-5,-1) -- (5,1) node[above] {$x^\prime$};
+\draw[\darkgreen,name path=tprime,-latex] (-1,-5) node[below] {e${}^+$} -- (1,5) node[right] {$t^\prime$};
+ 
+\node[label=south west:$A$] (A) at (-2.5,0) {};
+\node[label=south east:$B$] (B) at (2.5,0) {};
+
+\draw[\darkgreen] (A.center)++(-1,-5) node[below] {e${}^+$} -- (A.center);
+\draw[\darkgreen] (B.center)++(-1,-5) node[below] {e${}^+$} -- (B.center);
+
+\draw[name path] (A.center)++(0,-5) node[below] {e${}^-$} -- (A.center);
+\draw[name path] (B.center)++(0,-5) node[below] {e${}^-$}-- (B.center);
+
+\def\len{4.5};
+\draw[red,dashed,name path=leftcone] (A) ++(-\len/2,\len/2) -- ++(\len/2,-\len/2)-- ++(\len,\len);
+\draw[red,dashed,name path=rightcone] (B) ++(-\len,\len) -- ++(\len,-\len)-- ++(\len/2,\len/2);
+
+ 
+\path[coordinate, name intersections={of=leftcone and taxis}] (intersection-1) node (sect1) {}; 
+\node[label=west:$C$] at (sect1) {};
+
+\path[coordinate, name intersections={of=rightcone and tprime}] (intersection-1) node (sect2) {}; 
+\node[label=east:$E$] at (sect2) {};
+
+\path[coordinate, name intersections={of=leftcone and tprime}] (intersection-1) node (sect3) {}; 
+\node[label=west:$D$] at (sect3) {};
+
+\fill (sect1) circle [radius=2pt];
+\fill (sect2) circle [radius=2pt];
+\fill (sect3) circle [radius=2pt];
+\fill (A) circle [radius=2pt];
+\fill (B) circle [radius=2pt];
+
+%\def\helpcolor{none};
+%\draw[draw=\helpcolor,name path = upbound] (C.center) -- (D.center);
+%\draw[draw=\helpcolor,name path = lowbound] (A.center) -- (B.center);
+%\draw[draw=\helpcolor,name path = rbound] (B.center) -- (D.center);
+%\draw[draw=\helpcolor,name path = lbound] (A.center) -- (C.center);
+
+
+\end{tikzpicture}
+\end{document}

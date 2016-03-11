@@ -1,0 +1,40 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+
+\draw[fill=lightgray] (2,0) arc (0:180:2);
+\draw[dashed] (0,2) -- (0,10);
+\draw[dashed,rotate=40] (0,2) -- (0,10);
+\draw[dashed,rotate=-40] (0,2) -- (0,10);
+\draw[-latex] (0,3.5) -- (0,2.5);
+\draw[rotate=40,-latex] (0,3.5) -- (0,2.5);
+\draw[rotate=-40,-latex] (0,3.5) -- (0,2.5);
+
+\draw[-latex] (0,7.5) -- (0,6.5);
+\draw[rotate=40,-latex]  (0,7.5) -- (0,6.5);
+\draw[rotate=-40,-latex] (0,7.5) -- (0,6.5);
+
+\draw[latex-latex] (60:5) -- (80:5);
+\draw[latex-latex] (180-60:5) -- (180-80:5);
+
+\draw[latex-latex] (60:9) -- (80:9);
+\draw[latex-latex] (180-60:9) -- (180-80:9);
+
+
+
+\draw[fill=white] (-0.5,4) rectangle (0.5,6);
+\draw[rotate=40,fill=white] (-0.5,4) rectangle (0.5,6);
+\draw[rotate=-40,fill=white] (-0.5,4) rectangle (0.5,6);
+\draw[fill=white] (-0.5,8) rectangle (0.5,10);
+\draw[rotate=40,fill=white] (-0.5,8) rectangle (0.5,10);
+\draw[rotate=-40,fill=white] (-0.5,8) rectangle (0.5,10);
+\node[rotate=20,fill=white] at (180-70:8.9) {tidal forces};
+\node[text width=2cm] at (1.9,6) {free falling laboratory};
+
+
+\node[text width=3cm, align = center] at (0,0.75){inhomogenous \\  gravitational \\ field};
+
+
+\end{tikzpicture}
+\end{document}

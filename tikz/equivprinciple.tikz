@@ -1,0 +1,18 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \draw (-0.5,0) rectangle (0.5,2.5); 
+    \stickman at (0,0.5);
+    
+    \draw[fill=lightgray] (-2,-1) rectangle (2,0); 
+
+    \draw (5.5,0) rectangle (6.5,2.5); 
+    \stickman at (6,0.5);
+
+    \draw[-latex] (7,0.5) -- (7,2) node[anchor = west] {$\vec{a}$}; 
+    \draw[latex-] (1,0.5) -- (1,2) node[anchor = west] {$\vec{g}$}; 
+
+    \node at (3.5,1.2){$\iff$};
+\end{tikzpicture}
+\end{document}

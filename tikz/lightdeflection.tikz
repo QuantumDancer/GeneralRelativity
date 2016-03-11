@@ -1,0 +1,30 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \draw[fill=lightgray]  (0,0) circle (1);
+    \node (A) at (0,0) {};
+    \fill (A) circle [radius=0.075];
+    \draw (A.center) -- (0,2);
+    
+    \draw[dashed,red] (-5,2) --(5,2);
+
+    \draw[draw=none]
+        (-5,-2) coordinate (P)
+        -- (-0,3) coordinate (Q)
+        -- (0,3) coordinate (R)
+        -- (5,-2) coordinate (S) -- cycle (P) -- (R) (Q) -- (S);
+    \draw[arrows along my path,red] (P) .. controls (Q) and (R) .. (S);
+    \draw(P) --(1,4);
+    \draw (S) --(-1,4);
+    \draw[dashed] (-3.5,-3.5) --(0,0);
+    \draw[latex-latex] (-3,-3) --(-4.5,-1.5)node[midway,fill=white] {$b$};
+    \draw[latex-latex] (0,0) -- (25:1) node[midway,below,yshift=-0.1cm,xshift=0.1cm] {$R_{\astrosun}$};
+    \draw (0.5,3.5) arc (45:-45:0.71) node[midway,left,xshift=0.05cm] {$\Delta\phi$};
+    \draw (2.2,2) arc (0:-45:1.2) node[midway,left,xshift=0.05cm,yshift=0.1cm] {$\frac{\Delta\phi}{2}$};
+    \node at (-0.5,0.2) {$M_{\astrosun}$};
+    \node[label=east:total deflection angle] at (1,3) {};
+    \node[label=east:{\color{red}ray without deflection}] at (2.5,1.5) {};
+    %TODO Sun symbol
+\end{tikzpicture}
+\end{document}

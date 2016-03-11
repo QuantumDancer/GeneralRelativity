@@ -1,0 +1,35 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+\draw[-latex] (-5,0) -- (5,0) node[above] {$x$};
+\draw[-latex] (0,-5) -- (0,5) node [right] {$ct$};
+
+\draw[draw=red,thick] (-3,-3) arc (-180:0:3cm and 0.4cm);
+\draw[draw=red,thick,densely dashed] (-3,-3) arc (180:0:3cm and 0.4cm);
+\draw[draw=red,thick] (-3,3) arc (-180:0:3cm and 0.4cm);
+\draw[draw=red,thick] (-3,3) arc (180:0:3cm and 0.4cm);
+\draw[red,thick] (-3,-3) -- (3,3);
+\draw[red,thick] (-3,3) -- (3,-3);
+\draw[red,thick,dashed] (-4,-4) -- (4,4);
+\draw[red,thick,dashed] (-4,4) -- (4,-4);
+\draw (0,0) ;
+\node[text width=1.5cm] at (0.8,1.8){timelike\\$\mathrm{d} s^2< 0$};
+\node[text width=1.5cm] at (-3,0.8){spacelike\\$\mathrm{d} s^2> 0$};
+\node[text width=1.5cm] at (2,-0.8){lightlike\\$\mathrm{d} s^2= 0$};
+\node[text width=1.5cm] at (-0.8,1.8){future\\ $ $};
+\node[text width=1.5cm] at (0.8,-2){$\mathrm{d} s^2< 0$};
+\node[text width=1.5cm] at (-0.8,-2){past};
+\node[text width=0.25cm] at (0.5,0.25){$45^\circ $};
+\node[text width=1.5cm,red] at (2.5,-1.5){$t+x=0$};
+\node[text width=1.5cm,red] at (3.5,2.5){$t-x=0$};
+\node[text width=1.5cm] at (3,1){$\mathrm{d} s^2> 0$};
+\node[red] (1) at (2,4){light cone};
+\node (2) at (0.5,3){};
+\node (3) at (1,-1){};
+\draw[red] (1) -- (2);
+\draw (1,0) arc (0:45:1);
+\fill (0,0) circle (0.05);
+\draw (0,3) -- (0,5);
+\end{tikzpicture}
+\end{document}

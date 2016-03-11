@@ -1,0 +1,33 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \draw (0,0) circle (2);
+    \draw[fill=lightgray] (0,0) circle (0.4);
+    
+    \begin{scope}[rotate=0,scale=0.7]
+        \boxman at (2/0.7,-0.5);
+    \end{scope}
+    
+    \begin{scope}[rotate=90,scale=0.7]
+        \boxman at (2/0.7,-0.5);
+    \end{scope}
+    
+    \begin{scope}[rotate=180,scale=0.7]
+        \boxman at (2/0.7,-0.5);
+    \end{scope}
+    
+    \begin{scope}[rotate=270,scale=0.7]
+        \boxman at (2/0.7,-0.5);
+    \end{scope}
+    
+    \begin{scope}[scale=0.7]
+        \boxman at (6,-2.5);
+        \boxman at (9,1.5);
+    \end{scope}
+    
+    \node at (3,0){$\iff$};
+    
+    \draw[-latex](4.3,-0.5) -- (5.7,1) node[midway,above] {$\vec{v}$};
+\end{tikzpicture}
+\end{document}

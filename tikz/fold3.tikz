@@ -1,0 +1,21 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1]
+	\node (G) at (12,0){};
+	\node (H) at (12,2){};
+	
+	\draw (H) ellipse (0.8 and 0.2);
+	\draw (G) [dashed,partial ellipse=0:180:0.8cm and 0.2cm];
+	\draw (G) [partial ellipse=0:-180:0.8cm and 0.2cm];
+	\draw (11.2,0) --(11.2,2);
+	\draw (12.8,0) --(12.8,2);
+	
+	\draw[thick](11.2,0.0) .. controls (11.5,0.1)  and (12.5,0.2) .. (12.8,1);
+	\draw[thick,dashed](12.8,1) .. controls (12.5,1.8)   and (11.5,2) .. (11.2,2);
+	
+	\fill (11.2,0.0) circle(0.05);
+	\fill (12.8,1) circle(0.05);
+	\fill (11.2,2) circle(0.05);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+    \node[label=above:$\circled{1}$] (A) at (-1,2) {};
+    \node[label=below:$O$] (O) at (0,0) {};
+    \node[label=above:$\circled{2}$] (B) at (1,1) {};
+    
+    \draw [-latex] (O.center) -- (A.center) node[midway,left]{$\vec{x}$};
+    \draw [-latex] (O.center) -- (B.center) node[midway,right]{$\vec{x}+\boldsymbol{\chi}$};
+    \draw [-latex] (A.center) -- (B.center) node[midway,above]{$\boldsymbol{\chi}$};
+    
+    \fill (O) circle(0.08);
+    \fill (A) circle(0.08);
+    \fill (B) circle(0.08);
+\end{tikzpicture}
+\end{document}

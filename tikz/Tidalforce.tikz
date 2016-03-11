@@ -1,0 +1,33 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+	\def\prad{0.07}; 	% point radius
+	\def\num{8}; 	% number of points
+	\def\ypos{0.7}; 	% shift between ellipses
+	
+	% place nodes 
+	\node (p0) at (0,0){};
+	\node (q0) at (0,\ypos){};
+	\foreach \x in {1,...,\num} {
+		\node 					(p\x) at (360/\num*\x: 1 and 2){};
+		\node[shift={(0,\ypos)}] 	(q\x) at (360/\num*\x: 1.5 and 1.6){};
+		}
+	
+	% draw ellipses
+	\draw[\darkgreen,dashed] 	(p0) ellipse (1 and 2);
+	\draw[dashed] 				(q0) ellipse (1.5 and 1.6);
+	
+	% draw points and arrows
+	\foreach \x in {0,...,\num}	{
+		\fill[\darkgreen]  	(p\x) circle(\prad); 
+		\draw[blue,-latex] 	(q\x.center) --(p\x.center);
+		\fill  				(q\x) circle(\prad); 
+		}
+	
+	% draw rest
+	\draw (-2.5,-3) rectangle (2.5,3);
+	\draw[-latex] (0,-3)--(0,-4);
+	\filldraw[fill=lightgray] (-3,-6) arc (135:45:4.2) node [midway,yshift=-1cm]{inhomogenous grav. field};
+\end{tikzpicture}
+\end{document}

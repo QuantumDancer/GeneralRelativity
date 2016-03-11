@@ -1,0 +1,36 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+\clip(0,5) rectangle (11.5,11);
+     \def\sca{1};
+    \def\scb{3};
+    \node (A) at (0,0) {};
+
+    \node[shift={(\sca*3,\sca1*1)}] (B) at (A.center) {};
+
+    \node[shift={(\scb*3,\scb*1*1)},label=right:true postion,draw, fill=yellow, star, star points=5, minimum size=1cm] (C) at (B.center){};
+    \node[shift={(0.5*\sca*3,-0.5*\sca*1*1)}] (D) at (B.center){};
+    \node[shift={(-0.5*\sca*3,0.5*\sca*1*1)}] (E) at (B.center){};
+    \node[shift={(0.5*\scb*3,0.5*\scb*1*1)}] (F) at (B.center){};
+    \node[shift={(2*\sca*3,-2*\sca*1*1)},label=right:apparent postion,draw, fill=yellow, star, star points=5, minimum size=1cm] (G) at (F.center){};
+    \node[shift={(-2*\sca*3,2*\sca*1*1)},label=above:apparent postion,draw, fill=yellow, star, star points=5, minimum size=1cm] (H) at (F.center){};
+    \draw[dashed,thick] (F) -- (C);
+       \draw (B.center)++(-1.5,-0.5) -- ++(0,2) -- ++(3,-1) -- ++(0,-2) -- cycle;
+    \draw[fill=lightgray] (F) circle (0.5cm) node[above,yshift=1cm] {large mass};
+    \draw[dashed,thick] (B) -- (F);
+
+    \draw(E.center) .. controls (H.center)  and (H.center) .. (C.center) node[midway,below,yshift=-0.1cm]{path 1};
+    \draw(D.center) .. controls (G.center)  and (G.center) .. (C.center)node[midway,above,xshift=-0.3cm]{path 2};
+    \draw[dashed](D.center)-- (G.center);
+    \draw[dashed](E.center)-- (H.center);
+    \fill (B) circle(0.05);
+    \fill (C) circle(0.05);
+    \fill (D) circle(0.05);
+    \fill (E) circle(0.05);
+    \fill (F) circle(0.05);
+    \fill (G) circle(0.05);
+    \fill (H) circle(0.05);
+
+\end{tikzpicture}
+\end{document}

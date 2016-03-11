@@ -1,0 +1,16 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+    \node[label=above:$I_1$] (A) at (-1,2) {};
+    \node[label=below:$I$] (O) at (0,0) {};
+    \node[label=above:$I_2$] (B) at (1,1) {};
+    \draw [-latex] (O.center) -- (A.center) node[midway,left]{$\vec{v}_{1}$};
+    \draw [-latex] (O.center) -- (B.center) node[midway,right]{$\vec{v}_{2}$};
+    \draw [-latex] (A.center) -- (B.center) node[midway,above]{$\vec{v}_{12}$};
+    \draw (45:0.5) arc (45:115:0.5) node[midway,below]{$\alpha$};
+\fill (O) circle(0.08);
+\fill (A) circle(0.08);
+\fill (B) circle(0.08);
+\end{tikzpicture}
+\end{document}

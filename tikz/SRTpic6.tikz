@@ -1,0 +1,44 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=2]
+\def\prad{1.5pt};
+
+\draw[fill=gray!20,draw=none] (0,-5) rectangle (2,5);
+\draw[-latex,name path = taxis] (0,-5) -- (0,5) node[right] {$t$};
+\draw[-latex,name path = xaxis] (-1,0) -- (5,0)node[above] {$x$};
+
+\draw[\darkgreen,name path=xprime,-latex] (0,0) -- (5,3)node[right] {$t^\prime$};
+\draw[\darkgreen,name path=tprime,-latex] (0,0) -- (3,5)node[right] {$x^\prime$};
+
+\draw[domain=-5:5,smooth,variable=\x,blue,name path=hyp1,
+      postaction={decorate, 
+                  decoration={raise=4pt, reverse path, text align={left indent=20cm}, text along path,
+                              text={{}{\color{blue}$t=\sqrt{x^2-l^2}$}}}
+}] plot ({sqrt((\x)^2+4)},{\x});
+
+\draw[name path = h1] (2,-5) --(2,5);
+
+\path[coordinate, name intersections={of=xprime and hyp1}] (intersection-1) node (sect1) {}; 
+\node[label=south east:{\color{\darkgreen}$A^\prime$}] at (sect1) {};
+
+\path[coordinate, name intersections={of=xprime and h1}] (intersection-1) node (sect2) {}; 
+\node[label=north west:$B$] at (sect2) {};
+
+\draw[red] (-1,-1) --(5,5);
+\draw[red] (-1,1) --(5,-5);
+
+\draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=2pt},yshift=0pt,\darkgreen] (0,0) -- (sect2.center) node [black,midway,label=south east:{\color{\darkgreen}$l^\prime$}] {};
+\draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=2pt},yshift=0pt] (0,-5) -- (2,-5) node [black,midway,label=south:$l$,yshift=-0.1cm] {};
+
+\node (O) at (0,0) {};
+\node[label=south east:$A$] (A) at (2,0) {};
+\node[label=south east:\small\circled{1}] at (0,5) {};
+\node[label=south east :{\color{\darkgreen}\small\circled{2}}] at (3,5) {};
+
+\fill (sect1) circle [radius=\prad];
+\fill (sect2) circle [radius=\prad];
+\fill (A) circle [radius=\prad];
+\fill (O) circle [radius=\prad];
+\end{tikzpicture}
+\end{document}

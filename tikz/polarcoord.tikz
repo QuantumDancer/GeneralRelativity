@@ -1,0 +1,14 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=2]
+    \draw [latex-latex,thick] (0,2)  node [right] {$y$} |- (2,0) node [above] {$x$};
+    \draw (0,1.41) arc [radius=1.41, start angle=90, end angle=0];
+    \draw [-latex] (0,0) -- (1,1);
+    \draw [latex-] (0.4,0.4) arc [radius=0.565685, start angle=45, end angle=0];
+    \node [above] at (0.4,0.4) {$r$};
+    \node [right] at (0.5,0.25) {$\varphi$};
+    \node [left]at (0,1.25) {$\phantom{y}$};
+    \node [below]at (1.25,0) {$\phantom{x}$};
+\end{tikzpicture}
+\end{document}

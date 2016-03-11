@@ -1,0 +1,20 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+\draw(-0.3,-0.1) rectangle(2.8,2.6);
+\fill[white](-0.2,-0.2) rectangle(2.7,2.7);
+\draw[fill=gray!20] (0,0) --(0,2) --(2,0) --cycle ;
+\draw[double distance = 0.3cm,line cap=round] (0.15,2.3) -- (2.3,.15);
+ \foreach \x in {0,...,10}
+ {
+ 	\fill[shift={(2.15*1/10*\x,-2.15*1/10*\x)}] (0.15,2.3)circle(0.07);
+ }  
+
+ \draw [decorate,decoration={brace,amplitude=5pt}] (-0.4,0) -- (-0.4,2.3) node [black,midway,label=left:$n$] {};
+ \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=3pt},yshift=0pt] (0,-0.1) -- (2.5,-0.1) node [black,midway,label=below:$n$,yshift=-0.1cm] {};
+  \draw [decorate,decoration={brace,amplitude=5pt,raise=6pt},yshift=0pt] (0,2.5) -- (2.5,0) node [black,midway,label=north east:$n$,shift={(0.1,0.1)}] {};
+  \draw (-1.5,0) -- (0.5,0.5);
+  \node[fill=white] at (-1.5,0) {$\frac{n(n-1)}{2}$};
+\end{tikzpicture}
+\end{document}

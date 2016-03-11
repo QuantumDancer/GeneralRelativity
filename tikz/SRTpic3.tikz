@@ -1,0 +1,36 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=2]
+    \draw[-latex,name path = taxis] (0,0) -- (0,6) node [right] {$t$};
+    \draw[-latex,name path = xaxis] (0,0) -- (6,0) node [above] {$x$};
+    \draw[draw=none,name path=lightcone] (0,0) -- (5,5);
+    \node[text width = 2.5cm,label=above:{\color{\darkgreen}observer 1 worldline}] (tprimeaend) at (2,6) {};
+    \node[label=above:{\color{\darkgreen}observer 2 worldline}] (tprimebend) at (4,6) {};
+    \node (tprimeaend) at (2,6) {};
+    \draw[\darkgreen,name path=tprimea,-latex] (0,0) -- (tprimeaend) node[right] {$t^\prime$};
+    \draw[\darkgreen,name path=tprimeb,-latex] (2,0) -- (tprimebend) node[right] {$t^\prime$};
+    \draw[\darkgreen,name path=xprime,-latex] (0,0) -- (6,2) node[above] {$x^\prime$};;
+    \draw[draw=none,name path=hlinea] (0,2) -- (6,4);
+    \path [coordinate,name intersections={of=lightcone and tprimeb}] (intersection-1) node (sect1) {}; 
+    \node[label=south east:$B$] at (sect1) {};
+    \draw[draw=none,name path = hlineb] (sect1) -- +(-2,2);
+    \path [coordinate,name intersections={of=hlineb and tprimea}] (intersection-1) node (sect2) {}; 
+    \node [label=east:$C$] at (sect2) {};
+    \path [coordinate,name intersections={of=hlinea and tprimea}] (intersection-1) node (sect3) {}; 
+    \node [label=west:$D$] at (sect3) {};
+    \node[label=west:$A$] (A) at (0,0) {};
+     
+    \draw[red] (A.center) -- (sect1.center) node [midway,fill=white] {lightray} -- (sect2.center);
+    \draw[dashed,\darkgreen] (sect1) -- (sect3) node (m) [midway] {};
+    \node (n1) at (5.3,4) {};
+    \draw[-latex,\darkgreen] (n1) edge[bend right]  (m);
+    \node[text width = 2.5cm,\darkgreen,fill=white] at (n1){surface of simultaneity};
+    
+    \def\prad{0.05}
+    \fill (sect1) circle [radius=\prad];
+    \fill (sect2) circle [radius=\prad];
+    \fill (sect3) circle [radius=\prad];
+    \fill (A) circle [radius=\prad];
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,15 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\usetikzlibrary{shapes.geometric}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \draw[-latex] (0,-0.5) --(0,5) node[right] {$t$};
+    \draw[-latex] (-0.5,0) --(5,0) node[above]{$x$};
+    \node[label=north west:$t_\mathrm{A}$] (tA) at (0,0) {};
+    \node[label=north west:$t_\mathrm{B}$] (tB) at (0,3) {};
+    \draw (tA) --(tB) node[midway,label=west:\circled{1}] (mid){};
+    \draw[red] (tA) .. controls (0,0.5) and (2,1) .. (2,1.5) node[label=east:\circled{2}]{}.. controls (2,2) and (0,2.5) .. (tB) ;
+    \fill (tA) circle(0.05);
+    \fill (tB) circle(0.05);
+\end{tikzpicture}
+\end{document}

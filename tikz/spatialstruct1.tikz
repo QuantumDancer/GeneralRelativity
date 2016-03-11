@@ -1,0 +1,18 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \node at (0,3) {spherical: $\kappa>0$};
+    \node at (0,-1) {$\eta^{\prime\prime}<0$};
+    
+    \draw[name path = le] (0,0) .. controls (0.8,1)  and (0.8,1) .. (1,2);
+    \draw[name path = re]  (0,0) .. controls (-0.8,1)  and (-0.8,1) .. (-1,2) node[midway,left] {$r$};
+    \draw[name path = hl,draw=none] (-2,1.5) --(2,1.5);
+        
+    \path[coordinate, name intersections={of=le and hl}] (intersection-1) node (sect1) {}; 
+    \path[coordinate, name intersections={of=re and hl}] (intersection-1) node (sect2) {}; 
+    
+    \draw[name path = hl,thick] (sect1.center) --(sect2.center) node[midway,above] {$\eta$};
+    \fill (0,0) circle (0.08);
+\end{tikzpicture}
+\end{document}

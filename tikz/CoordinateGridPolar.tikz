@@ -1,0 +1,22 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+%grid
+\def\dist{1.0};
+\foreach \x in {1,...,5}
+{
+\draw[dashed] (0,\dist*\x) arc (90:0:\dist*\x);
+\draw[dashed] (0,0) -- (15*\x:5);
+};
+
+%axis
+\draw[-latex] (0,0) --(0,5) node[left] {$y$};
+\draw[-latex] (0,0) --(5,0) node[below] {$x$};
+
+\draw[ultra thick]  (15*5:3) -- (15*4:4) node[midway,above] {$\mathrm{d}s$}; %ds
+\draw[ultra thick] (15*4:3) arc (15*4:15*5:3) node[midway,below,xshift=-0.2cm] {$r\mathrm{d}\phi$} 
+      -- (15*5:4) node[midway,left] {$\mathrm{d}r$}; %rdphi
+
+\end{tikzpicture}
+\end{document}

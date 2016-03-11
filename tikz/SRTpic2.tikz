@@ -1,0 +1,37 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=2.5]
+\draw[domain=0:5,smooth,variable=\x,blue,name path=hyp] plot ({\x},{sqrt(\x*\x+4)});
+\draw[domain=0:5,smooth,variable=\x,\darkgreen,dashed,name path=tangent] plot ({\x},{3/5*\x+1.6});
+\node[label=north east:$A$] (A) at (0,2) {};
+\node (C) at (2,2) {};
+\draw[name path=linea] (A.center) -- (C.center);
+\draw[-latex,name path = taxis] (0,-0.1) -- (0,5) node[right] {$t$};
+\draw[-latex,name path = xaxis] (-0.1,0) -- (5,0) node[above] {$x$};
+\draw[red,name path=lightcone] (0,0) -- (5,5);
+\draw[\darkgreen,name path=tprime,-latex] (0,0) -- (3,5) node[\darkgreen,right] {$t^\prime$};
+\draw[\darkgreen,name path=xprime,-latex] (0,0) -- (5,3) node[\darkgreen,above] {$x^\prime$};
+
+\draw[decorate,decoration={brace,amplitude=5pt}] (-2pt,0) -- (-2pt,2) node[midway,left,xshift=-0.2cm]{$t=\tau$};
+\draw[decorate,decoration={brace,amplitude=3pt}] (-0.2,1.6) -- (-0.2,2) node[midway,left,xshift=-0.1cm]{$\Delta t$};
+
+
+\path[coordinate, name intersections={of=linea and tprime}] (intersection-1) node (sect2) {}; 
+\node[label=south east:{\color{\darkgreen}$B^\prime$}] at (sect2) {};
+\path[coordinate, name intersections={of=hyp and tprime}] (intersection-1) node (sect3) {}; 
+\node[label=north west:{\color{\darkgreen}$A^\prime$}] at (sect3) {};
+\path[coordinate, name intersections={of=tangent and taxis}] (intersection-1) node (sect4) {s4};
+\node[label=south east:$B$] at (sect4) {};
+
+\def\prad{1.5pt};
+\fill (A) circle [radius=\prad];
+\fill (C) circle [radius=\prad];
+\fill[\darkgreen] (sect2) circle [radius=\prad];
+\fill[\darkgreen] (sect3) circle [radius=\prad];
+\fill (sect4) circle [radius=\prad];
+
+\node[label=south east:\small\circled{1}] at (0,5) {};
+\node[label=south east :{\color{\darkgreen}\small\circled{2}}] at (3,5) {};
+\end{tikzpicture}
+\end{document}

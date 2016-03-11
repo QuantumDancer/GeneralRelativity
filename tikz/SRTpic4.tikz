@@ -1,0 +1,54 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+
+\begin{tikzpicture}[scale=2]
+    \def\prad{1.5pt};
+
+    \draw[fill=gray!20,draw=none] (3,5) -- (-1,{-5/3}) -- (-1,{-5+2/3})-- (4.6,5) --cycle;
+    \draw[-latex,name path = taxis] (0,-5) -- (0,5) node[right] {$t$};
+    \draw[-latex,name path = xaxis] (-1,0) -- (5,0) node[above] {$x$};
+
+    \draw[\darkgreen,name path=xprime,-latex] (0,0) -- (5,3) node[right] {$x^\prime$};
+    \draw[\darkgreen,name path=tprime,-latex] (-1,{-5/3})-- (3,5) node[right] {$t^\prime$};
+    \draw[\darkgreen,name path=tprime,-latex] (-1,{-5+2/3}) -- (4.6,5) node[right] {$t^{\prime\prime}$};
+
+    \draw[
+    	domain=-5:5,
+    	smooth,
+    	variable=\x,
+    	blue,
+    	name path=hyp1,
+    	postaction={
+    		decorate,
+             decoration={
+             		raise=4pt,
+             		reverse path,
+             		text align={
+             			left indent=20cm
+             			},
+                     text along path,
+                     text={{}{\color{blue}$t=\sqrt{x^2-l^2}$}}
+                     }
+		}
+	] plot ({sqrt((\x)^2+4)},{\x});    
+    \path[coordinate, name intersections={of=xprime and hyp1}] (intersection-1) node (sect1) {}; 
+    \node[label=east:$A^\prime$] at (sect1) {};
+    
+    \draw[red] (-1,-1) --(5,5);
+    \draw[red] (-1,1) --(5,-5);
+       
+    \node[label=south east:$A$] at (2,0) {};
+    
+    \node[label=south east:\small\circled{1}] at (0,5) {};
+    \node[label=south east:{\color{\darkgreen}\small\circled{2}}] at (3,5) {};
+    
+    \node[label=below:$B ^\prime$] at (1.6,0) {};
+    
+    
+    \fill (sect1) circle [radius=\prad];
+    \fill (0,0) circle [radius=\prad];
+    \fill (2,0) circle [radius=\prad];
+    \fill (1.6,0) circle [radius=\prad];
+\end{tikzpicture}
+\end{document}

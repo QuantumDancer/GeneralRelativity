@@ -1,0 +1,28 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.25]
+
+\clip (-1,-1) rectangle (6,6);
+
+\def\prad{2pt};
+\draw[-latex] (-5,0) -- (5,0) node [above] {$x$};
+\draw[-latex] (0,-5) -- (0,5) node [right] {$t$};
+\draw[-latex,\darkgreen] (70:-5) -- (70:5) node [right] {$t^\prime$};
+\draw[-latex,\darkgreen] (20:-5) -- (20:5) node [above] {$x^\prime$};
+
+
+\draw[red,thick] (45:-5) -- (45:5);
+
+
+\node[text width=4cm,red] at (4,4){light cone, \\absolute structure};
+
+\node[text width=0.25cm,\darkgreen] at (1.5,0.25){$\delta$};
+\node[text width=0.25cm,\darkgreen] at (0.25,1.5){$\delta$};
+
+\draw[\darkgreen] (2,0) arc (0:20:2);
+\draw[\darkgreen] (0,2) arc (90:70:2);
+\fill (0,0) circle [radius=\prad];
+
+\end{tikzpicture}
+\end{document}

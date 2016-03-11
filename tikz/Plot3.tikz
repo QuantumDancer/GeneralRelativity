@@ -1,0 +1,20 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}
+    \def\a{4};
+    \pgfplotsset{ticks=none};
+    \begin{axis}[
+        scale=1.25,      
+        xmin=-0.1,xmax=2.25,
+        ymin=-3,ymax=13,
+        xlabel={$r$},
+        ylabel={$V_{\mathrm{eff}}$},
+        axis lines=center,
+        axis line style=-latex,
+        restrict expr to domain={y}{-3:10}
+        ]
+        \addplot[red] expression[domain=0.08:2,samples=500]{-x^(-3)+\a*x^(-2)};  
+    \end{axis}
+\end{tikzpicture}
+\end{document}

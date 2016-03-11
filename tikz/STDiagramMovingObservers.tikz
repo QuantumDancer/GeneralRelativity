@@ -1,0 +1,30 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+\def\prad{2pt};
+\draw[-latex] (-5,0) -- (5,0) node [above] {$x$};
+\draw[-latex] (0,-6) -- (0,6) node [right] {$ct$};
+\draw[red,thick,dashed] (-4,-4) -- (4,4);
+\draw[red,thick,dashed] (-4,4) -- (4,-4);
+\draw[arrows along my path] (-4,-2) -- (3,6);
+\draw[arrows along my path] (0,-5) -- (0,5);
+\draw[arrows along my path] (2,-5) -- (2,5);
+
+\node (O) at (0,0) {};
+\node[label=south east:"`event"'] (E) at (0,2.57143) {};
+\node[label=south east:$P$] (P) at (2,0) {};
+
+\fill (E) circle [radius=\prad];
+\fill (2,4.85714) circle [radius=\prad];
+\fill (O) circle [radius=\prad];
+\fill (P) circle [radius=\prad];
+
+\node[text width=3cm] (1) at (-3.5,1){worldline of observer moving with $v\approx c$ relative to resting observers};
+\node[text width=2cm,red] (1) at (4.3,3){lightcone};
+\node[text width=2cm] (2) at (-0.8,4.2){worldline observer in rest at 0};
+\node[text width=2cm] (2) at (3.1,4.2){worldline observer in rest at $P$};
+
+
+\end{tikzpicture}
+\end{document}

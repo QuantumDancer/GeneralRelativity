@@ -1,0 +1,24 @@
+\documentclass[12pt]{standalone}
+\usepackage{tikzstyle}
+\begin{document}
+\def\a{3}
+\def\b{2}
+\def\c{1.9}
+\begin{tikzpicture}
+    \begin{axis}[
+        scale=1.25,
+        xmin=0,xmax=32,
+        ymin=-0.5,ymax=1.1,
+        xlabel={$r/r_\text{S}$},
+        ylabel={$E/(2mc^2)$},
+        axis lines=center,
+        axis line style=-latex,
+        restrict expr to domain={y}{-0.5:1}
+        ]
+        \addplot[red] expression[domain=0.1:35,samples=500]{-x^(-1)+\a^2*x^(-2)-\a^2*x^(-3)}; 
+        \addplot[blue] expression[domain=0.1:35,samples=500]{-x^(-1)+\b^2*x^(-2)-\b^2*x^(-3)}; 
+        \addplot[\darkgreen] expression[domain=0.1:35,samples=500]{-x^(-1)+\c^2*x^(-2)-\c^2*x^(-3)}; 
+        \legend{$a>2$,$a=2$,$a<2$}
+    \end{axis}
+\end{tikzpicture}
+\end{document}
